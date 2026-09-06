@@ -21,12 +21,12 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"stm32h7xx_hal_adc.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
+	.file	1 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
+	.file	2 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
+	.file	3 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
 	.file	4 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_adc.h"
+	.file	5 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	6 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_adc.h"
 	.section	.text.HAL_ADC_Init,"ax",%progbits
 	.hidden	HAL_ADC_Init                    @ -- Begin function HAL_ADC_Init
 	.globl	HAL_ADC_Init
@@ -36,7 +36,7 @@
 	.thumb_func
 HAL_ADC_Init:
 .Lfunc_begin0:
-	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c"
+	.file	7 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c"
 	.loc	7 408 0                         @ ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:408:0
 	.fnstart
 	.cfi_sections .debug_frame
@@ -976,7 +976,7 @@ HAL_ADC_MspInit:
 	.thumb_func
 LL_ADC_IsDeepPowerDownEnabled:
 .Lfunc_begin2:
-	.file	8 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_ll_adc.h"
+	.file	8 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_ll_adc.h"
 	.loc	8 6833 0                        @ ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_ll_adc.h:6833:0
 	.fnstart
 	.cfi_startproc
@@ -7539,7 +7539,7 @@ HAL_ADC_ConfigChannel:
 	rbit	r0, r0
 	str	r0, [sp, #304]
 .Ltmp697:
-	.file	9 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Include\\cmsis_armclang.h"
+	.file	9 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Include\\cmsis_armclang.h"
 	.loc	9 948 7                         @ ../Drivers/CMSIS/Include\cmsis_armclang.h:948:7
 	ldr	r0, [sp, #304]
 .Ltmp698:
@@ -16625,623 +16625,623 @@ LL_ADC_Disable:
 .Linfo_string1:
 	.asciz	"../Drivers/STM32H7xx_HAL_Driver/Src\\stm32h7xx_hal_adc.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=124
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=124
 .Linfo_string3:
-	.asciz	"unsigned char"                 @ string offset=202
+	.asciz	"unsigned char"                 @ string offset=183
 .Linfo_string4:
-	.asciz	"HAL_OK"                        @ string offset=216
+	.asciz	"HAL_OK"                        @ string offset=197
 .Linfo_string5:
-	.asciz	"HAL_ERROR"                     @ string offset=223
+	.asciz	"HAL_ERROR"                     @ string offset=204
 .Linfo_string6:
-	.asciz	"HAL_BUSY"                      @ string offset=233
+	.asciz	"HAL_BUSY"                      @ string offset=214
 .Linfo_string7:
-	.asciz	"HAL_TIMEOUT"                   @ string offset=242
+	.asciz	"HAL_TIMEOUT"                   @ string offset=223
 .Linfo_string8:
-	.asciz	"DISABLE"                       @ string offset=254
+	.asciz	"DISABLE"                       @ string offset=235
 .Linfo_string9:
-	.asciz	"ENABLE"                        @ string offset=262
+	.asciz	"ENABLE"                        @ string offset=243
 .Linfo_string10:
-	.asciz	"HAL_UNLOCKED"                  @ string offset=269
+	.asciz	"HAL_UNLOCKED"                  @ string offset=250
 .Linfo_string11:
-	.asciz	"HAL_LOCKED"                    @ string offset=282
+	.asciz	"HAL_LOCKED"                    @ string offset=263
 .Linfo_string12:
-	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=293
+	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=274
 .Linfo_string13:
-	.asciz	"HAL_DMA_STATE_READY"           @ string offset=313
+	.asciz	"HAL_DMA_STATE_READY"           @ string offset=294
 .Linfo_string14:
-	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=333
+	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=314
 .Linfo_string15:
-	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=352
+	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=333
 .Linfo_string16:
-	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=372
+	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=353
 .Linfo_string17:
-	.asciz	"ISR"                           @ string offset=392
+	.asciz	"ISR"                           @ string offset=373
 .Linfo_string18:
-	.asciz	"unsigned int"                  @ string offset=396
+	.asciz	"unsigned int"                  @ string offset=377
 .Linfo_string19:
-	.asciz	"uint32_t"                      @ string offset=409
+	.asciz	"uint32_t"                      @ string offset=390
 .Linfo_string20:
-	.asciz	"IER"                           @ string offset=418
+	.asciz	"IER"                           @ string offset=399
 .Linfo_string21:
-	.asciz	"CR"                            @ string offset=422
+	.asciz	"CR"                            @ string offset=403
 .Linfo_string22:
-	.asciz	"CFGR"                          @ string offset=425
+	.asciz	"CFGR"                          @ string offset=406
 .Linfo_string23:
-	.asciz	"CFGR2"                         @ string offset=430
+	.asciz	"CFGR2"                         @ string offset=411
 .Linfo_string24:
-	.asciz	"SMPR1"                         @ string offset=436
+	.asciz	"SMPR1"                         @ string offset=417
 .Linfo_string25:
-	.asciz	"SMPR2"                         @ string offset=442
+	.asciz	"SMPR2"                         @ string offset=423
 .Linfo_string26:
-	.asciz	"PCSEL_RES0"                    @ string offset=448
+	.asciz	"PCSEL_RES0"                    @ string offset=429
 .Linfo_string27:
-	.asciz	"LTR1_TR1"                      @ string offset=459
+	.asciz	"LTR1_TR1"                      @ string offset=440
 .Linfo_string28:
-	.asciz	"HTR1_TR2"                      @ string offset=468
+	.asciz	"HTR1_TR2"                      @ string offset=449
 .Linfo_string29:
-	.asciz	"RES1_TR3"                      @ string offset=477
+	.asciz	"RES1_TR3"                      @ string offset=458
 .Linfo_string30:
-	.asciz	"RESERVED2"                     @ string offset=486
+	.asciz	"RESERVED2"                     @ string offset=467
 .Linfo_string31:
-	.asciz	"SQR1"                          @ string offset=496
+	.asciz	"SQR1"                          @ string offset=477
 .Linfo_string32:
-	.asciz	"SQR2"                          @ string offset=501
+	.asciz	"SQR2"                          @ string offset=482
 .Linfo_string33:
-	.asciz	"SQR3"                          @ string offset=506
+	.asciz	"SQR3"                          @ string offset=487
 .Linfo_string34:
-	.asciz	"SQR4"                          @ string offset=511
+	.asciz	"SQR4"                          @ string offset=492
 .Linfo_string35:
-	.asciz	"DR"                            @ string offset=516
+	.asciz	"DR"                            @ string offset=497
 .Linfo_string36:
-	.asciz	"RESERVED3"                     @ string offset=519
+	.asciz	"RESERVED3"                     @ string offset=500
 .Linfo_string37:
-	.asciz	"RESERVED4"                     @ string offset=529
+	.asciz	"RESERVED4"                     @ string offset=510
 .Linfo_string38:
-	.asciz	"JSQR"                          @ string offset=539
+	.asciz	"JSQR"                          @ string offset=520
 .Linfo_string39:
-	.asciz	"RESERVED5"                     @ string offset=544
+	.asciz	"RESERVED5"                     @ string offset=525
 .Linfo_string40:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=554
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=535
 .Linfo_string41:
-	.asciz	"OFR1"                          @ string offset=574
+	.asciz	"OFR1"                          @ string offset=555
 .Linfo_string42:
-	.asciz	"OFR2"                          @ string offset=579
+	.asciz	"OFR2"                          @ string offset=560
 .Linfo_string43:
-	.asciz	"OFR3"                          @ string offset=584
+	.asciz	"OFR3"                          @ string offset=565
 .Linfo_string44:
-	.asciz	"OFR4"                          @ string offset=589
+	.asciz	"OFR4"                          @ string offset=570
 .Linfo_string45:
-	.asciz	"RESERVED6"                     @ string offset=594
+	.asciz	"RESERVED6"                     @ string offset=575
 .Linfo_string46:
-	.asciz	"JDR1"                          @ string offset=604
+	.asciz	"JDR1"                          @ string offset=585
 .Linfo_string47:
-	.asciz	"JDR2"                          @ string offset=609
+	.asciz	"JDR2"                          @ string offset=590
 .Linfo_string48:
-	.asciz	"JDR3"                          @ string offset=614
+	.asciz	"JDR3"                          @ string offset=595
 .Linfo_string49:
-	.asciz	"JDR4"                          @ string offset=619
+	.asciz	"JDR4"                          @ string offset=600
 .Linfo_string50:
-	.asciz	"RESERVED7"                     @ string offset=624
+	.asciz	"RESERVED7"                     @ string offset=605
 .Linfo_string51:
-	.asciz	"AWD2CR"                        @ string offset=634
+	.asciz	"AWD2CR"                        @ string offset=615
 .Linfo_string52:
-	.asciz	"AWD3CR"                        @ string offset=641
+	.asciz	"AWD3CR"                        @ string offset=622
 .Linfo_string53:
-	.asciz	"RESERVED8"                     @ string offset=648
+	.asciz	"RESERVED8"                     @ string offset=629
 .Linfo_string54:
-	.asciz	"RESERVED9"                     @ string offset=658
+	.asciz	"RESERVED9"                     @ string offset=639
 .Linfo_string55:
-	.asciz	"LTR2_DIFSEL"                   @ string offset=668
+	.asciz	"LTR2_DIFSEL"                   @ string offset=649
 .Linfo_string56:
-	.asciz	"HTR2_CALFACT"                  @ string offset=680
+	.asciz	"HTR2_CALFACT"                  @ string offset=661
 .Linfo_string57:
-	.asciz	"LTR3_RES10"                    @ string offset=693
+	.asciz	"LTR3_RES10"                    @ string offset=674
 .Linfo_string58:
-	.asciz	"HTR3_RES11"                    @ string offset=704
+	.asciz	"HTR3_RES11"                    @ string offset=685
 .Linfo_string59:
-	.asciz	"DIFSEL_RES12"                  @ string offset=715
+	.asciz	"DIFSEL_RES12"                  @ string offset=696
 .Linfo_string60:
-	.asciz	"CALFACT_RES13"                 @ string offset=728
+	.asciz	"CALFACT_RES13"                 @ string offset=709
 .Linfo_string61:
-	.asciz	"CALFACT2_RES14"                @ string offset=742
+	.asciz	"CALFACT2_RES14"                @ string offset=723
 .Linfo_string62:
-	.asciz	"ADC_TypeDef"                   @ string offset=757
+	.asciz	"ADC_TypeDef"                   @ string offset=738
 .Linfo_string63:
-	.asciz	"CSR"                           @ string offset=769
+	.asciz	"CSR"                           @ string offset=750
 .Linfo_string64:
-	.asciz	"RESERVED"                      @ string offset=773
+	.asciz	"RESERVED"                      @ string offset=754
 .Linfo_string65:
-	.asciz	"CCR"                           @ string offset=782
+	.asciz	"CCR"                           @ string offset=763
 .Linfo_string66:
-	.asciz	"CDR"                           @ string offset=786
+	.asciz	"CDR"                           @ string offset=767
 .Linfo_string67:
-	.asciz	"CDR2"                          @ string offset=790
+	.asciz	"CDR2"                          @ string offset=771
 .Linfo_string68:
-	.asciz	"ADC_Common_TypeDef"            @ string offset=795
+	.asciz	"ADC_Common_TypeDef"            @ string offset=776
 .Linfo_string69:
-	.asciz	"uint8_t"                       @ string offset=814
+	.asciz	"uint8_t"                       @ string offset=795
 .Linfo_string70:
-	.asciz	"IDCODE"                        @ string offset=822
+	.asciz	"IDCODE"                        @ string offset=803
 .Linfo_string71:
-	.asciz	"APB3FZ1"                       @ string offset=829
+	.asciz	"APB3FZ1"                       @ string offset=810
 .Linfo_string72:
-	.asciz	"APB1LFZ1"                      @ string offset=837
+	.asciz	"APB1LFZ1"                      @ string offset=818
 .Linfo_string73:
-	.asciz	"APB1HFZ1"                      @ string offset=846
+	.asciz	"APB1HFZ1"                      @ string offset=827
 .Linfo_string74:
-	.asciz	"APB2FZ1"                       @ string offset=855
+	.asciz	"APB2FZ1"                       @ string offset=836
 .Linfo_string75:
-	.asciz	"APB4FZ1"                       @ string offset=863
+	.asciz	"APB4FZ1"                       @ string offset=844
 .Linfo_string76:
-	.asciz	"PIDR4"                         @ string offset=871
+	.asciz	"PIDR4"                         @ string offset=852
 .Linfo_string77:
-	.asciz	"RESERVED10"                    @ string offset=877
+	.asciz	"RESERVED10"                    @ string offset=858
 .Linfo_string78:
-	.asciz	"PIDR0"                         @ string offset=888
+	.asciz	"PIDR0"                         @ string offset=869
 .Linfo_string79:
-	.asciz	"PIDR1"                         @ string offset=894
+	.asciz	"PIDR1"                         @ string offset=875
 .Linfo_string80:
-	.asciz	"PIDR2"                         @ string offset=900
+	.asciz	"PIDR2"                         @ string offset=881
 .Linfo_string81:
-	.asciz	"PIDR3"                         @ string offset=906
+	.asciz	"PIDR3"                         @ string offset=887
 .Linfo_string82:
-	.asciz	"CIDR0"                         @ string offset=912
+	.asciz	"CIDR0"                         @ string offset=893
 .Linfo_string83:
-	.asciz	"CIDR1"                         @ string offset=918
+	.asciz	"CIDR1"                         @ string offset=899
 .Linfo_string84:
-	.asciz	"CIDR2"                         @ string offset=924
+	.asciz	"CIDR2"                         @ string offset=905
 .Linfo_string85:
-	.asciz	"CIDR3"                         @ string offset=930
+	.asciz	"CIDR3"                         @ string offset=911
 .Linfo_string86:
-	.asciz	"DBGMCU_TypeDef"                @ string offset=936
+	.asciz	"DBGMCU_TypeDef"                @ string offset=917
 .Linfo_string87:
-	.asciz	"Instance"                      @ string offset=951
+	.asciz	"Instance"                      @ string offset=932
 .Linfo_string88:
-	.asciz	"Init"                          @ string offset=960
+	.asciz	"Init"                          @ string offset=941
 .Linfo_string89:
-	.asciz	"ClockPrescaler"                @ string offset=965
+	.asciz	"ClockPrescaler"                @ string offset=946
 .Linfo_string90:
-	.asciz	"Resolution"                    @ string offset=980
+	.asciz	"Resolution"                    @ string offset=961
 .Linfo_string91:
-	.asciz	"DataAlign"                     @ string offset=991
+	.asciz	"DataAlign"                     @ string offset=972
 .Linfo_string92:
-	.asciz	"ScanConvMode"                  @ string offset=1001
+	.asciz	"ScanConvMode"                  @ string offset=982
 .Linfo_string93:
-	.asciz	"EOCSelection"                  @ string offset=1014
+	.asciz	"EOCSelection"                  @ string offset=995
 .Linfo_string94:
-	.asciz	"LowPowerAutoWait"              @ string offset=1027
+	.asciz	"LowPowerAutoWait"              @ string offset=1008
 .Linfo_string95:
-	.asciz	"FunctionalState"               @ string offset=1044
+	.asciz	"FunctionalState"               @ string offset=1025
 .Linfo_string96:
-	.asciz	"ContinuousConvMode"            @ string offset=1060
+	.asciz	"ContinuousConvMode"            @ string offset=1041
 .Linfo_string97:
-	.asciz	"NbrOfConversion"               @ string offset=1079
+	.asciz	"NbrOfConversion"               @ string offset=1060
 .Linfo_string98:
-	.asciz	"DiscontinuousConvMode"         @ string offset=1095
+	.asciz	"DiscontinuousConvMode"         @ string offset=1076
 .Linfo_string99:
-	.asciz	"NbrOfDiscConversion"           @ string offset=1117
+	.asciz	"NbrOfDiscConversion"           @ string offset=1098
 .Linfo_string100:
-	.asciz	"ExternalTrigConv"              @ string offset=1137
+	.asciz	"ExternalTrigConv"              @ string offset=1118
 .Linfo_string101:
-	.asciz	"ExternalTrigConvEdge"          @ string offset=1154
+	.asciz	"ExternalTrigConvEdge"          @ string offset=1135
 .Linfo_string102:
-	.asciz	"ConversionDataManagement"      @ string offset=1175
+	.asciz	"ConversionDataManagement"      @ string offset=1156
 .Linfo_string103:
-	.asciz	"SamplingMode"                  @ string offset=1200
+	.asciz	"SamplingMode"                  @ string offset=1181
 .Linfo_string104:
-	.asciz	"DMAContinuousRequests"         @ string offset=1213
+	.asciz	"DMAContinuousRequests"         @ string offset=1194
 .Linfo_string105:
-	.asciz	"Overrun"                       @ string offset=1235
+	.asciz	"Overrun"                       @ string offset=1216
 .Linfo_string106:
-	.asciz	"LeftBitShift"                  @ string offset=1243
+	.asciz	"LeftBitShift"                  @ string offset=1224
 .Linfo_string107:
-	.asciz	"OversamplingMode"              @ string offset=1256
+	.asciz	"OversamplingMode"              @ string offset=1237
 .Linfo_string108:
-	.asciz	"Oversampling"                  @ string offset=1273
+	.asciz	"Oversampling"                  @ string offset=1254
 .Linfo_string109:
-	.asciz	"Ratio"                         @ string offset=1286
+	.asciz	"Ratio"                         @ string offset=1267
 .Linfo_string110:
-	.asciz	"RightBitShift"                 @ string offset=1292
+	.asciz	"RightBitShift"                 @ string offset=1273
 .Linfo_string111:
-	.asciz	"TriggeredMode"                 @ string offset=1306
+	.asciz	"TriggeredMode"                 @ string offset=1287
 .Linfo_string112:
-	.asciz	"OversamplingStopReset"         @ string offset=1320
+	.asciz	"OversamplingStopReset"         @ string offset=1301
 .Linfo_string113:
-	.asciz	"ADC_OversamplingTypeDef"       @ string offset=1342
+	.asciz	"ADC_OversamplingTypeDef"       @ string offset=1323
 .Linfo_string114:
-	.asciz	"ADC_InitTypeDef"               @ string offset=1366
+	.asciz	"ADC_InitTypeDef"               @ string offset=1347
 .Linfo_string115:
-	.asciz	"DMA_Handle"                    @ string offset=1382
+	.asciz	"DMA_Handle"                    @ string offset=1363
 .Linfo_string116:
-	.asciz	"Request"                       @ string offset=1393
+	.asciz	"Request"                       @ string offset=1374
 .Linfo_string117:
-	.asciz	"Direction"                     @ string offset=1401
+	.asciz	"Direction"                     @ string offset=1382
 .Linfo_string118:
-	.asciz	"PeriphInc"                     @ string offset=1411
+	.asciz	"PeriphInc"                     @ string offset=1392
 .Linfo_string119:
-	.asciz	"MemInc"                        @ string offset=1421
+	.asciz	"MemInc"                        @ string offset=1402
 .Linfo_string120:
-	.asciz	"PeriphDataAlignment"           @ string offset=1428
+	.asciz	"PeriphDataAlignment"           @ string offset=1409
 .Linfo_string121:
-	.asciz	"MemDataAlignment"              @ string offset=1448
+	.asciz	"MemDataAlignment"              @ string offset=1429
 .Linfo_string122:
-	.asciz	"Mode"                          @ string offset=1465
+	.asciz	"Mode"                          @ string offset=1446
 .Linfo_string123:
-	.asciz	"Priority"                      @ string offset=1470
+	.asciz	"Priority"                      @ string offset=1451
 .Linfo_string124:
-	.asciz	"FIFOMode"                      @ string offset=1479
+	.asciz	"FIFOMode"                      @ string offset=1460
 .Linfo_string125:
-	.asciz	"FIFOThreshold"                 @ string offset=1488
+	.asciz	"FIFOThreshold"                 @ string offset=1469
 .Linfo_string126:
-	.asciz	"MemBurst"                      @ string offset=1502
+	.asciz	"MemBurst"                      @ string offset=1483
 .Linfo_string127:
-	.asciz	"PeriphBurst"                   @ string offset=1511
+	.asciz	"PeriphBurst"                   @ string offset=1492
 .Linfo_string128:
-	.asciz	"DMA_InitTypeDef"               @ string offset=1523
+	.asciz	"DMA_InitTypeDef"               @ string offset=1504
 .Linfo_string129:
-	.asciz	"Lock"                          @ string offset=1539
+	.asciz	"Lock"                          @ string offset=1520
 .Linfo_string130:
-	.asciz	"HAL_LockTypeDef"               @ string offset=1544
+	.asciz	"HAL_LockTypeDef"               @ string offset=1525
 .Linfo_string131:
-	.asciz	"State"                         @ string offset=1560
+	.asciz	"State"                         @ string offset=1541
 .Linfo_string132:
-	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=1566
+	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=1547
 .Linfo_string133:
-	.asciz	"Parent"                        @ string offset=1587
+	.asciz	"Parent"                        @ string offset=1568
 .Linfo_string134:
-	.asciz	"XferCpltCallback"              @ string offset=1594
+	.asciz	"XferCpltCallback"              @ string offset=1575
 .Linfo_string135:
-	.asciz	"XferHalfCpltCallback"          @ string offset=1611
+	.asciz	"XferHalfCpltCallback"          @ string offset=1592
 .Linfo_string136:
-	.asciz	"XferM1CpltCallback"            @ string offset=1632
+	.asciz	"XferM1CpltCallback"            @ string offset=1613
 .Linfo_string137:
-	.asciz	"XferM1HalfCpltCallback"        @ string offset=1651
+	.asciz	"XferM1HalfCpltCallback"        @ string offset=1632
 .Linfo_string138:
-	.asciz	"XferErrorCallback"             @ string offset=1674
+	.asciz	"XferErrorCallback"             @ string offset=1655
 .Linfo_string139:
-	.asciz	"XferAbortCallback"             @ string offset=1692
+	.asciz	"XferAbortCallback"             @ string offset=1673
 .Linfo_string140:
-	.asciz	"ErrorCode"                     @ string offset=1710
+	.asciz	"ErrorCode"                     @ string offset=1691
 .Linfo_string141:
-	.asciz	"StreamBaseAddress"             @ string offset=1720
+	.asciz	"StreamBaseAddress"             @ string offset=1701
 .Linfo_string142:
-	.asciz	"StreamIndex"                   @ string offset=1738
+	.asciz	"StreamIndex"                   @ string offset=1719
 .Linfo_string143:
-	.asciz	"DMAmuxChannel"                 @ string offset=1750
+	.asciz	"DMAmuxChannel"                 @ string offset=1731
 .Linfo_string144:
-	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=1764
+	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=1745
 .Linfo_string145:
-	.asciz	"DMAmuxChannelStatus"           @ string offset=1787
+	.asciz	"DMAmuxChannelStatus"           @ string offset=1768
 .Linfo_string146:
-	.asciz	"CFR"                           @ string offset=1807
+	.asciz	"CFR"                           @ string offset=1788
 .Linfo_string147:
-	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=1811
+	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=1792
 .Linfo_string148:
-	.asciz	"DMAmuxChannelStatusMask"       @ string offset=1840
+	.asciz	"DMAmuxChannelStatusMask"       @ string offset=1821
 .Linfo_string149:
-	.asciz	"DMAmuxRequestGen"              @ string offset=1864
+	.asciz	"DMAmuxRequestGen"              @ string offset=1845
 .Linfo_string150:
-	.asciz	"RGCR"                          @ string offset=1881
+	.asciz	"RGCR"                          @ string offset=1862
 .Linfo_string151:
-	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=1886
+	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=1867
 .Linfo_string152:
-	.asciz	"DMAmuxRequestGenStatus"        @ string offset=1912
+	.asciz	"DMAmuxRequestGenStatus"        @ string offset=1893
 .Linfo_string153:
-	.asciz	"RGSR"                          @ string offset=1935
+	.asciz	"RGSR"                          @ string offset=1916
 .Linfo_string154:
-	.asciz	"RGCFR"                         @ string offset=1940
+	.asciz	"RGCFR"                         @ string offset=1921
 .Linfo_string155:
-	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=1946
+	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=1927
 .Linfo_string156:
-	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=1978
+	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=1959
 .Linfo_string157:
-	.asciz	"__DMA_HandleTypeDef"           @ string offset=2005
+	.asciz	"__DMA_HandleTypeDef"           @ string offset=1986
 .Linfo_string158:
-	.asciz	"DMA_HandleTypeDef"             @ string offset=2025
+	.asciz	"DMA_HandleTypeDef"             @ string offset=2006
 .Linfo_string159:
-	.asciz	"InjectionConfig"               @ string offset=2043
+	.asciz	"InjectionConfig"               @ string offset=2024
 .Linfo_string160:
-	.asciz	"ContextQueue"                  @ string offset=2059
+	.asciz	"ContextQueue"                  @ string offset=2040
 .Linfo_string161:
-	.asciz	"ChannelCount"                  @ string offset=2072
+	.asciz	"ChannelCount"                  @ string offset=2053
 .Linfo_string162:
-	.asciz	"ADC_InjectionConfigTypeDef"    @ string offset=2085
+	.asciz	"ADC_InjectionConfigTypeDef"    @ string offset=2066
 .Linfo_string163:
-	.asciz	"ADC_HandleTypeDef"             @ string offset=2112
+	.asciz	"ADC_HandleTypeDef"             @ string offset=2093
 .Linfo_string164:
-	.asciz	"unsigned long long"            @ string offset=2130
+	.asciz	"unsigned long long"            @ string offset=2111
 .Linfo_string165:
-	.asciz	"uint64_t"                      @ string offset=2149
+	.asciz	"uint64_t"                      @ string offset=2130
 .Linfo_string166:
-	.asciz	"__CLZ"                         @ string offset=2158
+	.asciz	"__CLZ"                         @ string offset=2139
 .Linfo_string167:
-	.asciz	"value"                         @ string offset=2164
+	.asciz	"value"                         @ string offset=2145
 .Linfo_string168:
-	.asciz	"HAL_ADC_Init"                  @ string offset=2170
+	.asciz	"HAL_ADC_Init"                  @ string offset=2151
 .Linfo_string169:
-	.asciz	"HAL_StatusTypeDef"             @ string offset=2183
+	.asciz	"HAL_StatusTypeDef"             @ string offset=2164
 .Linfo_string170:
-	.asciz	"HAL_ADC_MspInit"               @ string offset=2201
+	.asciz	"HAL_ADC_MspInit"               @ string offset=2182
 .Linfo_string171:
-	.asciz	"LL_ADC_IsDeepPowerDownEnabled" @ string offset=2217
+	.asciz	"LL_ADC_IsDeepPowerDownEnabled" @ string offset=2198
 .Linfo_string172:
-	.asciz	"LL_ADC_DisableDeepPowerDown"   @ string offset=2247
+	.asciz	"LL_ADC_DisableDeepPowerDown"   @ string offset=2228
 .Linfo_string173:
-	.asciz	"LL_ADC_IsInternalRegulatorEnabled" @ string offset=2275
+	.asciz	"LL_ADC_IsInternalRegulatorEnabled" @ string offset=2256
 .Linfo_string174:
-	.asciz	"LL_ADC_EnableInternalRegulator" @ string offset=2309
+	.asciz	"LL_ADC_EnableInternalRegulator" @ string offset=2290
 .Linfo_string175:
-	.asciz	"LL_ADC_REG_IsConversionOngoing" @ string offset=2340
+	.asciz	"LL_ADC_REG_IsConversionOngoing" @ string offset=2321
 .Linfo_string176:
-	.asciz	"LL_ADC_IsEnabled"              @ string offset=2371
+	.asciz	"LL_ADC_IsEnabled"              @ string offset=2352
 .Linfo_string177:
-	.asciz	"LL_ADC_SetCommonClock"         @ string offset=2388
+	.asciz	"LL_ADC_SetCommonClock"         @ string offset=2369
 .Linfo_string178:
-	.asciz	"LL_ADC_INJ_IsConversionOngoing" @ string offset=2410
+	.asciz	"LL_ADC_INJ_IsConversionOngoing" @ string offset=2391
 .Linfo_string179:
-	.asciz	"ADC_ConfigureBoostMode"        @ string offset=2441
+	.asciz	"ADC_ConfigureBoostMode"        @ string offset=2422
 .Linfo_string180:
-	.asciz	"HAL_ADC_DeInit"                @ string offset=2464
+	.asciz	"HAL_ADC_DeInit"                @ string offset=2445
 .Linfo_string181:
-	.asciz	"ADC_ConversionStop"            @ string offset=2479
+	.asciz	"ADC_ConversionStop"            @ string offset=2460
 .Linfo_string182:
-	.asciz	"ADC_Disable"                   @ string offset=2498
+	.asciz	"ADC_Disable"                   @ string offset=2479
 .Linfo_string183:
-	.asciz	"HAL_ADC_MspDeInit"             @ string offset=2510
+	.asciz	"HAL_ADC_MspDeInit"             @ string offset=2491
 .Linfo_string184:
-	.asciz	"HAL_ADC_Start"                 @ string offset=2528
+	.asciz	"HAL_ADC_Start"                 @ string offset=2509
 .Linfo_string185:
-	.asciz	"LL_ADC_GetMultimode"           @ string offset=2542
+	.asciz	"LL_ADC_GetMultimode"           @ string offset=2523
 .Linfo_string186:
-	.asciz	"ADC_Enable"                    @ string offset=2562
+	.asciz	"ADC_Enable"                    @ string offset=2543
 .Linfo_string187:
-	.asciz	"LL_ADC_REG_StartConversion"    @ string offset=2573
+	.asciz	"LL_ADC_REG_StartConversion"    @ string offset=2554
 .Linfo_string188:
-	.asciz	"HAL_ADC_Stop"                  @ string offset=2600
+	.asciz	"HAL_ADC_Stop"                  @ string offset=2581
 .Linfo_string189:
-	.asciz	"HAL_ADC_PollForConversion"     @ string offset=2613
+	.asciz	"HAL_ADC_PollForConversion"     @ string offset=2594
 .Linfo_string190:
-	.asciz	"LL_ADC_GetMultiDMATransfer"    @ string offset=2639
+	.asciz	"LL_ADC_GetMultiDMATransfer"    @ string offset=2620
 .Linfo_string191:
-	.asciz	"LL_ADC_REG_IsTriggerSourceSWStart" @ string offset=2666
+	.asciz	"LL_ADC_REG_IsTriggerSourceSWStart" @ string offset=2647
 .Linfo_string192:
-	.asciz	"HAL_ADC_PollForEvent"          @ string offset=2700
+	.asciz	"HAL_ADC_PollForEvent"          @ string offset=2681
 .Linfo_string193:
-	.asciz	"HAL_ADC_Start_IT"              @ string offset=2721
+	.asciz	"HAL_ADC_Start_IT"              @ string offset=2702
 .Linfo_string194:
-	.asciz	"HAL_ADC_Stop_IT"               @ string offset=2738
+	.asciz	"HAL_ADC_Stop_IT"               @ string offset=2719
 .Linfo_string195:
-	.asciz	"HAL_ADC_Start_DMA"             @ string offset=2754
+	.asciz	"HAL_ADC_Start_DMA"             @ string offset=2735
 .Linfo_string196:
-	.asciz	"ADC_DMAConvCplt"               @ string offset=2772
+	.asciz	"ADC_DMAConvCplt"               @ string offset=2753
 .Linfo_string197:
-	.asciz	"ADC_DMAHalfConvCplt"           @ string offset=2788
+	.asciz	"ADC_DMAHalfConvCplt"           @ string offset=2769
 .Linfo_string198:
-	.asciz	"ADC_DMAError"                  @ string offset=2808
+	.asciz	"ADC_DMAError"                  @ string offset=2789
 .Linfo_string199:
-	.asciz	"LL_ADC_REG_SetDMATransferMode" @ string offset=2821
+	.asciz	"LL_ADC_REG_SetDMATransferMode" @ string offset=2802
 .Linfo_string200:
-	.asciz	"LL_ADC_EnableDMAReq"           @ string offset=2851
+	.asciz	"LL_ADC_EnableDMAReq"           @ string offset=2832
 .Linfo_string201:
-	.asciz	"LL_ADC_REG_SetDataTransferMode" @ string offset=2871
+	.asciz	"LL_ADC_REG_SetDataTransferMode" @ string offset=2852
 .Linfo_string202:
-	.asciz	"HAL_ADC_Stop_DMA"              @ string offset=2902
+	.asciz	"HAL_ADC_Stop_DMA"              @ string offset=2883
 .Linfo_string203:
-	.asciz	"HAL_ADC_GetValue"              @ string offset=2919
+	.asciz	"HAL_ADC_GetValue"              @ string offset=2900
 .Linfo_string204:
-	.asciz	"HAL_ADC_IRQHandler"            @ string offset=2936
+	.asciz	"HAL_ADC_IRQHandler"            @ string offset=2917
 .Linfo_string205:
-	.asciz	"HAL_ADC_ConvCpltCallback"      @ string offset=2955
+	.asciz	"HAL_ADC_ConvCpltCallback"      @ string offset=2936
 .Linfo_string206:
-	.asciz	"LL_ADC_INJ_IsTriggerSourceSWStart" @ string offset=2980
+	.asciz	"LL_ADC_INJ_IsTriggerSourceSWStart" @ string offset=2961
 .Linfo_string207:
-	.asciz	"HAL_ADC_LevelOutOfWindowCallback" @ string offset=3014
+	.asciz	"HAL_ADC_LevelOutOfWindowCallback" @ string offset=2995
 .Linfo_string208:
-	.asciz	"HAL_ADC_ErrorCallback"         @ string offset=3047
+	.asciz	"HAL_ADC_ErrorCallback"         @ string offset=3028
 .Linfo_string209:
-	.asciz	"HAL_ADC_ConvHalfCpltCallback"  @ string offset=3069
+	.asciz	"HAL_ADC_ConvHalfCpltCallback"  @ string offset=3050
 .Linfo_string210:
-	.asciz	"HAL_ADC_ConfigChannel"         @ string offset=3098
+	.asciz	"HAL_ADC_ConfigChannel"         @ string offset=3079
 .Linfo_string211:
-	.asciz	"LL_ADC_REG_SetSequencerRanks"  @ string offset=3120
+	.asciz	"LL_ADC_REG_SetSequencerRanks"  @ string offset=3101
 .Linfo_string212:
-	.asciz	"LL_ADC_SetChannelSamplingTime" @ string offset=3149
+	.asciz	"LL_ADC_SetChannelSamplingTime" @ string offset=3130
 .Linfo_string213:
-	.asciz	"LL_ADC_SetOffset"              @ string offset=3179
+	.asciz	"LL_ADC_SetOffset"              @ string offset=3160
 .Linfo_string214:
-	.asciz	"LL_ADC_SetOffsetSign"          @ string offset=3196
+	.asciz	"LL_ADC_SetOffsetSign"          @ string offset=3177
 .Linfo_string215:
-	.asciz	"LL_ADC_SetOffsetSaturation"    @ string offset=3217
+	.asciz	"LL_ADC_SetOffsetSaturation"    @ string offset=3198
 .Linfo_string216:
-	.asciz	"LL_ADC_SetOffsetSignedSaturation" @ string offset=3244
+	.asciz	"LL_ADC_SetOffsetSignedSaturation" @ string offset=3225
 .Linfo_string217:
-	.asciz	"LL_ADC_SetDataRightShift"      @ string offset=3277
+	.asciz	"LL_ADC_SetDataRightShift"      @ string offset=3258
 .Linfo_string218:
-	.asciz	"LL_ADC_GetOffsetChannel"       @ string offset=3302
+	.asciz	"LL_ADC_GetOffsetChannel"       @ string offset=3283
 .Linfo_string219:
-	.asciz	"LL_ADC_SetOffsetState"         @ string offset=3326
+	.asciz	"LL_ADC_SetOffsetState"         @ string offset=3307
 .Linfo_string220:
-	.asciz	"LL_ADC_SetChannelSingleDiff"   @ string offset=3348
+	.asciz	"LL_ADC_SetChannelSingleDiff"   @ string offset=3329
 .Linfo_string221:
-	.asciz	"LL_ADC_SetChannelPreselection" @ string offset=3376
+	.asciz	"LL_ADC_SetChannelPreselection" @ string offset=3357
 .Linfo_string222:
-	.asciz	"LL_ADC_GetCommonPathInternalCh" @ string offset=3406
+	.asciz	"LL_ADC_GetCommonPathInternalCh" @ string offset=3387
 .Linfo_string223:
-	.asciz	"LL_ADC_SetCommonPathInternalCh" @ string offset=3437
+	.asciz	"LL_ADC_SetCommonPathInternalCh" @ string offset=3418
 .Linfo_string224:
-	.asciz	"HAL_ADC_AnalogWDGConfig"       @ string offset=3468
+	.asciz	"HAL_ADC_AnalogWDGConfig"       @ string offset=3449
 .Linfo_string225:
-	.asciz	"LL_ADC_SetAnalogWDMonitChannels" @ string offset=3492
+	.asciz	"LL_ADC_SetAnalogWDMonitChannels" @ string offset=3473
 .Linfo_string226:
-	.asciz	"LL_ADC_ClearFlag_AWD1"         @ string offset=3524
+	.asciz	"LL_ADC_ClearFlag_AWD1"         @ string offset=3505
 .Linfo_string227:
-	.asciz	"LL_ADC_EnableIT_AWD1"          @ string offset=3546
+	.asciz	"LL_ADC_EnableIT_AWD1"          @ string offset=3527
 .Linfo_string228:
-	.asciz	"LL_ADC_DisableIT_AWD1"         @ string offset=3567
+	.asciz	"LL_ADC_DisableIT_AWD1"         @ string offset=3548
 .Linfo_string229:
-	.asciz	"LL_ADC_ConfigAnalogWDThresholds" @ string offset=3589
+	.asciz	"LL_ADC_ConfigAnalogWDThresholds" @ string offset=3570
 .Linfo_string230:
-	.asciz	"LL_ADC_ClearFlag_AWD2"         @ string offset=3621
+	.asciz	"LL_ADC_ClearFlag_AWD2"         @ string offset=3602
 .Linfo_string231:
-	.asciz	"LL_ADC_EnableIT_AWD2"          @ string offset=3643
+	.asciz	"LL_ADC_EnableIT_AWD2"          @ string offset=3624
 .Linfo_string232:
-	.asciz	"LL_ADC_DisableIT_AWD2"         @ string offset=3664
+	.asciz	"LL_ADC_DisableIT_AWD2"         @ string offset=3645
 .Linfo_string233:
-	.asciz	"LL_ADC_ClearFlag_AWD3"         @ string offset=3686
+	.asciz	"LL_ADC_ClearFlag_AWD3"         @ string offset=3667
 .Linfo_string234:
-	.asciz	"LL_ADC_EnableIT_AWD3"          @ string offset=3708
+	.asciz	"LL_ADC_EnableIT_AWD3"          @ string offset=3689
 .Linfo_string235:
-	.asciz	"LL_ADC_DisableIT_AWD3"         @ string offset=3729
+	.asciz	"LL_ADC_DisableIT_AWD3"         @ string offset=3710
 .Linfo_string236:
-	.asciz	"HAL_ADC_GetState"              @ string offset=3751
+	.asciz	"HAL_ADC_GetState"              @ string offset=3732
 .Linfo_string237:
-	.asciz	"HAL_ADC_GetError"              @ string offset=3768
+	.asciz	"HAL_ADC_GetError"              @ string offset=3749
 .Linfo_string238:
-	.asciz	"LL_ADC_IsDisableOngoing"       @ string offset=3785
+	.asciz	"LL_ADC_IsDisableOngoing"       @ string offset=3766
 .Linfo_string239:
-	.asciz	"LL_ADC_REG_StopConversion"     @ string offset=3809
+	.asciz	"LL_ADC_REG_StopConversion"     @ string offset=3790
 .Linfo_string240:
-	.asciz	"LL_ADC_INJ_StopConversion"     @ string offset=3835
+	.asciz	"LL_ADC_INJ_StopConversion"     @ string offset=3816
 .Linfo_string241:
-	.asciz	"LL_ADC_Enable"                 @ string offset=3861
+	.asciz	"LL_ADC_Enable"                 @ string offset=3842
 .Linfo_string242:
-	.asciz	"LL_ADC_Disable"                @ string offset=3875
+	.asciz	"LL_ADC_Disable"                @ string offset=3856
 .Linfo_string243:
-	.asciz	"hadc"                          @ string offset=3890
+	.asciz	"hadc"                          @ string offset=3871
 .Linfo_string244:
-	.asciz	"tmp_hal_status"                @ string offset=3895
+	.asciz	"tmp_hal_status"                @ string offset=3876
 .Linfo_string245:
-	.asciz	"tmpCFGR"                       @ string offset=3910
+	.asciz	"tmpCFGR"                       @ string offset=3891
 .Linfo_string246:
-	.asciz	"tmp_adc_reg_is_conversion_on_going" @ string offset=3918
+	.asciz	"tmp_adc_reg_is_conversion_on_going" @ string offset=3899
 .Linfo_string247:
-	.asciz	"wait_loop_index"               @ string offset=3953
+	.asciz	"wait_loop_index"               @ string offset=3934
 .Linfo_string248:
-	.asciz	"tmp_adc_is_conversion_on_going_regular" @ string offset=3969
+	.asciz	"tmp_adc_is_conversion_on_going_regular" @ string offset=3950
 .Linfo_string249:
-	.asciz	"tmp_adc_is_conversion_on_going_injected" @ string offset=4008
+	.asciz	"tmp_adc_is_conversion_on_going_injected" @ string offset=3989
 .Linfo_string250:
-	.asciz	"ADCx"                          @ string offset=4048
+	.asciz	"ADCx"                          @ string offset=4029
 .Linfo_string251:
-	.asciz	"ADCxy_COMMON"                  @ string offset=4053
+	.asciz	"ADCxy_COMMON"                  @ string offset=4034
 .Linfo_string252:
-	.asciz	"CommonClock"                   @ string offset=4066
+	.asciz	"CommonClock"                   @ string offset=4047
 .Linfo_string253:
-	.asciz	"freq"                          @ string offset=4078
+	.asciz	"freq"                          @ string offset=4059
 .Linfo_string254:
-	.asciz	"ConversionGroup"               @ string offset=4083
+	.asciz	"ConversionGroup"               @ string offset=4064
 .Linfo_string255:
-	.asciz	"tickstart"                     @ string offset=4099
+	.asciz	"tickstart"                     @ string offset=4080
 .Linfo_string256:
-	.asciz	"Conversion_Timeout_CPU_cycles" @ string offset=4109
+	.asciz	"Conversion_Timeout_CPU_cycles" @ string offset=4090
 .Linfo_string257:
-	.asciz	"conversion_group_reassigned"   @ string offset=4139
+	.asciz	"conversion_group_reassigned"   @ string offset=4120
 .Linfo_string258:
-	.asciz	"tmp_ADC_CR_ADSTART_JADSTART"   @ string offset=4167
+	.asciz	"tmp_ADC_CR_ADSTART_JADSTART"   @ string offset=4148
 .Linfo_string259:
-	.asciz	"tmp_adc_is_disable_on_going"   @ string offset=4195
+	.asciz	"tmp_adc_is_disable_on_going"   @ string offset=4176
 .Linfo_string260:
-	.asciz	"tmpADC_Master"                 @ string offset=4223
+	.asciz	"tmpADC_Master"                 @ string offset=4204
 .Linfo_string261:
-	.asciz	"tmp_multimode_config"          @ string offset=4237
+	.asciz	"tmp_multimode_config"          @ string offset=4218
 .Linfo_string262:
-	.asciz	"Timeout"                       @ string offset=4258
+	.asciz	"Timeout"                       @ string offset=4239
 .Linfo_string263:
-	.asciz	"tmp_Flag_End"                  @ string offset=4266
+	.asciz	"tmp_Flag_End"                  @ string offset=4247
 .Linfo_string264:
-	.asciz	"tmp_cfgr"                      @ string offset=4279
+	.asciz	"tmp_cfgr"                      @ string offset=4260
 .Linfo_string265:
-	.asciz	"EventType"                     @ string offset=4288
+	.asciz	"EventType"                     @ string offset=4269
 .Linfo_string266:
-	.asciz	"pData"                         @ string offset=4298
+	.asciz	"pData"                         @ string offset=4279
 .Linfo_string267:
-	.asciz	"Length"                        @ string offset=4304
+	.asciz	"Length"                        @ string offset=4285
 .Linfo_string268:
-	.asciz	"hdma"                          @ string offset=4311
+	.asciz	"hdma"                          @ string offset=4292
 .Linfo_string269:
-	.asciz	"DMATransfer"                   @ string offset=4316
+	.asciz	"DMATransfer"                   @ string offset=4297
 .Linfo_string270:
-	.asciz	"DataTransferMode"              @ string offset=4328
+	.asciz	"DataTransferMode"              @ string offset=4309
 .Linfo_string271:
-	.asciz	"overrun_error"                 @ string offset=4345
+	.asciz	"overrun_error"                 @ string offset=4326
 .Linfo_string272:
-	.asciz	"tmp_isr"                       @ string offset=4359
+	.asciz	"tmp_isr"                       @ string offset=4340
 .Linfo_string273:
-	.asciz	"tmp_ier"                       @ string offset=4367
+	.asciz	"tmp_ier"                       @ string offset=4348
 .Linfo_string274:
-	.asciz	"tmp_adc_inj_is_trigger_source_sw_start" @ string offset=4375
+	.asciz	"tmp_adc_inj_is_trigger_source_sw_start" @ string offset=4356
 .Linfo_string275:
-	.asciz	"tmp_adc_reg_is_trigger_source_sw_start" @ string offset=4414
+	.asciz	"tmp_adc_reg_is_trigger_source_sw_start" @ string offset=4395
 .Linfo_string276:
-	.asciz	"sConfig"                       @ string offset=4453
+	.asciz	"sConfig"                       @ string offset=4434
 .Linfo_string277:
-	.asciz	"Channel"                       @ string offset=4461
+	.asciz	"Channel"                       @ string offset=4442
 .Linfo_string278:
-	.asciz	"Rank"                          @ string offset=4469
+	.asciz	"Rank"                          @ string offset=4450
 .Linfo_string279:
-	.asciz	"SamplingTime"                  @ string offset=4474
+	.asciz	"SamplingTime"                  @ string offset=4455
 .Linfo_string280:
-	.asciz	"SingleDiff"                    @ string offset=4487
+	.asciz	"SingleDiff"                    @ string offset=4468
 .Linfo_string281:
-	.asciz	"OffsetNumber"                  @ string offset=4498
+	.asciz	"OffsetNumber"                  @ string offset=4479
 .Linfo_string282:
-	.asciz	"Offset"                        @ string offset=4511
+	.asciz	"Offset"                        @ string offset=4492
 .Linfo_string283:
-	.asciz	"OffsetRightShift"              @ string offset=4518
+	.asciz	"OffsetRightShift"              @ string offset=4499
 .Linfo_string284:
-	.asciz	"OffsetSign"                    @ string offset=4535
+	.asciz	"OffsetSign"                    @ string offset=4516
 .Linfo_string285:
-	.asciz	"OffsetSaturation"              @ string offset=4546
+	.asciz	"OffsetSaturation"              @ string offset=4527
 .Linfo_string286:
-	.asciz	"OffsetSignedSaturation"        @ string offset=4563
+	.asciz	"OffsetSignedSaturation"        @ string offset=4544
 .Linfo_string287:
-	.asciz	"ADC_ChannelConfTypeDef"        @ string offset=4586
+	.asciz	"ADC_ChannelConfTypeDef"        @ string offset=4567
 .Linfo_string288:
-	.asciz	"tmpOffsetShifted"              @ string offset=4609
+	.asciz	"tmpOffsetShifted"              @ string offset=4590
 .Linfo_string289:
-	.asciz	"tmp_config_internal_channel"   @ string offset=4626
+	.asciz	"tmp_config_internal_channel"   @ string offset=4607
 .Linfo_string290:
-	.asciz	"preg"                          @ string offset=4654
+	.asciz	"preg"                          @ string offset=4635
 .Linfo_string291:
-	.asciz	"Offsety"                       @ string offset=4659
+	.asciz	"Offsety"                       @ string offset=4640
 .Linfo_string292:
-	.asciz	"OffsetLevel"                   @ string offset=4667
+	.asciz	"OffsetLevel"                   @ string offset=4648
 .Linfo_string293:
-	.asciz	"RigthShift"                    @ string offset=4679
+	.asciz	"RigthShift"                    @ string offset=4660
 .Linfo_string294:
-	.asciz	"OffsetState"                   @ string offset=4690
+	.asciz	"OffsetState"                   @ string offset=4671
 .Linfo_string295:
-	.asciz	"PathInternal"                  @ string offset=4702
+	.asciz	"PathInternal"                  @ string offset=4683
 .Linfo_string296:
-	.asciz	"AnalogWDGConfig"               @ string offset=4715
+	.asciz	"AnalogWDGConfig"               @ string offset=4696
 .Linfo_string297:
-	.asciz	"WatchdogNumber"                @ string offset=4731
+	.asciz	"WatchdogNumber"                @ string offset=4712
 .Linfo_string298:
-	.asciz	"WatchdogMode"                  @ string offset=4746
+	.asciz	"WatchdogMode"                  @ string offset=4727
 .Linfo_string299:
-	.asciz	"ITMode"                        @ string offset=4759
+	.asciz	"ITMode"                        @ string offset=4740
 .Linfo_string300:
-	.asciz	"HighThreshold"                 @ string offset=4766
+	.asciz	"HighThreshold"                 @ string offset=4747
 .Linfo_string301:
-	.asciz	"LowThreshold"                  @ string offset=4780
+	.asciz	"LowThreshold"                  @ string offset=4761
 .Linfo_string302:
-	.asciz	"FilteringConfig"               @ string offset=4793
+	.asciz	"FilteringConfig"               @ string offset=4774
 .Linfo_string303:
-	.asciz	"ADC_AnalogWDGConfTypeDef"      @ string offset=4809
+	.asciz	"ADC_AnalogWDGConfTypeDef"      @ string offset=4790
 .Linfo_string304:
-	.asciz	"tmpAWDHighThresholdShifted"    @ string offset=4834
+	.asciz	"tmpAWDHighThresholdShifted"    @ string offset=4815
 .Linfo_string305:
-	.asciz	"tmpAWDLowThresholdShifted"     @ string offset=4861
+	.asciz	"tmpAWDLowThresholdShifted"     @ string offset=4842
 .Linfo_string306:
-	.asciz	"AWDy"                          @ string offset=4887
+	.asciz	"AWDy"                          @ string offset=4868
 .Linfo_string307:
-	.asciz	"AWDChannelGroup"               @ string offset=4892
+	.asciz	"AWDChannelGroup"               @ string offset=4873
 .Linfo_string308:
-	.asciz	"AWDThresholdHighValue"         @ string offset=4908
+	.asciz	"AWDThresholdHighValue"         @ string offset=4889
 .Linfo_string309:
-	.asciz	"AWDThresholdLowValue"          @ string offset=4930
+	.asciz	"AWDThresholdLowValue"          @ string offset=4911
 .Linfo_string310:
-	.asciz	"preg2"                         @ string offset=4951
+	.asciz	"preg2"                         @ string offset=4932
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

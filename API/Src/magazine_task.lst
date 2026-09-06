@@ -21,11 +21,11 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"Magazine_task.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Inc\\Magazine_task.h"
+	.file	1 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Task/Inc\\Magazine_task.h"
 	.file	2 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Src/Magazine_task.c"
-	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\pid.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
+	.file	3 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Task/Src/Magazine_task.c"
+	.file	4 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Algorithm/Inc\\pid.h"
+	.file	5 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
 	.section	.text.Magazine_Task,"ax",%progbits
 	.hidden	Magazine_Task                   @ -- Begin function Magazine_Task
 	.globl	Magazine_Task
@@ -996,7 +996,7 @@ Shoot_Velocity_PID_Param:
 	.long	0x469c4000                      @ float 2.0E+4
 	.size	Shoot_Velocity_PID_Param, 28
 
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
+	.file	6 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -2080,207 +2080,207 @@ Shoot_Velocity_PID_Param:
 .Linfo_string1:
 	.asciz	"../Task/Src\\Magazine_task.c"  @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=96
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=96
 .Linfo_string3:
-	.asciz	"Control_Magazine_Info"         @ string offset=174
+	.asciz	"Control_Magazine_Info"         @ string offset=155
 .Linfo_string4:
-	.asciz	"Target"                        @ string offset=196
+	.asciz	"Target"                        @ string offset=177
 .Linfo_string5:
-	.asciz	"Magazine_Velocity"             @ string offset=203
+	.asciz	"Magazine_Velocity"             @ string offset=184
 .Linfo_string6:
-	.asciz	"float"                         @ string offset=221
+	.asciz	"float"                         @ string offset=202
 .Linfo_string7:
-	.asciz	"Magazine_Angle"                @ string offset=227
+	.asciz	"Magazine_Angle"                @ string offset=208
 .Linfo_string8:
-	.asciz	"Shoot0_Velocity"               @ string offset=242
+	.asciz	"Shoot0_Velocity"               @ string offset=223
 .Linfo_string9:
-	.asciz	"Shoot1_Velocity"               @ string offset=258
+	.asciz	"Shoot1_Velocity"               @ string offset=239
 .Linfo_string10:
-	.asciz	"Measure"                       @ string offset=274
+	.asciz	"Measure"                       @ string offset=255
 .Linfo_string11:
-	.asciz	"Type"                          @ string offset=282
+	.asciz	"Type"                          @ string offset=263
 .Linfo_string12:
-	.asciz	"unsigned char"                 @ string offset=287
+	.asciz	"unsigned char"                 @ string offset=268
 .Linfo_string13:
-	.asciz	"SHOOT_ENABLE"                  @ string offset=301
+	.asciz	"SHOOT_ENABLE"                  @ string offset=282
 .Linfo_string14:
-	.asciz	"SHOOT_SLEEP"                   @ string offset=314
+	.asciz	"SHOOT_SLEEP"                   @ string offset=295
 .Linfo_string15:
-	.asciz	"SHOOT_SINGLE"                  @ string offset=326
+	.asciz	"SHOOT_SINGLE"                  @ string offset=307
 .Linfo_string16:
-	.asciz	"SHOOT_SINGLE_WAIT"             @ string offset=339
+	.asciz	"SHOOT_SINGLE_WAIT"             @ string offset=320
 .Linfo_string17:
-	.asciz	"SHOOT_FIRE"                    @ string offset=357
+	.asciz	"SHOOT_FIRE"                    @ string offset=338
 .Linfo_string18:
-	.asciz	"Control_Magazine_Mode_Type_e"  @ string offset=368
+	.asciz	"Control_Magazine_Mode_Type_e"  @ string offset=349
 .Linfo_string19:
-	.asciz	"fireRate"                      @ string offset=397
+	.asciz	"fireRate"                      @ string offset=378
 .Linfo_string20:
-	.asciz	"short"                         @ string offset=406
+	.asciz	"short"                         @ string offset=387
 .Linfo_string21:
-	.asciz	"int16_t"                       @ string offset=412
+	.asciz	"int16_t"                       @ string offset=393
 .Linfo_string22:
-	.asciz	"fireSpeed"                     @ string offset=420
+	.asciz	"fireSpeed"                     @ string offset=401
 .Linfo_string23:
-	.asciz	"SendValue"                     @ string offset=430
+	.asciz	"SendValue"                     @ string offset=411
 .Linfo_string24:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=440
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=421
 .Linfo_string25:
-	.asciz	"Control_Magazine_Info_Typedef" @ string offset=460
+	.asciz	"Control_Magazine_Info_Typedef" @ string offset=441
 .Linfo_string26:
-	.asciz	"Magazine_Angle_PID"            @ string offset=490
+	.asciz	"Magazine_Angle_PID"            @ string offset=471
 .Linfo_string27:
-	.asciz	"PID_Type_None"                 @ string offset=509
+	.asciz	"PID_Type_None"                 @ string offset=490
 .Linfo_string28:
-	.asciz	"PID_POSITION"                  @ string offset=523
+	.asciz	"PID_POSITION"                  @ string offset=504
 .Linfo_string29:
-	.asciz	"PID_VELOCITY"                  @ string offset=536
+	.asciz	"PID_VELOCITY"                  @ string offset=517
 .Linfo_string30:
-	.asciz	"PID_ANGLE"                     @ string offset=549
+	.asciz	"PID_ANGLE"                     @ string offset=530
 .Linfo_string31:
-	.asciz	"PID_ANTI_WINDUP"               @ string offset=559
+	.asciz	"PID_ANTI_WINDUP"               @ string offset=540
 .Linfo_string32:
-	.asciz	"PID_FEEDFORWARD"               @ string offset=575
+	.asciz	"PID_FEEDFORWARD"               @ string offset=556
 .Linfo_string33:
-	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=591
+	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=572
 .Linfo_string34:
-	.asciz	"PID_TYPE_NUM"                  @ string offset=614
+	.asciz	"PID_TYPE_NUM"                  @ string offset=595
 .Linfo_string35:
-	.asciz	"PID_Type_e"                    @ string offset=627
+	.asciz	"PID_Type_e"                    @ string offset=608
 .Linfo_string36:
-	.asciz	"Err"                           @ string offset=638
+	.asciz	"Err"                           @ string offset=619
 .Linfo_string37:
-	.asciz	"Dbuf"                          @ string offset=642
+	.asciz	"Dbuf"                          @ string offset=623
 .Linfo_string38:
-	.asciz	"Integral"                      @ string offset=647
+	.asciz	"Integral"                      @ string offset=628
 .Linfo_string39:
-	.asciz	"Pout"                          @ string offset=656
+	.asciz	"Pout"                          @ string offset=637
 .Linfo_string40:
-	.asciz	"Iout"                          @ string offset=661
+	.asciz	"Iout"                          @ string offset=642
 .Linfo_string41:
-	.asciz	"Dout"                          @ string offset=666
+	.asciz	"Dout"                          @ string offset=647
 .Linfo_string42:
-	.asciz	"Output"                        @ string offset=671
+	.asciz	"Output"                        @ string offset=652
 .Linfo_string43:
-	.asciz	"Target_Buffer"                 @ string offset=678
+	.asciz	"Target_Buffer"                 @ string offset=659
 .Linfo_string44:
-	.asciz	"Target_Index"                  @ string offset=692
+	.asciz	"Target_Index"                  @ string offset=673
 .Linfo_string45:
-	.asciz	"uint8_t"                       @ string offset=705
+	.asciz	"uint8_t"                       @ string offset=686
 .Linfo_string46:
-	.asciz	"Fout"                          @ string offset=713
+	.asciz	"Fout"                          @ string offset=694
 .Linfo_string47:
-	.asciz	"Dout_LPF"                      @ string offset=718
+	.asciz	"Dout_LPF"                      @ string offset=699
 .Linfo_string48:
-	.asciz	"Initialized"                   @ string offset=727
+	.asciz	"Initialized"                   @ string offset=708
 .Linfo_string49:
-	.asciz	"_Bool"                         @ string offset=739
+	.asciz	"_Bool"                         @ string offset=720
 .Linfo_string50:
-	.asciz	"Input"                         @ string offset=745
+	.asciz	"Input"                         @ string offset=726
 .Linfo_string51:
-	.asciz	"Alpha"                         @ string offset=751
+	.asciz	"Alpha"                         @ string offset=732
 .Linfo_string52:
-	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=757
+	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=738
 .Linfo_string53:
-	.asciz	"Param"                         @ string offset=786
+	.asciz	"Param"                         @ string offset=767
 .Linfo_string54:
-	.asciz	"KP"                            @ string offset=792
+	.asciz	"KP"                            @ string offset=773
 .Linfo_string55:
-	.asciz	"KI"                            @ string offset=795
+	.asciz	"KI"                            @ string offset=776
 .Linfo_string56:
-	.asciz	"KD"                            @ string offset=798
+	.asciz	"KD"                            @ string offset=779
 .Linfo_string57:
-	.asciz	"Deadband"                      @ string offset=801
+	.asciz	"Deadband"                      @ string offset=782
 .Linfo_string58:
-	.asciz	"LimitIntegral"                 @ string offset=810
+	.asciz	"LimitIntegral"                 @ string offset=791
 .Linfo_string59:
-	.asciz	"LimitOutput"                   @ string offset=824
+	.asciz	"LimitOutput"                   @ string offset=805
 .Linfo_string60:
-	.asciz	"I_Variable_Speed_A"            @ string offset=836
+	.asciz	"I_Variable_Speed_A"            @ string offset=817
 .Linfo_string61:
-	.asciz	"I_Variable_Speed_B"            @ string offset=855
+	.asciz	"I_Variable_Speed_B"            @ string offset=836
 .Linfo_string62:
-	.asciz	"KF"                            @ string offset=874
+	.asciz	"KF"                            @ string offset=855
 .Linfo_string63:
-	.asciz	"PID_Parameter_Typedef"         @ string offset=877
+	.asciz	"PID_Parameter_Typedef"         @ string offset=858
 .Linfo_string64:
-	.asciz	"ERRORHandler"                  @ string offset=899
+	.asciz	"ERRORHandler"                  @ string offset=880
 .Linfo_string65:
-	.asciz	"ErrorCount"                    @ string offset=912
+	.asciz	"ErrorCount"                    @ string offset=893
 .Linfo_string66:
-	.asciz	"unsigned short"                @ string offset=923
+	.asciz	"unsigned short"                @ string offset=904
 .Linfo_string67:
-	.asciz	"uint16_t"                      @ string offset=938
+	.asciz	"uint16_t"                      @ string offset=919
 .Linfo_string68:
-	.asciz	"Status"                        @ string offset=947
+	.asciz	"Status"                        @ string offset=928
 .Linfo_string69:
-	.asciz	"PID_ERROR_NONE"                @ string offset=954
+	.asciz	"PID_ERROR_NONE"                @ string offset=935
 .Linfo_string70:
-	.asciz	"PID_FAILED_INIT"               @ string offset=969
+	.asciz	"PID_FAILED_INIT"               @ string offset=950
 .Linfo_string71:
-	.asciz	"PID_CALC_NANINF"               @ string offset=985
+	.asciz	"PID_CALC_NANINF"               @ string offset=966
 .Linfo_string72:
-	.asciz	"PID_Status_NUM"                @ string offset=1001
+	.asciz	"PID_Status_NUM"                @ string offset=982
 .Linfo_string73:
-	.asciz	"PID_Status_e"                  @ string offset=1016
+	.asciz	"PID_Status_e"                  @ string offset=997
 .Linfo_string74:
-	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=1029
+	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=1010
 .Linfo_string75:
-	.asciz	"PID_Param_Init"                @ string offset=1054
+	.asciz	"PID_Param_Init"                @ string offset=1035
 .Linfo_string76:
-	.asciz	"PID_Calc_Clear"                @ string offset=1069
+	.asciz	"PID_Calc_Clear"                @ string offset=1050
 .Linfo_string77:
-	.asciz	"_PID_TypeDef"                  @ string offset=1084
+	.asciz	"_PID_TypeDef"                  @ string offset=1065
 .Linfo_string78:
-	.asciz	"PID_Info_TypeDef"              @ string offset=1097
+	.asciz	"PID_Info_TypeDef"              @ string offset=1078
 .Linfo_string79:
-	.asciz	"Magazine_Velocity_PID"         @ string offset=1114
+	.asciz	"Magazine_Velocity_PID"         @ string offset=1095
 .Linfo_string80:
-	.asciz	"Shoot0_Velocity_PID"           @ string offset=1136
+	.asciz	"Shoot0_Velocity_PID"           @ string offset=1117
 .Linfo_string81:
-	.asciz	"Shoot1_Velocity_PID"           @ string offset=1156
+	.asciz	"Shoot1_Velocity_PID"           @ string offset=1137
 .Linfo_string82:
-	.asciz	"Magazine_ZeroPoint_MotorAngle" @ string offset=1176
+	.asciz	"Magazine_ZeroPoint_MotorAngle" @ string offset=1157
 .Linfo_string83:
-	.asciz	"time_flag_1"                   @ string offset=1206
+	.asciz	"time_flag_1"                   @ string offset=1187
 .Linfo_string84:
-	.asciz	"char"                          @ string offset=1218
+	.asciz	"char"                          @ string offset=1199
 .Linfo_string85:
-	.asciz	"time_flag_2"                   @ string offset=1223
+	.asciz	"time_flag_2"                   @ string offset=1204
 .Linfo_string86:
-	.asciz	"frist_flag"                    @ string offset=1235
+	.asciz	"frist_flag"                    @ string offset=1216
 .Linfo_string87:
-	.asciz	"pull"                          @ string offset=1246
+	.asciz	"pull"                          @ string offset=1227
 .Linfo_string88:
-	.asciz	"last_pull"                     @ string offset=1251
+	.asciz	"last_pull"                     @ string offset=1232
 .Linfo_string89:
-	.asciz	"Magazine_Velocity_PID_Param"   @ string offset=1261
+	.asciz	"Magazine_Velocity_PID_Param"   @ string offset=1242
 .Linfo_string90:
-	.asciz	"Magazine_Angle_PID_Param"      @ string offset=1289
+	.asciz	"Magazine_Angle_PID_Param"      @ string offset=1270
 .Linfo_string91:
-	.asciz	"Shoot_Velocity_PID_Param"      @ string offset=1314
+	.asciz	"Shoot_Velocity_PID_Param"      @ string offset=1295
 .Linfo_string92:
-	.asciz	"Magazine_Task"                 @ string offset=1339
+	.asciz	"Magazine_Task"                 @ string offset=1320
 .Linfo_string93:
-	.asciz	"Control_Init"                  @ string offset=1353
+	.asciz	"Control_Init"                  @ string offset=1334
 .Linfo_string94:
-	.asciz	"Control_Measure_Update"        @ string offset=1366
+	.asciz	"Control_Measure_Update"        @ string offset=1347
 .Linfo_string95:
-	.asciz	"Control_Mode"                  @ string offset=1389
+	.asciz	"Control_Mode"                  @ string offset=1370
 .Linfo_string96:
-	.asciz	"Control_Target_Update"         @ string offset=1402
+	.asciz	"Control_Target_Update"         @ string offset=1383
 .Linfo_string97:
-	.asciz	"Control_Magazine_Info_Update"  @ string offset=1424
+	.asciz	"Control_Magazine_Info_Update"  @ string offset=1405
 .Linfo_string98:
-	.asciz	"argument"                      @ string offset=1453
+	.asciz	"argument"                      @ string offset=1434
 .Linfo_string99:
-	.asciz	"Control_Task_SysTick"          @ string offset=1462
+	.asciz	"Control_Task_SysTick"          @ string offset=1443
 .Linfo_string100:
-	.asciz	"unsigned int"                  @ string offset=1483
+	.asciz	"unsigned int"                  @ string offset=1464
 .Linfo_string101:
-	.asciz	"uint32_t"                      @ string offset=1496
+	.asciz	"uint32_t"                      @ string offset=1477
 .Linfo_string102:
-	.asciz	"TickType_t"                    @ string offset=1505
+	.asciz	"TickType_t"                    @ string offset=1486
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

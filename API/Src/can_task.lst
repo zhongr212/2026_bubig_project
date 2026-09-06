@@ -22,12 +22,12 @@
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"CAN_Task.c"
 	.file	1 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Src/CAN_Task.c"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Inc\\CAN_Task.h"
-	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_fdcan.h"
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
-	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Device/Inc\\Motor.h"
+	.file	2 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Task/Src/CAN_Task.c"
+	.file	3 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Task/Inc\\CAN_Task.h"
+	.file	4 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
+	.file	5 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_fdcan.h"
+	.file	6 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
+	.file	7 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Device/Inc\\Motor.h"
 	.section	.text.CAN_Task,"ax",%progbits
 	.hidden	CAN_Task                        @ -- Begin function CAN_Task
 	.globl	CAN_Task
@@ -857,9 +857,9 @@ sentry_status:
 	.zero	10
 	.size	sentry_status, 10
 
-	.file	8 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
-	.file	9 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
-	.file	10 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../BSP/Inc\\bsp_can.h"
+	.file	8 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
+	.file	9 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	10 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../BSP/Inc\\bsp_can.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -2924,487 +2924,487 @@ sentry_status:
 .Linfo_string1:
 	.asciz	"../Task/Src\\CAN_Task.c"       @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=91
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=91
 .Linfo_string3:
-	.asciz	"tick_ms"                       @ string offset=169
+	.asciz	"tick_ms"                       @ string offset=150
 .Linfo_string4:
-	.asciz	"unsigned char"                 @ string offset=177
+	.asciz	"unsigned char"                 @ string offset=158
 .Linfo_string5:
-	.asciz	"uint8_t"                       @ string offset=191
+	.asciz	"uint8_t"                       @ string offset=172
 .Linfo_string6:
-	.asciz	"freq_1k"                       @ string offset=199
+	.asciz	"freq_1k"                       @ string offset=180
 .Linfo_string7:
-	.asciz	"unsigned int"                  @ string offset=207
+	.asciz	"unsigned int"                  @ string offset=188
 .Linfo_string8:
-	.asciz	"uint32_t"                      @ string offset=220
+	.asciz	"uint32_t"                      @ string offset=201
 .Linfo_string9:
-	.asciz	"cantx_data_chassis"            @ string offset=229
+	.asciz	"cantx_data_chassis"            @ string offset=210
 .Linfo_string10:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=248
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=229
 .Linfo_string11:
-	.asciz	"cantx_data_gimbal"             @ string offset=268
+	.asciz	"cantx_data_gimbal"             @ string offset=249
 .Linfo_string12:
-	.asciz	"cantx_data_Supercap"           @ string offset=286
+	.asciz	"cantx_data_Supercap"           @ string offset=267
 .Linfo_string13:
-	.asciz	"Sentry_Tx_Referee"             @ string offset=306
+	.asciz	"Sentry_Tx_Referee"             @ string offset=287
 .Linfo_string14:
-	.asciz	"header"                        @ string offset=324
+	.asciz	"header"                        @ string offset=305
 .Linfo_string15:
-	.asciz	"SOF"                           @ string offset=331
+	.asciz	"SOF"                           @ string offset=312
 .Linfo_string16:
-	.asciz	"length"                        @ string offset=335
+	.asciz	"length"                        @ string offset=316
 .Linfo_string17:
-	.asciz	"unsigned short"                @ string offset=342
+	.asciz	"unsigned short"                @ string offset=323
 .Linfo_string18:
-	.asciz	"uint16_t"                      @ string offset=357
+	.asciz	"uint16_t"                      @ string offset=338
 .Linfo_string19:
-	.asciz	"seq"                           @ string offset=366
+	.asciz	"seq"                           @ string offset=347
 .Linfo_string20:
-	.asciz	"crc8"                          @ string offset=370
+	.asciz	"crc8"                          @ string offset=351
 .Linfo_string21:
-	.asciz	"cmd_id"                        @ string offset=375
+	.asciz	"cmd_id"                        @ string offset=356
 .Linfo_string22:
-	.asciz	"data"                          @ string offset=382
+	.asciz	"data"                          @ string offset=363
 .Linfo_string23:
-	.asciz	"data_cmd_id"                   @ string offset=387
+	.asciz	"data_cmd_id"                   @ string offset=368
 .Linfo_string24:
-	.asciz	"sender_id"                     @ string offset=399
+	.asciz	"sender_id"                     @ string offset=380
 .Linfo_string25:
-	.asciz	"receiver_id"                   @ string offset=409
+	.asciz	"receiver_id"                   @ string offset=390
 .Linfo_string26:
-	.asciz	"sentry_cmd"                    @ string offset=421
+	.asciz	"sentry_cmd"                    @ string offset=402
 .Linfo_string27:
-	.asciz	"crc16"                         @ string offset=432
+	.asciz	"crc16"                         @ string offset=413
 .Linfo_string28:
-	.asciz	"Sentry_Tx_Referee_t"           @ string offset=438
+	.asciz	"Sentry_Tx_Referee_t"           @ string offset=419
 .Linfo_string29:
-	.asciz	"sentry_status"                 @ string offset=458
+	.asciz	"sentry_status"                 @ string offset=439
 .Linfo_string30:
-	.asciz	"hurt"                          @ string offset=472
+	.asciz	"hurt"                          @ string offset=453
 .Linfo_string31:
-	.asciz	"time"                          @ string offset=477
+	.asciz	"time"                          @ string offset=458
 .Linfo_string32:
-	.asciz	"symbol"                        @ string offset=482
+	.asciz	"symbol"                        @ string offset=463
 .Linfo_string33:
-	.asciz	"status"                        @ string offset=489
+	.asciz	"status"                        @ string offset=470
 .Linfo_string34:
-	.asciz	"current_hp"                    @ string offset=496
+	.asciz	"current_hp"                    @ string offset=477
 .Linfo_string35:
-	.asciz	"last_current_hp"               @ string offset=507
+	.asciz	"last_current_hp"               @ string offset=488
 .Linfo_string36:
-	.asciz	"out_fight"                     @ string offset=523
+	.asciz	"out_fight"                     @ string offset=504
 .Linfo_string37:
-	.asciz	"sentry_status_t"               @ string offset=533
+	.asciz	"sentry_status_t"               @ string offset=514
 .Linfo_string38:
-	.asciz	"DISABLE"                       @ string offset=549
+	.asciz	"DISABLE"                       @ string offset=530
 .Linfo_string39:
-	.asciz	"ENABLE"                        @ string offset=557
+	.asciz	"ENABLE"                        @ string offset=538
 .Linfo_string40:
-	.asciz	"HAL_FDCAN_STATE_RESET"         @ string offset=564
+	.asciz	"HAL_FDCAN_STATE_RESET"         @ string offset=545
 .Linfo_string41:
-	.asciz	"HAL_FDCAN_STATE_READY"         @ string offset=586
+	.asciz	"HAL_FDCAN_STATE_READY"         @ string offset=567
 .Linfo_string42:
-	.asciz	"HAL_FDCAN_STATE_BUSY"          @ string offset=608
+	.asciz	"HAL_FDCAN_STATE_BUSY"          @ string offset=589
 .Linfo_string43:
-	.asciz	"HAL_FDCAN_STATE_ERROR"         @ string offset=629
+	.asciz	"HAL_FDCAN_STATE_ERROR"         @ string offset=610
 .Linfo_string44:
-	.asciz	"HAL_UNLOCKED"                  @ string offset=651
+	.asciz	"HAL_UNLOCKED"                  @ string offset=632
 .Linfo_string45:
-	.asciz	"HAL_LOCKED"                    @ string offset=664
+	.asciz	"HAL_LOCKED"                    @ string offset=645
 .Linfo_string46:
-	.asciz	"MIT"                           @ string offset=675
+	.asciz	"MIT"                           @ string offset=656
 .Linfo_string47:
-	.asciz	"POSITION_VELOCITY"             @ string offset=679
+	.asciz	"POSITION_VELOCITY"             @ string offset=660
 .Linfo_string48:
-	.asciz	"VELOCITY"                      @ string offset=697
+	.asciz	"VELOCITY"                      @ string offset=678
 .Linfo_string49:
-	.asciz	"Motor_Enable"                  @ string offset=706
+	.asciz	"Motor_Enable"                  @ string offset=687
 .Linfo_string50:
-	.asciz	"Motor_Disable"                 @ string offset=719
+	.asciz	"Motor_Disable"                 @ string offset=700
 .Linfo_string51:
-	.asciz	"Motor_Save_Zero_Position"      @ string offset=733
+	.asciz	"Motor_Save_Zero_Position"      @ string offset=714
 .Linfo_string52:
-	.asciz	"DM_Motor_CMD_Type_Num"         @ string offset=758
+	.asciz	"DM_Motor_CMD_Type_Num"         @ string offset=739
 .Linfo_string53:
-	.asciz	"int"                           @ string offset=780
+	.asciz	"int"                           @ string offset=761
 .Linfo_string54:
-	.asciz	"float"                         @ string offset=784
+	.asciz	"float"                         @ string offset=765
 .Linfo_string55:
-	.asciz	"CAN_Task"                      @ string offset=790
+	.asciz	"CAN_Task"                      @ string offset=771
 .Linfo_string56:
-	.asciz	"DM_Motor_CAN_TxMessage"        @ string offset=799
+	.asciz	"DM_Motor_CAN_TxMessage"        @ string offset=780
 .Linfo_string57:
-	.asciz	"float_to_uint"                 @ string offset=822
+	.asciz	"float_to_uint"                 @ string offset=803
 .Linfo_string58:
-	.asciz	"DM_Motor_Command"              @ string offset=836
+	.asciz	"DM_Motor_Command"              @ string offset=817
 .Linfo_string59:
-	.asciz	"argument"                      @ string offset=853
+	.asciz	"argument"                      @ string offset=834
 .Linfo_string60:
-	.asciz	"CAN_FD_Tx_Buffer"              @ string offset=862
+	.asciz	"CAN_FD_Tx_Buffer"              @ string offset=843
 .Linfo_string61:
-	.asciz	"CAN_Task_SysTick"              @ string offset=879
+	.asciz	"CAN_Task_SysTick"              @ string offset=860
 .Linfo_string62:
-	.asciz	"TickType_t"                    @ string offset=896
+	.asciz	"TickType_t"                    @ string offset=877
 .Linfo_string63:
-	.asciz	"FDCAN_TxFrame"                 @ string offset=907
+	.asciz	"FDCAN_TxFrame"                 @ string offset=888
 .Linfo_string64:
-	.asciz	"hcan"                          @ string offset=921
+	.asciz	"hcan"                          @ string offset=902
 .Linfo_string65:
-	.asciz	"Instance"                      @ string offset=926
+	.asciz	"Instance"                      @ string offset=907
 .Linfo_string66:
-	.asciz	"CREL"                          @ string offset=935
+	.asciz	"CREL"                          @ string offset=916
 .Linfo_string67:
-	.asciz	"ENDN"                          @ string offset=940
+	.asciz	"ENDN"                          @ string offset=921
 .Linfo_string68:
-	.asciz	"RESERVED1"                     @ string offset=945
+	.asciz	"RESERVED1"                     @ string offset=926
 .Linfo_string69:
-	.asciz	"DBTP"                          @ string offset=955
+	.asciz	"DBTP"                          @ string offset=936
 .Linfo_string70:
-	.asciz	"TEST"                          @ string offset=960
+	.asciz	"TEST"                          @ string offset=941
 .Linfo_string71:
-	.asciz	"RWD"                           @ string offset=965
+	.asciz	"RWD"                           @ string offset=946
 .Linfo_string72:
-	.asciz	"CCCR"                          @ string offset=969
+	.asciz	"CCCR"                          @ string offset=950
 .Linfo_string73:
-	.asciz	"NBTP"                          @ string offset=974
+	.asciz	"NBTP"                          @ string offset=955
 .Linfo_string74:
-	.asciz	"TSCC"                          @ string offset=979
+	.asciz	"TSCC"                          @ string offset=960
 .Linfo_string75:
-	.asciz	"TSCV"                          @ string offset=984
+	.asciz	"TSCV"                          @ string offset=965
 .Linfo_string76:
-	.asciz	"TOCC"                          @ string offset=989
+	.asciz	"TOCC"                          @ string offset=970
 .Linfo_string77:
-	.asciz	"TOCV"                          @ string offset=994
+	.asciz	"TOCV"                          @ string offset=975
 .Linfo_string78:
-	.asciz	"RESERVED2"                     @ string offset=999
+	.asciz	"RESERVED2"                     @ string offset=980
 .Linfo_string79:
-	.asciz	"ECR"                           @ string offset=1009
+	.asciz	"ECR"                           @ string offset=990
 .Linfo_string80:
-	.asciz	"PSR"                           @ string offset=1013
+	.asciz	"PSR"                           @ string offset=994
 .Linfo_string81:
-	.asciz	"TDCR"                          @ string offset=1017
+	.asciz	"TDCR"                          @ string offset=998
 .Linfo_string82:
-	.asciz	"RESERVED3"                     @ string offset=1022
+	.asciz	"RESERVED3"                     @ string offset=1003
 .Linfo_string83:
-	.asciz	"IR"                            @ string offset=1032
+	.asciz	"IR"                            @ string offset=1013
 .Linfo_string84:
-	.asciz	"IE"                            @ string offset=1035
+	.asciz	"IE"                            @ string offset=1016
 .Linfo_string85:
-	.asciz	"ILS"                           @ string offset=1038
+	.asciz	"ILS"                           @ string offset=1019
 .Linfo_string86:
-	.asciz	"ILE"                           @ string offset=1042
+	.asciz	"ILE"                           @ string offset=1023
 .Linfo_string87:
-	.asciz	"RESERVED4"                     @ string offset=1046
+	.asciz	"RESERVED4"                     @ string offset=1027
 .Linfo_string88:
-	.asciz	"GFC"                           @ string offset=1056
+	.asciz	"GFC"                           @ string offset=1037
 .Linfo_string89:
-	.asciz	"SIDFC"                         @ string offset=1060
+	.asciz	"SIDFC"                         @ string offset=1041
 .Linfo_string90:
-	.asciz	"XIDFC"                         @ string offset=1066
+	.asciz	"XIDFC"                         @ string offset=1047
 .Linfo_string91:
-	.asciz	"RESERVED5"                     @ string offset=1072
+	.asciz	"RESERVED5"                     @ string offset=1053
 .Linfo_string92:
-	.asciz	"XIDAM"                         @ string offset=1082
+	.asciz	"XIDAM"                         @ string offset=1063
 .Linfo_string93:
-	.asciz	"HPMS"                          @ string offset=1088
+	.asciz	"HPMS"                          @ string offset=1069
 .Linfo_string94:
-	.asciz	"NDAT1"                         @ string offset=1093
+	.asciz	"NDAT1"                         @ string offset=1074
 .Linfo_string95:
-	.asciz	"NDAT2"                         @ string offset=1099
+	.asciz	"NDAT2"                         @ string offset=1080
 .Linfo_string96:
-	.asciz	"RXF0C"                         @ string offset=1105
+	.asciz	"RXF0C"                         @ string offset=1086
 .Linfo_string97:
-	.asciz	"RXF0S"                         @ string offset=1111
+	.asciz	"RXF0S"                         @ string offset=1092
 .Linfo_string98:
-	.asciz	"RXF0A"                         @ string offset=1117
+	.asciz	"RXF0A"                         @ string offset=1098
 .Linfo_string99:
-	.asciz	"RXBC"                          @ string offset=1123
+	.asciz	"RXBC"                          @ string offset=1104
 .Linfo_string100:
-	.asciz	"RXF1C"                         @ string offset=1128
+	.asciz	"RXF1C"                         @ string offset=1109
 .Linfo_string101:
-	.asciz	"RXF1S"                         @ string offset=1134
+	.asciz	"RXF1S"                         @ string offset=1115
 .Linfo_string102:
-	.asciz	"RXF1A"                         @ string offset=1140
+	.asciz	"RXF1A"                         @ string offset=1121
 .Linfo_string103:
-	.asciz	"RXESC"                         @ string offset=1146
+	.asciz	"RXESC"                         @ string offset=1127
 .Linfo_string104:
-	.asciz	"TXBC"                          @ string offset=1152
+	.asciz	"TXBC"                          @ string offset=1133
 .Linfo_string105:
-	.asciz	"TXFQS"                         @ string offset=1157
+	.asciz	"TXFQS"                         @ string offset=1138
 .Linfo_string106:
-	.asciz	"TXESC"                         @ string offset=1163
+	.asciz	"TXESC"                         @ string offset=1144
 .Linfo_string107:
-	.asciz	"TXBRP"                         @ string offset=1169
+	.asciz	"TXBRP"                         @ string offset=1150
 .Linfo_string108:
-	.asciz	"TXBAR"                         @ string offset=1175
+	.asciz	"TXBAR"                         @ string offset=1156
 .Linfo_string109:
-	.asciz	"TXBCR"                         @ string offset=1181
+	.asciz	"TXBCR"                         @ string offset=1162
 .Linfo_string110:
-	.asciz	"TXBTO"                         @ string offset=1187
+	.asciz	"TXBTO"                         @ string offset=1168
 .Linfo_string111:
-	.asciz	"TXBCF"                         @ string offset=1193
+	.asciz	"TXBCF"                         @ string offset=1174
 .Linfo_string112:
-	.asciz	"TXBTIE"                        @ string offset=1199
+	.asciz	"TXBTIE"                        @ string offset=1180
 .Linfo_string113:
-	.asciz	"TXBCIE"                        @ string offset=1206
+	.asciz	"TXBCIE"                        @ string offset=1187
 .Linfo_string114:
-	.asciz	"RESERVED6"                     @ string offset=1213
+	.asciz	"RESERVED6"                     @ string offset=1194
 .Linfo_string115:
-	.asciz	"TXEFC"                         @ string offset=1223
+	.asciz	"TXEFC"                         @ string offset=1204
 .Linfo_string116:
-	.asciz	"TXEFS"                         @ string offset=1229
+	.asciz	"TXEFS"                         @ string offset=1210
 .Linfo_string117:
-	.asciz	"TXEFA"                         @ string offset=1235
+	.asciz	"TXEFA"                         @ string offset=1216
 .Linfo_string118:
-	.asciz	"RESERVED7"                     @ string offset=1241
+	.asciz	"RESERVED7"                     @ string offset=1222
 .Linfo_string119:
-	.asciz	"FDCAN_GlobalTypeDef"           @ string offset=1251
+	.asciz	"FDCAN_GlobalTypeDef"           @ string offset=1232
 .Linfo_string120:
-	.asciz	"ttcan"                         @ string offset=1271
+	.asciz	"ttcan"                         @ string offset=1252
 .Linfo_string121:
-	.asciz	"TTTMC"                         @ string offset=1277
+	.asciz	"TTTMC"                         @ string offset=1258
 .Linfo_string122:
-	.asciz	"TTRMC"                         @ string offset=1283
+	.asciz	"TTRMC"                         @ string offset=1264
 .Linfo_string123:
-	.asciz	"TTOCF"                         @ string offset=1289
+	.asciz	"TTOCF"                         @ string offset=1270
 .Linfo_string124:
-	.asciz	"TTMLM"                         @ string offset=1295
+	.asciz	"TTMLM"                         @ string offset=1276
 .Linfo_string125:
-	.asciz	"TURCF"                         @ string offset=1301
+	.asciz	"TURCF"                         @ string offset=1282
 .Linfo_string126:
-	.asciz	"TTOCN"                         @ string offset=1307
+	.asciz	"TTOCN"                         @ string offset=1288
 .Linfo_string127:
-	.asciz	"TTGTP"                         @ string offset=1313
+	.asciz	"TTGTP"                         @ string offset=1294
 .Linfo_string128:
-	.asciz	"TTTMK"                         @ string offset=1319
+	.asciz	"TTTMK"                         @ string offset=1300
 .Linfo_string129:
-	.asciz	"TTIR"                          @ string offset=1325
+	.asciz	"TTIR"                          @ string offset=1306
 .Linfo_string130:
-	.asciz	"TTIE"                          @ string offset=1330
+	.asciz	"TTIE"                          @ string offset=1311
 .Linfo_string131:
-	.asciz	"TTILS"                         @ string offset=1335
+	.asciz	"TTILS"                         @ string offset=1316
 .Linfo_string132:
-	.asciz	"TTOST"                         @ string offset=1341
+	.asciz	"TTOST"                         @ string offset=1322
 .Linfo_string133:
-	.asciz	"TURNA"                         @ string offset=1347
+	.asciz	"TURNA"                         @ string offset=1328
 .Linfo_string134:
-	.asciz	"TTLGT"                         @ string offset=1353
+	.asciz	"TTLGT"                         @ string offset=1334
 .Linfo_string135:
-	.asciz	"TTCTC"                         @ string offset=1359
+	.asciz	"TTCTC"                         @ string offset=1340
 .Linfo_string136:
-	.asciz	"TTCPT"                         @ string offset=1365
+	.asciz	"TTCPT"                         @ string offset=1346
 .Linfo_string137:
-	.asciz	"TTCSM"                         @ string offset=1371
+	.asciz	"TTCSM"                         @ string offset=1352
 .Linfo_string138:
-	.asciz	"TTTS"                          @ string offset=1377
+	.asciz	"TTTS"                          @ string offset=1358
 .Linfo_string139:
-	.asciz	"TTCAN_TypeDef"                 @ string offset=1382
+	.asciz	"TTCAN_TypeDef"                 @ string offset=1363
 .Linfo_string140:
-	.asciz	"Init"                          @ string offset=1396
+	.asciz	"Init"                          @ string offset=1377
 .Linfo_string141:
-	.asciz	"FrameFormat"                   @ string offset=1401
+	.asciz	"FrameFormat"                   @ string offset=1382
 .Linfo_string142:
-	.asciz	"Mode"                          @ string offset=1413
+	.asciz	"Mode"                          @ string offset=1394
 .Linfo_string143:
-	.asciz	"AutoRetransmission"            @ string offset=1418
+	.asciz	"AutoRetransmission"            @ string offset=1399
 .Linfo_string144:
-	.asciz	"FunctionalState"               @ string offset=1437
+	.asciz	"FunctionalState"               @ string offset=1418
 .Linfo_string145:
-	.asciz	"TransmitPause"                 @ string offset=1453
+	.asciz	"TransmitPause"                 @ string offset=1434
 .Linfo_string146:
-	.asciz	"ProtocolException"             @ string offset=1467
+	.asciz	"ProtocolException"             @ string offset=1448
 .Linfo_string147:
-	.asciz	"NominalPrescaler"              @ string offset=1485
+	.asciz	"NominalPrescaler"              @ string offset=1466
 .Linfo_string148:
-	.asciz	"NominalSyncJumpWidth"          @ string offset=1502
+	.asciz	"NominalSyncJumpWidth"          @ string offset=1483
 .Linfo_string149:
-	.asciz	"NominalTimeSeg1"               @ string offset=1523
+	.asciz	"NominalTimeSeg1"               @ string offset=1504
 .Linfo_string150:
-	.asciz	"NominalTimeSeg2"               @ string offset=1539
+	.asciz	"NominalTimeSeg2"               @ string offset=1520
 .Linfo_string151:
-	.asciz	"DataPrescaler"                 @ string offset=1555
+	.asciz	"DataPrescaler"                 @ string offset=1536
 .Linfo_string152:
-	.asciz	"DataSyncJumpWidth"             @ string offset=1569
+	.asciz	"DataSyncJumpWidth"             @ string offset=1550
 .Linfo_string153:
-	.asciz	"DataTimeSeg1"                  @ string offset=1587
+	.asciz	"DataTimeSeg1"                  @ string offset=1568
 .Linfo_string154:
-	.asciz	"DataTimeSeg2"                  @ string offset=1600
+	.asciz	"DataTimeSeg2"                  @ string offset=1581
 .Linfo_string155:
-	.asciz	"MessageRAMOffset"              @ string offset=1613
+	.asciz	"MessageRAMOffset"              @ string offset=1594
 .Linfo_string156:
-	.asciz	"StdFiltersNbr"                 @ string offset=1630
+	.asciz	"StdFiltersNbr"                 @ string offset=1611
 .Linfo_string157:
-	.asciz	"ExtFiltersNbr"                 @ string offset=1644
+	.asciz	"ExtFiltersNbr"                 @ string offset=1625
 .Linfo_string158:
-	.asciz	"RxFifo0ElmtsNbr"               @ string offset=1658
+	.asciz	"RxFifo0ElmtsNbr"               @ string offset=1639
 .Linfo_string159:
-	.asciz	"RxFifo0ElmtSize"               @ string offset=1674
+	.asciz	"RxFifo0ElmtSize"               @ string offset=1655
 .Linfo_string160:
-	.asciz	"RxFifo1ElmtsNbr"               @ string offset=1690
+	.asciz	"RxFifo1ElmtsNbr"               @ string offset=1671
 .Linfo_string161:
-	.asciz	"RxFifo1ElmtSize"               @ string offset=1706
+	.asciz	"RxFifo1ElmtSize"               @ string offset=1687
 .Linfo_string162:
-	.asciz	"RxBuffersNbr"                  @ string offset=1722
+	.asciz	"RxBuffersNbr"                  @ string offset=1703
 .Linfo_string163:
-	.asciz	"RxBufferSize"                  @ string offset=1735
+	.asciz	"RxBufferSize"                  @ string offset=1716
 .Linfo_string164:
-	.asciz	"TxEventsNbr"                   @ string offset=1748
+	.asciz	"TxEventsNbr"                   @ string offset=1729
 .Linfo_string165:
-	.asciz	"TxBuffersNbr"                  @ string offset=1760
+	.asciz	"TxBuffersNbr"                  @ string offset=1741
 .Linfo_string166:
-	.asciz	"TxFifoQueueElmtsNbr"           @ string offset=1773
+	.asciz	"TxFifoQueueElmtsNbr"           @ string offset=1754
 .Linfo_string167:
-	.asciz	"TxFifoQueueMode"               @ string offset=1793
+	.asciz	"TxFifoQueueMode"               @ string offset=1774
 .Linfo_string168:
-	.asciz	"TxElmtSize"                    @ string offset=1809
+	.asciz	"TxElmtSize"                    @ string offset=1790
 .Linfo_string169:
-	.asciz	"FDCAN_InitTypeDef"             @ string offset=1820
+	.asciz	"FDCAN_InitTypeDef"             @ string offset=1801
 .Linfo_string170:
-	.asciz	"msgRam"                        @ string offset=1838
+	.asciz	"msgRam"                        @ string offset=1819
 .Linfo_string171:
-	.asciz	"StandardFilterSA"              @ string offset=1845
+	.asciz	"StandardFilterSA"              @ string offset=1826
 .Linfo_string172:
-	.asciz	"ExtendedFilterSA"              @ string offset=1862
+	.asciz	"ExtendedFilterSA"              @ string offset=1843
 .Linfo_string173:
-	.asciz	"RxFIFO0SA"                     @ string offset=1879
+	.asciz	"RxFIFO0SA"                     @ string offset=1860
 .Linfo_string174:
-	.asciz	"RxFIFO1SA"                     @ string offset=1889
+	.asciz	"RxFIFO1SA"                     @ string offset=1870
 .Linfo_string175:
-	.asciz	"RxBufferSA"                    @ string offset=1899
+	.asciz	"RxBufferSA"                    @ string offset=1880
 .Linfo_string176:
-	.asciz	"TxEventFIFOSA"                 @ string offset=1910
+	.asciz	"TxEventFIFOSA"                 @ string offset=1891
 .Linfo_string177:
-	.asciz	"TxBufferSA"                    @ string offset=1924
+	.asciz	"TxBufferSA"                    @ string offset=1905
 .Linfo_string178:
-	.asciz	"TxFIFOQSA"                     @ string offset=1935
+	.asciz	"TxFIFOQSA"                     @ string offset=1916
 .Linfo_string179:
-	.asciz	"TTMemorySA"                    @ string offset=1945
+	.asciz	"TTMemorySA"                    @ string offset=1926
 .Linfo_string180:
-	.asciz	"EndAddress"                    @ string offset=1956
+	.asciz	"EndAddress"                    @ string offset=1937
 .Linfo_string181:
-	.asciz	"FDCAN_MsgRamAddressTypeDef"    @ string offset=1967
+	.asciz	"FDCAN_MsgRamAddressTypeDef"    @ string offset=1948
 .Linfo_string182:
-	.asciz	"LatestTxFifoQRequest"          @ string offset=1994
+	.asciz	"LatestTxFifoQRequest"          @ string offset=1975
 .Linfo_string183:
-	.asciz	"State"                         @ string offset=2015
+	.asciz	"State"                         @ string offset=1996
 .Linfo_string184:
-	.asciz	"HAL_FDCAN_StateTypeDef"        @ string offset=2021
+	.asciz	"HAL_FDCAN_StateTypeDef"        @ string offset=2002
 .Linfo_string185:
-	.asciz	"Lock"                          @ string offset=2044
+	.asciz	"Lock"                          @ string offset=2025
 .Linfo_string186:
-	.asciz	"HAL_LockTypeDef"               @ string offset=2049
+	.asciz	"HAL_LockTypeDef"               @ string offset=2030
 .Linfo_string187:
-	.asciz	"ErrorCode"                     @ string offset=2065
+	.asciz	"ErrorCode"                     @ string offset=2046
 .Linfo_string188:
-	.asciz	"FDCAN_HandleTypeDef"           @ string offset=2075
+	.asciz	"FDCAN_HandleTypeDef"           @ string offset=2056
 .Linfo_string189:
-	.asciz	"Header"                        @ string offset=2095
+	.asciz	"Header"                        @ string offset=2076
 .Linfo_string190:
-	.asciz	"Identifier"                    @ string offset=2102
+	.asciz	"Identifier"                    @ string offset=2083
 .Linfo_string191:
-	.asciz	"IdType"                        @ string offset=2113
+	.asciz	"IdType"                        @ string offset=2094
 .Linfo_string192:
-	.asciz	"TxFrameType"                   @ string offset=2120
+	.asciz	"TxFrameType"                   @ string offset=2101
 .Linfo_string193:
-	.asciz	"DataLength"                    @ string offset=2132
+	.asciz	"DataLength"                    @ string offset=2113
 .Linfo_string194:
-	.asciz	"ErrorStateIndicator"           @ string offset=2143
+	.asciz	"ErrorStateIndicator"           @ string offset=2124
 .Linfo_string195:
-	.asciz	"BitRateSwitch"                 @ string offset=2163
+	.asciz	"BitRateSwitch"                 @ string offset=2144
 .Linfo_string196:
-	.asciz	"FDFormat"                      @ string offset=2177
+	.asciz	"FDFormat"                      @ string offset=2158
 .Linfo_string197:
-	.asciz	"TxEventFifoControl"            @ string offset=2186
+	.asciz	"TxEventFifoControl"            @ string offset=2167
 .Linfo_string198:
-	.asciz	"MessageMarker"                 @ string offset=2205
+	.asciz	"MessageMarker"                 @ string offset=2186
 .Linfo_string199:
-	.asciz	"FDCAN_TxHeaderTypeDef"         @ string offset=2219
+	.asciz	"FDCAN_TxHeaderTypeDef"         @ string offset=2200
 .Linfo_string200:
-	.asciz	"Data"                          @ string offset=2241
+	.asciz	"Data"                          @ string offset=2222
 .Linfo_string201:
-	.asciz	"FDCAN_TxFrame_TypeDef"         @ string offset=2246
+	.asciz	"FDCAN_TxFrame_TypeDef"         @ string offset=2227
 .Linfo_string202:
-	.asciz	"DM_Motor"                      @ string offset=2268
+	.asciz	"DM_Motor"                      @ string offset=2249
 .Linfo_string203:
-	.asciz	"Control_Mode"                  @ string offset=2277
+	.asciz	"Control_Mode"                  @ string offset=2258
 .Linfo_string204:
-	.asciz	"DM_Motor_Control_Mode_Type_e"  @ string offset=2290
+	.asciz	"DM_Motor_Control_Mode_Type_e"  @ string offset=2271
 .Linfo_string205:
-	.asciz	"FDCANFrame"                    @ string offset=2319
+	.asciz	"FDCANFrame"                    @ string offset=2300
 .Linfo_string206:
-	.asciz	"TxStdId"                       @ string offset=2330
+	.asciz	"TxStdId"                       @ string offset=2311
 .Linfo_string207:
-	.asciz	"RxStdId"                       @ string offset=2338
+	.asciz	"RxStdId"                       @ string offset=2319
 .Linfo_string208:
-	.asciz	"FrameIndex"                    @ string offset=2346
+	.asciz	"FrameIndex"                    @ string offset=2327
 .Linfo_string209:
-	.asciz	"Motor_CANFrameInfo_typedef"    @ string offset=2357
+	.asciz	"Motor_CANFrameInfo_typedef"    @ string offset=2338
 .Linfo_string210:
-	.asciz	"Param_Range"                   @ string offset=2384
+	.asciz	"Param_Range"                   @ string offset=2365
 .Linfo_string211:
-	.asciz	"P_MAX"                         @ string offset=2396
+	.asciz	"P_MAX"                         @ string offset=2377
 .Linfo_string212:
-	.asciz	"V_MAX"                         @ string offset=2402
+	.asciz	"V_MAX"                         @ string offset=2383
 .Linfo_string213:
-	.asciz	"T_MAX"                         @ string offset=2408
+	.asciz	"T_MAX"                         @ string offset=2389
 .Linfo_string214:
-	.asciz	"DM_Motor_Param_Range_Typedef"  @ string offset=2414
+	.asciz	"DM_Motor_Param_Range_Typedef"  @ string offset=2395
 .Linfo_string215:
-	.asciz	"Initlized"                     @ string offset=2443
+	.asciz	"Initlized"                     @ string offset=2424
 .Linfo_string216:
-	.asciz	"_Bool"                         @ string offset=2453
+	.asciz	"_Bool"                         @ string offset=2434
 .Linfo_string217:
-	.asciz	"P_int"                         @ string offset=2459
+	.asciz	"P_int"                         @ string offset=2440
 .Linfo_string218:
-	.asciz	"V_int"                         @ string offset=2465
+	.asciz	"V_int"                         @ string offset=2446
 .Linfo_string219:
-	.asciz	"T_int"                         @ string offset=2471
+	.asciz	"T_int"                         @ string offset=2452
 .Linfo_string220:
-	.asciz	"Position"                      @ string offset=2477
+	.asciz	"Position"                      @ string offset=2458
 .Linfo_string221:
-	.asciz	"Velocity"                      @ string offset=2486
+	.asciz	"Velocity"                      @ string offset=2467
 .Linfo_string222:
-	.asciz	"Torque"                        @ string offset=2495
+	.asciz	"Torque"                        @ string offset=2476
 .Linfo_string223:
-	.asciz	"Temperature_MOS"               @ string offset=2502
+	.asciz	"Temperature_MOS"               @ string offset=2483
 .Linfo_string224:
-	.asciz	"Temperature_Rotor"             @ string offset=2518
+	.asciz	"Temperature_Rotor"             @ string offset=2499
 .Linfo_string225:
-	.asciz	"Angle"                         @ string offset=2536
+	.asciz	"Angle"                         @ string offset=2517
 .Linfo_string226:
-	.asciz	"DM_Motor_Data_Typedef"         @ string offset=2542
+	.asciz	"DM_Motor_Data_Typedef"         @ string offset=2523
 .Linfo_string227:
-	.asciz	"DM_Motor_Info_Typedef"         @ string offset=2564
+	.asciz	"DM_Motor_Info_Typedef"         @ string offset=2545
 .Linfo_string228:
-	.asciz	"Postion"                       @ string offset=2586
+	.asciz	"Postion"                       @ string offset=2567
 .Linfo_string229:
-	.asciz	"KP"                            @ string offset=2594
+	.asciz	"KP"                            @ string offset=2575
 .Linfo_string230:
-	.asciz	"KD"                            @ string offset=2597
+	.asciz	"KD"                            @ string offset=2578
 .Linfo_string231:
-	.asciz	"Postion_Tmp"                   @ string offset=2600
+	.asciz	"Postion_Tmp"                   @ string offset=2581
 .Linfo_string232:
-	.asciz	"Velocity_Tmp"                  @ string offset=2612
+	.asciz	"Velocity_Tmp"                  @ string offset=2593
 .Linfo_string233:
-	.asciz	"Torque_Tmp"                    @ string offset=2625
+	.asciz	"Torque_Tmp"                    @ string offset=2606
 .Linfo_string234:
-	.asciz	"KP_Tmp"                        @ string offset=2636
+	.asciz	"KP_Tmp"                        @ string offset=2617
 .Linfo_string235:
-	.asciz	"KD_Tmp"                        @ string offset=2643
+	.asciz	"KD_Tmp"                        @ string offset=2624
 .Linfo_string236:
-	.asciz	"x"                             @ string offset=2650
+	.asciz	"x"                             @ string offset=2631
 .Linfo_string237:
-	.asciz	"x_min"                         @ string offset=2652
+	.asciz	"x_min"                         @ string offset=2633
 .Linfo_string238:
-	.asciz	"x_max"                         @ string offset=2658
+	.asciz	"x_max"                         @ string offset=2639
 .Linfo_string239:
-	.asciz	"bits"                          @ string offset=2664
+	.asciz	"bits"                          @ string offset=2645
 .Linfo_string240:
-	.asciz	"span"                          @ string offset=2669
+	.asciz	"span"                          @ string offset=2650
 .Linfo_string241:
-	.asciz	"offset"                        @ string offset=2674
+	.asciz	"offset"                        @ string offset=2655
 .Linfo_string242:
-	.asciz	"CMD"                           @ string offset=2681
+	.asciz	"CMD"                           @ string offset=2662
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

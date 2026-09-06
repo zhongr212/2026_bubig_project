@@ -22,8 +22,8 @@
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"stm32h7xx_hal_pwr.c"
 	.file	1 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Include\\core_cm7.h"
+	.file	2 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	3 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Include\\core_cm7.h"
 	.section	.text.HAL_PWR_DeInit,"ax",%progbits
 	.hidden	HAL_PWR_DeInit                  @ -- Begin function HAL_PWR_DeInit
 	.globl	HAL_PWR_DeInit
@@ -37,7 +37,7 @@ HAL_PWR_DeInit:
 	.cfi_sections .debug_frame
 	.cfi_startproc
 @ %bb.0:
-	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
+	.file	4 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
 	.loc	4 227 1 prologue_end            @ ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c:227:1
 	bx	lr
 .Ltmp0:
@@ -776,7 +776,7 @@ HAL_PWR_PVDCallback:
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_pwr.h"
+	.file	5 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_pwr.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -2039,251 +2039,251 @@ HAL_PWR_PVDCallback:
 .Linfo_string1:
 	.asciz	"../Drivers/STM32H7xx_HAL_Driver/Src\\stm32h7xx_hal_pwr.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=124
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=124
 .Linfo_string3:
-	.asciz	"CR1"                           @ string offset=202
+	.asciz	"CR1"                           @ string offset=183
 .Linfo_string4:
-	.asciz	"unsigned int"                  @ string offset=206
+	.asciz	"unsigned int"                  @ string offset=187
 .Linfo_string5:
-	.asciz	"uint32_t"                      @ string offset=219
+	.asciz	"uint32_t"                      @ string offset=200
 .Linfo_string6:
-	.asciz	"CSR1"                          @ string offset=228
+	.asciz	"CSR1"                          @ string offset=209
 .Linfo_string7:
-	.asciz	"CR2"                           @ string offset=233
+	.asciz	"CR2"                           @ string offset=214
 .Linfo_string8:
-	.asciz	"CR3"                           @ string offset=237
+	.asciz	"CR3"                           @ string offset=218
 .Linfo_string9:
-	.asciz	"CPUCR"                         @ string offset=241
+	.asciz	"CPUCR"                         @ string offset=222
 .Linfo_string10:
-	.asciz	"RESERVED0"                     @ string offset=247
+	.asciz	"RESERVED0"                     @ string offset=228
 .Linfo_string11:
-	.asciz	"D3CR"                          @ string offset=257
+	.asciz	"D3CR"                          @ string offset=238
 .Linfo_string12:
-	.asciz	"RESERVED1"                     @ string offset=262
+	.asciz	"RESERVED1"                     @ string offset=243
 .Linfo_string13:
-	.asciz	"WKUPCR"                        @ string offset=272
+	.asciz	"WKUPCR"                        @ string offset=253
 .Linfo_string14:
-	.asciz	"WKUPFR"                        @ string offset=279
+	.asciz	"WKUPFR"                        @ string offset=260
 .Linfo_string15:
-	.asciz	"WKUPEPR"                       @ string offset=286
+	.asciz	"WKUPEPR"                       @ string offset=267
 .Linfo_string16:
-	.asciz	"PWR_TypeDef"                   @ string offset=294
+	.asciz	"PWR_TypeDef"                   @ string offset=275
 .Linfo_string17:
-	.asciz	"RTSR1"                         @ string offset=306
+	.asciz	"RTSR1"                         @ string offset=287
 .Linfo_string18:
-	.asciz	"FTSR1"                         @ string offset=312
+	.asciz	"FTSR1"                         @ string offset=293
 .Linfo_string19:
-	.asciz	"SWIER1"                        @ string offset=318
+	.asciz	"SWIER1"                        @ string offset=299
 .Linfo_string20:
-	.asciz	"D3PMR1"                        @ string offset=325
+	.asciz	"D3PMR1"                        @ string offset=306
 .Linfo_string21:
-	.asciz	"D3PCR1L"                       @ string offset=332
+	.asciz	"D3PCR1L"                       @ string offset=313
 .Linfo_string22:
-	.asciz	"D3PCR1H"                       @ string offset=340
+	.asciz	"D3PCR1H"                       @ string offset=321
 .Linfo_string23:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=348
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=329
 .Linfo_string24:
-	.asciz	"RTSR2"                         @ string offset=368
+	.asciz	"RTSR2"                         @ string offset=349
 .Linfo_string25:
-	.asciz	"FTSR2"                         @ string offset=374
+	.asciz	"FTSR2"                         @ string offset=355
 .Linfo_string26:
-	.asciz	"SWIER2"                        @ string offset=380
+	.asciz	"SWIER2"                        @ string offset=361
 .Linfo_string27:
-	.asciz	"D3PMR2"                        @ string offset=387
+	.asciz	"D3PMR2"                        @ string offset=368
 .Linfo_string28:
-	.asciz	"D3PCR2L"                       @ string offset=394
+	.asciz	"D3PCR2L"                       @ string offset=375
 .Linfo_string29:
-	.asciz	"D3PCR2H"                       @ string offset=402
+	.asciz	"D3PCR2H"                       @ string offset=383
 .Linfo_string30:
-	.asciz	"RESERVED2"                     @ string offset=410
+	.asciz	"RESERVED2"                     @ string offset=391
 .Linfo_string31:
-	.asciz	"RTSR3"                         @ string offset=420
+	.asciz	"RTSR3"                         @ string offset=401
 .Linfo_string32:
-	.asciz	"FTSR3"                         @ string offset=426
+	.asciz	"FTSR3"                         @ string offset=407
 .Linfo_string33:
-	.asciz	"SWIER3"                        @ string offset=432
+	.asciz	"SWIER3"                        @ string offset=413
 .Linfo_string34:
-	.asciz	"D3PMR3"                        @ string offset=439
+	.asciz	"D3PMR3"                        @ string offset=420
 .Linfo_string35:
-	.asciz	"D3PCR3L"                       @ string offset=446
+	.asciz	"D3PCR3L"                       @ string offset=427
 .Linfo_string36:
-	.asciz	"D3PCR3H"                       @ string offset=454
+	.asciz	"D3PCR3H"                       @ string offset=435
 .Linfo_string37:
-	.asciz	"RESERVED3"                     @ string offset=462
+	.asciz	"RESERVED3"                     @ string offset=443
 .Linfo_string38:
-	.asciz	"IMR1"                          @ string offset=472
+	.asciz	"IMR1"                          @ string offset=453
 .Linfo_string39:
-	.asciz	"EMR1"                          @ string offset=477
+	.asciz	"EMR1"                          @ string offset=458
 .Linfo_string40:
-	.asciz	"PR1"                           @ string offset=482
+	.asciz	"PR1"                           @ string offset=463
 .Linfo_string41:
-	.asciz	"RESERVED4"                     @ string offset=486
+	.asciz	"RESERVED4"                     @ string offset=467
 .Linfo_string42:
-	.asciz	"IMR2"                          @ string offset=496
+	.asciz	"IMR2"                          @ string offset=477
 .Linfo_string43:
-	.asciz	"EMR2"                          @ string offset=501
+	.asciz	"EMR2"                          @ string offset=482
 .Linfo_string44:
-	.asciz	"PR2"                           @ string offset=506
+	.asciz	"PR2"                           @ string offset=487
 .Linfo_string45:
-	.asciz	"RESERVED5"                     @ string offset=510
+	.asciz	"RESERVED5"                     @ string offset=491
 .Linfo_string46:
-	.asciz	"IMR3"                          @ string offset=520
+	.asciz	"IMR3"                          @ string offset=501
 .Linfo_string47:
-	.asciz	"EMR3"                          @ string offset=525
+	.asciz	"EMR3"                          @ string offset=506
 .Linfo_string48:
-	.asciz	"PR3"                           @ string offset=530
+	.asciz	"PR3"                           @ string offset=511
 .Linfo_string49:
-	.asciz	"EXTI_TypeDef"                  @ string offset=534
+	.asciz	"EXTI_TypeDef"                  @ string offset=515
 .Linfo_string50:
-	.asciz	"CPUID"                         @ string offset=547
+	.asciz	"CPUID"                         @ string offset=528
 .Linfo_string51:
-	.asciz	"ICSR"                          @ string offset=553
+	.asciz	"ICSR"                          @ string offset=534
 .Linfo_string52:
-	.asciz	"VTOR"                          @ string offset=558
+	.asciz	"VTOR"                          @ string offset=539
 .Linfo_string53:
-	.asciz	"AIRCR"                         @ string offset=563
+	.asciz	"AIRCR"                         @ string offset=544
 .Linfo_string54:
-	.asciz	"SCR"                           @ string offset=569
+	.asciz	"SCR"                           @ string offset=550
 .Linfo_string55:
-	.asciz	"CCR"                           @ string offset=573
+	.asciz	"CCR"                           @ string offset=554
 .Linfo_string56:
-	.asciz	"SHPR"                          @ string offset=577
+	.asciz	"SHPR"                          @ string offset=558
 .Linfo_string57:
-	.asciz	"unsigned char"                 @ string offset=582
+	.asciz	"unsigned char"                 @ string offset=563
 .Linfo_string58:
-	.asciz	"uint8_t"                       @ string offset=596
+	.asciz	"uint8_t"                       @ string offset=577
 .Linfo_string59:
-	.asciz	"SHCSR"                         @ string offset=604
+	.asciz	"SHCSR"                         @ string offset=585
 .Linfo_string60:
-	.asciz	"CFSR"                          @ string offset=610
+	.asciz	"CFSR"                          @ string offset=591
 .Linfo_string61:
-	.asciz	"HFSR"                          @ string offset=615
+	.asciz	"HFSR"                          @ string offset=596
 .Linfo_string62:
-	.asciz	"DFSR"                          @ string offset=620
+	.asciz	"DFSR"                          @ string offset=601
 .Linfo_string63:
-	.asciz	"MMFAR"                         @ string offset=625
+	.asciz	"MMFAR"                         @ string offset=606
 .Linfo_string64:
-	.asciz	"BFAR"                          @ string offset=631
+	.asciz	"BFAR"                          @ string offset=612
 .Linfo_string65:
-	.asciz	"AFSR"                          @ string offset=636
+	.asciz	"AFSR"                          @ string offset=617
 .Linfo_string66:
-	.asciz	"ID_PFR"                        @ string offset=641
+	.asciz	"ID_PFR"                        @ string offset=622
 .Linfo_string67:
-	.asciz	"ID_DFR"                        @ string offset=648
+	.asciz	"ID_DFR"                        @ string offset=629
 .Linfo_string68:
-	.asciz	"ID_AFR"                        @ string offset=655
+	.asciz	"ID_AFR"                        @ string offset=636
 .Linfo_string69:
-	.asciz	"ID_MFR"                        @ string offset=662
+	.asciz	"ID_MFR"                        @ string offset=643
 .Linfo_string70:
-	.asciz	"ID_ISAR"                       @ string offset=669
+	.asciz	"ID_ISAR"                       @ string offset=650
 .Linfo_string71:
-	.asciz	"CLIDR"                         @ string offset=677
+	.asciz	"CLIDR"                         @ string offset=658
 .Linfo_string72:
-	.asciz	"CTR"                           @ string offset=683
+	.asciz	"CTR"                           @ string offset=664
 .Linfo_string73:
-	.asciz	"CCSIDR"                        @ string offset=687
+	.asciz	"CCSIDR"                        @ string offset=668
 .Linfo_string74:
-	.asciz	"CSSELR"                        @ string offset=694
+	.asciz	"CSSELR"                        @ string offset=675
 .Linfo_string75:
-	.asciz	"CPACR"                         @ string offset=701
+	.asciz	"CPACR"                         @ string offset=682
 .Linfo_string76:
-	.asciz	"STIR"                          @ string offset=707
+	.asciz	"STIR"                          @ string offset=688
 .Linfo_string77:
-	.asciz	"MVFR0"                         @ string offset=712
+	.asciz	"MVFR0"                         @ string offset=693
 .Linfo_string78:
-	.asciz	"MVFR1"                         @ string offset=718
+	.asciz	"MVFR1"                         @ string offset=699
 .Linfo_string79:
-	.asciz	"MVFR2"                         @ string offset=724
+	.asciz	"MVFR2"                         @ string offset=705
 .Linfo_string80:
-	.asciz	"ICIALLU"                       @ string offset=730
+	.asciz	"ICIALLU"                       @ string offset=711
 .Linfo_string81:
-	.asciz	"RESERVED6"                     @ string offset=738
+	.asciz	"RESERVED6"                     @ string offset=719
 .Linfo_string82:
-	.asciz	"ICIMVAU"                       @ string offset=748
+	.asciz	"ICIMVAU"                       @ string offset=729
 .Linfo_string83:
-	.asciz	"DCIMVAC"                       @ string offset=756
+	.asciz	"DCIMVAC"                       @ string offset=737
 .Linfo_string84:
-	.asciz	"DCISW"                         @ string offset=764
+	.asciz	"DCISW"                         @ string offset=745
 .Linfo_string85:
-	.asciz	"DCCMVAU"                       @ string offset=770
+	.asciz	"DCCMVAU"                       @ string offset=751
 .Linfo_string86:
-	.asciz	"DCCMVAC"                       @ string offset=778
+	.asciz	"DCCMVAC"                       @ string offset=759
 .Linfo_string87:
-	.asciz	"DCCSW"                         @ string offset=786
+	.asciz	"DCCSW"                         @ string offset=767
 .Linfo_string88:
-	.asciz	"DCCIMVAC"                      @ string offset=792
+	.asciz	"DCCIMVAC"                      @ string offset=773
 .Linfo_string89:
-	.asciz	"DCCISW"                        @ string offset=801
+	.asciz	"DCCISW"                        @ string offset=782
 .Linfo_string90:
-	.asciz	"RESERVED7"                     @ string offset=808
+	.asciz	"RESERVED7"                     @ string offset=789
 .Linfo_string91:
-	.asciz	"ITCMCR"                        @ string offset=818
+	.asciz	"ITCMCR"                        @ string offset=799
 .Linfo_string92:
-	.asciz	"DTCMCR"                        @ string offset=825
+	.asciz	"DTCMCR"                        @ string offset=806
 .Linfo_string93:
-	.asciz	"AHBPCR"                        @ string offset=832
+	.asciz	"AHBPCR"                        @ string offset=813
 .Linfo_string94:
-	.asciz	"CACR"                          @ string offset=839
+	.asciz	"CACR"                          @ string offset=820
 .Linfo_string95:
-	.asciz	"AHBSCR"                        @ string offset=844
+	.asciz	"AHBSCR"                        @ string offset=825
 .Linfo_string96:
-	.asciz	"RESERVED8"                     @ string offset=851
+	.asciz	"RESERVED8"                     @ string offset=832
 .Linfo_string97:
-	.asciz	"ABFSR"                         @ string offset=861
+	.asciz	"ABFSR"                         @ string offset=842
 .Linfo_string98:
-	.asciz	"SCB_Type"                      @ string offset=867
+	.asciz	"SCB_Type"                      @ string offset=848
 .Linfo_string99:
-	.asciz	"HAL_PWR_DeInit"                @ string offset=876
+	.asciz	"HAL_PWR_DeInit"                @ string offset=857
 .Linfo_string100:
-	.asciz	"HAL_PWR_EnableBkUpAccess"      @ string offset=891
+	.asciz	"HAL_PWR_EnableBkUpAccess"      @ string offset=872
 .Linfo_string101:
-	.asciz	"HAL_PWR_DisableBkUpAccess"     @ string offset=916
+	.asciz	"HAL_PWR_DisableBkUpAccess"     @ string offset=897
 .Linfo_string102:
-	.asciz	"HAL_PWR_ConfigPVD"             @ string offset=942
+	.asciz	"HAL_PWR_ConfigPVD"             @ string offset=923
 .Linfo_string103:
-	.asciz	"HAL_PWR_EnablePVD"             @ string offset=960
+	.asciz	"HAL_PWR_EnablePVD"             @ string offset=941
 .Linfo_string104:
-	.asciz	"HAL_PWR_DisablePVD"            @ string offset=978
+	.asciz	"HAL_PWR_DisablePVD"            @ string offset=959
 .Linfo_string105:
-	.asciz	"HAL_PWR_EnableWakeUpPin"       @ string offset=997
+	.asciz	"HAL_PWR_EnableWakeUpPin"       @ string offset=978
 .Linfo_string106:
-	.asciz	"HAL_PWR_DisableWakeUpPin"      @ string offset=1021
+	.asciz	"HAL_PWR_DisableWakeUpPin"      @ string offset=1002
 .Linfo_string107:
-	.asciz	"HAL_PWR_EnterSLEEPMode"        @ string offset=1046
+	.asciz	"HAL_PWR_EnterSLEEPMode"        @ string offset=1027
 .Linfo_string108:
-	.asciz	"HAL_PWR_EnterSTOPMode"         @ string offset=1069
+	.asciz	"HAL_PWR_EnterSTOPMode"         @ string offset=1050
 .Linfo_string109:
-	.asciz	"HAL_PWR_EnterSTANDBYMode"      @ string offset=1091
+	.asciz	"HAL_PWR_EnterSTANDBYMode"      @ string offset=1072
 .Linfo_string110:
-	.asciz	"HAL_PWR_EnableSleepOnExit"     @ string offset=1116
+	.asciz	"HAL_PWR_EnableSleepOnExit"     @ string offset=1097
 .Linfo_string111:
-	.asciz	"HAL_PWR_DisableSleepOnExit"    @ string offset=1142
+	.asciz	"HAL_PWR_DisableSleepOnExit"    @ string offset=1123
 .Linfo_string112:
-	.asciz	"HAL_PWR_EnableSEVOnPend"       @ string offset=1169
+	.asciz	"HAL_PWR_EnableSEVOnPend"       @ string offset=1150
 .Linfo_string113:
-	.asciz	"HAL_PWR_DisableSEVOnPend"      @ string offset=1193
+	.asciz	"HAL_PWR_DisableSEVOnPend"      @ string offset=1174
 .Linfo_string114:
-	.asciz	"HAL_PWR_PVD_IRQHandler"        @ string offset=1218
+	.asciz	"HAL_PWR_PVD_IRQHandler"        @ string offset=1199
 .Linfo_string115:
-	.asciz	"HAL_PWR_PVDCallback"           @ string offset=1241
+	.asciz	"HAL_PWR_PVDCallback"           @ string offset=1222
 .Linfo_string116:
-	.asciz	"sConfigPVD"                    @ string offset=1261
+	.asciz	"sConfigPVD"                    @ string offset=1242
 .Linfo_string117:
-	.asciz	"PVDLevel"                      @ string offset=1272
+	.asciz	"PVDLevel"                      @ string offset=1253
 .Linfo_string118:
-	.asciz	"Mode"                          @ string offset=1281
+	.asciz	"Mode"                          @ string offset=1262
 .Linfo_string119:
-	.asciz	"PWR_PVDTypeDef"                @ string offset=1286
+	.asciz	"PWR_PVDTypeDef"                @ string offset=1267
 .Linfo_string120:
-	.asciz	"WakeUpPinPolarity"             @ string offset=1301
+	.asciz	"WakeUpPinPolarity"             @ string offset=1282
 .Linfo_string121:
-	.asciz	"WakeUpPinx"                    @ string offset=1319
+	.asciz	"WakeUpPinx"                    @ string offset=1300
 .Linfo_string122:
-	.asciz	"Regulator"                     @ string offset=1330
+	.asciz	"Regulator"                     @ string offset=1311
 .Linfo_string123:
-	.asciz	"SLEEPEntry"                    @ string offset=1340
+	.asciz	"SLEEPEntry"                    @ string offset=1321
 .Linfo_string124:
-	.asciz	"STOPEntry"                     @ string offset=1351
+	.asciz	"STOPEntry"                     @ string offset=1332
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

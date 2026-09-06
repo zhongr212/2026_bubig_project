@@ -21,12 +21,12 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"stm32h7xx_hal_i2c.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_i2c.h"
-	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
+	.file	1 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
+	.file	2 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
+	.file	3 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_i2c.h"
+	.file	4 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h7xx.h"
 	.file	5 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	6 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
 	.section	.text.HAL_I2C_Init,"ax",%progbits
 	.hidden	HAL_I2C_Init                    @ -- Begin function HAL_I2C_Init
 	.globl	HAL_I2C_Init
@@ -36,7 +36,7 @@
 	.thumb_func
 HAL_I2C_Init:
 .Lfunc_begin0:
-	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c"
+	.file	7 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c"
 	.loc	7 536 0                         @ ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c:536:0
 	.fnstart
 	.cfi_sections .debug_frame
@@ -26758,527 +26758,527 @@ I2C_IsErrorOccurred:
 .Linfo_string1:
 	.asciz	"../Drivers/STM32H7xx_HAL_Driver/Src\\stm32h7xx_hal_i2c.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=124
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=124
 .Linfo_string3:
-	.asciz	"unsigned char"                 @ string offset=202
+	.asciz	"unsigned char"                 @ string offset=183
 .Linfo_string4:
-	.asciz	"HAL_OK"                        @ string offset=216
+	.asciz	"HAL_OK"                        @ string offset=197
 .Linfo_string5:
-	.asciz	"HAL_ERROR"                     @ string offset=223
+	.asciz	"HAL_ERROR"                     @ string offset=204
 .Linfo_string6:
-	.asciz	"HAL_BUSY"                      @ string offset=233
+	.asciz	"HAL_BUSY"                      @ string offset=214
 .Linfo_string7:
-	.asciz	"HAL_TIMEOUT"                   @ string offset=242
+	.asciz	"HAL_TIMEOUT"                   @ string offset=223
 .Linfo_string8:
-	.asciz	"HAL_UNLOCKED"                  @ string offset=254
+	.asciz	"HAL_UNLOCKED"                  @ string offset=235
 .Linfo_string9:
-	.asciz	"HAL_LOCKED"                    @ string offset=267
+	.asciz	"HAL_LOCKED"                    @ string offset=248
 .Linfo_string10:
-	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=278
+	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=259
 .Linfo_string11:
-	.asciz	"HAL_DMA_STATE_READY"           @ string offset=298
+	.asciz	"HAL_DMA_STATE_READY"           @ string offset=279
 .Linfo_string12:
-	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=318
+	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=299
 .Linfo_string13:
-	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=337
+	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=318
 .Linfo_string14:
-	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=357
+	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=338
 .Linfo_string15:
-	.asciz	"HAL_I2C_STATE_RESET"           @ string offset=377
+	.asciz	"HAL_I2C_STATE_RESET"           @ string offset=358
 .Linfo_string16:
-	.asciz	"HAL_I2C_STATE_READY"           @ string offset=397
+	.asciz	"HAL_I2C_STATE_READY"           @ string offset=378
 .Linfo_string17:
-	.asciz	"HAL_I2C_STATE_BUSY"            @ string offset=417
+	.asciz	"HAL_I2C_STATE_BUSY"            @ string offset=398
 .Linfo_string18:
-	.asciz	"HAL_I2C_STATE_BUSY_TX"         @ string offset=436
+	.asciz	"HAL_I2C_STATE_BUSY_TX"         @ string offset=417
 .Linfo_string19:
-	.asciz	"HAL_I2C_STATE_BUSY_RX"         @ string offset=458
+	.asciz	"HAL_I2C_STATE_BUSY_RX"         @ string offset=439
 .Linfo_string20:
-	.asciz	"HAL_I2C_STATE_LISTEN"          @ string offset=480
+	.asciz	"HAL_I2C_STATE_LISTEN"          @ string offset=461
 .Linfo_string21:
-	.asciz	"HAL_I2C_STATE_BUSY_TX_LISTEN"  @ string offset=501
+	.asciz	"HAL_I2C_STATE_BUSY_TX_LISTEN"  @ string offset=482
 .Linfo_string22:
-	.asciz	"HAL_I2C_STATE_BUSY_RX_LISTEN"  @ string offset=530
+	.asciz	"HAL_I2C_STATE_BUSY_RX_LISTEN"  @ string offset=511
 .Linfo_string23:
-	.asciz	"HAL_I2C_STATE_ABORT"           @ string offset=559
+	.asciz	"HAL_I2C_STATE_ABORT"           @ string offset=540
 .Linfo_string24:
-	.asciz	"HAL_I2C_MODE_NONE"             @ string offset=579
+	.asciz	"HAL_I2C_MODE_NONE"             @ string offset=560
 .Linfo_string25:
-	.asciz	"HAL_I2C_MODE_MASTER"           @ string offset=597
+	.asciz	"HAL_I2C_MODE_MASTER"           @ string offset=578
 .Linfo_string26:
-	.asciz	"HAL_I2C_MODE_SLAVE"            @ string offset=617
+	.asciz	"HAL_I2C_MODE_SLAVE"            @ string offset=598
 .Linfo_string27:
-	.asciz	"HAL_I2C_MODE_MEM"              @ string offset=636
+	.asciz	"HAL_I2C_MODE_MEM"              @ string offset=617
 .Linfo_string28:
-	.asciz	"RESET"                         @ string offset=653
+	.asciz	"RESET"                         @ string offset=634
 .Linfo_string29:
-	.asciz	"SET"                           @ string offset=659
+	.asciz	"SET"                           @ string offset=640
 .Linfo_string30:
-	.asciz	"unsigned int"                  @ string offset=663
+	.asciz	"unsigned int"                  @ string offset=644
 .Linfo_string31:
-	.asciz	"uint32_t"                      @ string offset=676
+	.asciz	"uint32_t"                      @ string offset=657
 .Linfo_string32:
-	.asciz	"uint8_t"                       @ string offset=685
+	.asciz	"uint8_t"                       @ string offset=666
 .Linfo_string33:
-	.asciz	"unsigned short"                @ string offset=693
+	.asciz	"unsigned short"                @ string offset=674
 .Linfo_string34:
-	.asciz	"uint16_t"                      @ string offset=708
+	.asciz	"uint16_t"                      @ string offset=689
 .Linfo_string35:
-	.asciz	"CR"                            @ string offset=717
+	.asciz	"CR"                            @ string offset=698
 .Linfo_string36:
-	.asciz	"NDTR"                          @ string offset=720
+	.asciz	"NDTR"                          @ string offset=701
 .Linfo_string37:
-	.asciz	"PAR"                           @ string offset=725
+	.asciz	"PAR"                           @ string offset=706
 .Linfo_string38:
-	.asciz	"M0AR"                          @ string offset=729
+	.asciz	"M0AR"                          @ string offset=710
 .Linfo_string39:
-	.asciz	"M1AR"                          @ string offset=734
+	.asciz	"M1AR"                          @ string offset=715
 .Linfo_string40:
-	.asciz	"FCR"                           @ string offset=739
+	.asciz	"FCR"                           @ string offset=720
 .Linfo_string41:
-	.asciz	"DMA_Stream_TypeDef"            @ string offset=743
+	.asciz	"DMA_Stream_TypeDef"            @ string offset=724
 .Linfo_string42:
-	.asciz	"CCR"                           @ string offset=762
+	.asciz	"CCR"                           @ string offset=743
 .Linfo_string43:
-	.asciz	"CNDTR"                         @ string offset=766
+	.asciz	"CNDTR"                         @ string offset=747
 .Linfo_string44:
-	.asciz	"CPAR"                          @ string offset=772
+	.asciz	"CPAR"                          @ string offset=753
 .Linfo_string45:
-	.asciz	"CM0AR"                         @ string offset=777
+	.asciz	"CM0AR"                         @ string offset=758
 .Linfo_string46:
-	.asciz	"CM1AR"                         @ string offset=783
+	.asciz	"CM1AR"                         @ string offset=764
 .Linfo_string47:
-	.asciz	"BDMA_Channel_TypeDef"          @ string offset=789
+	.asciz	"BDMA_Channel_TypeDef"          @ string offset=770
 .Linfo_string48:
-	.asciz	"Instance"                      @ string offset=810
+	.asciz	"Instance"                      @ string offset=791
 .Linfo_string49:
-	.asciz	"CR1"                           @ string offset=819
+	.asciz	"CR1"                           @ string offset=800
 .Linfo_string50:
-	.asciz	"CR2"                           @ string offset=823
+	.asciz	"CR2"                           @ string offset=804
 .Linfo_string51:
-	.asciz	"OAR1"                          @ string offset=827
+	.asciz	"OAR1"                          @ string offset=808
 .Linfo_string52:
-	.asciz	"OAR2"                          @ string offset=832
+	.asciz	"OAR2"                          @ string offset=813
 .Linfo_string53:
-	.asciz	"TIMINGR"                       @ string offset=837
+	.asciz	"TIMINGR"                       @ string offset=818
 .Linfo_string54:
-	.asciz	"TIMEOUTR"                      @ string offset=845
+	.asciz	"TIMEOUTR"                      @ string offset=826
 .Linfo_string55:
-	.asciz	"ISR"                           @ string offset=854
+	.asciz	"ISR"                           @ string offset=835
 .Linfo_string56:
-	.asciz	"ICR"                           @ string offset=858
+	.asciz	"ICR"                           @ string offset=839
 .Linfo_string57:
-	.asciz	"PECR"                          @ string offset=862
+	.asciz	"PECR"                          @ string offset=843
 .Linfo_string58:
-	.asciz	"RXDR"                          @ string offset=867
+	.asciz	"RXDR"                          @ string offset=848
 .Linfo_string59:
-	.asciz	"TXDR"                          @ string offset=872
+	.asciz	"TXDR"                          @ string offset=853
 .Linfo_string60:
-	.asciz	"I2C_TypeDef"                   @ string offset=877
+	.asciz	"I2C_TypeDef"                   @ string offset=858
 .Linfo_string61:
-	.asciz	"Init"                          @ string offset=889
+	.asciz	"Init"                          @ string offset=870
 .Linfo_string62:
-	.asciz	"Timing"                        @ string offset=894
+	.asciz	"Timing"                        @ string offset=875
 .Linfo_string63:
-	.asciz	"OwnAddress1"                   @ string offset=901
+	.asciz	"OwnAddress1"                   @ string offset=882
 .Linfo_string64:
-	.asciz	"AddressingMode"                @ string offset=913
+	.asciz	"AddressingMode"                @ string offset=894
 .Linfo_string65:
-	.asciz	"DualAddressMode"               @ string offset=928
+	.asciz	"DualAddressMode"               @ string offset=909
 .Linfo_string66:
-	.asciz	"OwnAddress2"                   @ string offset=944
+	.asciz	"OwnAddress2"                   @ string offset=925
 .Linfo_string67:
-	.asciz	"OwnAddress2Masks"              @ string offset=956
+	.asciz	"OwnAddress2Masks"              @ string offset=937
 .Linfo_string68:
-	.asciz	"GeneralCallMode"               @ string offset=973
+	.asciz	"GeneralCallMode"               @ string offset=954
 .Linfo_string69:
-	.asciz	"NoStretchMode"                 @ string offset=989
+	.asciz	"NoStretchMode"                 @ string offset=970
 .Linfo_string70:
-	.asciz	"I2C_InitTypeDef"               @ string offset=1003
+	.asciz	"I2C_InitTypeDef"               @ string offset=984
 .Linfo_string71:
-	.asciz	"pBuffPtr"                      @ string offset=1019
+	.asciz	"pBuffPtr"                      @ string offset=1000
 .Linfo_string72:
-	.asciz	"XferSize"                      @ string offset=1028
+	.asciz	"XferSize"                      @ string offset=1009
 .Linfo_string73:
-	.asciz	"XferCount"                     @ string offset=1037
+	.asciz	"XferCount"                     @ string offset=1018
 .Linfo_string74:
-	.asciz	"XferOptions"                   @ string offset=1047
+	.asciz	"XferOptions"                   @ string offset=1028
 .Linfo_string75:
-	.asciz	"PreviousState"                 @ string offset=1059
+	.asciz	"PreviousState"                 @ string offset=1040
 .Linfo_string76:
-	.asciz	"XferISR"                       @ string offset=1073
+	.asciz	"XferISR"                       @ string offset=1054
 .Linfo_string77:
-	.asciz	"HAL_StatusTypeDef"             @ string offset=1081
+	.asciz	"HAL_StatusTypeDef"             @ string offset=1062
 .Linfo_string78:
-	.asciz	"hdmatx"                        @ string offset=1099
+	.asciz	"hdmatx"                        @ string offset=1080
 .Linfo_string79:
-	.asciz	"Request"                       @ string offset=1106
+	.asciz	"Request"                       @ string offset=1087
 .Linfo_string80:
-	.asciz	"Direction"                     @ string offset=1114
+	.asciz	"Direction"                     @ string offset=1095
 .Linfo_string81:
-	.asciz	"PeriphInc"                     @ string offset=1124
+	.asciz	"PeriphInc"                     @ string offset=1105
 .Linfo_string82:
-	.asciz	"MemInc"                        @ string offset=1134
+	.asciz	"MemInc"                        @ string offset=1115
 .Linfo_string83:
-	.asciz	"PeriphDataAlignment"           @ string offset=1141
+	.asciz	"PeriphDataAlignment"           @ string offset=1122
 .Linfo_string84:
-	.asciz	"MemDataAlignment"              @ string offset=1161
+	.asciz	"MemDataAlignment"              @ string offset=1142
 .Linfo_string85:
-	.asciz	"Mode"                          @ string offset=1178
+	.asciz	"Mode"                          @ string offset=1159
 .Linfo_string86:
-	.asciz	"Priority"                      @ string offset=1183
+	.asciz	"Priority"                      @ string offset=1164
 .Linfo_string87:
-	.asciz	"FIFOMode"                      @ string offset=1192
+	.asciz	"FIFOMode"                      @ string offset=1173
 .Linfo_string88:
-	.asciz	"FIFOThreshold"                 @ string offset=1201
+	.asciz	"FIFOThreshold"                 @ string offset=1182
 .Linfo_string89:
-	.asciz	"MemBurst"                      @ string offset=1215
+	.asciz	"MemBurst"                      @ string offset=1196
 .Linfo_string90:
-	.asciz	"PeriphBurst"                   @ string offset=1224
+	.asciz	"PeriphBurst"                   @ string offset=1205
 .Linfo_string91:
-	.asciz	"DMA_InitTypeDef"               @ string offset=1236
+	.asciz	"DMA_InitTypeDef"               @ string offset=1217
 .Linfo_string92:
-	.asciz	"Lock"                          @ string offset=1252
+	.asciz	"Lock"                          @ string offset=1233
 .Linfo_string93:
-	.asciz	"HAL_LockTypeDef"               @ string offset=1257
+	.asciz	"HAL_LockTypeDef"               @ string offset=1238
 .Linfo_string94:
-	.asciz	"State"                         @ string offset=1273
+	.asciz	"State"                         @ string offset=1254
 .Linfo_string95:
-	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=1279
+	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=1260
 .Linfo_string96:
-	.asciz	"Parent"                        @ string offset=1300
+	.asciz	"Parent"                        @ string offset=1281
 .Linfo_string97:
-	.asciz	"XferCpltCallback"              @ string offset=1307
+	.asciz	"XferCpltCallback"              @ string offset=1288
 .Linfo_string98:
-	.asciz	"XferHalfCpltCallback"          @ string offset=1324
+	.asciz	"XferHalfCpltCallback"          @ string offset=1305
 .Linfo_string99:
-	.asciz	"XferM1CpltCallback"            @ string offset=1345
+	.asciz	"XferM1CpltCallback"            @ string offset=1326
 .Linfo_string100:
-	.asciz	"XferM1HalfCpltCallback"        @ string offset=1364
+	.asciz	"XferM1HalfCpltCallback"        @ string offset=1345
 .Linfo_string101:
-	.asciz	"XferErrorCallback"             @ string offset=1387
+	.asciz	"XferErrorCallback"             @ string offset=1368
 .Linfo_string102:
-	.asciz	"XferAbortCallback"             @ string offset=1405
+	.asciz	"XferAbortCallback"             @ string offset=1386
 .Linfo_string103:
-	.asciz	"ErrorCode"                     @ string offset=1423
+	.asciz	"ErrorCode"                     @ string offset=1404
 .Linfo_string104:
-	.asciz	"StreamBaseAddress"             @ string offset=1433
+	.asciz	"StreamBaseAddress"             @ string offset=1414
 .Linfo_string105:
-	.asciz	"StreamIndex"                   @ string offset=1451
+	.asciz	"StreamIndex"                   @ string offset=1432
 .Linfo_string106:
-	.asciz	"DMAmuxChannel"                 @ string offset=1463
+	.asciz	"DMAmuxChannel"                 @ string offset=1444
 .Linfo_string107:
-	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=1477
+	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=1458
 .Linfo_string108:
-	.asciz	"DMAmuxChannelStatus"           @ string offset=1500
+	.asciz	"DMAmuxChannelStatus"           @ string offset=1481
 .Linfo_string109:
-	.asciz	"CSR"                           @ string offset=1520
+	.asciz	"CSR"                           @ string offset=1501
 .Linfo_string110:
-	.asciz	"CFR"                           @ string offset=1524
+	.asciz	"CFR"                           @ string offset=1505
 .Linfo_string111:
-	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=1528
+	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=1509
 .Linfo_string112:
-	.asciz	"DMAmuxChannelStatusMask"       @ string offset=1557
+	.asciz	"DMAmuxChannelStatusMask"       @ string offset=1538
 .Linfo_string113:
-	.asciz	"DMAmuxRequestGen"              @ string offset=1581
+	.asciz	"DMAmuxRequestGen"              @ string offset=1562
 .Linfo_string114:
-	.asciz	"RGCR"                          @ string offset=1598
+	.asciz	"RGCR"                          @ string offset=1579
 .Linfo_string115:
-	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=1603
+	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=1584
 .Linfo_string116:
-	.asciz	"DMAmuxRequestGenStatus"        @ string offset=1629
+	.asciz	"DMAmuxRequestGenStatus"        @ string offset=1610
 .Linfo_string117:
-	.asciz	"RGSR"                          @ string offset=1652
+	.asciz	"RGSR"                          @ string offset=1633
 .Linfo_string118:
-	.asciz	"RGCFR"                         @ string offset=1657
+	.asciz	"RGCFR"                         @ string offset=1638
 .Linfo_string119:
-	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=1663
+	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=1644
 .Linfo_string120:
-	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=1695
+	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=1676
 .Linfo_string121:
-	.asciz	"__DMA_HandleTypeDef"           @ string offset=1722
+	.asciz	"__DMA_HandleTypeDef"           @ string offset=1703
 .Linfo_string122:
-	.asciz	"DMA_HandleTypeDef"             @ string offset=1742
+	.asciz	"DMA_HandleTypeDef"             @ string offset=1723
 .Linfo_string123:
-	.asciz	"hdmarx"                        @ string offset=1760
+	.asciz	"hdmarx"                        @ string offset=1741
 .Linfo_string124:
-	.asciz	"HAL_I2C_StateTypeDef"          @ string offset=1767
+	.asciz	"HAL_I2C_StateTypeDef"          @ string offset=1748
 .Linfo_string125:
-	.asciz	"HAL_I2C_ModeTypeDef"           @ string offset=1788
+	.asciz	"HAL_I2C_ModeTypeDef"           @ string offset=1769
 .Linfo_string126:
-	.asciz	"AddrEventCount"                @ string offset=1808
+	.asciz	"AddrEventCount"                @ string offset=1789
 .Linfo_string127:
-	.asciz	"Devaddress"                    @ string offset=1823
+	.asciz	"Devaddress"                    @ string offset=1804
 .Linfo_string128:
-	.asciz	"Memaddress"                    @ string offset=1834
+	.asciz	"Memaddress"                    @ string offset=1815
 .Linfo_string129:
-	.asciz	"__I2C_HandleTypeDef"           @ string offset=1845
+	.asciz	"__I2C_HandleTypeDef"           @ string offset=1826
 .Linfo_string130:
-	.asciz	"I2C_HandleTypeDef"             @ string offset=1865
+	.asciz	"I2C_HandleTypeDef"             @ string offset=1846
 .Linfo_string131:
-	.asciz	"HAL_I2C_Init"                  @ string offset=1883
+	.asciz	"HAL_I2C_Init"                  @ string offset=1864
 .Linfo_string132:
-	.asciz	"HAL_I2C_MspInit"               @ string offset=1896
+	.asciz	"HAL_I2C_MspInit"               @ string offset=1877
 .Linfo_string133:
-	.asciz	"HAL_I2C_DeInit"                @ string offset=1912
+	.asciz	"HAL_I2C_DeInit"                @ string offset=1893
 .Linfo_string134:
-	.asciz	"HAL_I2C_MspDeInit"             @ string offset=1927
+	.asciz	"HAL_I2C_MspDeInit"             @ string offset=1908
 .Linfo_string135:
-	.asciz	"HAL_I2C_Master_Transmit"       @ string offset=1945
+	.asciz	"HAL_I2C_Master_Transmit"       @ string offset=1926
 .Linfo_string136:
-	.asciz	"I2C_WaitOnFlagUntilTimeout"    @ string offset=1969
+	.asciz	"I2C_WaitOnFlagUntilTimeout"    @ string offset=1950
 .Linfo_string137:
-	.asciz	"I2C_TransferConfig"            @ string offset=1996
+	.asciz	"I2C_TransferConfig"            @ string offset=1977
 .Linfo_string138:
-	.asciz	"I2C_WaitOnTXISFlagUntilTimeout" @ string offset=2015
+	.asciz	"I2C_WaitOnTXISFlagUntilTimeout" @ string offset=1996
 .Linfo_string139:
-	.asciz	"I2C_WaitOnSTOPFlagUntilTimeout" @ string offset=2046
+	.asciz	"I2C_WaitOnSTOPFlagUntilTimeout" @ string offset=2027
 .Linfo_string140:
-	.asciz	"HAL_I2C_Master_Receive"        @ string offset=2077
+	.asciz	"HAL_I2C_Master_Receive"        @ string offset=2058
 .Linfo_string141:
-	.asciz	"I2C_WaitOnRXNEFlagUntilTimeout" @ string offset=2100
+	.asciz	"I2C_WaitOnRXNEFlagUntilTimeout" @ string offset=2081
 .Linfo_string142:
-	.asciz	"HAL_I2C_Slave_Transmit"        @ string offset=2131
+	.asciz	"HAL_I2C_Slave_Transmit"        @ string offset=2112
 .Linfo_string143:
-	.asciz	"I2C_Flush_TXDR"                @ string offset=2154
+	.asciz	"I2C_Flush_TXDR"                @ string offset=2135
 .Linfo_string144:
-	.asciz	"HAL_I2C_Slave_Receive"         @ string offset=2169
+	.asciz	"HAL_I2C_Slave_Receive"         @ string offset=2150
 .Linfo_string145:
-	.asciz	"HAL_I2C_Master_Transmit_IT"    @ string offset=2191
+	.asciz	"HAL_I2C_Master_Transmit_IT"    @ string offset=2172
 .Linfo_string146:
-	.asciz	"I2C_Master_ISR_IT"             @ string offset=2218
+	.asciz	"I2C_Master_ISR_IT"             @ string offset=2199
 .Linfo_string147:
-	.asciz	"I2C_Enable_IRQ"                @ string offset=2236
+	.asciz	"I2C_Enable_IRQ"                @ string offset=2217
 .Linfo_string148:
-	.asciz	"HAL_I2C_Master_Receive_IT"     @ string offset=2251
+	.asciz	"HAL_I2C_Master_Receive_IT"     @ string offset=2232
 .Linfo_string149:
-	.asciz	"HAL_I2C_Slave_Transmit_IT"     @ string offset=2277
+	.asciz	"HAL_I2C_Slave_Transmit_IT"     @ string offset=2258
 .Linfo_string150:
-	.asciz	"I2C_Slave_ISR_IT"              @ string offset=2303
+	.asciz	"I2C_Slave_ISR_IT"              @ string offset=2284
 .Linfo_string151:
-	.asciz	"HAL_I2C_Slave_Receive_IT"      @ string offset=2320
+	.asciz	"HAL_I2C_Slave_Receive_IT"      @ string offset=2301
 .Linfo_string152:
-	.asciz	"HAL_I2C_Master_Transmit_DMA"   @ string offset=2345
+	.asciz	"HAL_I2C_Master_Transmit_DMA"   @ string offset=2326
 .Linfo_string153:
-	.asciz	"I2C_Master_ISR_DMA"            @ string offset=2373
+	.asciz	"I2C_Master_ISR_DMA"            @ string offset=2354
 .Linfo_string154:
-	.asciz	"I2C_DMAMasterTransmitCplt"     @ string offset=2392
+	.asciz	"I2C_DMAMasterTransmitCplt"     @ string offset=2373
 .Linfo_string155:
-	.asciz	"I2C_DMAError"                  @ string offset=2418
+	.asciz	"I2C_DMAError"                  @ string offset=2399
 .Linfo_string156:
-	.asciz	"HAL_I2C_Master_Receive_DMA"    @ string offset=2431
+	.asciz	"HAL_I2C_Master_Receive_DMA"    @ string offset=2412
 .Linfo_string157:
-	.asciz	"I2C_DMAMasterReceiveCplt"      @ string offset=2458
+	.asciz	"I2C_DMAMasterReceiveCplt"      @ string offset=2439
 .Linfo_string158:
-	.asciz	"HAL_I2C_Slave_Transmit_DMA"    @ string offset=2483
+	.asciz	"HAL_I2C_Slave_Transmit_DMA"    @ string offset=2464
 .Linfo_string159:
-	.asciz	"I2C_Slave_ISR_DMA"             @ string offset=2510
+	.asciz	"I2C_Slave_ISR_DMA"             @ string offset=2491
 .Linfo_string160:
-	.asciz	"I2C_DMASlaveTransmitCplt"      @ string offset=2528
+	.asciz	"I2C_DMASlaveTransmitCplt"      @ string offset=2509
 .Linfo_string161:
-	.asciz	"HAL_I2C_Slave_Receive_DMA"     @ string offset=2553
+	.asciz	"HAL_I2C_Slave_Receive_DMA"     @ string offset=2534
 .Linfo_string162:
-	.asciz	"I2C_DMASlaveReceiveCplt"       @ string offset=2579
+	.asciz	"I2C_DMASlaveReceiveCplt"       @ string offset=2560
 .Linfo_string163:
-	.asciz	"HAL_I2C_Mem_Write"             @ string offset=2603
+	.asciz	"HAL_I2C_Mem_Write"             @ string offset=2584
 .Linfo_string164:
-	.asciz	"I2C_RequestMemoryWrite"        @ string offset=2621
+	.asciz	"I2C_RequestMemoryWrite"        @ string offset=2602
 .Linfo_string165:
-	.asciz	"HAL_I2C_Mem_Read"              @ string offset=2644
+	.asciz	"HAL_I2C_Mem_Read"              @ string offset=2625
 .Linfo_string166:
-	.asciz	"I2C_RequestMemoryRead"         @ string offset=2661
+	.asciz	"I2C_RequestMemoryRead"         @ string offset=2642
 .Linfo_string167:
-	.asciz	"HAL_I2C_Mem_Write_IT"          @ string offset=2683
+	.asciz	"HAL_I2C_Mem_Write_IT"          @ string offset=2664
 .Linfo_string168:
-	.asciz	"I2C_Mem_ISR_IT"                @ string offset=2704
+	.asciz	"I2C_Mem_ISR_IT"                @ string offset=2685
 .Linfo_string169:
-	.asciz	"HAL_I2C_Mem_Read_IT"           @ string offset=2719
+	.asciz	"HAL_I2C_Mem_Read_IT"           @ string offset=2700
 .Linfo_string170:
-	.asciz	"HAL_I2C_Mem_Write_DMA"         @ string offset=2739
+	.asciz	"HAL_I2C_Mem_Write_DMA"         @ string offset=2720
 .Linfo_string171:
-	.asciz	"I2C_Mem_ISR_DMA"               @ string offset=2761
+	.asciz	"I2C_Mem_ISR_DMA"               @ string offset=2742
 .Linfo_string172:
-	.asciz	"HAL_I2C_Mem_Read_DMA"          @ string offset=2777
+	.asciz	"HAL_I2C_Mem_Read_DMA"          @ string offset=2758
 .Linfo_string173:
-	.asciz	"HAL_I2C_IsDeviceReady"         @ string offset=2798
+	.asciz	"HAL_I2C_IsDeviceReady"         @ string offset=2779
 .Linfo_string174:
-	.asciz	"HAL_I2C_Master_Seq_Transmit_IT" @ string offset=2820
+	.asciz	"HAL_I2C_Master_Seq_Transmit_IT" @ string offset=2801
 .Linfo_string175:
-	.asciz	"I2C_ConvertOtherXferOptions"   @ string offset=2851
+	.asciz	"I2C_ConvertOtherXferOptions"   @ string offset=2832
 .Linfo_string176:
-	.asciz	"HAL_I2C_Master_Seq_Transmit_DMA" @ string offset=2879
+	.asciz	"HAL_I2C_Master_Seq_Transmit_DMA" @ string offset=2860
 .Linfo_string177:
-	.asciz	"HAL_I2C_Master_Seq_Receive_IT" @ string offset=2911
+	.asciz	"HAL_I2C_Master_Seq_Receive_IT" @ string offset=2892
 .Linfo_string178:
-	.asciz	"HAL_I2C_Master_Seq_Receive_DMA" @ string offset=2941
+	.asciz	"HAL_I2C_Master_Seq_Receive_DMA" @ string offset=2922
 .Linfo_string179:
-	.asciz	"HAL_I2C_Slave_Seq_Transmit_IT" @ string offset=2972
+	.asciz	"HAL_I2C_Slave_Seq_Transmit_IT" @ string offset=2953
 .Linfo_string180:
-	.asciz	"I2C_Disable_IRQ"               @ string offset=3002
+	.asciz	"I2C_Disable_IRQ"               @ string offset=2983
 .Linfo_string181:
-	.asciz	"I2C_DMAAbort"                  @ string offset=3018
+	.asciz	"I2C_DMAAbort"                  @ string offset=2999
 .Linfo_string182:
-	.asciz	"HAL_I2C_Slave_Seq_Transmit_DMA" @ string offset=3031
+	.asciz	"HAL_I2C_Slave_Seq_Transmit_DMA" @ string offset=3012
 .Linfo_string183:
-	.asciz	"HAL_I2C_Slave_Seq_Receive_IT"  @ string offset=3062
+	.asciz	"HAL_I2C_Slave_Seq_Receive_IT"  @ string offset=3043
 .Linfo_string184:
-	.asciz	"HAL_I2C_Slave_Seq_Receive_DMA" @ string offset=3091
+	.asciz	"HAL_I2C_Slave_Seq_Receive_DMA" @ string offset=3072
 .Linfo_string185:
-	.asciz	"HAL_I2C_EnableListen_IT"       @ string offset=3121
+	.asciz	"HAL_I2C_EnableListen_IT"       @ string offset=3102
 .Linfo_string186:
-	.asciz	"HAL_I2C_DisableListen_IT"      @ string offset=3145
+	.asciz	"HAL_I2C_DisableListen_IT"      @ string offset=3126
 .Linfo_string187:
-	.asciz	"HAL_I2C_Master_Abort_IT"       @ string offset=3170
+	.asciz	"HAL_I2C_Master_Abort_IT"       @ string offset=3151
 .Linfo_string188:
-	.asciz	"HAL_I2C_EV_IRQHandler"         @ string offset=3194
+	.asciz	"HAL_I2C_EV_IRQHandler"         @ string offset=3175
 .Linfo_string189:
-	.asciz	"HAL_I2C_ER_IRQHandler"         @ string offset=3216
+	.asciz	"HAL_I2C_ER_IRQHandler"         @ string offset=3197
 .Linfo_string190:
-	.asciz	"I2C_ITError"                   @ string offset=3238
+	.asciz	"I2C_ITError"                   @ string offset=3219
 .Linfo_string191:
-	.asciz	"HAL_I2C_MasterTxCpltCallback"  @ string offset=3250
+	.asciz	"HAL_I2C_MasterTxCpltCallback"  @ string offset=3231
 .Linfo_string192:
-	.asciz	"HAL_I2C_MasterRxCpltCallback"  @ string offset=3279
+	.asciz	"HAL_I2C_MasterRxCpltCallback"  @ string offset=3260
 .Linfo_string193:
-	.asciz	"HAL_I2C_SlaveTxCpltCallback"   @ string offset=3308
+	.asciz	"HAL_I2C_SlaveTxCpltCallback"   @ string offset=3289
 .Linfo_string194:
-	.asciz	"HAL_I2C_SlaveRxCpltCallback"   @ string offset=3336
+	.asciz	"HAL_I2C_SlaveRxCpltCallback"   @ string offset=3317
 .Linfo_string195:
-	.asciz	"HAL_I2C_AddrCallback"          @ string offset=3364
+	.asciz	"HAL_I2C_AddrCallback"          @ string offset=3345
 .Linfo_string196:
-	.asciz	"HAL_I2C_ListenCpltCallback"    @ string offset=3385
+	.asciz	"HAL_I2C_ListenCpltCallback"    @ string offset=3366
 .Linfo_string197:
-	.asciz	"HAL_I2C_MemTxCpltCallback"     @ string offset=3412
+	.asciz	"HAL_I2C_MemTxCpltCallback"     @ string offset=3393
 .Linfo_string198:
-	.asciz	"HAL_I2C_MemRxCpltCallback"     @ string offset=3438
+	.asciz	"HAL_I2C_MemRxCpltCallback"     @ string offset=3419
 .Linfo_string199:
-	.asciz	"HAL_I2C_ErrorCallback"         @ string offset=3464
+	.asciz	"HAL_I2C_ErrorCallback"         @ string offset=3445
 .Linfo_string200:
-	.asciz	"HAL_I2C_AbortCpltCallback"     @ string offset=3486
+	.asciz	"HAL_I2C_AbortCpltCallback"     @ string offset=3467
 .Linfo_string201:
-	.asciz	"HAL_I2C_GetState"              @ string offset=3512
+	.asciz	"HAL_I2C_GetState"              @ string offset=3493
 .Linfo_string202:
-	.asciz	"HAL_I2C_GetMode"               @ string offset=3529
+	.asciz	"HAL_I2C_GetMode"               @ string offset=3510
 .Linfo_string203:
-	.asciz	"HAL_I2C_GetError"              @ string offset=3545
+	.asciz	"HAL_I2C_GetError"              @ string offset=3526
 .Linfo_string204:
-	.asciz	"I2C_ITMasterSeqCplt"           @ string offset=3562
+	.asciz	"I2C_ITMasterSeqCplt"           @ string offset=3543
 .Linfo_string205:
-	.asciz	"I2C_ITMasterCplt"              @ string offset=3582
+	.asciz	"I2C_ITMasterCplt"              @ string offset=3563
 .Linfo_string206:
-	.asciz	"I2C_ITSlaveCplt"               @ string offset=3599
+	.asciz	"I2C_ITSlaveCplt"               @ string offset=3580
 .Linfo_string207:
-	.asciz	"I2C_ITListenCplt"              @ string offset=3615
+	.asciz	"I2C_ITListenCplt"              @ string offset=3596
 .Linfo_string208:
-	.asciz	"I2C_ITSlaveSeqCplt"            @ string offset=3632
+	.asciz	"I2C_ITSlaveSeqCplt"            @ string offset=3613
 .Linfo_string209:
-	.asciz	"I2C_ITAddrCplt"                @ string offset=3651
+	.asciz	"I2C_ITAddrCplt"                @ string offset=3632
 .Linfo_string210:
-	.asciz	"I2C_TreatErrorCallback"        @ string offset=3666
+	.asciz	"I2C_TreatErrorCallback"        @ string offset=3647
 .Linfo_string211:
-	.asciz	"I2C_IsErrorOccurred"           @ string offset=3689
+	.asciz	"I2C_IsErrorOccurred"           @ string offset=3670
 .Linfo_string212:
-	.asciz	"hi2c"                          @ string offset=3709
+	.asciz	"hi2c"                          @ string offset=3690
 .Linfo_string213:
-	.asciz	"DevAddress"                    @ string offset=3714
+	.asciz	"DevAddress"                    @ string offset=3695
 .Linfo_string214:
-	.asciz	"pData"                         @ string offset=3725
+	.asciz	"pData"                         @ string offset=3706
 .Linfo_string215:
-	.asciz	"Size"                          @ string offset=3731
+	.asciz	"Size"                          @ string offset=3712
 .Linfo_string216:
-	.asciz	"Timeout"                       @ string offset=3736
+	.asciz	"Timeout"                       @ string offset=3717
 .Linfo_string217:
-	.asciz	"tickstart"                     @ string offset=3744
+	.asciz	"tickstart"                     @ string offset=3725
 .Linfo_string218:
-	.asciz	"xfermode"                      @ string offset=3754
+	.asciz	"xfermode"                      @ string offset=3735
 .Linfo_string219:
-	.asciz	"Flag"                          @ string offset=3763
+	.asciz	"Flag"                          @ string offset=3744
 .Linfo_string220:
-	.asciz	"Status"                        @ string offset=3768
+	.asciz	"Status"                        @ string offset=3749
 .Linfo_string221:
-	.asciz	"FlagStatus"                    @ string offset=3775
+	.asciz	"FlagStatus"                    @ string offset=3756
 .Linfo_string222:
-	.asciz	"Tickstart"                     @ string offset=3786
+	.asciz	"Tickstart"                     @ string offset=3767
 .Linfo_string223:
-	.asciz	"tmp"                           @ string offset=3796
+	.asciz	"tmp"                           @ string offset=3777
 .Linfo_string224:
-	.asciz	"status"                        @ string offset=3800
+	.asciz	"status"                        @ string offset=3781
 .Linfo_string225:
-	.asciz	"tmpXferCount"                  @ string offset=3807
+	.asciz	"tmpXferCount"                  @ string offset=3788
 .Linfo_string226:
-	.asciz	"error"                         @ string offset=3820
+	.asciz	"error"                         @ string offset=3801
 .Linfo_string227:
-	.asciz	"ITFlags"                       @ string offset=3826
+	.asciz	"ITFlags"                       @ string offset=3807
 .Linfo_string228:
-	.asciz	"ITSources"                     @ string offset=3834
+	.asciz	"ITSources"                     @ string offset=3815
 .Linfo_string229:
-	.asciz	"devaddress"                    @ string offset=3844
+	.asciz	"devaddress"                    @ string offset=3825
 .Linfo_string230:
-	.asciz	"tmpITFlags"                    @ string offset=3855
+	.asciz	"tmpITFlags"                    @ string offset=3836
 .Linfo_string231:
-	.asciz	"InterruptRequest"              @ string offset=3866
+	.asciz	"InterruptRequest"              @ string offset=3847
 .Linfo_string232:
-	.asciz	"tmpisr"                        @ string offset=3883
+	.asciz	"tmpisr"                        @ string offset=3864
 .Linfo_string233:
-	.asciz	"tmpoptions"                    @ string offset=3890
+	.asciz	"tmpoptions"                    @ string offset=3871
 .Linfo_string234:
-	.asciz	"dmaxferstatus"                 @ string offset=3901
+	.asciz	"dmaxferstatus"                 @ string offset=3882
 .Linfo_string235:
-	.asciz	"sizetoxfer"                    @ string offset=3915
+	.asciz	"sizetoxfer"                    @ string offset=3896
 .Linfo_string236:
-	.asciz	"hdma"                          @ string offset=3926
+	.asciz	"hdma"                          @ string offset=3907
 .Linfo_string237:
-	.asciz	"treatdmaerror"                 @ string offset=3931
+	.asciz	"treatdmaerror"                 @ string offset=3912
 .Linfo_string238:
-	.asciz	"treatdmanack"                  @ string offset=3945
+	.asciz	"treatdmanack"                  @ string offset=3926
 .Linfo_string239:
-	.asciz	"tmpstate"                      @ string offset=3958
+	.asciz	"tmpstate"                      @ string offset=3939
 .Linfo_string240:
-	.asciz	"MemAddress"                    @ string offset=3967
+	.asciz	"MemAddress"                    @ string offset=3948
 .Linfo_string241:
-	.asciz	"MemAddSize"                    @ string offset=3978
+	.asciz	"MemAddSize"                    @ string offset=3959
 .Linfo_string242:
-	.asciz	"direction"                     @ string offset=3989
+	.asciz	"direction"                     @ string offset=3970
 .Linfo_string243:
-	.asciz	"Trials"                        @ string offset=3999
+	.asciz	"Trials"                        @ string offset=3980
 .Linfo_string244:
-	.asciz	"I2C_Trials"                    @ string offset=4006
+	.asciz	"I2C_Trials"                    @ string offset=3987
 .Linfo_string245:
-	.asciz	"tmp1"                          @ string offset=4017
+	.asciz	"tmp1"                          @ string offset=3998
 .Linfo_string246:
-	.asciz	"tmp2"                          @ string offset=4022
+	.asciz	"tmp2"                          @ string offset=4003
 .Linfo_string247:
-	.asciz	"xferrequest"                   @ string offset=4027
+	.asciz	"xferrequest"                   @ string offset=4008
 .Linfo_string248:
-	.asciz	"tmp_mode"                      @ string offset=4039
+	.asciz	"tmp_mode"                      @ string offset=4020
 .Linfo_string249:
-	.asciz	"itflags"                       @ string offset=4048
+	.asciz	"itflags"                       @ string offset=4029
 .Linfo_string250:
-	.asciz	"itsources"                     @ string offset=4056
+	.asciz	"itsources"                     @ string offset=4037
 .Linfo_string251:
-	.asciz	"tmperror"                      @ string offset=4066
+	.asciz	"tmperror"                      @ string offset=4047
 .Linfo_string252:
-	.asciz	"tmppreviousstate"              @ string offset=4075
+	.asciz	"tmppreviousstate"              @ string offset=4056
 .Linfo_string253:
-	.asciz	"TransferDirection"             @ string offset=4092
+	.asciz	"TransferDirection"             @ string offset=4073
 .Linfo_string254:
-	.asciz	"AddrMatchCode"                 @ string offset=4110
+	.asciz	"AddrMatchCode"                 @ string offset=4091
 .Linfo_string255:
-	.asciz	"tmpreg"                        @ string offset=4124
+	.asciz	"tmpreg"                        @ string offset=4105
 .Linfo_string256:
-	.asciz	"tmpcr1value"                   @ string offset=4131
+	.asciz	"tmpcr1value"                   @ string offset=4112
 .Linfo_string257:
-	.asciz	"transferdirection"             @ string offset=4143
+	.asciz	"transferdirection"             @ string offset=4124
 .Linfo_string258:
-	.asciz	"slaveaddrcode"                 @ string offset=4161
+	.asciz	"slaveaddrcode"                 @ string offset=4142
 .Linfo_string259:
-	.asciz	"ownadd1code"                   @ string offset=4175
+	.asciz	"ownadd1code"                   @ string offset=4156
 .Linfo_string260:
-	.asciz	"ownadd2code"                   @ string offset=4187
+	.asciz	"ownadd2code"                   @ string offset=4168
 .Linfo_string261:
-	.asciz	"itflag"                        @ string offset=4199
+	.asciz	"itflag"                        @ string offset=4180
 .Linfo_string262:
-	.asciz	"error_code"                    @ string offset=4206
+	.asciz	"error_code"                    @ string offset=4187
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

@@ -21,10 +21,10 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"stm32h7xx_hal_flash_ex.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_flash.h"
+	.file	1 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
+	.file	2 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_flash.h"
 	.file	3 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	4 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
 	.section	.text.HAL_FLASHEx_Erase,"ax",%progbits
 	.hidden	HAL_FLASHEx_Erase               @ -- Begin function HAL_FLASHEx_Erase
 	.globl	HAL_FLASHEx_Erase
@@ -34,7 +34,7 @@
 	.thumb_func
 HAL_FLASHEx_Erase:
 .Lfunc_begin0:
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c"
+	.file	5 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c"
 	.loc	5 187 0                         @ ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c:187:0
 	.fnstart
 	.cfi_sections .debug_frame
@@ -2897,7 +2897,7 @@ FLASH_CRC_SelectAddress:
 	.cantunwind
 	.fnend
                                         @ -- End function
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_flash_ex.h"
+	.file	6 "d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_flash_ex.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -4713,263 +4713,263 @@ FLASH_CRC_SelectAddress:
 .Linfo_string1:
 	.asciz	"../Drivers/STM32H7xx_HAL_Driver/Src\\stm32h7xx_hal_flash_ex.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=129
+	.asciz	"d:\\stm32_project\\daily_work\\git\\2026_bubig_project\\MDK-ARM" @ string offset=129
 .Linfo_string3:
-	.asciz	"unsigned char"                 @ string offset=207
+	.asciz	"unsigned char"                 @ string offset=188
 .Linfo_string4:
-	.asciz	"HAL_OK"                        @ string offset=221
+	.asciz	"HAL_OK"                        @ string offset=202
 .Linfo_string5:
-	.asciz	"HAL_ERROR"                     @ string offset=228
+	.asciz	"HAL_ERROR"                     @ string offset=209
 .Linfo_string6:
-	.asciz	"HAL_BUSY"                      @ string offset=238
+	.asciz	"HAL_BUSY"                      @ string offset=219
 .Linfo_string7:
-	.asciz	"HAL_TIMEOUT"                   @ string offset=247
+	.asciz	"HAL_TIMEOUT"                   @ string offset=228
 .Linfo_string8:
-	.asciz	"HAL_UNLOCKED"                  @ string offset=259
+	.asciz	"HAL_UNLOCKED"                  @ string offset=240
 .Linfo_string9:
-	.asciz	"HAL_LOCKED"                    @ string offset=272
+	.asciz	"HAL_LOCKED"                    @ string offset=253
 .Linfo_string10:
-	.asciz	"FLASH_PROC_NONE"               @ string offset=283
+	.asciz	"FLASH_PROC_NONE"               @ string offset=264
 .Linfo_string11:
-	.asciz	"FLASH_PROC_SECTERASE_BANK1"    @ string offset=299
+	.asciz	"FLASH_PROC_SECTERASE_BANK1"    @ string offset=280
 .Linfo_string12:
-	.asciz	"FLASH_PROC_MASSERASE_BANK1"    @ string offset=326
+	.asciz	"FLASH_PROC_MASSERASE_BANK1"    @ string offset=307
 .Linfo_string13:
-	.asciz	"FLASH_PROC_PROGRAM_BANK1"      @ string offset=353
+	.asciz	"FLASH_PROC_PROGRAM_BANK1"      @ string offset=334
 .Linfo_string14:
-	.asciz	"FLASH_PROC_SECTERASE_BANK2"    @ string offset=378
+	.asciz	"FLASH_PROC_SECTERASE_BANK2"    @ string offset=359
 .Linfo_string15:
-	.asciz	"FLASH_PROC_MASSERASE_BANK2"    @ string offset=405
+	.asciz	"FLASH_PROC_MASSERASE_BANK2"    @ string offset=386
 .Linfo_string16:
-	.asciz	"FLASH_PROC_PROGRAM_BANK2"      @ string offset=432
+	.asciz	"FLASH_PROC_PROGRAM_BANK2"      @ string offset=413
 .Linfo_string17:
-	.asciz	"FLASH_PROC_ALLBANK_MASSERASE"  @ string offset=457
+	.asciz	"FLASH_PROC_ALLBANK_MASSERASE"  @ string offset=438
 .Linfo_string18:
-	.asciz	"unsigned int"                  @ string offset=486
+	.asciz	"unsigned int"                  @ string offset=467
 .Linfo_string19:
-	.asciz	"uint32_t"                      @ string offset=499
+	.asciz	"uint32_t"                      @ string offset=480
 .Linfo_string20:
-	.asciz	"ACR"                           @ string offset=508
+	.asciz	"ACR"                           @ string offset=489
 .Linfo_string21:
-	.asciz	"KEYR1"                         @ string offset=512
+	.asciz	"KEYR1"                         @ string offset=493
 .Linfo_string22:
-	.asciz	"OPTKEYR"                       @ string offset=518
+	.asciz	"OPTKEYR"                       @ string offset=499
 .Linfo_string23:
-	.asciz	"CR1"                           @ string offset=526
+	.asciz	"CR1"                           @ string offset=507
 .Linfo_string24:
-	.asciz	"SR1"                           @ string offset=530
+	.asciz	"SR1"                           @ string offset=511
 .Linfo_string25:
-	.asciz	"CCR1"                          @ string offset=534
+	.asciz	"CCR1"                          @ string offset=515
 .Linfo_string26:
-	.asciz	"OPTCR"                         @ string offset=539
+	.asciz	"OPTCR"                         @ string offset=520
 .Linfo_string27:
-	.asciz	"OPTSR_CUR"                     @ string offset=545
+	.asciz	"OPTSR_CUR"                     @ string offset=526
 .Linfo_string28:
-	.asciz	"OPTSR_PRG"                     @ string offset=555
+	.asciz	"OPTSR_PRG"                     @ string offset=536
 .Linfo_string29:
-	.asciz	"OPTCCR"                        @ string offset=565
+	.asciz	"OPTCCR"                        @ string offset=546
 .Linfo_string30:
-	.asciz	"PRAR_CUR1"                     @ string offset=572
+	.asciz	"PRAR_CUR1"                     @ string offset=553
 .Linfo_string31:
-	.asciz	"PRAR_PRG1"                     @ string offset=582
+	.asciz	"PRAR_PRG1"                     @ string offset=563
 .Linfo_string32:
-	.asciz	"SCAR_CUR1"                     @ string offset=592
+	.asciz	"SCAR_CUR1"                     @ string offset=573
 .Linfo_string33:
-	.asciz	"SCAR_PRG1"                     @ string offset=602
+	.asciz	"SCAR_PRG1"                     @ string offset=583
 .Linfo_string34:
-	.asciz	"WPSN_CUR1"                     @ string offset=612
+	.asciz	"WPSN_CUR1"                     @ string offset=593
 .Linfo_string35:
-	.asciz	"WPSN_PRG1"                     @ string offset=622
+	.asciz	"WPSN_PRG1"                     @ string offset=603
 .Linfo_string36:
-	.asciz	"BOOT_CUR"                      @ string offset=632
+	.asciz	"BOOT_CUR"                      @ string offset=613
 .Linfo_string37:
-	.asciz	"BOOT_PRG"                      @ string offset=641
+	.asciz	"BOOT_PRG"                      @ string offset=622
 .Linfo_string38:
-	.asciz	"RESERVED0"                     @ string offset=650
+	.asciz	"RESERVED0"                     @ string offset=631
 .Linfo_string39:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=660
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=641
 .Linfo_string40:
-	.asciz	"CRCCR1"                        @ string offset=680
+	.asciz	"CRCCR1"                        @ string offset=661
 .Linfo_string41:
-	.asciz	"CRCSADD1"                      @ string offset=687
+	.asciz	"CRCSADD1"                      @ string offset=668
 .Linfo_string42:
-	.asciz	"CRCEADD1"                      @ string offset=696
+	.asciz	"CRCEADD1"                      @ string offset=677
 .Linfo_string43:
-	.asciz	"CRCDATA"                       @ string offset=705
+	.asciz	"CRCDATA"                       @ string offset=686
 .Linfo_string44:
-	.asciz	"ECC_FA1"                       @ string offset=713
+	.asciz	"ECC_FA1"                       @ string offset=694
 .Linfo_string45:
-	.asciz	"RESERVED"                      @ string offset=721
+	.asciz	"RESERVED"                      @ string offset=702
 .Linfo_string46:
-	.asciz	"OPTSR2_CUR"                    @ string offset=730
+	.asciz	"OPTSR2_CUR"                    @ string offset=711
 .Linfo_string47:
-	.asciz	"OPTSR2_PRG"                    @ string offset=741
+	.asciz	"OPTSR2_PRG"                    @ string offset=722
 .Linfo_string48:
-	.asciz	"FLASH_TypeDef"                 @ string offset=752
+	.asciz	"FLASH_TypeDef"                 @ string offset=733
 .Linfo_string49:
-	.asciz	"HAL_FLASHEx_Erase"             @ string offset=766
+	.asciz	"HAL_FLASHEx_Erase"             @ string offset=747
 .Linfo_string50:
-	.asciz	"HAL_StatusTypeDef"             @ string offset=784
+	.asciz	"HAL_StatusTypeDef"             @ string offset=765
 .Linfo_string51:
-	.asciz	"FLASH_MassErase"               @ string offset=802
+	.asciz	"FLASH_MassErase"               @ string offset=783
 .Linfo_string52:
-	.asciz	"FLASH_Erase_Sector"            @ string offset=818
+	.asciz	"FLASH_Erase_Sector"            @ string offset=799
 .Linfo_string53:
-	.asciz	"HAL_FLASHEx_Erase_IT"          @ string offset=837
+	.asciz	"HAL_FLASHEx_Erase_IT"          @ string offset=818
 .Linfo_string54:
-	.asciz	"HAL_FLASHEx_OBProgram"         @ string offset=858
+	.asciz	"HAL_FLASHEx_OBProgram"         @ string offset=839
 .Linfo_string55:
-	.asciz	"FLASH_OB_EnableWRP"            @ string offset=880
+	.asciz	"FLASH_OB_EnableWRP"            @ string offset=861
 .Linfo_string56:
-	.asciz	"FLASH_OB_DisableWRP"           @ string offset=899
+	.asciz	"FLASH_OB_DisableWRP"           @ string offset=880
 .Linfo_string57:
-	.asciz	"FLASH_OB_RDPConfig"            @ string offset=919
+	.asciz	"FLASH_OB_RDPConfig"            @ string offset=900
 .Linfo_string58:
-	.asciz	"FLASH_OB_UserConfig"           @ string offset=938
+	.asciz	"FLASH_OB_UserConfig"           @ string offset=919
 .Linfo_string59:
-	.asciz	"FLASH_OB_PCROPConfig"          @ string offset=958
+	.asciz	"FLASH_OB_PCROPConfig"          @ string offset=939
 .Linfo_string60:
-	.asciz	"FLASH_OB_BOR_LevelConfig"      @ string offset=979
+	.asciz	"FLASH_OB_BOR_LevelConfig"      @ string offset=960
 .Linfo_string61:
-	.asciz	"FLASH_OB_BootAddConfig"        @ string offset=1004
+	.asciz	"FLASH_OB_BootAddConfig"        @ string offset=985
 .Linfo_string62:
-	.asciz	"FLASH_OB_SecureAreaConfig"     @ string offset=1027
+	.asciz	"FLASH_OB_SecureAreaConfig"     @ string offset=1008
 .Linfo_string63:
-	.asciz	"FLASH_OB_SharedRAM_Config"     @ string offset=1053
+	.asciz	"FLASH_OB_SharedRAM_Config"     @ string offset=1034
 .Linfo_string64:
-	.asciz	"FLASH_OB_CPUFreq_BoostConfig"  @ string offset=1079
+	.asciz	"FLASH_OB_CPUFreq_BoostConfig"  @ string offset=1060
 .Linfo_string65:
-	.asciz	"HAL_FLASHEx_OBGetConfig"       @ string offset=1108
+	.asciz	"HAL_FLASHEx_OBGetConfig"       @ string offset=1089
 .Linfo_string66:
-	.asciz	"FLASH_OB_GetRDP"               @ string offset=1132
+	.asciz	"FLASH_OB_GetRDP"               @ string offset=1113
 .Linfo_string67:
-	.asciz	"FLASH_OB_GetUser"              @ string offset=1148
+	.asciz	"FLASH_OB_GetUser"              @ string offset=1129
 .Linfo_string68:
-	.asciz	"FLASH_OB_GetBOR"               @ string offset=1165
+	.asciz	"FLASH_OB_GetBOR"               @ string offset=1146
 .Linfo_string69:
-	.asciz	"FLASH_OB_GetWRP"               @ string offset=1181
+	.asciz	"FLASH_OB_GetWRP"               @ string offset=1162
 .Linfo_string70:
-	.asciz	"FLASH_OB_GetPCROP"             @ string offset=1197
+	.asciz	"FLASH_OB_GetPCROP"             @ string offset=1178
 .Linfo_string71:
-	.asciz	"FLASH_OB_GetSecureArea"        @ string offset=1215
+	.asciz	"FLASH_OB_GetSecureArea"        @ string offset=1196
 .Linfo_string72:
-	.asciz	"FLASH_OB_GetBootAdd"           @ string offset=1238
+	.asciz	"FLASH_OB_GetBootAdd"           @ string offset=1219
 .Linfo_string73:
-	.asciz	"FLASH_OB_SharedRAM_GetConfig"  @ string offset=1258
+	.asciz	"FLASH_OB_SharedRAM_GetConfig"  @ string offset=1239
 .Linfo_string74:
-	.asciz	"FLASH_OB_CPUFreq_GetBoost"     @ string offset=1287
+	.asciz	"FLASH_OB_CPUFreq_GetBoost"     @ string offset=1268
 .Linfo_string75:
-	.asciz	"HAL_FLASHEx_Unlock_Bank1"      @ string offset=1313
+	.asciz	"HAL_FLASHEx_Unlock_Bank1"      @ string offset=1294
 .Linfo_string76:
-	.asciz	"HAL_FLASHEx_Lock_Bank1"        @ string offset=1338
+	.asciz	"HAL_FLASHEx_Lock_Bank1"        @ string offset=1319
 .Linfo_string77:
-	.asciz	"HAL_FLASHEx_ComputeCRC"        @ string offset=1361
+	.asciz	"HAL_FLASHEx_ComputeCRC"        @ string offset=1342
 .Linfo_string78:
-	.asciz	"FLASH_CRC_AddSector"           @ string offset=1384
+	.asciz	"FLASH_CRC_AddSector"           @ string offset=1365
 .Linfo_string79:
-	.asciz	"FLASH_CRC_SelectAddress"       @ string offset=1404
+	.asciz	"FLASH_CRC_SelectAddress"       @ string offset=1385
 .Linfo_string80:
-	.asciz	"pEraseInit"                    @ string offset=1428
+	.asciz	"pEraseInit"                    @ string offset=1409
 .Linfo_string81:
-	.asciz	"TypeErase"                     @ string offset=1439
+	.asciz	"TypeErase"                     @ string offset=1420
 .Linfo_string82:
-	.asciz	"Banks"                         @ string offset=1449
+	.asciz	"Banks"                         @ string offset=1430
 .Linfo_string83:
-	.asciz	"Sector"                        @ string offset=1455
+	.asciz	"Sector"                        @ string offset=1436
 .Linfo_string84:
-	.asciz	"NbSectors"                     @ string offset=1462
+	.asciz	"NbSectors"                     @ string offset=1443
 .Linfo_string85:
-	.asciz	"VoltageRange"                  @ string offset=1472
+	.asciz	"VoltageRange"                  @ string offset=1453
 .Linfo_string86:
-	.asciz	"FLASH_EraseInitTypeDef"        @ string offset=1485
+	.asciz	"FLASH_EraseInitTypeDef"        @ string offset=1466
 .Linfo_string87:
-	.asciz	"SectorError"                   @ string offset=1508
+	.asciz	"SectorError"                   @ string offset=1489
 .Linfo_string88:
-	.asciz	"status"                        @ string offset=1520
+	.asciz	"status"                        @ string offset=1501
 .Linfo_string89:
-	.asciz	"sector_index"                  @ string offset=1527
+	.asciz	"sector_index"                  @ string offset=1508
 .Linfo_string90:
-	.asciz	"pOBInit"                       @ string offset=1540
+	.asciz	"pOBInit"                       @ string offset=1521
 .Linfo_string91:
-	.asciz	"OptionType"                    @ string offset=1548
+	.asciz	"OptionType"                    @ string offset=1529
 .Linfo_string92:
-	.asciz	"WRPState"                      @ string offset=1559
+	.asciz	"WRPState"                      @ string offset=1540
 .Linfo_string93:
-	.asciz	"WRPSector"                     @ string offset=1568
+	.asciz	"WRPSector"                     @ string offset=1549
 .Linfo_string94:
-	.asciz	"RDPLevel"                      @ string offset=1578
+	.asciz	"RDPLevel"                      @ string offset=1559
 .Linfo_string95:
-	.asciz	"BORLevel"                      @ string offset=1587
+	.asciz	"BORLevel"                      @ string offset=1568
 .Linfo_string96:
-	.asciz	"USERType"                      @ string offset=1596
+	.asciz	"USERType"                      @ string offset=1577
 .Linfo_string97:
-	.asciz	"USERConfig"                    @ string offset=1605
+	.asciz	"USERConfig"                    @ string offset=1586
 .Linfo_string98:
-	.asciz	"PCROPConfig"                   @ string offset=1616
+	.asciz	"PCROPConfig"                   @ string offset=1597
 .Linfo_string99:
-	.asciz	"PCROPStartAddr"                @ string offset=1628
+	.asciz	"PCROPStartAddr"                @ string offset=1609
 .Linfo_string100:
-	.asciz	"PCROPEndAddr"                  @ string offset=1643
+	.asciz	"PCROPEndAddr"                  @ string offset=1624
 .Linfo_string101:
-	.asciz	"BootConfig"                    @ string offset=1656
+	.asciz	"BootConfig"                    @ string offset=1637
 .Linfo_string102:
-	.asciz	"BootAddr0"                     @ string offset=1667
+	.asciz	"BootAddr0"                     @ string offset=1648
 .Linfo_string103:
-	.asciz	"BootAddr1"                     @ string offset=1677
+	.asciz	"BootAddr1"                     @ string offset=1658
 .Linfo_string104:
-	.asciz	"SecureAreaConfig"              @ string offset=1687
+	.asciz	"SecureAreaConfig"              @ string offset=1668
 .Linfo_string105:
-	.asciz	"SecureAreaStartAddr"           @ string offset=1704
+	.asciz	"SecureAreaStartAddr"           @ string offset=1685
 .Linfo_string106:
-	.asciz	"SecureAreaEndAddr"             @ string offset=1724
+	.asciz	"SecureAreaEndAddr"             @ string offset=1705
 .Linfo_string107:
-	.asciz	"SharedRamConfig"               @ string offset=1742
+	.asciz	"SharedRamConfig"               @ string offset=1723
 .Linfo_string108:
-	.asciz	"FreqBoostState"                @ string offset=1758
+	.asciz	"FreqBoostState"                @ string offset=1739
 .Linfo_string109:
-	.asciz	"FLASH_OBProgramInitTypeDef"    @ string offset=1773
+	.asciz	"FLASH_OBProgramInitTypeDef"    @ string offset=1754
 .Linfo_string110:
-	.asciz	"UserType"                      @ string offset=1800
+	.asciz	"UserType"                      @ string offset=1781
 .Linfo_string111:
-	.asciz	"UserConfig"                    @ string offset=1809
+	.asciz	"UserConfig"                    @ string offset=1790
 .Linfo_string112:
-	.asciz	"optr_reg_val"                  @ string offset=1820
+	.asciz	"optr_reg_val"                  @ string offset=1801
 .Linfo_string113:
-	.asciz	"optr_reg_mask"                 @ string offset=1833
+	.asciz	"optr_reg_mask"                 @ string offset=1814
 .Linfo_string114:
-	.asciz	"Level"                         @ string offset=1847
+	.asciz	"Level"                         @ string offset=1828
 .Linfo_string115:
-	.asciz	"BootOption"                    @ string offset=1853
+	.asciz	"BootOption"                    @ string offset=1834
 .Linfo_string116:
-	.asciz	"BootAddress0"                  @ string offset=1864
+	.asciz	"BootAddress0"                  @ string offset=1845
 .Linfo_string117:
-	.asciz	"BootAddress1"                  @ string offset=1877
+	.asciz	"BootAddress1"                  @ string offset=1858
 .Linfo_string118:
-	.asciz	"FreqBoost"                     @ string offset=1890
+	.asciz	"FreqBoost"                     @ string offset=1871
 .Linfo_string119:
-	.asciz	"rdp_level"                     @ string offset=1900
+	.asciz	"rdp_level"                     @ string offset=1881
 .Linfo_string120:
-	.asciz	"userConfig"                    @ string offset=1910
+	.asciz	"userConfig"                    @ string offset=1891
 .Linfo_string121:
-	.asciz	"Bank"                          @ string offset=1921
+	.asciz	"Bank"                          @ string offset=1902
 .Linfo_string122:
-	.asciz	"regvalue"                      @ string offset=1926
+	.asciz	"regvalue"                      @ string offset=1907
 .Linfo_string123:
-	.asciz	"bankBase"                      @ string offset=1935
+	.asciz	"bankBase"                      @ string offset=1916
 .Linfo_string124:
-	.asciz	"pCRCInit"                      @ string offset=1944
+	.asciz	"pCRCInit"                      @ string offset=1925
 .Linfo_string125:
-	.asciz	"TypeCRC"                       @ string offset=1953
+	.asciz	"TypeCRC"                       @ string offset=1934
 .Linfo_string126:
-	.asciz	"BurstSize"                     @ string offset=1961
+	.asciz	"BurstSize"                     @ string offset=1942
 .Linfo_string127:
-	.asciz	"CRCStartAddr"                  @ string offset=1971
+	.asciz	"CRCStartAddr"                  @ string offset=1952
 .Linfo_string128:
-	.asciz	"CRCEndAddr"                    @ string offset=1984
+	.asciz	"CRCEndAddr"                    @ string offset=1965
 .Linfo_string129:
-	.asciz	"FLASH_CRCInitTypeDef"          @ string offset=1995
+	.asciz	"FLASH_CRCInitTypeDef"          @ string offset=1976
 .Linfo_string130:
-	.asciz	"CRC_Result"                    @ string offset=2016
+	.asciz	"CRC_Result"                    @ string offset=1997
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
