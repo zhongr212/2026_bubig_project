@@ -42,7 +42,7 @@ extern TIM_HandleTypeDef htim12;
 
 void MX_TIM3_Init(void);
 void MX_TIM12_Init(void);
-
+void TIM1_1ms_Init(void);//1ms¶¨Ê±º¯Êý
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN Prototypes */

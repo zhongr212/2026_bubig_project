@@ -136,7 +136,8 @@ int main(void)
   BSP_FDCAN_Init();
   BMI088_Init();
 	BSP_ADC_Init();
-HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
+	TIM1_1ms_Init();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */

@@ -253,19 +253,19 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 130 51                        @ ../Task/Src/Control_Gaimbal_Task.c:130:51
 	vstr	s0, [r0, #36]
-	.loc	2 133 62 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:133:62
-	movw	r0, :lower16:DM_IMU_Info
-	movt	r0, :upper16:DM_IMU_Info
-	vldr	s0, [r0, #8]
-	.loc	2 133 66 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:133:66
+	.loc	2 133 59 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:133:59
+	movw	r0, :lower16:INS_Info
+	movt	r0, :upper16:INS_Info
+	vldr	s0, [r0, #4]
+	.loc	2 133 69 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:133:69
 	vdiv.f32	s0, s0, s4
-	.loc	2 133 74                        @ ../Task/Src/Control_Gaimbal_Task.c:133:74
+	.loc	2 133 77                        @ ../Task/Src/Control_Gaimbal_Task.c:133:77
 	vmul.f32	s0, s0, s2
 	.loc	2 133 5                         @ ../Task/Src/Control_Gaimbal_Task.c:133:5
 	ldr	r1, [sp, #20]
 	.loc	2 133 48                        @ ../Task/Src/Control_Gaimbal_Task.c:133:48
 	vstr	s0, [r1, #16]
-	.loc	2 134 81 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:134:81
+	.loc	2 134 90 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:134:90
 	vldr	s0, [r0, #20]
 	.loc	2 134 49 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:134:49
 	movw	r0, :lower16:kfp_yaw_imuspeed

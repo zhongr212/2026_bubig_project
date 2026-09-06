@@ -130,8 +130,8 @@ static void Control_Measure_Update(Control_Gimbal_Info_Typedef *Control_Gimbal_I
     Control_Gimbal_Info->Measure.Pitch_Motor_Gyro = KalmanFilter(&kfp_pitch_speed, (float)Pich_Motor.Data.Velocity / 60.0f * 2.0f * PI);
 
     // Update yaw axis IMU measurements with filtering
-    Control_Gimbal_Info->Measure.Yaw_IMU_Angle = DM_IMU_Info.yaw / 180.f * PI;
-    Control_Gimbal_Info->Measure.Yaw_IMU_Gyro = KalmanFilter(&kfp_yaw_imuspeed, DM_IMU_Info.gyro[2]);
+    Control_Gimbal_Info->Measure.Yaw_IMU_Angle = INS_Info.Yaw_Angle / 180.f * PI;
+    Control_Gimbal_Info->Measure.Yaw_IMU_Gyro = KalmanFilter(&kfp_yaw_imuspeed, INS_Info.Yaw_Gyro);
 
     // Update lower yaw motor measurements with filtering
     Control_Gimbal_Info->Measure.Yaw_Motor_Gyro = KalmanFilter(&kfp_yaw_speed, (float)DM_Yaw_Motor.Data.Velocity / (2.0f * PI * 60.0f));  // rad/s

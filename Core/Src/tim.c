@@ -22,6 +22,44 @@
 
 /* USER CODE BEGIN 0 */
 
+volatile uint32_t tim1_ms_count = 0;
+
+void TIM1_1ms_Init(void)//1ms定时函数
+{
+    /* 1. 使能 TIM1 外设时钟 */
+    RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+    (void)RCC->APB2ENR;       /* 等待时钟生效 */
+
+    /* 2. 复位 TIM1，保证寄存器处于已知状态 */
+    RCC->APB2RSTR |= RCC_APB2RSTR_TIM1RST;
+    RCC->APB2RSTR &= ~RCC_APB2RSTR_TIM1RST;
+
+    /* 3. 配置基本计数参数 */
+    TIM1->CR1 = 0;             /* 向上计数、关闭计数器 */
+    TIM1->PSC = 159;           /* 160 MHz / (159 + 1) = 1 MHz */
+    TIM1->ARR = 999;           /* 1 MHz / (999 + 1) = 1 kHz，即 1 ms */
+    TIM1->CNT = 0;
+    TIM1->RCR = 0;             /* 每次溢出都产生更新事件 */
+
+    /* 4. 立即装载 PSC 和 ARR */
+    TIM1->EGR = TIM_EGR_UG;
+
+    /* UG 会设置 UIF，启动中断前必须清除 */
+    TIM1->SR = 0;
+
+    /* 5. 使能更新中断 */
+    TIM1->DIER |= TIM_DIER_UIE;
+
+    /* 6. 配置 NVIC */
+    NVIC_SetPriority(TIM1_UP_IRQn, 5);
+    NVIC_ClearPendingIRQ(TIM1_UP_IRQn);
+    NVIC_EnableIRQ(TIM1_UP_IRQn);
+
+    /* 7. 启动 TIM1 */
+    TIM1->CR1 |= TIM_CR1_CEN;
+}
+
+
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim3;
@@ -218,5 +256,15 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* tim_pwmHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void TIM1_UP_IRQHandler(void)
+{
+    if ((TIM1->SR & TIM_SR_UIF) != 0U)
+    {
+        TIM1->SR &= ~TIM_SR_UIF;
 
+        tim1_ms_count++;
+
+        /* 每隔 1 ms 执行的代码 */
+    }
+}
 /* USER CODE END 1 */

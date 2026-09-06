@@ -34,7 +34,11 @@ typedef enum{
 /**
  * @brief typedef structure that contains the information of chassis control
 */
+typedef struct {
+	int bullet;//·¢µ¯Á¿
 
+	
+}fire_control;
 
 
 typedef struct 

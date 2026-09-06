@@ -248,16 +248,18 @@ main:
 	bl	BMI088_Init
 	.loc	7 138 2                         @ ../Core/Src/main.c:138:2
 	bl	BSP_ADC_Init
-	.loc	7 139 1                         @ ../Core/Src/main.c:139:1
+	.loc	7 139 2                         @ ../Core/Src/main.c:139:2
 	movw	r0, :lower16:htim3
 	movt	r0, :upper16:htim3
 	movs	r1, #12
 	bl	HAL_TIM_PWM_Start
-	.loc	7 143 3                         @ ../Core/Src/main.c:143:3
+	.loc	7 140 2                         @ ../Core/Src/main.c:140:2
+	bl	TIM1_1ms_Init
+	.loc	7 144 3                         @ ../Core/Src/main.c:144:3
 	bl	MX_FREERTOS_Init
-	.loc	7 146 3                         @ ../Core/Src/main.c:146:3
+	.loc	7 147 3                         @ ../Core/Src/main.c:147:3
 	bl	osKernelStart
-	.loc	7 152 3                         @ ../Core/Src/main.c:152:3
+	.loc	7 153 3                         @ ../Core/Src/main.c:153:3
 	b	.LBB0_11
 .LBB0_11:                               @ =>This Inner Loop Header: Depth=1
 	b	.LBB0_11
@@ -275,7 +277,7 @@ main:
 	.thumb_func
 MPU_Config:
 .Lfunc_begin1:
-	.loc	7 257 0                         @ ../Core/Src/main.c:257:0
+	.loc	7 258 0                         @ ../Core/Src/main.c:258:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -289,48 +291,48 @@ MPU_Config:
 	.cfi_def_cfa_offset 32
 	movs	r0, #0
 .Ltmp19:
-	.loc	7 258 26 prologue_end           @ ../Core/Src/main.c:258:26
+	.loc	7 259 26 prologue_end           @ ../Core/Src/main.c:259:26
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	str	r0, [sp, #20]
 	str	r0, [sp, #16]
 	str	r0, [sp, #12]
 	str	r0, [sp, #8]
-	.loc	7 261 3                         @ ../Core/Src/main.c:261:3
+	.loc	7 262 3                         @ ../Core/Src/main.c:262:3
 	bl	HAL_MPU_Disable
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movs	r1, #1
-	.loc	7 265 25                        @ ../Core/Src/main.c:265:25
-	strb.w	r1, [sp, #8]
 	.loc	7 266 25                        @ ../Core/Src/main.c:266:25
+	strb.w	r1, [sp, #8]
+	.loc	7 267 25                        @ ../Core/Src/main.c:267:25
 	strb.w	r0, [sp, #9]
 	mov.w	r2, #603979776
-	.loc	7 267 30                        @ ../Core/Src/main.c:267:30
+	.loc	7 268 30                        @ ../Core/Src/main.c:268:30
 	str	r2, [sp, #12]
 	movs	r2, #18
-	.loc	7 268 23                        @ ../Core/Src/main.c:268:23
+	.loc	7 269 23                        @ ../Core/Src/main.c:269:23
 	strb.w	r2, [sp, #16]
-	.loc	7 269 35                        @ ../Core/Src/main.c:269:35
+	.loc	7 270 35                        @ ../Core/Src/main.c:270:35
 	strb.w	r0, [sp, #17]
-	.loc	7 270 31                        @ ../Core/Src/main.c:270:31
+	.loc	7 271 31                        @ ../Core/Src/main.c:271:31
 	strb.w	r1, [sp, #18]
 	movs	r1, #3
-	.loc	7 271 35                        @ ../Core/Src/main.c:271:35
+	.loc	7 272 35                        @ ../Core/Src/main.c:272:35
 	strb.w	r1, [sp, #19]
-	.loc	7 272 30                        @ ../Core/Src/main.c:272:30
-	strb.w	r0, [sp, #20]
 	.loc	7 273 30                        @ ../Core/Src/main.c:273:30
-	strb.w	r0, [sp, #21]
+	strb.w	r0, [sp, #20]
 	.loc	7 274 30                        @ ../Core/Src/main.c:274:30
+	strb.w	r0, [sp, #21]
+	.loc	7 275 30                        @ ../Core/Src/main.c:275:30
 	strb.w	r0, [sp, #22]
-	.loc	7 275 31                        @ ../Core/Src/main.c:275:31
+	.loc	7 276 31                        @ ../Core/Src/main.c:276:31
 	strb.w	r0, [sp, #23]
 	add	r0, sp, #8
-	.loc	7 277 3                         @ ../Core/Src/main.c:277:3
+	.loc	7 278 3                         @ ../Core/Src/main.c:278:3
 	bl	HAL_MPU_ConfigRegion
 	movs	r0, #6
-	.loc	7 279 3                         @ ../Core/Src/main.c:279:3
+	.loc	7 280 3                         @ ../Core/Src/main.c:280:3
 	bl	HAL_MPU_Enable
-	.loc	7 281 1 epilogue_begin          @ ../Core/Src/main.c:281:1
+	.loc	7 282 1 epilogue_begin          @ ../Core/Src/main.c:282:1
 	add	sp, #24
 	pop	{r7, pc}
 .Ltmp20:
@@ -349,7 +351,7 @@ MPU_Config:
 	.thumb_func
 SystemClock_Config:
 .Lfunc_begin2:
-	.loc	7 167 0                         @ ../Core/Src/main.c:167:0
+	.loc	7 168 0                         @ ../Core/Src/main.c:168:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -364,10 +366,10 @@ SystemClock_Config:
 	add	r0, sp, #44
 	movs	r1, #76
 .Ltmp21:
-	.loc	7 168 22 prologue_end           @ ../Core/Src/main.c:168:22
+	.loc	7 169 22 prologue_end           @ ../Core/Src/main.c:169:22
 	bl	__aeabi_memclr4
 	movs	r0, #0
-	.loc	7 169 22                        @ ../Core/Src/main.c:169:22
+	.loc	7 170 22                        @ ../Core/Src/main.c:170:22
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	str	r0, [sp, #40]
 	str	r0, [sp, #36]
@@ -378,15 +380,15 @@ SystemClock_Config:
 	str	r0, [sp, #16]
 	str	r0, [sp, #12]
 	movs	r0, #2
-	.loc	7 173 3                         @ ../Core/Src/main.c:173:3
+	.loc	7 174 3                         @ ../Core/Src/main.c:174:3
 	bl	HAL_PWREx_ConfigSupply
-	.loc	7 177 3                         @ ../Core/Src/main.c:177:3
+	.loc	7 178 3                         @ ../Core/Src/main.c:178:3
 	b	.LBB2_1
 .LBB2_1:
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movs	r0, #0
 .Ltmp22:
-	.loc	7 177 3                         @ ../Core/Src/main.c:177:3
+	.loc	7 178 3                         @ ../Core/Src/main.c:178:3
 	str	r0, [sp, #8]
 	movw	r0, #18456
 	movt	r0, #22530
@@ -400,16 +402,16 @@ SystemClock_Config:
 	b	.LBB2_2
 .Ltmp23:
 .LBB2_2:
-	.loc	7 179 3 is_stmt 1               @ ../Core/Src/main.c:179:3
+	.loc	7 180 3 is_stmt 1               @ ../Core/Src/main.c:180:3
 	b	.LBB2_3
 .LBB2_3:                                @ =>This Inner Loop Header: Depth=1
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movw	r0, #18456
 	movt	r0, #22530
-	.loc	7 179 10                        @ ../Core/Src/main.c:179:10
+	.loc	7 180 10                        @ ../Core/Src/main.c:180:10
 	ldr	r0, [r0]
 	and	r0, r0, #8192
-	.loc	7 179 3                         @ ../Core/Src/main.c:179:3
+	.loc	7 180 3                         @ ../Core/Src/main.c:180:3
 	cmp.w	r0, #8192
 	beq	.LBB2_5
 	b	.LBB2_4
@@ -418,94 +420,94 @@ SystemClock_Config:
 .LBB2_5:
 	.loc	7 0 3                           @ ../Core/Src/main.c:0:3
 	movs	r1, #1
-	.loc	7 184 36 is_stmt 1              @ ../Core/Src/main.c:184:36
+	.loc	7 185 36 is_stmt 1              @ ../Core/Src/main.c:185:36
 	str	r1, [sp, #44]
 	mov.w	r0, #65536
-	.loc	7 185 30                        @ ../Core/Src/main.c:185:30
+	.loc	7 186 30                        @ ../Core/Src/main.c:186:30
 	str	r0, [sp, #48]
 	movs	r0, #2
-	.loc	7 186 34                        @ ../Core/Src/main.c:186:34
+	.loc	7 187 34                        @ ../Core/Src/main.c:187:34
 	str	r0, [sp, #80]
-	.loc	7 187 35                        @ ../Core/Src/main.c:187:35
+	.loc	7 188 35                        @ ../Core/Src/main.c:188:35
 	str	r0, [sp, #84]
 	movs	r2, #6
-	.loc	7 188 30                        @ ../Core/Src/main.c:188:30
+	.loc	7 189 30                        @ ../Core/Src/main.c:189:30
 	str	r2, [sp, #88]
 	movs	r2, #160
-	.loc	7 189 30                        @ ../Core/Src/main.c:189:30
-	str	r2, [sp, #92]
 	.loc	7 190 30                        @ ../Core/Src/main.c:190:30
+	str	r2, [sp, #92]
+	.loc	7 191 30                        @ ../Core/Src/main.c:191:30
 	str	r1, [sp, #96]
 	movs	r1, #4
-	.loc	7 191 30                        @ ../Core/Src/main.c:191:30
-	str	r1, [sp, #100]
 	.loc	7 192 30                        @ ../Core/Src/main.c:192:30
+	str	r1, [sp, #100]
+	.loc	7 193 30                        @ ../Core/Src/main.c:193:30
 	str	r0, [sp, #104]
 	movs	r0, #8
-	.loc	7 193 32                        @ ../Core/Src/main.c:193:32
+	.loc	7 194 32                        @ ../Core/Src/main.c:194:32
 	str	r0, [sp, #108]
 	movs	r0, #0
-	.loc	7 194 35                        @ ../Core/Src/main.c:194:35
+	.loc	7 195 35                        @ ../Core/Src/main.c:195:35
 	str	r0, [sp, #112]
-	.loc	7 195 34                        @ ../Core/Src/main.c:195:34
+	.loc	7 196 34                        @ ../Core/Src/main.c:196:34
 	str	r0, [sp, #116]
 	add	r0, sp, #44
 .Ltmp24:
-	.loc	7 196 7                         @ ../Core/Src/main.c:196:7
+	.loc	7 197 7                         @ ../Core/Src/main.c:197:7
 	bl	HAL_RCC_OscConfig
 .Ltmp25:
-	.loc	7 196 7 is_stmt 0               @ ../Core/Src/main.c:196:7
+	.loc	7 197 7 is_stmt 0               @ ../Core/Src/main.c:197:7
 	cbz	r0, .LBB2_7
 	b	.LBB2_6
 .LBB2_6:
 .Ltmp26:
-	.loc	7 198 5 is_stmt 1               @ ../Core/Src/main.c:198:5
+	.loc	7 199 5 is_stmt 1               @ ../Core/Src/main.c:199:5
 	bl	Error_Handler
-	.loc	7 199 3                         @ ../Core/Src/main.c:199:3
+	.loc	7 200 3                         @ ../Core/Src/main.c:200:3
 	b	.LBB2_7
 .Ltmp27:
 .LBB2_7:
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movs	r0, #63
-	.loc	7 203 31 is_stmt 1              @ ../Core/Src/main.c:203:31
+	.loc	7 204 31 is_stmt 1              @ ../Core/Src/main.c:204:31
 	str	r0, [sp, #12]
 	movs	r0, #3
-	.loc	7 206 34                        @ ../Core/Src/main.c:206:34
+	.loc	7 207 34                        @ ../Core/Src/main.c:207:34
 	str	r0, [sp, #16]
 	movs	r0, #0
-	.loc	7 207 35                        @ ../Core/Src/main.c:207:35
+	.loc	7 208 35                        @ ../Core/Src/main.c:208:35
 	str	r0, [sp, #20]
 	movs	r0, #9
-	.loc	7 208 35                        @ ../Core/Src/main.c:208:35
+	.loc	7 209 35                        @ ../Core/Src/main.c:209:35
 	str	r0, [sp, #24]
 	movs	r0, #64
-	.loc	7 209 36                        @ ../Core/Src/main.c:209:36
-	str	r0, [sp, #28]
 	.loc	7 210 36                        @ ../Core/Src/main.c:210:36
+	str	r0, [sp, #28]
+	.loc	7 211 36                        @ ../Core/Src/main.c:211:36
 	str	r0, [sp, #32]
 	mov.w	r1, #1024
-	.loc	7 211 36                        @ ../Core/Src/main.c:211:36
-	str	r1, [sp, #36]
 	.loc	7 212 36                        @ ../Core/Src/main.c:212:36
+	str	r1, [sp, #36]
+	.loc	7 213 36                        @ ../Core/Src/main.c:213:36
 	str	r0, [sp, #40]
 	add	r0, sp, #12
 	movs	r1, #2
 .Ltmp28:
-	.loc	7 214 7                         @ ../Core/Src/main.c:214:7
+	.loc	7 215 7                         @ ../Core/Src/main.c:215:7
 	bl	HAL_RCC_ClockConfig
 .Ltmp29:
-	.loc	7 214 7 is_stmt 0               @ ../Core/Src/main.c:214:7
+	.loc	7 215 7 is_stmt 0               @ ../Core/Src/main.c:215:7
 	cbz	r0, .LBB2_9
 	b	.LBB2_8
 .LBB2_8:
 .Ltmp30:
-	.loc	7 216 5 is_stmt 1               @ ../Core/Src/main.c:216:5
+	.loc	7 217 5 is_stmt 1               @ ../Core/Src/main.c:217:5
 	bl	Error_Handler
-	.loc	7 217 3                         @ ../Core/Src/main.c:217:3
+	.loc	7 218 3                         @ ../Core/Src/main.c:218:3
 	b	.LBB2_9
 .Ltmp31:
 .LBB2_9:
-	.loc	7 218 1 epilogue_begin          @ ../Core/Src/main.c:218:1
+	.loc	7 219 1 epilogue_begin          @ ../Core/Src/main.c:219:1
 	add	sp, #120
 	pop	{r7, pc}
 .Ltmp32:
@@ -524,7 +526,7 @@ SystemClock_Config:
 	.thumb_func
 PeriphCommonClock_Config:
 .Lfunc_begin3:
-	.loc	7 225 0                         @ ../Core/Src/main.c:225:0
+	.loc	7 226 0                         @ ../Core/Src/main.c:226:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -540,59 +542,59 @@ PeriphCommonClock_Config:
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	movs	r1, #184
 .Ltmp33:
-	.loc	7 226 28 prologue_end           @ ../Core/Src/main.c:226:28
+	.loc	7 227 28 prologue_end           @ ../Core/Src/main.c:227:28
 	bl	__aeabi_memclr8
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movs	r1, #0
-	.loc	7 230 44                        @ ../Core/Src/main.c:230:44
+	.loc	7 231 44                        @ ../Core/Src/main.c:231:44
 	str	r1, [sp, #12]
 	movw	r2, #32769
 	movt	r2, #8
 	str	r2, [sp, #8]
 	movs	r2, #24
-	.loc	7 233 34                        @ ../Core/Src/main.c:233:34
+	.loc	7 234 34                        @ ../Core/Src/main.c:234:34
 	str	r2, [sp, #16]
 	movs	r2, #200
-	.loc	7 234 34                        @ ../Core/Src/main.c:234:34
+	.loc	7 235 34                        @ ../Core/Src/main.c:235:34
 	str	r2, [sp, #20]
 	movs	r2, #2
-	.loc	7 235 34                        @ ../Core/Src/main.c:235:34
-	str	r2, [sp, #24]
 	.loc	7 236 34                        @ ../Core/Src/main.c:236:34
-	str	r2, [sp, #28]
+	str	r2, [sp, #24]
 	.loc	7 237 34                        @ ../Core/Src/main.c:237:34
+	str	r2, [sp, #28]
+	.loc	7 238 34                        @ ../Core/Src/main.c:238:34
 	str	r2, [sp, #32]
-	.loc	7 238 36                        @ ../Core/Src/main.c:238:36
+	.loc	7 239 36                        @ ../Core/Src/main.c:239:36
 	str	r1, [sp, #36]
 	movs	r2, #32
-	.loc	7 239 39                        @ ../Core/Src/main.c:239:39
+	.loc	7 240 39                        @ ../Core/Src/main.c:240:39
 	str	r2, [sp, #40]
-	.loc	7 240 38                        @ ../Core/Src/main.c:240:38
+	.loc	7 241 38                        @ ../Core/Src/main.c:241:38
 	str	r1, [sp, #44]
 	mov.w	r2, #536870912
-	.loc	7 241 43                        @ ../Core/Src/main.c:241:43
+	.loc	7 242 43                        @ ../Core/Src/main.c:242:43
 	str	r2, [sp, #116]
 	movs	r2, #8
-	.loc	7 242 45                        @ ../Core/Src/main.c:242:45
+	.loc	7 243 45                        @ ../Core/Src/main.c:243:45
 	str	r2, [sp, #128]
-	.loc	7 243 41                        @ ../Core/Src/main.c:243:41
+	.loc	7 244 41                        @ ../Core/Src/main.c:244:41
 	str	r1, [sp, #168]
 .Ltmp34:
-	.loc	7 244 7                         @ ../Core/Src/main.c:244:7
+	.loc	7 245 7                         @ ../Core/Src/main.c:245:7
 	bl	HAL_RCCEx_PeriphCLKConfig
 .Ltmp35:
-	.loc	7 244 7 is_stmt 0               @ ../Core/Src/main.c:244:7
+	.loc	7 245 7 is_stmt 0               @ ../Core/Src/main.c:245:7
 	cbz	r0, .LBB3_2
 	b	.LBB3_1
 .LBB3_1:
 .Ltmp36:
-	.loc	7 246 5 is_stmt 1               @ ../Core/Src/main.c:246:5
+	.loc	7 247 5 is_stmt 1               @ ../Core/Src/main.c:247:5
 	bl	Error_Handler
-	.loc	7 247 3                         @ ../Core/Src/main.c:247:3
+	.loc	7 248 3                         @ ../Core/Src/main.c:248:3
 	b	.LBB3_2
 .Ltmp37:
 .LBB3_2:
-	.loc	7 248 1 epilogue_begin          @ ../Core/Src/main.c:248:1
+	.loc	7 249 1 epilogue_begin          @ ../Core/Src/main.c:249:1
 	add	sp, #192
 	pop	{r7, pc}
 .Ltmp38:
@@ -611,7 +613,7 @@ PeriphCommonClock_Config:
 	.thumb_func
 Error_Handler:
 .Lfunc_begin4:
-	.loc	7 310 0                         @ ../Core/Src/main.c:310:0
+	.loc	7 311 0                         @ ../Core/Src/main.c:311:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -619,14 +621,14 @@ Error_Handler:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 .Ltmp39:
-	.loc	7 313 3 prologue_end            @ ../Core/Src/main.c:313:3
+	.loc	7 314 3 prologue_end            @ ../Core/Src/main.c:314:3
 	@APP
 	mrs	r0, primask
 	cpsid i
 
 	@NO_APP
 	str	r0, [sp]
-	.loc	7 314 3                         @ ../Core/Src/main.c:314:3
+	.loc	7 315 3                         @ ../Core/Src/main.c:315:3
 	b	.LBB4_1
 .LBB4_1:                                @ =>This Inner Loop Header: Depth=1
 	b	.LBB4_1
@@ -646,7 +648,7 @@ Error_Handler:
 	.thumb_func
 HAL_TIM_PeriodElapsedCallback:
 .Lfunc_begin5:
-	.loc	7 292 0                         @ ../Core/Src/main.c:292:0
+	.loc	7 293 0                         @ ../Core/Src/main.c:293:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -660,24 +662,24 @@ HAL_TIM_PeriodElapsedCallback:
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
 .Ltmp41:
-	.loc	7 296 7 prologue_end            @ ../Core/Src/main.c:296:7
+	.loc	7 297 7 prologue_end            @ ../Core/Src/main.c:297:7
 	ldr	r0, [sp, #4]
-	.loc	7 296 13 is_stmt 0              @ ../Core/Src/main.c:296:13
+	.loc	7 297 13 is_stmt 0              @ ../Core/Src/main.c:297:13
 	ldr	r0, [r0]
 .Ltmp42:
-	.loc	7 296 7                         @ ../Core/Src/main.c:296:7
+	.loc	7 297 7                         @ ../Core/Src/main.c:297:7
 	cmp.w	r0, #1073741824
 	bne	.LBB5_2
 	b	.LBB5_1
 .LBB5_1:
 .Ltmp43:
-	.loc	7 298 5 is_stmt 1               @ ../Core/Src/main.c:298:5
+	.loc	7 299 5 is_stmt 1               @ ../Core/Src/main.c:299:5
 	bl	HAL_IncTick
-	.loc	7 299 3                         @ ../Core/Src/main.c:299:3
+	.loc	7 300 3                         @ ../Core/Src/main.c:300:3
 	b	.LBB5_2
 .Ltmp44:
 .LBB5_2:
-	.loc	7 303 1 epilogue_begin          @ ../Core/Src/main.c:303:1
+	.loc	7 304 1 epilogue_begin          @ ../Core/Src/main.c:304:1
 	add	sp, #8
 	pop	{r7, pc}
 .Ltmp45:
@@ -2064,7 +2066,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string133                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	256                             @ DW_AT_decl_line
+	.short	257                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	26                              @ Abbrev [26] 0x731:0xf DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2072,7 +2074,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string138                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	258                             @ DW_AT_decl_line
+	.short	259                             @ DW_AT_decl_line
 	.long	2018                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	27                              @ Abbrev [27] 0x741:0x46 DW_TAG_subprogram
@@ -2082,7 +2084,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string134                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	166                             @ DW_AT_decl_line
+	.byte	167                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	28                              @ Abbrev [28] 0x752:0xe DW_TAG_variable
@@ -2091,7 +2093,7 @@ __ARM_use_no_argv:
 	.byte	44
 	.long	.Linfo_string151                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	168                             @ DW_AT_decl_line
+	.byte	169                             @ DW_AT_decl_line
 	.long	2166                            @ DW_AT_type
 	.byte	28                              @ Abbrev [28] 0x760:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2099,7 +2101,7 @@ __ARM_use_no_argv:
 	.byte	12
 	.long	.Linfo_string174                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	169                             @ DW_AT_decl_line
+	.byte	170                             @ DW_AT_decl_line
 	.long	2438                            @ DW_AT_type
 	.byte	29                              @ Abbrev [29] 0x76e:0x18 DW_TAG_lexical_block
 	.long	.Ltmp22                         @ DW_AT_low_pc
@@ -2110,7 +2112,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string184                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	177                             @ DW_AT_decl_line
+	.byte	178                             @ DW_AT_decl_line
 	.long	452                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	0                               @ End Of Children Mark
@@ -2121,7 +2123,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string135                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	224                             @ DW_AT_decl_line
+	.byte	225                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	28                              @ Abbrev [28] 0x798:0xe DW_TAG_variable
@@ -2130,7 +2132,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string185                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	226                             @ DW_AT_decl_line
+	.byte	227                             @ DW_AT_decl_line
 	.long	2550                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	30                              @ Abbrev [30] 0x7a7:0x12 DW_TAG_subprogram
@@ -2140,7 +2142,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string136                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	309                             @ DW_AT_decl_line
+	.short	310                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	31                              @ Abbrev [31] 0x7b9:0x22 DW_TAG_subprogram
@@ -2150,7 +2152,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string137                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	291                             @ DW_AT_decl_line
+	.short	292                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	32                              @ Abbrev [32] 0x7cb:0xf DW_TAG_formal_parameter
@@ -2159,7 +2161,7 @@ __ARM_use_no_argv:
 	.byte	4
 	.long	.Linfo_string236                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	291                             @ DW_AT_decl_line
+	.short	292                             @ DW_AT_decl_line
 	.long	3169                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	4                               @ Abbrev [4] 0x7db:0x7 DW_TAG_base_type

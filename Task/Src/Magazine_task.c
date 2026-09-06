@@ -105,7 +105,7 @@ static void Control_Mode(Control_Magazine_Info_Typedef *Control_Magazine_Info)
 		time_flag_1 = osKernelSysTick();
 	do
 	{Control_Magazine_Info->SendValue[0] = 0;}//测试后更改
-	while((Magazine_Motor.Data.Current<=1000)||(osKernelSysTick() - time_flag_1 <=2000));
+	while((Magazine_Motor.Data.Current<=1000)||(osKernelSysTick() - time_flag_1 <=2000));//卡限位，没测
 
 	Control_Magazine_Info->Type = SHOOT_SLEEP;
 	}

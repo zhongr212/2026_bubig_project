@@ -53,7 +53,7 @@ static void BMI088_Temp_Control(float temp);
   * @retval None
   */
 /* USER CODE END Header_INS_Task */
-void INS_Task(void const * argument)
+void INS_Task(void const * argument)//µ¥Î»£º¶È
 {
   /* USER CODE BEGIN INS_Task */
   TickType_t systick = 0;
