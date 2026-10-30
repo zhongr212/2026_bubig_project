@@ -1,0 +1,4106 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m7
+	.eabi_attribute	6, 13	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 2	@ Tag_THUMB_ISA_use
+	.fpu	fpv5-d16
+	.eabi_attribute	36, 1	@ Tag_FP_HP_extension
+	.eabi_attribute	34, 1	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	28, 1	@ Tag_ABI_VFP_args
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"Quaternion.c"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../API/Inc\\Quaternion.h"
+	.file	2 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
+	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\Kalman_Filter.h"
+	.file	4 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\arm_math.h"
+	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../API/Src/Quaternion.c"
+	.section	.text.QuaternionEKF_Init,"ax",%progbits
+	.hidden	QuaternionEKF_Init              @ -- Begin function QuaternionEKF_Init
+	.globl	QuaternionEKF_Init
+	.p2align	3
+	.type	QuaternionEKF_Init,%function
+	.code	16                              @ @QuaternionEKF_Init
+	.thumb_func
+QuaternionEKF_Init:
+.Lfunc_begin0:
+	.loc	5 19 0                          @ ../API/Src/Quaternion.c:19:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#32
+	sub	sp, #32
+	.cfi_def_cfa_offset 40
+	str	r0, [sp, #28]
+	vstr	s0, [sp, #24]
+	vstr	s1, [sp, #20]
+	vstr	s2, [sp, #16]
+	str	r1, [sp, #12]
+	str	r2, [sp, #8]
+.Ltmp0:
+	.loc	5 21 14 prologue_end            @ ../API/Src/Quaternion.c:21:14
+	ldr	r0, [sp, #24]
+	.loc	5 21 3 is_stmt 0                @ ../API/Src/Quaternion.c:21:3
+	ldr	r1, [sp, #28]
+	.loc	5 21 12                         @ ../API/Src/Quaternion.c:21:12
+	str	r0, [r1, #32]
+	.loc	5 22 14 is_stmt 1               @ ../API/Src/Quaternion.c:22:14
+	ldr	r0, [sp, #20]
+	.loc	5 22 3 is_stmt 0                @ ../API/Src/Quaternion.c:22:3
+	ldr	r1, [sp, #28]
+	.loc	5 22 12                         @ ../API/Src/Quaternion.c:22:12
+	str	r0, [r1, #36]
+	.loc	5 23 14 is_stmt 1               @ ../API/Src/Quaternion.c:23:14
+	ldr	r0, [sp, #16]
+	.loc	5 23 3 is_stmt 0                @ ../API/Src/Quaternion.c:23:3
+	ldr	r1, [sp, #28]
+	.loc	5 23 12                         @ ../API/Src/Quaternion.c:23:12
+	str	r0, [r1, #40]
+	.loc	5 25 32 is_stmt 1               @ ../API/Src/Quaternion.c:25:32
+	ldr	r0, [sp, #12]
+	.loc	5 25 3 is_stmt 0                @ ../API/Src/Quaternion.c:25:3
+	ldr	r1, [sp, #28]
+	.loc	5 25 30                         @ ../API/Src/Quaternion.c:25:30
+	str	r0, [r1, #44]
+	.loc	5 26 32 is_stmt 1               @ ../API/Src/Quaternion.c:26:32
+	ldr	r0, [sp, #8]
+	.loc	5 26 3 is_stmt 0                @ ../API/Src/Quaternion.c:26:3
+	ldr	r1, [sp, #28]
+	.loc	5 26 30                         @ ../API/Src/Quaternion.c:26:30
+	str	r0, [r1, #48]
+	.loc	5 28 23 is_stmt 1               @ ../API/Src/Quaternion.c:28:23
+	ldr	r0, [sp, #28]
+	.loc	5 28 29 is_stmt 0               @ ../API/Src/Quaternion.c:28:29
+	adds	r0, #52
+	movs	r1, #6
+	movs	r2, #0
+	str	r2, [sp, #4]                    @ 4-byte Spill
+	movs	r3, #3
+	.loc	5 28 3                          @ ../API/Src/Quaternion.c:28:3
+	bl	Kalman_Filter_Init
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	.loc	5 30 2 is_stmt 1                @ ../API/Src/Quaternion.c:30:2
+	ldr	r1, [sp, #28]
+	.loc	5 30 45 is_stmt 0               @ ../API/Src/Quaternion.c:30:45
+	strb.w	r0, [r1, #72]
+	.loc	5 31 3 is_stmt 1                @ ../API/Src/Quaternion.c:31:3
+	ldr	r1, [sp, #28]
+	.loc	5 31 44 is_stmt 0               @ ../API/Src/Quaternion.c:31:44
+	strb.w	r0, [r1, #93]
+	.loc	5 32 3 is_stmt 1                @ ../API/Src/Quaternion.c:32:3
+	ldr	r2, [sp, #28]
+	movw	r1, #52343
+	movt	r1, #12843
+	.loc	5 32 61 is_stmt 0               @ ../API/Src/Quaternion.c:32:61
+	str	r1, [r2, #88]
+	.loc	5 33 3 is_stmt 1                @ ../API/Src/Quaternion.c:33:3
+	ldr	r1, [sp, #28]
+	.loc	5 33 50 is_stmt 0               @ ../API/Src/Quaternion.c:33:50
+	strb.w	r0, [r1, #92]
+	.loc	5 35 2 is_stmt 1                @ ../API/Src/Quaternion.c:35:2
+	ldr	r1, [sp, #28]
+	.loc	5 35 27 is_stmt 0               @ ../API/Src/Quaternion.c:35:27
+	ldr.w	r2, [r1, #252]
+	mov.w	r1, #1065353216
+	.loc	5 35 35                         @ ../API/Src/Quaternion.c:35:35
+	str	r1, [r2]
+	.loc	5 36 3 is_stmt 1                @ ../API/Src/Quaternion.c:36:3
+	ldr	r1, [sp, #28]
+	.loc	5 36 28 is_stmt 0               @ ../API/Src/Quaternion.c:36:28
+	ldr.w	r1, [r1, #252]
+	.loc	5 36 36                         @ ../API/Src/Quaternion.c:36:36
+	str	r0, [r1, #4]
+	.loc	5 37 3 is_stmt 1                @ ../API/Src/Quaternion.c:37:3
+	ldr	r1, [sp, #28]
+	.loc	5 37 28 is_stmt 0               @ ../API/Src/Quaternion.c:37:28
+	ldr.w	r1, [r1, #252]
+	.loc	5 37 36                         @ ../API/Src/Quaternion.c:37:36
+	str	r0, [r1, #8]
+	.loc	5 38 3 is_stmt 1                @ ../API/Src/Quaternion.c:38:3
+	ldr	r1, [sp, #28]
+	.loc	5 38 28 is_stmt 0               @ ../API/Src/Quaternion.c:38:28
+	ldr.w	r1, [r1, #252]
+	.loc	5 38 36                         @ ../API/Src/Quaternion.c:38:36
+	str	r0, [r1, #12]
+	.loc	5 40 3 is_stmt 1                @ ../API/Src/Quaternion.c:40:3
+	ldr	r1, [sp, #28]
+	.loc	5 40 38 is_stmt 0               @ ../API/Src/Quaternion.c:40:38
+	movw	r0, :lower16:QuaternionEKF_A_Update
+	movt	r0, :upper16:QuaternionEKF_A_Update
+	str.w	r0, [r1, #336]
+	.loc	5 41 3 is_stmt 1                @ ../API/Src/Quaternion.c:41:3
+	ldr	r1, [sp, #28]
+	.loc	5 41 38 is_stmt 0               @ ../API/Src/Quaternion.c:41:38
+	movw	r0, :lower16:QuaternionEKF_H_Update
+	movt	r0, :upper16:QuaternionEKF_H_Update
+	str.w	r0, [r1, #340]
+	.loc	5 42 3 is_stmt 1                @ ../API/Src/Quaternion.c:42:3
+	ldr	r1, [sp, #28]
+	.loc	5 42 38 is_stmt 0               @ ../API/Src/Quaternion.c:42:38
+	movw	r0, :lower16:QuaternionEKF_xhat_Update
+	movt	r0, :upper16:QuaternionEKF_xhat_Update
+	str.w	r0, [r1, #344]
+	.loc	5 44 3 is_stmt 1                @ ../API/Src/Quaternion.c:44:3
+	ldr	r1, [sp, #28]
+	.loc	5 44 33 is_stmt 0               @ ../API/Src/Quaternion.c:44:33
+	ldrb.w	r0, [r1, #328]
+	orr	r0, r0, #4
+	strb.w	r0, [r1, #328]
+	.loc	5 45 3 is_stmt 1                @ ../API/Src/Quaternion.c:45:3
+	ldr	r1, [sp, #28]
+	.loc	5 45 33 is_stmt 0               @ ../API/Src/Quaternion.c:45:33
+	ldrb.w	r0, [r1, #328]
+	orr	r0, r0, #8
+	strb.w	r0, [r1, #328]
+	.loc	5 47 10 is_stmt 1               @ ../API/Src/Quaternion.c:47:10
+	ldr	r3, [sp, #28]
+	.loc	5 47 35 is_stmt 0               @ ../API/Src/Quaternion.c:47:35
+	ldr.w	r0, [r3, #272]
+	.loc	5 47 43                         @ ../API/Src/Quaternion.c:47:43
+	ldr	r1, [r3, #44]
+	.loc	5 47 84                         @ ../API/Src/Quaternion.c:47:84
+	ldrh	r2, [r3, #52]
+	.loc	5 47 119                        @ ../API/Src/Quaternion.c:47:119
+	ldrb.w	r3, [r3, #56]
+	.loc	5 47 97                         @ ../API/Src/Quaternion.c:47:97
+	muls	r2, r3, r2
+	.loc	5 47 129                        @ ../API/Src/Quaternion.c:47:129
+	muls	r2, r3, r2
+	.loc	5 47 3                          @ ../API/Src/Quaternion.c:47:3
+	bl	__aeabi_memcpy4
+	.loc	5 48 10 is_stmt 1               @ ../API/Src/Quaternion.c:48:10
+	ldr	r3, [sp, #28]
+	.loc	5 48 35 is_stmt 0               @ ../API/Src/Quaternion.c:48:35
+	ldr.w	r0, [r3, #288]
+	.loc	5 48 43                         @ ../API/Src/Quaternion.c:48:43
+	ldr	r1, [r3, #48]
+	.loc	5 48 84                         @ ../API/Src/Quaternion.c:48:84
+	ldrh	r2, [r3, #52]
+	.loc	5 48 119                        @ ../API/Src/Quaternion.c:48:119
+	ldrb.w	r3, [r3, #56]
+	.loc	5 48 97                         @ ../API/Src/Quaternion.c:48:97
+	muls	r2, r3, r2
+	.loc	5 48 129                        @ ../API/Src/Quaternion.c:48:129
+	muls	r2, r3, r2
+	.loc	5 48 3                          @ ../API/Src/Quaternion.c:48:3
+	bl	__aeabi_memcpy4
+	.loc	5 50 1 epilogue_begin is_stmt 1 @ ../API/Src/Quaternion.c:50:1
+	add	sp, #32
+	pop	{r7, pc}
+.Ltmp1:
+.Lfunc_end0:
+	.size	QuaternionEKF_Init, .Lfunc_end0-QuaternionEKF_Init
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.QuaternionEKF_A_Update,"ax",%progbits
+	.p2align	3                               @ -- Begin function QuaternionEKF_A_Update
+	.type	QuaternionEKF_A_Update,%function
+	.code	16                              @ @QuaternionEKF_A_Update
+	.thumb_func
+QuaternionEKF_A_Update:
+.Lfunc_begin1:
+	.loc	5 140 0                         @ ../API/Src/Quaternion.c:140:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp2:
+	.loc	5 142 9 prologue_end            @ ../API/Src/Quaternion.c:142:9
+	ldr	r2, [sp, #4]
+	ldr.w	r0, [r2, #268]
+	.loc	5 142 40 is_stmt 0              @ ../API/Src/Quaternion.c:142:40
+	ldrh	r1, [r2]
+	.loc	5 142 59                        @ ../API/Src/Quaternion.c:142:59
+	ldrb	r2, [r2, #4]
+	.loc	5 142 53                        @ ../API/Src/Quaternion.c:142:53
+	muls	r1, r2, r1
+	.loc	5 142 2                         @ ../API/Src/Quaternion.c:142:2
+	bl	__aeabi_memclr4
+	.loc	5 143 49 is_stmt 1              @ ../API/Src/Quaternion.c:143:49
+	ldr	r0, [sp, #4]
+	.loc	5 143 58 is_stmt 0              @ ../API/Src/Quaternion.c:143:58
+	ldr.w	r0, [r0, #204]
+	.loc	5 143 49                        @ ../API/Src/Quaternion.c:143:49
+	vldr	s6, [r0]
+	.loc	5 144 50 is_stmt 1              @ ../API/Src/Quaternion.c:144:50
+	vldr	s0, [r0, #4]
+	.loc	5 145 50                        @ ../API/Src/Quaternion.c:145:50
+	vldr	s4, [r0, #8]
+	.loc	5 146 50                        @ ../API/Src/Quaternion.c:146:50
+	vldr	s2, [r0, #12]
+	.loc	5 144 71                        @ ../API/Src/Quaternion.c:144:71
+	vmul.f32	s0, s0, s0
+	.loc	5 144 49 is_stmt 0              @ ../API/Src/Quaternion.c:144:49
+	vfma.f32	s0, s6, s6
+	.loc	5 145 49 is_stmt 1              @ ../API/Src/Quaternion.c:145:49
+	vfma.f32	s0, s4, s4
+	.loc	5 146 49                        @ ../API/Src/Quaternion.c:146:49
+	vfma.f32	s0, s2, s2
+	.loc	5 143 32                        @ ../API/Src/Quaternion.c:143:32
+	bl	Fast_InverseSqrt
+	.loc	5 143 2 is_stmt 0               @ ../API/Src/Quaternion.c:143:2
+	ldr	r0, [sp, #4]
+	ldr.w	r0, [r0, #268]
+	.loc	5 143 30                        @ ../API/Src/Quaternion.c:143:30
+	vstr	s0, [r0]
+	.loc	5 148 27 is_stmt 1              @ ../API/Src/Quaternion.c:148:27
+	ldr	r1, [sp, #4]
+	.loc	5 148 11 is_stmt 0              @ ../API/Src/Quaternion.c:148:11
+	ldr.w	r0, [r1, #204]
+	.loc	5 148 27                        @ ../API/Src/Quaternion.c:148:27
+	ldr.w	r1, [r1, #268]
+	vldr	s2, [r1]
+	.loc	5 148 24                        @ ../API/Src/Quaternion.c:148:24
+	vldr	s0, [r0]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0]
+	.loc	5 149 28 is_stmt 1              @ ../API/Src/Quaternion.c:149:28
+	ldr	r1, [sp, #4]
+	.loc	5 149 12 is_stmt 0              @ ../API/Src/Quaternion.c:149:12
+	ldr.w	r0, [r1, #204]
+	.loc	5 149 28                        @ ../API/Src/Quaternion.c:149:28
+	ldr.w	r1, [r1, #268]
+	vldr	s2, [r1]
+	.loc	5 149 25                        @ ../API/Src/Quaternion.c:149:25
+	vldr	s0, [r0, #4]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0, #4]
+	.loc	5 150 28 is_stmt 1              @ ../API/Src/Quaternion.c:150:28
+	ldr	r1, [sp, #4]
+	.loc	5 150 12 is_stmt 0              @ ../API/Src/Quaternion.c:150:12
+	ldr.w	r0, [r1, #204]
+	.loc	5 150 28                        @ ../API/Src/Quaternion.c:150:28
+	ldr.w	r1, [r1, #268]
+	vldr	s2, [r1]
+	.loc	5 150 25                        @ ../API/Src/Quaternion.c:150:25
+	vldr	s0, [r0, #8]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0, #8]
+	.loc	5 151 28 is_stmt 1              @ ../API/Src/Quaternion.c:151:28
+	ldr	r1, [sp, #4]
+	.loc	5 151 12 is_stmt 0              @ ../API/Src/Quaternion.c:151:12
+	ldr.w	r0, [r1, #204]
+	.loc	5 151 28                        @ ../API/Src/Quaternion.c:151:28
+	ldr.w	r1, [r1, #268]
+	vldr	s2, [r1]
+	.loc	5 151 25                        @ ../API/Src/Quaternion.c:151:25
+	vldr	s0, [r0, #12]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0, #12]
+	.loc	5 153 25 is_stmt 1              @ ../API/Src/Quaternion.c:153:25
+	ldr	r0, [sp, #4]
+	.loc	5 153 34 is_stmt 0              @ ../API/Src/Quaternion.c:153:34
+	ldr.w	r1, [r0, #204]
+	.loc	5 153 25                        @ ../API/Src/Quaternion.c:153:25
+	vldr	s0, [r1, #4]
+	vmov.f32	s4, #5.000000e-01
+	.loc	5 153 24                        @ ../API/Src/Quaternion.c:153:24
+	vmul.f32	s0, s0, s4
+	.loc	5 153 51                        @ ../API/Src/Quaternion.c:153:51
+	vldr	s2, [r0, #8]
+	.loc	5 153 46                        @ ../API/Src/Quaternion.c:153:46
+	vmul.f32	s0, s0, s2
+	.loc	5 153 11                        @ ../API/Src/Quaternion.c:153:11
+	ldr.w	r0, [r0, #220]
+	.loc	5 153 17                        @ ../API/Src/Quaternion.c:153:17
+	vstr	s0, [r0, #16]
+	.loc	5 154 26 is_stmt 1              @ ../API/Src/Quaternion.c:154:26
+	ldr	r0, [sp, #4]
+	.loc	5 154 35 is_stmt 0              @ ../API/Src/Quaternion.c:154:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 154 26                        @ ../API/Src/Quaternion.c:154:26
+	vldr	s0, [r1, #8]
+	.loc	5 154 25                        @ ../API/Src/Quaternion.c:154:25
+	vmul.f32	s0, s0, s4
+	.loc	5 154 52                        @ ../API/Src/Quaternion.c:154:52
+	vldr	s2, [r0, #8]
+	.loc	5 154 47                        @ ../API/Src/Quaternion.c:154:47
+	vmul.f32	s0, s0, s2
+	.loc	5 154 12                        @ ../API/Src/Quaternion.c:154:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 154 18                        @ ../API/Src/Quaternion.c:154:18
+	vstr	s0, [r0, #20]
+	.loc	5 156 26 is_stmt 1              @ ../API/Src/Quaternion.c:156:26
+	ldr	r0, [sp, #4]
+	.loc	5 156 35 is_stmt 0              @ ../API/Src/Quaternion.c:156:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 156 26                        @ ../API/Src/Quaternion.c:156:26
+	vldr	s0, [r1]
+	vmov.f32	s2, #-5.000000e-01
+	.loc	5 156 25                        @ ../API/Src/Quaternion.c:156:25
+	vmul.f32	s0, s0, s2
+	.loc	5 156 52                        @ ../API/Src/Quaternion.c:156:52
+	vldr	s6, [r0, #8]
+	.loc	5 156 47                        @ ../API/Src/Quaternion.c:156:47
+	vmul.f32	s0, s0, s6
+	.loc	5 156 12                        @ ../API/Src/Quaternion.c:156:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 156 18                        @ ../API/Src/Quaternion.c:156:18
+	vstr	s0, [r0, #40]
+	.loc	5 157 26 is_stmt 1              @ ../API/Src/Quaternion.c:157:26
+	ldr	r0, [sp, #4]
+	.loc	5 157 35 is_stmt 0              @ ../API/Src/Quaternion.c:157:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 157 26                        @ ../API/Src/Quaternion.c:157:26
+	vldr	s0, [r1, #12]
+	.loc	5 157 25                        @ ../API/Src/Quaternion.c:157:25
+	vmul.f32	s0, s0, s4
+	.loc	5 157 52                        @ ../API/Src/Quaternion.c:157:52
+	vldr	s6, [r0, #8]
+	.loc	5 157 47                        @ ../API/Src/Quaternion.c:157:47
+	vmul.f32	s0, s0, s6
+	.loc	5 157 12                        @ ../API/Src/Quaternion.c:157:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 157 18                        @ ../API/Src/Quaternion.c:157:18
+	vstr	s0, [r0, #44]
+	.loc	5 159 26 is_stmt 1              @ ../API/Src/Quaternion.c:159:26
+	ldr	r0, [sp, #4]
+	.loc	5 159 35 is_stmt 0              @ ../API/Src/Quaternion.c:159:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 159 26                        @ ../API/Src/Quaternion.c:159:26
+	vldr	s0, [r1, #12]
+	.loc	5 159 25                        @ ../API/Src/Quaternion.c:159:25
+	vmul.f32	s0, s0, s2
+	.loc	5 159 52                        @ ../API/Src/Quaternion.c:159:52
+	vldr	s6, [r0, #8]
+	.loc	5 159 47                        @ ../API/Src/Quaternion.c:159:47
+	vmul.f32	s0, s0, s6
+	.loc	5 159 12                        @ ../API/Src/Quaternion.c:159:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 159 18                        @ ../API/Src/Quaternion.c:159:18
+	vstr	s0, [r0, #64]
+	.loc	5 160 26 is_stmt 1              @ ../API/Src/Quaternion.c:160:26
+	ldr	r0, [sp, #4]
+	.loc	5 160 35 is_stmt 0              @ ../API/Src/Quaternion.c:160:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 160 26                        @ ../API/Src/Quaternion.c:160:26
+	vldr	s0, [r1]
+	.loc	5 160 25                        @ ../API/Src/Quaternion.c:160:25
+	vmul.f32	s0, s0, s2
+	.loc	5 160 52                        @ ../API/Src/Quaternion.c:160:52
+	vldr	s6, [r0, #8]
+	.loc	5 160 47                        @ ../API/Src/Quaternion.c:160:47
+	vmul.f32	s0, s0, s6
+	.loc	5 160 12                        @ ../API/Src/Quaternion.c:160:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 160 18                        @ ../API/Src/Quaternion.c:160:18
+	vstr	s0, [r0, #68]
+	.loc	5 162 26 is_stmt 1              @ ../API/Src/Quaternion.c:162:26
+	ldr	r0, [sp, #4]
+	.loc	5 162 35 is_stmt 0              @ ../API/Src/Quaternion.c:162:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 162 26                        @ ../API/Src/Quaternion.c:162:26
+	vldr	s0, [r1, #8]
+	.loc	5 162 25                        @ ../API/Src/Quaternion.c:162:25
+	vmul.f32	s0, s0, s4
+	.loc	5 162 52                        @ ../API/Src/Quaternion.c:162:52
+	vldr	s4, [r0, #8]
+	.loc	5 162 47                        @ ../API/Src/Quaternion.c:162:47
+	vmul.f32	s0, s0, s4
+	.loc	5 162 12                        @ ../API/Src/Quaternion.c:162:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 162 18                        @ ../API/Src/Quaternion.c:162:18
+	vstr	s0, [r0, #88]
+	.loc	5 163 26 is_stmt 1              @ ../API/Src/Quaternion.c:163:26
+	ldr	r0, [sp, #4]
+	.loc	5 163 35 is_stmt 0              @ ../API/Src/Quaternion.c:163:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 163 26                        @ ../API/Src/Quaternion.c:163:26
+	vldr	s0, [r1, #4]
+	.loc	5 163 25                        @ ../API/Src/Quaternion.c:163:25
+	vmul.f32	s0, s0, s2
+	.loc	5 163 52                        @ ../API/Src/Quaternion.c:163:52
+	vldr	s2, [r0, #8]
+	.loc	5 163 47                        @ ../API/Src/Quaternion.c:163:47
+	vmul.f32	s0, s0, s2
+	.loc	5 163 12                        @ ../API/Src/Quaternion.c:163:12
+	ldr.w	r0, [r0, #220]
+	.loc	5 163 18                        @ ../API/Src/Quaternion.c:163:18
+	vstr	s0, [r0, #92]
+	.loc	5 166 3 is_stmt 1               @ ../API/Src/Quaternion.c:166:3
+	b	.LBB1_1
+.LBB1_1:
+.Ltmp3:
+	.loc	5 166 3 is_stmt 0               @ ../API/Src/Quaternion.c:166:3
+	ldr	r0, [sp, #4]
+	ldr.w	r0, [r0, #236]
+	vldr	s0, [r0, #112]
+	vldr	s2, .LCPI1_0
+.Ltmp4:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB1_3
+	b	.LBB1_2
+.LBB1_2:
+.Ltmp5:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	ldr	r0, [sp, #4]
+	ldr.w	r1, [r0, #236]
+	movw	r0, #16384
+	movt	r0, #17948
+	str	r0, [r1, #112]
+	b	.LBB1_6
+.Ltmp6:
+.LBB1_3:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	ldr	r0, [sp, #4]
+	ldr.w	r0, [r0, #236]
+	vldr	s0, [r0, #112]
+	vldr	s2, .LCPI1_1
+.Ltmp7:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB1_5
+	b	.LBB1_4
+.LBB1_4:
+.Ltmp8:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	ldr	r0, [sp, #4]
+	ldr.w	r1, [r0, #236]
+	movw	r0, #16384
+	movt	r0, #50716
+	str	r0, [r1, #112]
+	b	.LBB1_5
+.Ltmp9:
+.LBB1_5:
+	.loc	5 0 3                           @ ../API/Src/Quaternion.c:0:3
+	b	.LBB1_6
+.LBB1_6:
+	.loc	5 166 3                         @ ../API/Src/Quaternion.c:166:3
+	b	.LBB1_7
+.Ltmp10:
+.LBB1_7:
+	.loc	5 167 3 is_stmt 1               @ ../API/Src/Quaternion.c:167:3
+	b	.LBB1_8
+.LBB1_8:
+.Ltmp11:
+	.loc	5 167 3 is_stmt 0               @ ../API/Src/Quaternion.c:167:3
+	ldr	r0, [sp, #4]
+	ldr.w	r0, [r0, #236]
+	vldr	s0, [r0, #140]
+	vldr	s2, .LCPI1_0
+.Ltmp12:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB1_10
+	b	.LBB1_9
+.LBB1_9:
+.Ltmp13:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	ldr	r0, [sp, #4]
+	ldr.w	r1, [r0, #236]
+	movw	r0, #16384
+	movt	r0, #17948
+	str.w	r0, [r1, #140]
+	b	.LBB1_13
+.Ltmp14:
+.LBB1_10:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	ldr	r0, [sp, #4]
+	ldr.w	r0, [r0, #236]
+	vldr	s0, [r0, #140]
+	vldr	s2, .LCPI1_1
+.Ltmp15:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB1_12
+	b	.LBB1_11
+.LBB1_11:
+.Ltmp16:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	ldr	r0, [sp, #4]
+	ldr.w	r1, [r0, #236]
+	movw	r0, #16384
+	movt	r0, #50716
+	str.w	r0, [r1, #140]
+	b	.LBB1_12
+.Ltmp17:
+.LBB1_12:
+	.loc	5 0 3                           @ ../API/Src/Quaternion.c:0:3
+	b	.LBB1_13
+.LBB1_13:
+	.loc	5 167 3                         @ ../API/Src/Quaternion.c:167:3
+	b	.LBB1_14
+.Ltmp18:
+.LBB1_14:
+	.loc	5 169 1 epilogue_begin is_stmt 1 @ ../API/Src/Quaternion.c:169:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp19:
+	.loc	5 0 1 is_stmt 0                 @ :0:1
+.Ltmp20:
+	.p2align	2
+@ %bb.15:
+.LCPI1_0:
+	.long	0x461c4000                      @ float 1.0E+4
+.LCPI1_1:
+	.long	0xc61c4000                      @ float -1.0E+4
+.Lfunc_end1:
+	.size	QuaternionEKF_A_Update, .Lfunc_end1-QuaternionEKF_A_Update
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.QuaternionEKF_H_Update,"ax",%progbits
+	.p2align	3                               @ -- Begin function QuaternionEKF_H_Update
+	.type	QuaternionEKF_H_Update,%function
+	.code	16                              @ @QuaternionEKF_H_Update
+	.thumb_func
+QuaternionEKF_H_Update:
+.Lfunc_begin2:
+	.loc	5 171 0 is_stmt 1               @ ../API/Src/Quaternion.c:171:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp21:
+	.loc	5 173 9 prologue_end            @ ../API/Src/Quaternion.c:173:9
+	ldr	r3, [sp, #4]
+	.loc	5 173 18 is_stmt 0              @ ../API/Src/Quaternion.c:173:18
+	ldr.w	r0, [r3, #228]
+	.loc	5 173 26                        @ ../API/Src/Quaternion.c:173:26
+	ldrh	r1, [r3]
+	.loc	5 173 58                        @ ../API/Src/Quaternion.c:173:58
+	ldrb	r2, [r3, #4]
+	.loc	5 173 45                        @ ../API/Src/Quaternion.c:173:45
+	ldrb	r3, [r3, #6]
+	.loc	5 173 39                        @ ../API/Src/Quaternion.c:173:39
+	muls	r1, r3, r1
+	.loc	5 173 52                        @ ../API/Src/Quaternion.c:173:52
+	muls	r1, r2, r1
+	.loc	5 173 2                         @ ../API/Src/Quaternion.c:173:2
+	bl	__aeabi_memclr4
+	.loc	5 175 26 is_stmt 1              @ ../API/Src/Quaternion.c:175:26
+	ldr	r0, [sp, #4]
+	.loc	5 175 35 is_stmt 0              @ ../API/Src/Quaternion.c:175:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 175 12                        @ ../API/Src/Quaternion.c:175:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 175 26                        @ ../API/Src/Quaternion.c:175:26
+	vldr	s0, [r1, #8]
+	vmov.f32	s2, #-2.000000e+00
+	.loc	5 175 25                        @ ../API/Src/Quaternion.c:175:25
+	vmul.f32	s0, s0, s2
+	.loc	5 175 19                        @ ../API/Src/Quaternion.c:175:19
+	vstr	s0, [r0]
+	.loc	5 176 26 is_stmt 1              @ ../API/Src/Quaternion.c:176:26
+	ldr	r0, [sp, #4]
+	.loc	5 176 35 is_stmt 0              @ ../API/Src/Quaternion.c:176:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 176 12                        @ ../API/Src/Quaternion.c:176:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 176 26                        @ ../API/Src/Quaternion.c:176:26
+	vldr	s0, [r1, #12]
+	.loc	5 176 25                        @ ../API/Src/Quaternion.c:176:25
+	vadd.f32	s0, s0, s0
+	.loc	5 176 19                        @ ../API/Src/Quaternion.c:176:19
+	vstr	s0, [r0, #4]
+	.loc	5 177 26 is_stmt 1              @ ../API/Src/Quaternion.c:177:26
+	ldr	r0, [sp, #4]
+	.loc	5 177 35 is_stmt 0              @ ../API/Src/Quaternion.c:177:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 177 12                        @ ../API/Src/Quaternion.c:177:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 177 26                        @ ../API/Src/Quaternion.c:177:26
+	vldr	s0, [r1]
+	.loc	5 177 25                        @ ../API/Src/Quaternion.c:177:25
+	vmul.f32	s0, s0, s2
+	.loc	5 177 19                        @ ../API/Src/Quaternion.c:177:19
+	vstr	s0, [r0, #8]
+	.loc	5 178 26 is_stmt 1              @ ../API/Src/Quaternion.c:178:26
+	ldr	r0, [sp, #4]
+	.loc	5 178 35 is_stmt 0              @ ../API/Src/Quaternion.c:178:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 178 12                        @ ../API/Src/Quaternion.c:178:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 178 26                        @ ../API/Src/Quaternion.c:178:26
+	vldr	s0, [r1, #4]
+	.loc	5 178 25                        @ ../API/Src/Quaternion.c:178:25
+	vadd.f32	s0, s0, s0
+	.loc	5 178 19                        @ ../API/Src/Quaternion.c:178:19
+	vstr	s0, [r0, #12]
+	.loc	5 181 25 is_stmt 1              @ ../API/Src/Quaternion.c:181:25
+	ldr	r0, [sp, #4]
+	.loc	5 181 34 is_stmt 0              @ ../API/Src/Quaternion.c:181:34
+	ldr.w	r1, [r0, #204]
+	.loc	5 181 11                        @ ../API/Src/Quaternion.c:181:11
+	ldr.w	r0, [r0, #228]
+	.loc	5 181 25                        @ ../API/Src/Quaternion.c:181:25
+	vldr	s0, [r1, #4]
+	.loc	5 181 24                        @ ../API/Src/Quaternion.c:181:24
+	vadd.f32	s0, s0, s0
+	.loc	5 181 18                        @ ../API/Src/Quaternion.c:181:18
+	vstr	s0, [r0, #24]
+	.loc	5 182 26 is_stmt 1              @ ../API/Src/Quaternion.c:182:26
+	ldr	r0, [sp, #4]
+	.loc	5 182 35 is_stmt 0              @ ../API/Src/Quaternion.c:182:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 182 12                        @ ../API/Src/Quaternion.c:182:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 182 26                        @ ../API/Src/Quaternion.c:182:26
+	vldr	s0, [r1]
+	.loc	5 182 25                        @ ../API/Src/Quaternion.c:182:25
+	vadd.f32	s0, s0, s0
+	.loc	5 182 19                        @ ../API/Src/Quaternion.c:182:19
+	vstr	s0, [r0, #28]
+	.loc	5 183 26 is_stmt 1              @ ../API/Src/Quaternion.c:183:26
+	ldr	r0, [sp, #4]
+	.loc	5 183 35 is_stmt 0              @ ../API/Src/Quaternion.c:183:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 183 12                        @ ../API/Src/Quaternion.c:183:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 183 26                        @ ../API/Src/Quaternion.c:183:26
+	vldr	s0, [r1, #12]
+	.loc	5 183 25                        @ ../API/Src/Quaternion.c:183:25
+	vadd.f32	s0, s0, s0
+	.loc	5 183 19                        @ ../API/Src/Quaternion.c:183:19
+	vstr	s0, [r0, #32]
+	.loc	5 184 26 is_stmt 1              @ ../API/Src/Quaternion.c:184:26
+	ldr	r0, [sp, #4]
+	.loc	5 184 35 is_stmt 0              @ ../API/Src/Quaternion.c:184:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 184 12                        @ ../API/Src/Quaternion.c:184:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 184 26                        @ ../API/Src/Quaternion.c:184:26
+	vldr	s0, [r1, #8]
+	.loc	5 184 25                        @ ../API/Src/Quaternion.c:184:25
+	vadd.f32	s0, s0, s0
+	.loc	5 184 19                        @ ../API/Src/Quaternion.c:184:19
+	vstr	s0, [r0, #36]
+	.loc	5 187 25 is_stmt 1              @ ../API/Src/Quaternion.c:187:25
+	ldr	r0, [sp, #4]
+	.loc	5 187 34 is_stmt 0              @ ../API/Src/Quaternion.c:187:34
+	ldr.w	r1, [r0, #204]
+	.loc	5 187 11                        @ ../API/Src/Quaternion.c:187:11
+	ldr.w	r0, [r0, #228]
+	.loc	5 187 25                        @ ../API/Src/Quaternion.c:187:25
+	vldr	s0, [r1]
+	.loc	5 187 24                        @ ../API/Src/Quaternion.c:187:24
+	vadd.f32	s0, s0, s0
+	.loc	5 187 18                        @ ../API/Src/Quaternion.c:187:18
+	vstr	s0, [r0, #48]
+	.loc	5 188 26 is_stmt 1              @ ../API/Src/Quaternion.c:188:26
+	ldr	r0, [sp, #4]
+	.loc	5 188 35 is_stmt 0              @ ../API/Src/Quaternion.c:188:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 188 12                        @ ../API/Src/Quaternion.c:188:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 188 26                        @ ../API/Src/Quaternion.c:188:26
+	vldr	s0, [r1, #4]
+	.loc	5 188 25                        @ ../API/Src/Quaternion.c:188:25
+	vmul.f32	s0, s0, s2
+	.loc	5 188 19                        @ ../API/Src/Quaternion.c:188:19
+	vstr	s0, [r0, #52]
+	.loc	5 189 26 is_stmt 1              @ ../API/Src/Quaternion.c:189:26
+	ldr	r0, [sp, #4]
+	.loc	5 189 35 is_stmt 0              @ ../API/Src/Quaternion.c:189:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 189 12                        @ ../API/Src/Quaternion.c:189:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 189 26                        @ ../API/Src/Quaternion.c:189:26
+	vldr	s0, [r1, #8]
+	.loc	5 189 25                        @ ../API/Src/Quaternion.c:189:25
+	vmul.f32	s0, s0, s2
+	.loc	5 189 19                        @ ../API/Src/Quaternion.c:189:19
+	vstr	s0, [r0, #56]
+	.loc	5 190 26 is_stmt 1              @ ../API/Src/Quaternion.c:190:26
+	ldr	r0, [sp, #4]
+	.loc	5 190 35 is_stmt 0              @ ../API/Src/Quaternion.c:190:35
+	ldr.w	r1, [r0, #204]
+	.loc	5 190 12                        @ ../API/Src/Quaternion.c:190:12
+	ldr.w	r0, [r0, #228]
+	.loc	5 190 26                        @ ../API/Src/Quaternion.c:190:26
+	vldr	s0, [r1, #12]
+	.loc	5 190 25                        @ ../API/Src/Quaternion.c:190:25
+	vadd.f32	s0, s0, s0
+	.loc	5 190 19                        @ ../API/Src/Quaternion.c:190:19
+	vstr	s0, [r0, #60]
+	.loc	5 194 1 epilogue_begin is_stmt 1 @ ../API/Src/Quaternion.c:194:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp22:
+.Lfunc_end2:
+	.size	QuaternionEKF_H_Update, .Lfunc_end2-QuaternionEKF_H_Update
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.QuaternionEKF_xhat_Update,"ax",%progbits
+	.p2align	3                               @ -- Begin function QuaternionEKF_xhat_Update
+	.type	QuaternionEKF_xhat_Update,%function
+	.code	16                              @ @QuaternionEKF_xhat_Update
+	.thumb_func
+QuaternionEKF_xhat_Update:
+.Lfunc_begin3:
+	.loc	5 262 0                         @ ../API/Src/Quaternion.c:262:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#24
+	sub	sp, #24
+	.cfi_def_cfa_offset 32
+	str	r0, [sp, #20]
+.Ltmp23:
+	.loc	5 265 37 prologue_end           @ ../API/Src/Quaternion.c:265:37
+	ldr	r1, [sp, #20]
+	.loc	5 265 45 is_stmt 0              @ ../API/Src/Quaternion.c:265:45
+	add.w	r0, r1, #100
+	.loc	5 265 56                        @ ../API/Src/Quaternion.c:265:56
+	adds	r1, #108
+	.loc	5 265 19                        @ ../API/Src/Quaternion.c:265:19
+	bl	arm_mat_trans_f32
+	.loc	5 265 3                         @ ../API/Src/Quaternion.c:265:3
+	ldr	r1, [sp, #20]
+	.loc	5 265 17                        @ ../API/Src/Quaternion.c:265:17
+	strb.w	r0, [r1, #196]
+	.loc	5 268 37 is_stmt 1              @ ../API/Src/Quaternion.c:268:37
+	ldr	r1, [sp, #20]
+	.loc	5 268 47 is_stmt 0              @ ../API/Src/Quaternion.c:268:47
+	ldrh.w	r0, [r1, #100]
+	.loc	5 268 35                        @ ../API/Src/Quaternion.c:268:35
+	strh.w	r0, [r1, #164]
+	.loc	5 269 37 is_stmt 1              @ ../API/Src/Quaternion.c:269:37
+	ldr	r1, [sp, #20]
+	.loc	5 269 52 is_stmt 0              @ ../API/Src/Quaternion.c:269:52
+	ldrh.w	r0, [r1, #126]
+	.loc	5 269 35                        @ ../API/Src/Quaternion.c:269:35
+	strh.w	r0, [r1, #166]
+	.loc	5 270 36 is_stmt 1              @ ../API/Src/Quaternion.c:270:36
+	ldr	r2, [sp, #20]
+	.loc	5 270 44 is_stmt 0              @ ../API/Src/Quaternion.c:270:44
+	add.w	r0, r2, #100
+	.loc	5 270 56                        @ ../API/Src/Quaternion.c:270:56
+	add.w	r1, r2, #124
+	.loc	5 270 73                        @ ../API/Src/Quaternion.c:270:73
+	adds	r2, #164
+	.loc	5 270 19                        @ ../API/Src/Quaternion.c:270:19
+	bl	arm_mat_mult_f32
+	.loc	5 270 3                         @ ../API/Src/Quaternion.c:270:3
+	ldr	r1, [sp, #20]
+	.loc	5 270 17                        @ ../API/Src/Quaternion.c:270:17
+	strb.w	r0, [r1, #196]
+	.loc	5 273 37 is_stmt 1              @ ../API/Src/Quaternion.c:273:37
+	ldr	r1, [sp, #20]
+	.loc	5 273 61 is_stmt 0              @ ../API/Src/Quaternion.c:273:61
+	ldrh.w	r0, [r1, #164]
+	.loc	5 273 35                        @ ../API/Src/Quaternion.c:273:35
+	strh.w	r0, [r1, #172]
+	.loc	5 274 37 is_stmt 1              @ ../API/Src/Quaternion.c:274:37
+	ldr	r1, [sp, #20]
+	.loc	5 274 48 is_stmt 0              @ ../API/Src/Quaternion.c:274:48
+	ldrh.w	r0, [r1, #110]
+	.loc	5 274 35                        @ ../API/Src/Quaternion.c:274:35
+	strh.w	r0, [r1, #174]
+	.loc	5 275 36 is_stmt 1              @ ../API/Src/Quaternion.c:275:36
+	ldr	r2, [sp, #20]
+	.loc	5 275 44 is_stmt 0              @ ../API/Src/Quaternion.c:275:44
+	add.w	r0, r2, #164
+	.loc	5 275 70                        @ ../API/Src/Quaternion.c:275:70
+	add.w	r1, r2, #108
+	.loc	5 275 75                        @ ../API/Src/Quaternion.c:275:75
+	adds	r2, #172
+	.loc	5 275 19                        @ ../API/Src/Quaternion.c:275:19
+	bl	arm_mat_mult_f32
+	.loc	5 275 3                         @ ../API/Src/Quaternion.c:275:3
+	ldr	r1, [sp, #20]
+	.loc	5 275 17                        @ ../API/Src/Quaternion.c:275:17
+	strb.w	r0, [r1, #196]
+	.loc	5 278 35 is_stmt 1              @ ../API/Src/Quaternion.c:278:35
+	ldr	r1, [sp, #20]
+	.loc	5 278 45 is_stmt 0              @ ../API/Src/Quaternion.c:278:45
+	ldrh.w	r0, [r1, #140]
+	.loc	5 278 33                        @ ../API/Src/Quaternion.c:278:33
+	strh.w	r0, [r1, #156]
+	.loc	5 279 35 is_stmt 1              @ ../API/Src/Quaternion.c:279:35
+	ldr	r1, [sp, #20]
+	.loc	5 279 45 is_stmt 0              @ ../API/Src/Quaternion.c:279:45
+	ldrh.w	r0, [r1, #142]
+	.loc	5 279 33                        @ ../API/Src/Quaternion.c:279:33
+	strh.w	r0, [r1, #158]
+	.loc	5 280 31 is_stmt 1              @ ../API/Src/Quaternion.c:280:31
+	ldr	r2, [sp, #20]
+	add.w	r0, r2, #172
+	.loc	5 280 65 is_stmt 0              @ ../API/Src/Quaternion.c:280:65
+	add.w	r1, r2, #140
+	.loc	5 280 77                        @ ../API/Src/Quaternion.c:280:77
+	adds	r2, #156
+	.loc	5 280 19                        @ ../API/Src/Quaternion.c:280:19
+	bl	arm_mat_add_f32
+	.loc	5 280 3                         @ ../API/Src/Quaternion.c:280:3
+	ldr	r1, [sp, #20]
+	.loc	5 280 17                        @ ../API/Src/Quaternion.c:280:17
+	strb.w	r0, [r1, #196]
+	.loc	5 283 35 is_stmt 1              @ ../API/Src/Quaternion.c:283:35
+	ldr	r1, [sp, #20]
+	.loc	5 283 43 is_stmt 0              @ ../API/Src/Quaternion.c:283:43
+	add.w	r0, r1, #156
+	.loc	5 283 59                        @ ../API/Src/Quaternion.c:283:59
+	adds	r1, #172
+	.loc	5 283 19                        @ ../API/Src/Quaternion.c:283:19
+	bl	arm_mat_inverse_f32
+	.loc	5 283 3                         @ ../API/Src/Quaternion.c:283:3
+	ldr	r1, [sp, #20]
+	.loc	5 283 17                        @ ../API/Src/Quaternion.c:283:17
+	strb.w	r0, [r1, #196]
+	.loc	5 285 37 is_stmt 1              @ ../API/Src/Quaternion.c:285:37
+	ldr	r1, [sp, #20]
+	.loc	5 285 47 is_stmt 0              @ ../API/Src/Quaternion.c:285:47
+	ldrh.w	r0, [r1, #100]
+	.loc	5 285 35                        @ ../API/Src/Quaternion.c:285:35
+	strh.w	r0, [r1, #180]
+	.loc	5 286 3 is_stmt 1               @ ../API/Src/Quaternion.c:286:3
+	ldr	r1, [sp, #20]
+	movs	r0, #1
+	.loc	5 286 35 is_stmt 0              @ ../API/Src/Quaternion.c:286:35
+	strh.w	r0, [r1, #182]
+	.loc	5 287 40 is_stmt 1              @ ../API/Src/Quaternion.c:287:40
+	ldr	r0, [sp, #20]
+	.loc	5 287 49 is_stmt 0              @ ../API/Src/Quaternion.c:287:49
+	ldr.w	r1, [r0, #204]
+	.loc	5 287 3                         @ ../API/Src/Quaternion.c:287:3
+	ldr.w	r0, [r0, #268]
+	.loc	5 287 88                        @ ../API/Src/Quaternion.c:287:88
+	vldr	s0, [r1]
+	.loc	5 287 40                        @ ../API/Src/Quaternion.c:287:40
+	vldr	s2, [r1, #4]
+	.loc	5 287 112                       @ ../API/Src/Quaternion.c:287:112
+	vldr	s6, [r1, #8]
+	.loc	5 287 64                        @ ../API/Src/Quaternion.c:287:64
+	vldr	s4, [r1, #12]
+	.loc	5 287 110                       @ ../API/Src/Quaternion.c:287:110
+	vmul.f32	s0, s0, s6
+	.loc	5 287 86                        @ ../API/Src/Quaternion.c:287:86
+	vfnms.f32	s0, s2, s4
+	.loc	5 287 37                        @ ../API/Src/Quaternion.c:287:37
+	vadd.f32	s0, s0, s0
+	.loc	5 287 31                        @ ../API/Src/Quaternion.c:287:31
+	vstr	s0, [r0]
+	.loc	5 288 40 is_stmt 1              @ ../API/Src/Quaternion.c:288:40
+	ldr	r0, [sp, #20]
+	.loc	5 288 49 is_stmt 0              @ ../API/Src/Quaternion.c:288:49
+	ldr.w	r1, [r0, #204]
+	.loc	5 288 3                         @ ../API/Src/Quaternion.c:288:3
+	ldr.w	r0, [r0, #268]
+	.loc	5 288 40                        @ ../API/Src/Quaternion.c:288:40
+	vldr	s2, [r1]
+	.loc	5 288 64                        @ ../API/Src/Quaternion.c:288:64
+	vldr	s4, [r1, #4]
+	.loc	5 288 88                        @ ../API/Src/Quaternion.c:288:88
+	vldr	s0, [r1, #8]
+	.loc	5 288 112                       @ ../API/Src/Quaternion.c:288:112
+	vldr	s6, [r1, #12]
+	.loc	5 288 110                       @ ../API/Src/Quaternion.c:288:110
+	vmul.f32	s0, s0, s6
+	.loc	5 288 86                        @ ../API/Src/Quaternion.c:288:86
+	vfma.f32	s0, s2, s4
+	.loc	5 288 37                        @ ../API/Src/Quaternion.c:288:37
+	vadd.f32	s0, s0, s0
+	.loc	5 288 31                        @ ../API/Src/Quaternion.c:288:31
+	vstr	s0, [r0, #4]
+	.loc	5 289 35 is_stmt 1              @ ../API/Src/Quaternion.c:289:35
+	ldr	r0, [sp, #20]
+	.loc	5 289 44 is_stmt 0              @ ../API/Src/Quaternion.c:289:44
+	ldr.w	r1, [r0, #204]
+	.loc	5 289 3                         @ ../API/Src/Quaternion.c:289:3
+	ldr.w	r0, [r0, #268]
+	.loc	5 289 35                        @ ../API/Src/Quaternion.c:289:35
+	vldr	s6, [r1]
+	.loc	5 290 35 is_stmt 1              @ ../API/Src/Quaternion.c:290:35
+	vldr	s0, [r1, #4]
+	.loc	5 291 35                        @ ../API/Src/Quaternion.c:291:35
+	vldr	s4, [r1, #8]
+	.loc	5 292 35                        @ ../API/Src/Quaternion.c:292:35
+	vldr	s2, [r1, #12]
+	.loc	5 290 57                        @ ../API/Src/Quaternion.c:290:57
+	vmul.f32	s0, s0, s0
+	.loc	5 290 33 is_stmt 0              @ ../API/Src/Quaternion.c:290:33
+	vfnms.f32	s0, s6, s6
+	.loc	5 291 33 is_stmt 1              @ ../API/Src/Quaternion.c:291:33
+	vfms.f32	s0, s4, s4
+	.loc	5 292 33                        @ ../API/Src/Quaternion.c:292:33
+	vfma.f32	s0, s2, s2
+	.loc	5 289 31                        @ ../API/Src/Quaternion.c:289:31
+	vstr	s0, [r0, #8]
+	movs	r0, #0
+.Ltmp24:
+	.loc	5 298 15                        @ ../API/Src/Quaternion.c:298:15
+	strb.w	r0, [sp, #7]
+	.loc	5 298 7 is_stmt 0               @ ../API/Src/Quaternion.c:298:7
+	b	.LBB3_1
+.LBB3_1:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp25:
+	.loc	5 298 22                        @ ../API/Src/Quaternion.c:298:22
+	ldrb.w	r0, [sp, #7]
+.Ltmp26:
+	.loc	5 298 2                         @ ../API/Src/Quaternion.c:298:2
+	cmp	r0, #2
+	bgt	.LBB3_4
+	b	.LBB3_2
+.LBB3_2:                                @   in Loop: Header=BB3_1 Depth=1
+.Ltmp27:
+	.loc	5 300 38 is_stmt 1              @ ../API/Src/Quaternion.c:300:38
+	ldr	r0, [sp, #20]
+	ldr.w	r0, [r0, #268]
+	.loc	5 300 63 is_stmt 0              @ ../API/Src/Quaternion.c:300:63
+	ldrb.w	r1, [sp, #7]
+	.loc	5 300 38                        @ ../API/Src/Quaternion.c:300:38
+	add.w	r0, r0, r1, lsl #2
+	vldr	s0, [r0]
+	.loc	5 300 32                        @ ../API/Src/Quaternion.c:300:32
+	vabs.f32	s0, s0
+	.loc	5 300 26                        @ ../API/Src/Quaternion.c:300:26
+	bl	__hardfp_acosf
+	.loc	5 300 21                        @ ../API/Src/Quaternion.c:300:21
+	ldrb.w	r1, [sp, #7]
+	add	r0, sp, #8
+	.loc	5 300 3                         @ ../API/Src/Quaternion.c:300:3
+	add.w	r0, r0, r1, lsl #2
+	.loc	5 300 24                        @ ../API/Src/Quaternion.c:300:24
+	vstr	s0, [r0]
+	.loc	5 301 2 is_stmt 1               @ ../API/Src/Quaternion.c:301:2
+	b	.LBB3_3
+.Ltmp28:
+.LBB3_3:                                @   in Loop: Header=BB3_1 Depth=1
+	.loc	5 298 30                        @ ../API/Src/Quaternion.c:298:30
+	ldrb.w	r0, [sp, #7]
+	adds	r0, #1
+	strb.w	r0, [sp, #7]
+	.loc	5 298 2 is_stmt 0               @ ../API/Src/Quaternion.c:298:2
+	b	.LBB3_1
+.Ltmp29:
+.LBB3_4:
+	.loc	5 304 37 is_stmt 1              @ ../API/Src/Quaternion.c:304:37
+	ldr	r1, [sp, #20]
+	.loc	5 304 47 is_stmt 0              @ ../API/Src/Quaternion.c:304:47
+	ldrh.w	r0, [r1, #68]
+	.loc	5 304 35                        @ ../API/Src/Quaternion.c:304:35
+	strh.w	r0, [r1, #188]
+	.loc	5 305 3 is_stmt 1               @ ../API/Src/Quaternion.c:305:3
+	ldr	r1, [sp, #20]
+	movs	r0, #1
+	.loc	5 305 35 is_stmt 0              @ ../API/Src/Quaternion.c:305:35
+	strh.w	r0, [r1, #190]
+	.loc	5 306 36 is_stmt 1              @ ../API/Src/Quaternion.c:306:36
+	ldr	r2, [sp, #20]
+	.loc	5 306 44 is_stmt 0              @ ../API/Src/Quaternion.c:306:44
+	add.w	r0, r2, #68
+	.loc	5 306 56                        @ ../API/Src/Quaternion.c:306:56
+	add.w	r1, r2, #180
+	.loc	5 306 74                        @ ../API/Src/Quaternion.c:306:74
+	adds	r2, #188
+	.loc	5 306 19                        @ ../API/Src/Quaternion.c:306:19
+	bl	arm_mat_sub_f32
+	.loc	5 306 3                         @ ../API/Src/Quaternion.c:306:3
+	ldr	r1, [sp, #20]
+	.loc	5 306 17                        @ ../API/Src/Quaternion.c:306:17
+	strb.w	r0, [r1, #196]
+.Ltmp30:
+	.loc	5 309 32 is_stmt 1              @ ../API/Src/Quaternion.c:309:32
+	ldr	r0, [sp, #20]
+	.loc	5 309 6 is_stmt 0               @ ../API/Src/Quaternion.c:309:6
+	bl	QuaternionEKF_ChiSqrtTest
+.Ltmp31:
+	.loc	5 309 6                         @ ../API/Src/Quaternion.c:309:6
+	cbz	r0, .LBB3_6
+	b	.LBB3_5
+.LBB3_5:
+.Ltmp32:
+	.loc	5 311 5 is_stmt 1               @ ../API/Src/Quaternion.c:311:5
+	b	.LBB3_35
+.Ltmp33:
+.LBB3_6:
+	.loc	5 315 37                        @ ../API/Src/Quaternion.c:315:37
+	ldr	r1, [sp, #20]
+	.loc	5 315 52 is_stmt 0              @ ../API/Src/Quaternion.c:315:52
+	ldrh.w	r0, [r1, #124]
+	.loc	5 315 35                        @ ../API/Src/Quaternion.c:315:35
+	strh.w	r0, [r1, #164]
+	.loc	5 316 37 is_stmt 1              @ ../API/Src/Quaternion.c:316:37
+	ldr	r1, [sp, #20]
+	.loc	5 316 48 is_stmt 0              @ ../API/Src/Quaternion.c:316:48
+	ldrh.w	r0, [r1, #110]
+	.loc	5 316 35                        @ ../API/Src/Quaternion.c:316:35
+	strh.w	r0, [r1, #166]
+	.loc	5 317 36 is_stmt 1              @ ../API/Src/Quaternion.c:317:36
+	ldr	r2, [sp, #20]
+	.loc	5 317 44 is_stmt 0              @ ../API/Src/Quaternion.c:317:44
+	add.w	r0, r2, #124
+	.loc	5 317 61                        @ ../API/Src/Quaternion.c:317:61
+	add.w	r1, r2, #108
+	.loc	5 317 74                        @ ../API/Src/Quaternion.c:317:74
+	adds	r2, #164
+	.loc	5 317 19                        @ ../API/Src/Quaternion.c:317:19
+	bl	arm_mat_mult_f32
+	.loc	5 317 3                         @ ../API/Src/Quaternion.c:317:3
+	ldr	r1, [sp, #20]
+	.loc	5 317 17                        @ ../API/Src/Quaternion.c:317:17
+	strb.w	r0, [r1, #196]
+	.loc	5 320 36 is_stmt 1              @ ../API/Src/Quaternion.c:320:36
+	ldr	r2, [sp, #20]
+	.loc	5 320 44 is_stmt 0              @ ../API/Src/Quaternion.c:320:44
+	add.w	r0, r2, #164
+	.loc	5 320 62                        @ ../API/Src/Quaternion.c:320:62
+	add.w	r1, r2, #172
+	.loc	5 320 96                        @ ../API/Src/Quaternion.c:320:96
+	adds	r2, #148
+	.loc	5 320 19                        @ ../API/Src/Quaternion.c:320:19
+	bl	arm_mat_mult_f32
+	.loc	5 320 3                         @ ../API/Src/Quaternion.c:320:3
+	ldr	r1, [sp, #20]
+	.loc	5 320 17                        @ ../API/Src/Quaternion.c:320:17
+	strb.w	r0, [r1, #196]
+	movs	r0, #0
+.Ltmp34:
+	.loc	5 323 14 is_stmt 1              @ ../API/Src/Quaternion.c:323:14
+	strb.w	r0, [sp, #6]
+	.loc	5 323 6 is_stmt 0               @ ../API/Src/Quaternion.c:323:6
+	b	.LBB3_7
+.LBB3_7:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp35:
+	.loc	5 323 21                        @ ../API/Src/Quaternion.c:323:21
+	ldrb.w	r0, [sp, #6]
+	.loc	5 323 25                        @ ../API/Src/Quaternion.c:323:25
+	ldr	r2, [sp, #20]
+	.loc	5 323 35                        @ ../API/Src/Quaternion.c:323:35
+	ldrh.w	r1, [r2, #150]
+	.loc	5 323 53                        @ ../API/Src/Quaternion.c:323:53
+	ldrh.w	r2, [r2, #148]
+	.loc	5 323 42                        @ ../API/Src/Quaternion.c:323:42
+	muls	r1, r2, r1
+.Ltmp36:
+	.loc	5 323 2                         @ ../API/Src/Quaternion.c:323:2
+	cmp	r0, r1
+	bge	.LBB3_10
+	b	.LBB3_8
+.LBB3_8:                                @   in Loop: Header=BB3_7 Depth=1
+.Ltmp37:
+	.loc	5 325 20 is_stmt 1              @ ../API/Src/Quaternion.c:325:20
+	ldr	r1, [sp, #20]
+	.loc	5 325 12 is_stmt 0              @ ../API/Src/Quaternion.c:325:12
+	ldr.w	r0, [r1, #252]
+	.loc	5 325 20                        @ ../API/Src/Quaternion.c:325:20
+	ldr.w	r1, [r1, #268]
+	vldr	s2, [r1]
+	.loc	5 325 14                        @ ../API/Src/Quaternion.c:325:14
+	ldrb.w	r1, [sp, #6]
+	.loc	5 325 3                         @ ../API/Src/Quaternion.c:325:3
+	add.w	r0, r0, r1, lsl #2
+	.loc	5 325 17                        @ ../API/Src/Quaternion.c:325:17
+	vldr	s0, [r0]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0]
+	.loc	5 326 2 is_stmt 1               @ ../API/Src/Quaternion.c:326:2
+	b	.LBB3_9
+.Ltmp38:
+.LBB3_9:                                @   in Loop: Header=BB3_7 Depth=1
+	.loc	5 323 63                        @ ../API/Src/Quaternion.c:323:63
+	ldrb.w	r0, [sp, #6]
+	adds	r0, #1
+	strb.w	r0, [sp, #6]
+	.loc	5 323 2 is_stmt 0               @ ../API/Src/Quaternion.c:323:2
+	b	.LBB3_7
+.Ltmp39:
+.LBB3_10:
+	.loc	5 0 2                           @ ../API/Src/Quaternion.c:0:2
+	movs	r0, #4
+.Ltmp40:
+	.loc	5 338 16 is_stmt 1              @ ../API/Src/Quaternion.c:338:16
+	strb.w	r0, [sp, #5]
+	.loc	5 338 8 is_stmt 0               @ ../API/Src/Quaternion.c:338:8
+	b	.LBB3_11
+.LBB3_11:                               @ =>This Loop Header: Depth=1
+                                        @     Child Loop BB3_13 Depth 2
+.Ltmp41:
+	.loc	5 338 23                        @ ../API/Src/Quaternion.c:338:23
+	ldrb.w	r0, [sp, #5]
+.Ltmp42:
+	.loc	5 338 3                         @ ../API/Src/Quaternion.c:338:3
+	cmp	r0, #5
+	bgt	.LBB3_18
+	b	.LBB3_12
+.LBB3_12:                               @   in Loop: Header=BB3_11 Depth=1
+	.loc	5 0 3                           @ ../API/Src/Quaternion.c:0:3
+	movs	r0, #0
+.Ltmp43:
+	.loc	5 340 18 is_stmt 1              @ ../API/Src/Quaternion.c:340:18
+	strb.w	r0, [sp, #4]
+	.loc	5 340 10 is_stmt 0              @ ../API/Src/Quaternion.c:340:10
+	b	.LBB3_13
+.LBB3_13:                               @   Parent Loop BB3_11 Depth=1
+                                        @ =>  This Inner Loop Header: Depth=2
+.Ltmp44:
+	.loc	5 340 25                        @ ../API/Src/Quaternion.c:340:25
+	ldrb.w	r0, [sp, #4]
+.Ltmp45:
+	.loc	5 340 5                         @ ../API/Src/Quaternion.c:340:5
+	cmp	r0, #2
+	bgt	.LBB3_16
+	b	.LBB3_14
+.LBB3_14:                               @   in Loop: Header=BB3_13 Depth=2
+.Ltmp46:
+	.loc	5 342 52 is_stmt 1              @ ../API/Src/Quaternion.c:342:52
+	ldrb.w	r1, [sp, #5]
+	add	r0, sp, #8
+	.loc	5 342 34 is_stmt 0              @ ../API/Src/Quaternion.c:342:34
+	add.w	r0, r0, r1, lsl #2
+	vldr	s0, [r0, #-16]
+	vldr	s2, .LCPI3_2
+	.loc	5 342 59                        @ ../API/Src/Quaternion.c:342:59
+	vdiv.f32	s2, s0, s2
+	.loc	5 342 9                         @ ../API/Src/Quaternion.c:342:9
+	ldr	r0, [sp, #20]
+	.loc	5 342 18                        @ ../API/Src/Quaternion.c:342:18
+	ldr.w	r0, [r0, #252]
+	.loc	5 342 22                        @ ../API/Src/Quaternion.c:342:22
+	add.w	r1, r1, r1, lsl #1
+	.loc	5 342 28                        @ ../API/Src/Quaternion.c:342:28
+	ldrb.w	r2, [sp, #4]
+	.loc	5 342 26                        @ ../API/Src/Quaternion.c:342:26
+	add	r1, r2
+	.loc	5 342 9                         @ ../API/Src/Quaternion.c:342:9
+	add.w	r0, r0, r1, lsl #2
+	.loc	5 342 31                        @ ../API/Src/Quaternion.c:342:31
+	vldr	s0, [r0]
+	vmul.f32	s0, s0, s2
+	vstr	s0, [r0]
+	.loc	5 343 5 is_stmt 1               @ ../API/Src/Quaternion.c:343:5
+	b	.LBB3_15
+.Ltmp47:
+.LBB3_15:                               @   in Loop: Header=BB3_13 Depth=2
+	.loc	5 340 33                        @ ../API/Src/Quaternion.c:340:33
+	ldrb.w	r0, [sp, #4]
+	adds	r0, #1
+	strb.w	r0, [sp, #4]
+	.loc	5 340 5 is_stmt 0               @ ../API/Src/Quaternion.c:340:5
+	b	.LBB3_13
+.Ltmp48:
+.LBB3_16:                               @   in Loop: Header=BB3_11 Depth=1
+	.loc	5 344 3 is_stmt 1               @ ../API/Src/Quaternion.c:344:3
+	b	.LBB3_17
+.Ltmp49:
+.LBB3_17:                               @   in Loop: Header=BB3_11 Depth=1
+	.loc	5 338 31                        @ ../API/Src/Quaternion.c:338:31
+	ldrb.w	r0, [sp, #5]
+	adds	r0, #1
+	strb.w	r0, [sp, #5]
+	.loc	5 338 3 is_stmt 0               @ ../API/Src/Quaternion.c:338:3
+	b	.LBB3_11
+.Ltmp50:
+.LBB3_18:
+	.loc	5 347 37 is_stmt 1              @ ../API/Src/Quaternion.c:347:37
+	ldr	r1, [sp, #20]
+	.loc	5 347 47 is_stmt 0              @ ../API/Src/Quaternion.c:347:47
+	ldrh.w	r0, [r1, #148]
+	.loc	5 347 35                        @ ../API/Src/Quaternion.c:347:35
+	strh.w	r0, [r1, #180]
+	.loc	5 348 3 is_stmt 1               @ ../API/Src/Quaternion.c:348:3
+	ldr	r1, [sp, #20]
+	movs	r0, #1
+	.loc	5 348 35 is_stmt 0              @ ../API/Src/Quaternion.c:348:35
+	strh.w	r0, [r1, #182]
+	.loc	5 349 36 is_stmt 1              @ ../API/Src/Quaternion.c:349:36
+	ldr	r1, [sp, #20]
+	.loc	5 349 44 is_stmt 0              @ ../API/Src/Quaternion.c:349:44
+	add.w	r0, r1, #148
+	.loc	5 349 56                        @ ../API/Src/Quaternion.c:349:56
+	add.w	r2, r1, #180
+	.loc	5 349 48                        @ ../API/Src/Quaternion.c:349:48
+	adds	r1, #188
+	.loc	5 349 19                        @ ../API/Src/Quaternion.c:349:19
+	bl	arm_mat_mult_f32
+	.loc	5 349 3                         @ ../API/Src/Quaternion.c:349:3
+	ldr	r1, [sp, #20]
+	.loc	5 349 17                        @ ../API/Src/Quaternion.c:349:17
+	strb.w	r0, [r1, #196]
+.Ltmp51:
+	.loc	5 351 6 is_stmt 1               @ ../API/Src/Quaternion.c:351:6
+	ldr	r0, [sp, #20]
+	.loc	5 351 24 is_stmt 0              @ ../API/Src/Quaternion.c:351:24
+	ldrb.w	r0, [r0, #41]
+.Ltmp52:
+	.loc	5 351 6                         @ ../API/Src/Quaternion.c:351:6
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	beq	.LBB3_34
+	b	.LBB3_19
+.LBB3_19:
+.Ltmp53:
+	.loc	5 353 5 is_stmt 1               @ ../API/Src/Quaternion.c:353:5
+	b	.LBB3_20
+.LBB3_20:
+.Ltmp54:
+	.loc	5 353 5 is_stmt 0               @ ../API/Src/Quaternion.c:353:5
+	ldr	r0, [sp, #20]
+	ldr.w	r1, [r0, #268]
+	vldr	s0, [r1, #16]
+	vldr	s2, [r0, #8]
+	vldr	s4, .LCPI3_0
+	vmul.f32	s2, s2, s4
+.Ltmp55:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB3_22
+	b	.LBB3_21
+.LBB3_21:
+.Ltmp56:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #8]
+	vldr	s2, .LCPI3_0
+	vmul.f32	s0, s0, s2
+	ldr.w	r0, [r0, #268]
+	vstr	s0, [r0, #16]
+	b	.LBB3_25
+.Ltmp57:
+.LBB3_22:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	ldr	r0, [sp, #20]
+	ldr.w	r1, [r0, #268]
+	vldr	s0, [r1, #16]
+	vldr	s2, [r0, #8]
+	vldr	s4, .LCPI3_1
+	vmul.f32	s2, s2, s4
+.Ltmp58:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB3_24
+	b	.LBB3_23
+.LBB3_23:
+.Ltmp59:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #8]
+	vldr	s2, .LCPI3_1
+	vmul.f32	s0, s0, s2
+	ldr.w	r0, [r0, #268]
+	vstr	s0, [r0, #16]
+	b	.LBB3_24
+.Ltmp60:
+.LBB3_24:
+	.loc	5 0 5                           @ ../API/Src/Quaternion.c:0:5
+	b	.LBB3_25
+.LBB3_25:
+	.loc	5 353 5                         @ ../API/Src/Quaternion.c:353:5
+	b	.LBB3_26
+.Ltmp61:
+.LBB3_26:
+	.loc	5 354 5 is_stmt 1               @ ../API/Src/Quaternion.c:354:5
+	b	.LBB3_27
+.LBB3_27:
+.Ltmp62:
+	.loc	5 354 5 is_stmt 0               @ ../API/Src/Quaternion.c:354:5
+	ldr	r0, [sp, #20]
+	ldr.w	r1, [r0, #268]
+	vldr	s0, [r1, #20]
+	vldr	s2, [r0, #8]
+	vldr	s4, .LCPI3_0
+	vmul.f32	s2, s2, s4
+.Ltmp63:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB3_29
+	b	.LBB3_28
+.LBB3_28:
+.Ltmp64:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #8]
+	vldr	s2, .LCPI3_0
+	vmul.f32	s0, s0, s2
+	ldr.w	r0, [r0, #268]
+	vstr	s0, [r0, #20]
+	b	.LBB3_32
+.Ltmp65:
+.LBB3_29:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	ldr	r0, [sp, #20]
+	ldr.w	r1, [r0, #268]
+	vldr	s0, [r1, #20]
+	vldr	s2, [r0, #8]
+	vldr	s4, .LCPI3_1
+	vmul.f32	s2, s2, s4
+.Ltmp66:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB3_31
+	b	.LBB3_30
+.LBB3_30:
+.Ltmp67:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #8]
+	vldr	s2, .LCPI3_1
+	vmul.f32	s0, s0, s2
+	ldr.w	r0, [r0, #268]
+	vstr	s0, [r0, #20]
+	b	.LBB3_31
+.Ltmp68:
+.LBB3_31:
+	.loc	5 0 5                           @ ../API/Src/Quaternion.c:0:5
+	b	.LBB3_32
+.LBB3_32:
+	.loc	5 354 5                         @ ../API/Src/Quaternion.c:354:5
+	b	.LBB3_33
+.Ltmp69:
+.LBB3_33:
+	.loc	5 355 3 is_stmt 1               @ ../API/Src/Quaternion.c:355:3
+	b	.LBB3_34
+.Ltmp70:
+.LBB3_34:
+	.loc	5 356 3                         @ ../API/Src/Quaternion.c:356:3
+	ldr	r0, [sp, #20]
+	ldr.w	r1, [r0, #268]
+	movs	r0, #0
+	.loc	5 356 31 is_stmt 0              @ ../API/Src/Quaternion.c:356:31
+	str	r0, [r1, #12]
+	.loc	5 358 31 is_stmt 1              @ ../API/Src/Quaternion.c:358:31
+	ldr	r1, [sp, #20]
+	.loc	5 358 35 is_stmt 0              @ ../API/Src/Quaternion.c:358:35
+	add.w	r2, r1, #44
+	.loc	5 358 39                        @ ../API/Src/Quaternion.c:358:39
+	add.w	r0, r1, #52
+	.loc	5 358 59                        @ ../API/Src/Quaternion.c:358:59
+	adds	r1, #180
+	.loc	5 358 19                        @ ../API/Src/Quaternion.c:358:19
+	bl	arm_mat_add_f32
+	.loc	5 358 3                         @ ../API/Src/Quaternion.c:358:3
+	ldr	r1, [sp, #20]
+	.loc	5 358 17                        @ ../API/Src/Quaternion.c:358:17
+	strb.w	r0, [r1, #196]
+	.loc	5 360 1 is_stmt 1               @ ../API/Src/Quaternion.c:360:1
+	b	.LBB3_35
+.LBB3_35:
+	.loc	5 360 1 epilogue_begin is_stmt 0 @ ../API/Src/Quaternion.c:360:1
+	add	sp, #24
+	pop	{r7, pc}
+.Ltmp71:
+	.loc	5 0 1                           @ :0:1
+.Ltmp72:
+	.p2align	2
+@ %bb.36:
+.LCPI3_0:
+	.long	0x3c23d70a                      @ float 0.00999999977
+.LCPI3_1:
+	.long	0xbc23d70a                      @ float -0.00999999977
+.LCPI3_2:
+	.long	0x3fc90fda                      @ float 1.57079625
+.Lfunc_end3:
+	.size	QuaternionEKF_xhat_Update, .Lfunc_end3-QuaternionEKF_xhat_Update
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.QuaternionEKF_Update,"ax",%progbits
+	.hidden	QuaternionEKF_Update            @ -- Begin function QuaternionEKF_Update
+	.globl	QuaternionEKF_Update
+	.p2align	3
+	.type	QuaternionEKF_Update,%function
+	.code	16                              @ @QuaternionEKF_Update
+	.thumb_func
+QuaternionEKF_Update:
+.Lfunc_begin4:
+	.loc	5 53 0 is_stmt 1                @ ../API/Src/Quaternion.c:53:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#24
+	sub	sp, #24
+	.cfi_def_cfa_offset 32
+	str	r0, [sp, #20]
+	str	r1, [sp, #16]
+	str	r2, [sp, #12]
+	vstr	s0, [sp, #8]
+.Ltmp73:
+	.loc	5 55 28 prologue_end            @ ../API/Src/Quaternion.c:55:28
+	ldr	r0, [sp, #8]
+	.loc	5 55 3 is_stmt 0                @ ../API/Src/Quaternion.c:55:3
+	ldr	r1, [sp, #20]
+	.loc	5 55 26                         @ ../API/Src/Quaternion.c:55:26
+	str	r0, [r1, #60]
+	.loc	5 57 18 is_stmt 1               @ ../API/Src/Quaternion.c:57:18
+	ldr	r0, [sp, #16]
+	vldr	s0, [r0]
+	.loc	5 57 28 is_stmt 0               @ ../API/Src/Quaternion.c:57:28
+	ldr	r0, [sp, #20]
+	vldr	s2, [r0, #20]
+	.loc	5 57 26                         @ ../API/Src/Quaternion.c:57:26
+	vsub.f32	s0, s0, s2
+	.loc	5 57 16                         @ ../API/Src/Quaternion.c:57:16
+	vstr	s0, [r0, #376]
+	.loc	5 58 19 is_stmt 1               @ ../API/Src/Quaternion.c:58:19
+	ldr	r0, [sp, #16]
+	vldr	s0, [r0, #4]
+	.loc	5 58 29 is_stmt 0               @ ../API/Src/Quaternion.c:58:29
+	ldr	r0, [sp, #20]
+	vldr	s2, [r0, #24]
+	.loc	5 58 27                         @ ../API/Src/Quaternion.c:58:27
+	vsub.f32	s0, s0, s2
+	.loc	5 58 17                         @ ../API/Src/Quaternion.c:58:17
+	vstr	s0, [r0, #380]
+	.loc	5 59 19 is_stmt 1               @ ../API/Src/Quaternion.c:59:19
+	ldr	r0, [sp, #16]
+	vldr	s0, [r0, #8]
+	.loc	5 59 29 is_stmt 0               @ ../API/Src/Quaternion.c:59:29
+	ldr	r0, [sp, #20]
+	vldr	s2, [r0, #28]
+	.loc	5 59 27                         @ ../API/Src/Quaternion.c:59:27
+	vsub.f32	s0, s0, s2
+	.loc	5 59 17                         @ ../API/Src/Quaternion.c:59:17
+	vstr	s0, [r0, #384]
+	.loc	5 61 39 is_stmt 1               @ ../API/Src/Quaternion.c:61:39
+	ldr	r0, [sp, #20]
+	vldr	s4, [r0, #376]
+	.loc	5 61 69 is_stmt 0               @ ../API/Src/Quaternion.c:61:69
+	vldr	s0, [r0, #380]
+	.loc	5 61 99                         @ ../API/Src/Quaternion.c:61:99
+	vldr	s2, [r0, #384]
+	.loc	5 61 82                         @ ../API/Src/Quaternion.c:61:82
+	vmul.f32	s0, s0, s0
+	.loc	5 61 67                         @ ../API/Src/Quaternion.c:61:67
+	vfma.f32	s0, s4, s4
+	.loc	5 61 97                         @ ../API/Src/Quaternion.c:61:97
+	vfma.f32	s0, s2, s2
+	.loc	5 61 22                         @ ../API/Src/Quaternion.c:61:22
+	bl	Fast_InverseSqrt
+	.loc	5 61 2                          @ ../API/Src/Quaternion.c:61:2
+	ldr	r0, [sp, #20]
+	.loc	5 61 20                         @ ../API/Src/Quaternion.c:61:20
+	vstr	s0, [r0, #392]
+	.loc	5 63 33 is_stmt 1               @ ../API/Src/Quaternion.c:63:33
+	ldr	r0, [sp, #20]
+	.loc	5 63 69 is_stmt 0               @ ../API/Src/Quaternion.c:63:69
+	vldr	s2, [r0, #60]
+	.loc	5 63 33                         @ ../API/Src/Quaternion.c:63:33
+	vldr	s0, [r0, #376]
+	vmov.f32	s4, #5.000000e-01
+	.loc	5 63 31                         @ ../API/Src/Quaternion.c:63:31
+	vmul.f32	s0, s0, s4
+	.loc	5 63 47                         @ ../API/Src/Quaternion.c:63:47
+	vmul.f32	s0, s0, s2
+	.loc	5 63 24                         @ ../API/Src/Quaternion.c:63:24
+	vstr	s0, [r0, #396]
+	.loc	5 64 33 is_stmt 1               @ ../API/Src/Quaternion.c:64:33
+	ldr	r0, [sp, #20]
+	.loc	5 64 69 is_stmt 0               @ ../API/Src/Quaternion.c:64:69
+	vldr	s2, [r0, #60]
+	.loc	5 64 33                         @ ../API/Src/Quaternion.c:64:33
+	vldr	s0, [r0, #380]
+	.loc	5 64 31                         @ ../API/Src/Quaternion.c:64:31
+	vmul.f32	s0, s0, s4
+	.loc	5 64 47                         @ ../API/Src/Quaternion.c:64:47
+	vmul.f32	s0, s0, s2
+	.loc	5 64 24                         @ ../API/Src/Quaternion.c:64:24
+	vstr	s0, [r0, #400]
+	.loc	5 65 34 is_stmt 1               @ ../API/Src/Quaternion.c:65:34
+	ldr	r0, [sp, #20]
+	.loc	5 65 70 is_stmt 0               @ ../API/Src/Quaternion.c:65:70
+	vldr	s2, [r0, #60]
+	.loc	5 65 34                         @ ../API/Src/Quaternion.c:65:34
+	vldr	s0, [r0, #384]
+	.loc	5 65 32                         @ ../API/Src/Quaternion.c:65:32
+	vmul.f32	s0, s0, s4
+	.loc	5 65 48                         @ ../API/Src/Quaternion.c:65:48
+	vmul.f32	s0, s0, s2
+	.loc	5 65 25                         @ ../API/Src/Quaternion.c:65:25
+	vstr	s0, [r0, #404]
+	.loc	5 77 10 is_stmt 1               @ ../API/Src/Quaternion.c:77:10
+	ldr	r3, [sp, #20]
+	.loc	5 77 35 is_stmt 0               @ ../API/Src/Quaternion.c:77:35
+	ldr.w	r0, [r3, #272]
+	.loc	5 77 43                         @ ../API/Src/Quaternion.c:77:43
+	ldr	r1, [r3, #44]
+	.loc	5 77 84                         @ ../API/Src/Quaternion.c:77:84
+	ldrh	r2, [r3, #52]
+	.loc	5 77 119                        @ ../API/Src/Quaternion.c:77:119
+	ldrb.w	r3, [r3, #56]
+	.loc	5 77 97                         @ ../API/Src/Quaternion.c:77:97
+	muls	r2, r3, r2
+	.loc	5 77 129                        @ ../API/Src/Quaternion.c:77:129
+	muls	r2, r3, r2
+	.loc	5 77 3                          @ ../API/Src/Quaternion.c:77:3
+	bl	__aeabi_memcpy4
+	.loc	5 79 38 is_stmt 1               @ ../API/Src/Quaternion.c:79:38
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #396]
+	.loc	5 79 37 is_stmt 0               @ ../API/Src/Quaternion.c:79:37
+	vneg.f32	s0, s0
+	.loc	5 79 28                         @ ../API/Src/Quaternion.c:79:28
+	ldr.w	r0, [r0, #272]
+	.loc	5 79 34                         @ ../API/Src/Quaternion.c:79:34
+	vstr	s0, [r0, #4]
+	.loc	5 80 37 is_stmt 1               @ ../API/Src/Quaternion.c:80:37
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #400]
+	.loc	5 80 36 is_stmt 0               @ ../API/Src/Quaternion.c:80:36
+	vneg.f32	s0, s0
+	.loc	5 80 27                         @ ../API/Src/Quaternion.c:80:27
+	ldr.w	r0, [r0, #272]
+	.loc	5 80 33                         @ ../API/Src/Quaternion.c:80:33
+	vstr	s0, [r0, #8]
+	.loc	5 81 37 is_stmt 1               @ ../API/Src/Quaternion.c:81:37
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #404]
+	.loc	5 81 36 is_stmt 0               @ ../API/Src/Quaternion.c:81:36
+	vneg.f32	s0, s0
+	.loc	5 81 27                         @ ../API/Src/Quaternion.c:81:27
+	ldr.w	r0, [r0, #272]
+	.loc	5 81 33                         @ ../API/Src/Quaternion.c:81:33
+	vstr	s0, [r0, #12]
+	.loc	5 83 37 is_stmt 1               @ ../API/Src/Quaternion.c:83:37
+	ldr	r0, [sp, #20]
+	.loc	5 83 27 is_stmt 0               @ ../API/Src/Quaternion.c:83:27
+	ldr.w	r1, [r0, #272]
+	.loc	5 83 37                         @ ../API/Src/Quaternion.c:83:37
+	ldr.w	r0, [r0, #396]
+	.loc	5 83 33                         @ ../API/Src/Quaternion.c:83:33
+	str	r0, [r1, #24]
+	.loc	5 84 37 is_stmt 1               @ ../API/Src/Quaternion.c:84:37
+	ldr	r0, [sp, #20]
+	.loc	5 84 27 is_stmt 0               @ ../API/Src/Quaternion.c:84:27
+	ldr.w	r1, [r0, #272]
+	.loc	5 84 37                         @ ../API/Src/Quaternion.c:84:37
+	ldr.w	r0, [r0, #404]
+	.loc	5 84 33                         @ ../API/Src/Quaternion.c:84:33
+	str	r0, [r1, #32]
+	.loc	5 85 37 is_stmt 1               @ ../API/Src/Quaternion.c:85:37
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #400]
+	.loc	5 85 36 is_stmt 0               @ ../API/Src/Quaternion.c:85:36
+	vneg.f32	s0, s0
+	.loc	5 85 27                         @ ../API/Src/Quaternion.c:85:27
+	ldr.w	r0, [r0, #272]
+	.loc	5 85 33                         @ ../API/Src/Quaternion.c:85:33
+	vstr	s0, [r0, #36]
+	.loc	5 87 38 is_stmt 1               @ ../API/Src/Quaternion.c:87:38
+	ldr	r0, [sp, #20]
+	.loc	5 87 28 is_stmt 0               @ ../API/Src/Quaternion.c:87:28
+	ldr.w	r1, [r0, #272]
+	.loc	5 87 38                         @ ../API/Src/Quaternion.c:87:38
+	ldr.w	r0, [r0, #400]
+	.loc	5 87 34                         @ ../API/Src/Quaternion.c:87:34
+	str	r0, [r1, #48]
+	.loc	5 88 37 is_stmt 1               @ ../API/Src/Quaternion.c:88:37
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #404]
+	.loc	5 88 36 is_stmt 0               @ ../API/Src/Quaternion.c:88:36
+	vneg.f32	s0, s0
+	.loc	5 88 27                         @ ../API/Src/Quaternion.c:88:27
+	ldr.w	r0, [r0, #272]
+	.loc	5 88 33                         @ ../API/Src/Quaternion.c:88:33
+	vstr	s0, [r0, #52]
+	.loc	5 89 37 is_stmt 1               @ ../API/Src/Quaternion.c:89:37
+	ldr	r0, [sp, #20]
+	.loc	5 89 27 is_stmt 0               @ ../API/Src/Quaternion.c:89:27
+	ldr.w	r1, [r0, #272]
+	.loc	5 89 37                         @ ../API/Src/Quaternion.c:89:37
+	ldr.w	r0, [r0, #396]
+	.loc	5 89 33                         @ ../API/Src/Quaternion.c:89:33
+	str	r0, [r1, #60]
+	.loc	5 91 38 is_stmt 1               @ ../API/Src/Quaternion.c:91:38
+	ldr	r0, [sp, #20]
+	.loc	5 91 28 is_stmt 0               @ ../API/Src/Quaternion.c:91:28
+	ldr.w	r1, [r0, #272]
+	.loc	5 91 38                         @ ../API/Src/Quaternion.c:91:38
+	ldr.w	r0, [r0, #404]
+	.loc	5 91 34                         @ ../API/Src/Quaternion.c:91:34
+	str	r0, [r1, #72]
+	.loc	5 92 37 is_stmt 1               @ ../API/Src/Quaternion.c:92:37
+	ldr	r0, [sp, #20]
+	.loc	5 92 27 is_stmt 0               @ ../API/Src/Quaternion.c:92:27
+	ldr.w	r1, [r0, #272]
+	.loc	5 92 37                         @ ../API/Src/Quaternion.c:92:37
+	ldr.w	r0, [r0, #400]
+	.loc	5 92 33                         @ ../API/Src/Quaternion.c:92:33
+	str	r0, [r1, #76]
+	.loc	5 93 37 is_stmt 1               @ ../API/Src/Quaternion.c:93:37
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #396]
+	.loc	5 93 36 is_stmt 0               @ ../API/Src/Quaternion.c:93:36
+	vneg.f32	s0, s0
+	.loc	5 93 27                         @ ../API/Src/Quaternion.c:93:27
+	ldr.w	r0, [r0, #272]
+	.loc	5 93 33                         @ ../API/Src/Quaternion.c:93:33
+	vstr	s0, [r0, #80]
+	.loc	5 95 10 is_stmt 1               @ ../API/Src/Quaternion.c:95:10
+	ldr	r1, [sp, #20]
+	.loc	5 95 22 is_stmt 0               @ ../API/Src/Quaternion.c:95:22
+	ldr	r3, [sp, #12]
+	.loc	5 95 3                          @ ../API/Src/Quaternion.c:95:3
+	ldr	r0, [r3]
+	ldr	r2, [r3, #4]
+	ldr	r3, [r3, #8]
+	str.w	r3, [r1, #372]
+	str.w	r2, [r1, #368]
+	str.w	r0, [r1, #364]
+	.loc	5 97 41 is_stmt 1               @ ../API/Src/Quaternion.c:97:41
+	ldr	r0, [sp, #20]
+	vldr	s4, [r0, #364]
+	.loc	5 97 75 is_stmt 0               @ ../API/Src/Quaternion.c:97:75
+	vldr	s0, [r0, #368]
+	.loc	5 97 109                        @ ../API/Src/Quaternion.c:97:109
+	vldr	s2, [r0, #372]
+	.loc	5 97 90                         @ ../API/Src/Quaternion.c:97:90
+	vmul.f32	s0, s0, s0
+	.loc	5 97 73                         @ ../API/Src/Quaternion.c:97:73
+	vfma.f32	s0, s4, s4
+	.loc	5 97 107                        @ ../API/Src/Quaternion.c:97:107
+	vfma.f32	s0, s2, s2
+	.loc	5 97 24                         @ ../API/Src/Quaternion.c:97:24
+	bl	Fast_InverseSqrt
+	.loc	5 97 3                          @ ../API/Src/Quaternion.c:97:3
+	ldr	r0, [sp, #20]
+	.loc	5 97 22                         @ ../API/Src/Quaternion.c:97:22
+	vstr	s0, [r0, #388]
+	.loc	5 99 44 is_stmt 1               @ ../API/Src/Quaternion.c:99:44
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #364]
+	.loc	5 99 67 is_stmt 0               @ ../API/Src/Quaternion.c:99:67
+	vldr	s2, [r0, #388]
+	.loc	5 99 59                         @ ../API/Src/Quaternion.c:99:59
+	vmul.f32	s0, s0, s2
+	.loc	5 99 23                         @ ../API/Src/Quaternion.c:99:23
+	ldr	r0, [r0, #64]
+	.loc	5 99 41                         @ ../API/Src/Quaternion.c:99:41
+	vstr	s0, [r0]
+	.loc	5 100 44 is_stmt 1              @ ../API/Src/Quaternion.c:100:44
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #368]
+	.loc	5 100 67 is_stmt 0              @ ../API/Src/Quaternion.c:100:67
+	vldr	s2, [r0, #388]
+	.loc	5 100 59                        @ ../API/Src/Quaternion.c:100:59
+	vmul.f32	s0, s0, s2
+	.loc	5 100 23                        @ ../API/Src/Quaternion.c:100:23
+	ldr	r0, [r0, #64]
+	.loc	5 100 41                        @ ../API/Src/Quaternion.c:100:41
+	vstr	s0, [r0, #4]
+	.loc	5 101 44 is_stmt 1              @ ../API/Src/Quaternion.c:101:44
+	ldr	r0, [sp, #20]
+	vldr	s0, [r0, #372]
+	.loc	5 101 67 is_stmt 0              @ ../API/Src/Quaternion.c:101:67
+	vldr	s2, [r0, #388]
+	.loc	5 101 59                        @ ../API/Src/Quaternion.c:101:59
+	vmul.f32	s0, s0, s2
+	.loc	5 101 23                        @ ../API/Src/Quaternion.c:101:23
+	ldr	r0, [r0, #64]
+	.loc	5 101 41                        @ ../API/Src/Quaternion.c:101:41
+	vstr	s0, [r0, #8]
+.Ltmp74:
+	.loc	5 103 10 is_stmt 1              @ ../API/Src/Quaternion.c:103:10
+	ldr	r0, [sp, #20]
+	.loc	5 103 16 is_stmt 0              @ ../API/Src/Quaternion.c:103:16
+	vldr	s2, [r0, #392]
+	vmov.f32	s0, #1.000000e+00
+	.loc	5 103 9                         @ ../API/Src/Quaternion.c:103:9
+	vdiv.f32	s0, s0, s2
+	vldr	s2, .LCPI4_0
+	.loc	5 103 35                        @ ../API/Src/Quaternion.c:103:35
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB4_4
+	b	.LBB4_1
+.LBB4_1:
+	.loc	5 103 42                        @ ../API/Src/Quaternion.c:103:42
+	ldr	r0, [sp, #20]
+	.loc	5 103 48                        @ ../API/Src/Quaternion.c:103:48
+	vldr	s2, [r0, #388]
+	vmov.f32	s0, #1.000000e+00
+	.loc	5 103 41                        @ ../API/Src/Quaternion.c:103:41
+	vdiv.f32	s0, s0, s2
+	vldr	s2, .LCPI4_1
+	.loc	5 103 84                        @ ../API/Src/Quaternion.c:103:84
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB4_4
+	b	.LBB4_2
+.LBB4_2:
+	.loc	5 103 91                        @ ../API/Src/Quaternion.c:103:91
+	ldr	r0, [sp, #20]
+	.loc	5 103 97                        @ ../API/Src/Quaternion.c:103:97
+	vldr	s2, [r0, #388]
+	vmov.f32	s0, #1.000000e+00
+	.loc	5 103 90                        @ ../API/Src/Quaternion.c:103:90
+	vdiv.f32	s0, s0, s2
+	vldr	s2, .LCPI4_2
+.Ltmp75:
+	.loc	5 103 6                         @ ../API/Src/Quaternion.c:103:6
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB4_4
+	b	.LBB4_3
+.LBB4_3:
+.Ltmp76:
+	.loc	5 105 3 is_stmt 1               @ ../API/Src/Quaternion.c:105:3
+	ldr	r1, [sp, #20]
+	movs	r0, #1
+	.loc	5 105 46 is_stmt 0              @ ../API/Src/Quaternion.c:105:46
+	strb.w	r0, [r1, #72]
+	.loc	5 106 3 is_stmt 1               @ ../API/Src/Quaternion.c:106:3
+	b	.LBB4_5
+.Ltmp77:
+.LBB4_4:
+	.loc	5 109 5                         @ ../API/Src/Quaternion.c:109:5
+	ldr	r1, [sp, #20]
+	movs	r0, #0
+	.loc	5 109 48 is_stmt 0              @ ../API/Src/Quaternion.c:109:48
+	strb.w	r0, [r1, #72]
+	b	.LBB4_5
+.Ltmp78:
+.LBB4_5:
+	.loc	5 112 36 is_stmt 1              @ ../API/Src/Quaternion.c:112:36
+	ldr	r0, [sp, #20]
+	.loc	5 112 42 is_stmt 0              @ ../API/Src/Quaternion.c:112:42
+	vldr	s0, [r0, #32]
+	.loc	5 112 67                        @ ../API/Src/Quaternion.c:112:67
+	vldr	s2, [r0, #60]
+	.loc	5 112 45                        @ ../API/Src/Quaternion.c:112:45
+	vmul.f32	s0, s0, s2
+	.loc	5 112 28                        @ ../API/Src/Quaternion.c:112:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 112 34                        @ ../API/Src/Quaternion.c:112:34
+	vstr	s0, [r0]
+	.loc	5 113 36 is_stmt 1              @ ../API/Src/Quaternion.c:113:36
+	ldr	r0, [sp, #20]
+	.loc	5 113 42 is_stmt 0              @ ../API/Src/Quaternion.c:113:42
+	vldr	s0, [r0, #32]
+	.loc	5 113 67                        @ ../API/Src/Quaternion.c:113:67
+	vldr	s2, [r0, #60]
+	.loc	5 113 45                        @ ../API/Src/Quaternion.c:113:45
+	vmul.f32	s0, s0, s2
+	.loc	5 113 28                        @ ../API/Src/Quaternion.c:113:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 113 34                        @ ../API/Src/Quaternion.c:113:34
+	vstr	s0, [r0, #28]
+	.loc	5 114 36 is_stmt 1              @ ../API/Src/Quaternion.c:114:36
+	ldr	r0, [sp, #20]
+	.loc	5 114 42 is_stmt 0              @ ../API/Src/Quaternion.c:114:42
+	vldr	s0, [r0, #32]
+	.loc	5 114 67                        @ ../API/Src/Quaternion.c:114:67
+	vldr	s2, [r0, #60]
+	.loc	5 114 45                        @ ../API/Src/Quaternion.c:114:45
+	vmul.f32	s0, s0, s2
+	.loc	5 114 28                        @ ../API/Src/Quaternion.c:114:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 114 34                        @ ../API/Src/Quaternion.c:114:34
+	vstr	s0, [r0, #56]
+	.loc	5 115 36 is_stmt 1              @ ../API/Src/Quaternion.c:115:36
+	ldr	r0, [sp, #20]
+	.loc	5 115 42 is_stmt 0              @ ../API/Src/Quaternion.c:115:42
+	vldr	s0, [r0, #32]
+	.loc	5 115 67                        @ ../API/Src/Quaternion.c:115:67
+	vldr	s2, [r0, #60]
+	.loc	5 115 45                        @ ../API/Src/Quaternion.c:115:45
+	vmul.f32	s0, s0, s2
+	.loc	5 115 28                        @ ../API/Src/Quaternion.c:115:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 115 34                        @ ../API/Src/Quaternion.c:115:34
+	vstr	s0, [r0, #84]
+	.loc	5 116 36 is_stmt 1              @ ../API/Src/Quaternion.c:116:36
+	ldr	r0, [sp, #20]
+	.loc	5 116 42 is_stmt 0              @ ../API/Src/Quaternion.c:116:42
+	vldr	s0, [r0, #36]
+	.loc	5 116 67                        @ ../API/Src/Quaternion.c:116:67
+	vldr	s2, [r0, #60]
+	.loc	5 116 45                        @ ../API/Src/Quaternion.c:116:45
+	vmul.f32	s0, s0, s2
+	.loc	5 116 28                        @ ../API/Src/Quaternion.c:116:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 116 34                        @ ../API/Src/Quaternion.c:116:34
+	vstr	s0, [r0, #112]
+	.loc	5 117 36 is_stmt 1              @ ../API/Src/Quaternion.c:117:36
+	ldr	r0, [sp, #20]
+	.loc	5 117 42 is_stmt 0              @ ../API/Src/Quaternion.c:117:42
+	vldr	s0, [r0, #36]
+	.loc	5 117 67                        @ ../API/Src/Quaternion.c:117:67
+	vldr	s2, [r0, #60]
+	.loc	5 117 45                        @ ../API/Src/Quaternion.c:117:45
+	vmul.f32	s0, s0, s2
+	.loc	5 117 28                        @ ../API/Src/Quaternion.c:117:28
+	ldr.w	r0, [r0, #296]
+	.loc	5 117 34                        @ ../API/Src/Quaternion.c:117:34
+	vstr	s0, [r0, #140]
+	.loc	5 118 36 is_stmt 1              @ ../API/Src/Quaternion.c:118:36
+	ldr	r1, [sp, #20]
+	.loc	5 118 42 is_stmt 0              @ ../API/Src/Quaternion.c:118:42
+	ldr	r0, [r1, #40]
+	.loc	5 118 28                        @ ../API/Src/Quaternion.c:118:28
+	ldr.w	r1, [r1, #300]
+	.loc	5 118 34                        @ ../API/Src/Quaternion.c:118:34
+	str	r0, [r1]
+	.loc	5 119 36 is_stmt 1              @ ../API/Src/Quaternion.c:119:36
+	ldr	r1, [sp, #20]
+	.loc	5 119 42 is_stmt 0              @ ../API/Src/Quaternion.c:119:42
+	ldr	r0, [r1, #40]
+	.loc	5 119 28                        @ ../API/Src/Quaternion.c:119:28
+	ldr.w	r1, [r1, #300]
+	.loc	5 119 34                        @ ../API/Src/Quaternion.c:119:34
+	str	r0, [r1, #16]
+	.loc	5 120 36 is_stmt 1              @ ../API/Src/Quaternion.c:120:36
+	ldr	r1, [sp, #20]
+	.loc	5 120 42 is_stmt 0              @ ../API/Src/Quaternion.c:120:42
+	ldr	r0, [r1, #40]
+	.loc	5 120 28                        @ ../API/Src/Quaternion.c:120:28
+	ldr.w	r1, [r1, #300]
+	.loc	5 120 34                        @ ../API/Src/Quaternion.c:120:34
+	str	r0, [r1, #32]
+	.loc	5 122 25 is_stmt 1              @ ../API/Src/Quaternion.c:122:25
+	ldr	r0, [sp, #20]
+	.loc	5 122 31 is_stmt 0              @ ../API/Src/Quaternion.c:122:31
+	adds	r0, #52
+	.loc	5 122 3                         @ ../API/Src/Quaternion.c:122:3
+	bl	Kalman_Filter_Update
+	.loc	5 124 22 is_stmt 1              @ ../API/Src/Quaternion.c:124:22
+	ldr	r1, [sp, #20]
+	.loc	5 124 42 is_stmt 0              @ ../API/Src/Quaternion.c:124:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 124 22                        @ ../API/Src/Quaternion.c:124:22
+	ldr	r0, [r0]
+	.loc	5 124 20                        @ ../API/Src/Quaternion.c:124:20
+	str	r0, [r1, #4]
+	.loc	5 125 22 is_stmt 1              @ ../API/Src/Quaternion.c:125:22
+	ldr	r1, [sp, #20]
+	.loc	5 125 42 is_stmt 0              @ ../API/Src/Quaternion.c:125:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 125 22                        @ ../API/Src/Quaternion.c:125:22
+	ldr	r0, [r0, #4]
+	.loc	5 125 20                        @ ../API/Src/Quaternion.c:125:20
+	str	r0, [r1, #8]
+	.loc	5 126 22 is_stmt 1              @ ../API/Src/Quaternion.c:126:22
+	ldr	r1, [sp, #20]
+	.loc	5 126 42 is_stmt 0              @ ../API/Src/Quaternion.c:126:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 126 22                        @ ../API/Src/Quaternion.c:126:22
+	ldr	r0, [r0, #8]
+	.loc	5 126 20                        @ ../API/Src/Quaternion.c:126:20
+	str	r0, [r1, #12]
+	.loc	5 127 22 is_stmt 1              @ ../API/Src/Quaternion.c:127:22
+	ldr	r1, [sp, #20]
+	.loc	5 127 42 is_stmt 0              @ ../API/Src/Quaternion.c:127:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 127 22                        @ ../API/Src/Quaternion.c:127:22
+	ldr	r0, [r0, #12]
+	.loc	5 127 20                        @ ../API/Src/Quaternion.c:127:20
+	str	r0, [r1, #16]
+	.loc	5 128 22 is_stmt 1              @ ../API/Src/Quaternion.c:128:22
+	ldr	r1, [sp, #20]
+	.loc	5 128 42 is_stmt 0              @ ../API/Src/Quaternion.c:128:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 128 22                        @ ../API/Src/Quaternion.c:128:22
+	ldr	r0, [r0, #16]
+	.loc	5 128 20                        @ ../API/Src/Quaternion.c:128:20
+	str	r0, [r1, #20]
+	.loc	5 129 22 is_stmt 1              @ ../API/Src/Quaternion.c:129:22
+	ldr	r1, [sp, #20]
+	.loc	5 129 42 is_stmt 0              @ ../API/Src/Quaternion.c:129:42
+	ldr.w	r0, [r1, #360]
+	.loc	5 129 22                        @ ../API/Src/Quaternion.c:129:22
+	ldr	r0, [r0, #20]
+	.loc	5 129 20                        @ ../API/Src/Quaternion.c:129:20
+	str	r0, [r1, #24]
+	.loc	5 130 3 is_stmt 1               @ ../API/Src/Quaternion.c:130:3
+	ldr	r1, [sp, #20]
+	movs	r0, #0
+	.loc	5 130 20 is_stmt 0              @ ../API/Src/Quaternion.c:130:20
+	str	r0, [r1, #28]
+	.loc	5 134 36 is_stmt 1              @ ../API/Src/Quaternion.c:134:36
+	ldr	r0, [sp, #20]
+	vldr	s6, [r0, #4]
+	.loc	5 134 66 is_stmt 0              @ ../API/Src/Quaternion.c:134:66
+	vldr	s0, [r0, #8]
+	.loc	5 134 80                        @ ../API/Src/Quaternion.c:134:80
+	vldr	s4, [r0, #12]
+	.loc	5 134 50                        @ ../API/Src/Quaternion.c:134:50
+	vldr	s2, [r0, #16]
+	.loc	5 134 79                        @ ../API/Src/Quaternion.c:134:79
+	vmul.f32	s0, s0, s4
+	.loc	5 134 64                        @ ../API/Src/Quaternion.c:134:64
+	vfma.f32	s0, s6, s2
+	.loc	5 134 34                        @ ../API/Src/Quaternion.c:134:34
+	vadd.f32	s0, s0, s0
+	.loc	5 134 150                       @ ../API/Src/Quaternion.c:134:150
+	vmul.f32	s2, s2, s2
+	.loc	5 134 135                       @ ../API/Src/Quaternion.c:134:135
+	vfma.f32	s2, s4, s4
+	vmov.f32	s4, #-2.000000e+00
+	vstr	s4, [sp, #4]                    @ 4-byte Spill
+	vmov.f32	s1, #1.000000e+00
+	vstr	s1, [sp]                        @ 4-byte Spill
+	.loc	5 134 100                       @ ../API/Src/Quaternion.c:134:100
+	vfma.f32	s1, s2, s4
+	.loc	5 134 24                        @ ../API/Src/Quaternion.c:134:24
+	bl	__hardfp_atan2f
+	vldr	s4, [sp, #4]                    @ 4-byte Reload
+	.loc	5 134 2                         @ ../API/Src/Quaternion.c:134:2
+	ldr	r0, [sp, #20]
+	.loc	5 134 22                        @ ../API/Src/Quaternion.c:134:22
+	vstr	s0, [r0, #408]
+	.loc	5 135 37 is_stmt 1              @ ../API/Src/Quaternion.c:135:37
+	ldr	r0, [sp, #20]
+	vldr	s2, [r0, #4]
+	.loc	5 135 73 is_stmt 0              @ ../API/Src/Quaternion.c:135:73
+	vldr	s0, [r0, #8]
+	.loc	5 135 51                        @ ../API/Src/Quaternion.c:135:51
+	vldr	s8, [r0, #12]
+	.loc	5 135 87                        @ ../API/Src/Quaternion.c:135:87
+	vldr	s6, [r0, #16]
+	.loc	5 135 50                        @ ../API/Src/Quaternion.c:135:50
+	vmul.f32	s2, s2, s8
+	.loc	5 135 86                        @ ../API/Src/Quaternion.c:135:86
+	vmul.f32	s0, s0, s6
+	.loc	5 135 71                        @ ../API/Src/Quaternion.c:135:71
+	vadd.f32	s0, s0, s0
+	.loc	5 135 66                        @ ../API/Src/Quaternion.c:135:66
+	vfnma.f32	s0, s2, s4
+	.loc	5 135 25                        @ ../API/Src/Quaternion.c:135:25
+	bl	__hardfp_asinf
+	vldr	s1, [sp]                        @ 4-byte Reload
+	vldr	s4, [sp, #4]                    @ 4-byte Reload
+	.loc	5 135 3                         @ ../API/Src/Quaternion.c:135:3
+	ldr	r0, [sp, #20]
+	.loc	5 135 23                        @ ../API/Src/Quaternion.c:135:23
+	vstr	s0, [r0, #412]
+	.loc	5 136 36 is_stmt 1              @ ../API/Src/Quaternion.c:136:36
+	ldr	r0, [sp, #20]
+	vldr	s8, [r0, #4]
+	.loc	5 136 50 is_stmt 0              @ ../API/Src/Quaternion.c:136:50
+	vldr	s6, [r0, #8]
+	.loc	5 136 66                        @ ../API/Src/Quaternion.c:136:66
+	vldr	s2, [r0, #12]
+	.loc	5 136 80                        @ ../API/Src/Quaternion.c:136:80
+	vldr	s0, [r0, #16]
+	.loc	5 136 79                        @ ../API/Src/Quaternion.c:136:79
+	vmul.f32	s0, s2, s0
+	.loc	5 136 64                        @ ../API/Src/Quaternion.c:136:64
+	vfma.f32	s0, s8, s6
+	.loc	5 136 34                        @ ../API/Src/Quaternion.c:136:34
+	vadd.f32	s0, s0, s0
+	.loc	5 136 150                       @ ../API/Src/Quaternion.c:136:150
+	vmul.f32	s2, s2, s2
+	.loc	5 136 135                       @ ../API/Src/Quaternion.c:136:135
+	vfma.f32	s2, s6, s6
+	.loc	5 136 100                       @ ../API/Src/Quaternion.c:136:100
+	vfma.f32	s1, s2, s4
+	.loc	5 136 24                        @ ../API/Src/Quaternion.c:136:24
+	bl	__hardfp_atan2f
+	.loc	5 136 2                         @ ../API/Src/Quaternion.c:136:2
+	ldr	r0, [sp, #20]
+	.loc	5 136 22                        @ ../API/Src/Quaternion.c:136:22
+	vstr	s0, [r0, #416]
+	.loc	5 138 1 epilogue_begin is_stmt 1 @ ../API/Src/Quaternion.c:138:1
+	add	sp, #24
+	pop	{r7, pc}
+.Ltmp79:
+	.loc	5 0 1 is_stmt 0                 @ :0:1
+.Ltmp80:
+	.p2align	2
+@ %bb.6:
+.LCPI4_0:
+	.long	0x3e99999a                      @ float 0.300000012
+.LCPI4_1:
+	.long	0x41137cee                      @ float 9.21800041
+.LCPI4_2:
+	.long	0x41237cee                      @ float 10.2180004
+.Lfunc_end4:
+	.size	QuaternionEKF_Update, .Lfunc_end4-QuaternionEKF_Update
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.Fast_InverseSqrt,"ax",%progbits
+	.p2align	3                               @ -- Begin function Fast_InverseSqrt
+	.type	Fast_InverseSqrt,%function
+	.code	16                              @ @Fast_InverseSqrt
+	.thumb_func
+Fast_InverseSqrt:
+.Lfunc_begin5:
+	.loc	5 363 0 is_stmt 1               @ ../API/Src/Quaternion.c:363:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 16
+	vstr	s0, [sp, #12]
+.Ltmp81:
+	.loc	5 365 26 prologue_end           @ ../API/Src/Quaternion.c:365:26
+	vldr	s0, [sp, #12]
+	vmov.f32	s2, #5.000000e-01
+	.loc	5 365 24 is_stmt 0              @ ../API/Src/Quaternion.c:365:24
+	vmul.f32	s0, s0, s2
+	.loc	5 365 11                        @ ../API/Src/Quaternion.c:365:11
+	vstr	s0, [sp, #8]
+	.loc	5 366 15 is_stmt 1              @ ../API/Src/Quaternion.c:366:15
+	ldr	r0, [sp, #12]
+	.loc	5 366 11 is_stmt 0              @ ../API/Src/Quaternion.c:366:11
+	str	r0, [sp, #4]
+	.loc	5 367 14 is_stmt 1              @ ../API/Src/Quaternion.c:367:14
+	ldr	r0, [sp, #4]
+	.loc	5 367 10 is_stmt 0              @ ../API/Src/Quaternion.c:367:10
+	str	r0, [sp]
+	.loc	5 369 23 is_stmt 1              @ ../API/Src/Quaternion.c:369:23
+	ldr	r1, [sp]
+	movw	r0, #23174
+	movt	r0, #24375
+	.loc	5 369 20 is_stmt 0              @ ../API/Src/Quaternion.c:369:20
+	sub.w	r0, r0, r1, asr #1
+	.loc	5 369 7                         @ ../API/Src/Quaternion.c:369:7
+	str	r0, [sp]
+	.loc	5 370 9 is_stmt 1               @ ../API/Src/Quaternion.c:370:9
+	ldr	r0, [sp]
+	.loc	5 370 7 is_stmt 0               @ ../API/Src/Quaternion.c:370:7
+	str	r0, [sp, #4]
+	.loc	5 371 9 is_stmt 1               @ ../API/Src/Quaternion.c:371:9
+	vldr	s2, [sp, #4]
+	.loc	5 371 22 is_stmt 0              @ ../API/Src/Quaternion.c:371:22
+	vldr	s0, [sp, #8]
+	.loc	5 371 28                        @ ../API/Src/Quaternion.c:371:28
+	vmul.f32	s4, s0, s2
+	vmov.f32	s0, #-1.500000e+00
+	.loc	5 371 19                        @ ../API/Src/Quaternion.c:371:19
+	vfma.f32	s0, s4, s2
+	.loc	5 371 11                        @ ../API/Src/Quaternion.c:371:11
+	vnmul.f32	s0, s0, s2
+	.loc	5 371 7                         @ ../API/Src/Quaternion.c:371:7
+	vstr	s0, [sp, #4]
+	.loc	5 372 12 is_stmt 1              @ ../API/Src/Quaternion.c:372:12
+	vldr	s0, [sp, #4]
+	.loc	5 372 5 epilogue_begin is_stmt 0 @ ../API/Src/Quaternion.c:372:5
+	add	sp, #16
+	bx	lr
+.Ltmp82:
+.Lfunc_end5:
+	.size	Fast_InverseSqrt, .Lfunc_end5-Fast_InverseSqrt
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.QuaternionEKF_ChiSqrtTest,"ax",%progbits
+	.p2align	3                               @ -- Begin function QuaternionEKF_ChiSqrtTest
+	.type	QuaternionEKF_ChiSqrtTest,%function
+	.code	16                              @ @QuaternionEKF_ChiSqrtTest
+	.thumb_func
+QuaternionEKF_ChiSqrtTest:
+.Lfunc_begin6:
+	.loc	5 196 0 is_stmt 1               @ ../API/Src/Quaternion.c:196:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+	str	r0, [sp, #8]
+.Ltmp83:
+	.loc	5 199 37 prologue_end           @ ../API/Src/Quaternion.c:199:37
+	ldr	r1, [sp, #8]
+	.loc	5 199 61 is_stmt 0              @ ../API/Src/Quaternion.c:199:61
+	ldrh.w	r0, [r1, #172]
+	.loc	5 199 35                        @ ../API/Src/Quaternion.c:199:35
+	strh.w	r0, [r1, #164]
+	.loc	5 200 3 is_stmt 1               @ ../API/Src/Quaternion.c:200:3
+	ldr	r1, [sp, #8]
+	movs	r0, #1
+	.loc	5 200 35 is_stmt 0              @ ../API/Src/Quaternion.c:200:35
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	strh.w	r0, [r1, #166]
+	.loc	5 201 36 is_stmt 1              @ ../API/Src/Quaternion.c:201:36
+	ldr	r1, [sp, #8]
+	.loc	5 201 44 is_stmt 0              @ ../API/Src/Quaternion.c:201:44
+	add.w	r2, r1, #164
+	.loc	5 201 36                        @ ../API/Src/Quaternion.c:201:36
+	add.w	r0, r1, #172
+	.loc	5 201 62                        @ ../API/Src/Quaternion.c:201:62
+	adds	r1, #188
+	.loc	5 201 19                        @ ../API/Src/Quaternion.c:201:19
+	bl	arm_mat_mult_f32
+	mov	r1, r0
+	.loc	5 201 3                         @ ../API/Src/Quaternion.c:201:3
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	ldr	r2, [sp, #8]
+	.loc	5 201 17                        @ ../API/Src/Quaternion.c:201:17
+	strb.w	r1, [r2, #196]
+	.loc	5 204 2 is_stmt 1               @ ../API/Src/Quaternion.c:204:2
+	ldr	r1, [sp, #8]
+	.loc	5 204 34 is_stmt 0              @ ../API/Src/Quaternion.c:204:34
+	strh.w	r0, [r1, #180]
+	.loc	5 205 37 is_stmt 1              @ ../API/Src/Quaternion.c:205:37
+	ldr	r1, [sp, #8]
+	.loc	5 205 61 is_stmt 0              @ ../API/Src/Quaternion.c:205:61
+	ldrh.w	r0, [r1, #172]
+	.loc	5 205 35                        @ ../API/Src/Quaternion.c:205:35
+	strh.w	r0, [r1, #182]
+	.loc	5 206 37 is_stmt 1              @ ../API/Src/Quaternion.c:206:37
+	ldr	r1, [sp, #8]
+	add.w	r0, r1, #172
+	.loc	5 206 71 is_stmt 0              @ ../API/Src/Quaternion.c:206:71
+	adds	r1, #180
+	.loc	5 206 19                        @ ../API/Src/Quaternion.c:206:19
+	bl	arm_mat_trans_f32
+	.loc	5 206 3                         @ ../API/Src/Quaternion.c:206:3
+	ldr	r1, [sp, #8]
+	.loc	5 206 17                        @ ../API/Src/Quaternion.c:206:17
+	strb.w	r0, [r1, #196]
+	.loc	5 209 36 is_stmt 1              @ ../API/Src/Quaternion.c:209:36
+	ldr	r2, [sp, #8]
+	.loc	5 209 44 is_stmt 0              @ ../API/Src/Quaternion.c:209:44
+	add.w	r0, r2, #180
+	.loc	5 209 70                        @ ../API/Src/Quaternion.c:209:70
+	add.w	r1, r2, #164
+	.loc	5 209 106                       @ ../API/Src/Quaternion.c:209:106
+	adds	r2, #24
+	.loc	5 209 19                        @ ../API/Src/Quaternion.c:209:19
+	bl	arm_mat_mult_f32
+	.loc	5 209 3                         @ ../API/Src/Quaternion.c:209:3
+	ldr	r1, [sp, #8]
+	.loc	5 209 17                        @ ../API/Src/Quaternion.c:209:17
+	strb.w	r0, [r1, #196]
+.Ltmp84:
+	.loc	5 211 6 is_stmt 1               @ ../API/Src/Quaternion.c:211:6
+	ldr	r0, [sp, #8]
+	vldr	s0, [r0, #32]
+	.loc	5 211 69 is_stmt 0              @ ../API/Src/Quaternion.c:211:69
+	vldr	s2, [r0, #36]
+	vmov.f32	s4, #5.000000e-01
+	.loc	5 211 49                        @ ../API/Src/Quaternion.c:211:49
+	vmul.f32	s2, s2, s4
+.Ltmp85:
+	.loc	5 211 6                         @ ../API/Src/Quaternion.c:211:6
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	bge	.LBB6_2
+	b	.LBB6_1
+.LBB6_1:
+.Ltmp86:
+	.loc	5 213 7 is_stmt 1               @ ../API/Src/Quaternion.c:213:7
+	ldr	r1, [sp, #8]
+	movs	r0, #1
+	.loc	5 213 32 is_stmt 0              @ ../API/Src/Quaternion.c:213:32
+	strb.w	r0, [r1, #41]
+	.loc	5 214 3 is_stmt 1               @ ../API/Src/Quaternion.c:214:3
+	b	.LBB6_2
+.Ltmp87:
+.LBB6_2:
+	.loc	5 216 8                         @ ../API/Src/Quaternion.c:216:8
+	ldr	r0, [sp, #8]
+	vldr	s0, [r0, #32]
+	.loc	5 216 64 is_stmt 0              @ ../API/Src/Quaternion.c:216:64
+	vldr	s2, [r0, #36]
+	.loc	5 216 88                        @ ../API/Src/Quaternion.c:216:88
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB6_11
+	b	.LBB6_3
+.LBB6_3:
+	.loc	5 216 91                        @ ../API/Src/Quaternion.c:216:91
+	ldr	r0, [sp, #8]
+	.loc	5 216 109                       @ ../API/Src/Quaternion.c:216:109
+	ldrb.w	r0, [r0, #41]
+.Ltmp88:
+	.loc	5 216 8                         @ ../API/Src/Quaternion.c:216:8
+	lsls	r0, r0, #31
+	cmp	r0, #0
+	beq	.LBB6_11
+	b	.LBB6_4
+.LBB6_4:
+.Ltmp89:
+	.loc	5 218 11 is_stmt 1              @ ../API/Src/Quaternion.c:218:11
+	ldr	r0, [sp, #8]
+	.loc	5 218 29 is_stmt 0              @ ../API/Src/Quaternion.c:218:29
+	ldrb	r0, [r0, #20]
+.Ltmp90:
+	.loc	5 218 11                        @ ../API/Src/Quaternion.c:218:11
+	lsls	r0, r0, #31
+	cbz	r0, .LBB6_6
+	b	.LBB6_5
+.LBB6_5:
+.Ltmp91:
+	.loc	5 220 11 is_stmt 1              @ ../API/Src/Quaternion.c:220:11
+	ldr	r1, [sp, #8]
+	.loc	5 220 41 is_stmt 0              @ ../API/Src/Quaternion.c:220:41
+	ldrb.w	r0, [r1, #40]
+	adds	r0, #1
+	strb.w	r0, [r1, #40]
+	.loc	5 221 7 is_stmt 1               @ ../API/Src/Quaternion.c:221:7
+	b	.LBB6_7
+.Ltmp92:
+.LBB6_6:
+	.loc	5 224 11                        @ ../API/Src/Quaternion.c:224:11
+	ldr	r1, [sp, #8]
+	movs	r0, #0
+	.loc	5 224 42 is_stmt 0              @ ../API/Src/Quaternion.c:224:42
+	strb.w	r0, [r1, #40]
+	b	.LBB6_7
+.Ltmp93:
+.LBB6_7:
+	.loc	5 227 11 is_stmt 1              @ ../API/Src/Quaternion.c:227:11
+	ldr	r0, [sp, #8]
+	.loc	5 227 29 is_stmt 0              @ ../API/Src/Quaternion.c:227:29
+	ldrb.w	r0, [r0, #40]
+.Ltmp94:
+	.loc	5 227 11                        @ ../API/Src/Quaternion.c:227:11
+	cmp	r0, #51
+	blt	.LBB6_9
+	b	.LBB6_8
+.LBB6_8:
+.Ltmp95:
+	.loc	5 229 11 is_stmt 1              @ ../API/Src/Quaternion.c:229:11
+	ldr	r1, [sp, #8]
+	movs	r0, #0
+	.loc	5 229 36 is_stmt 0              @ ../API/Src/Quaternion.c:229:36
+	strb.w	r0, [r1, #41]
+	.loc	5 230 11 is_stmt 1              @ ../API/Src/Quaternion.c:230:11
+	ldr	r1, [sp, #8]
+	.loc	5 230 25 is_stmt 0              @ ../API/Src/Quaternion.c:230:25
+	ldrb.w	r0, [r1, #276]
+	and	r0, r0, #239
+	strb.w	r0, [r1, #276]
+	.loc	5 231 7 is_stmt 1               @ ../API/Src/Quaternion.c:231:7
+	b	.LBB6_10
+.Ltmp96:
+.LBB6_9:
+	.loc	5 236 18                        @ ../API/Src/Quaternion.c:236:18
+	ldr	r3, [sp, #8]
+	.loc	5 236 27 is_stmt 0              @ ../API/Src/Quaternion.c:236:27
+	ldr.w	r0, [r3, #200]
+	.loc	5 236 42                        @ ../API/Src/Quaternion.c:236:42
+	ldr.w	r1, [r3, #204]
+	.loc	5 236 57                        @ ../API/Src/Quaternion.c:236:57
+	ldrh	r2, [r3]
+	.loc	5 236 76                        @ ../API/Src/Quaternion.c:236:76
+	ldrb	r3, [r3, #4]
+	.loc	5 236 70                        @ ../API/Src/Quaternion.c:236:70
+	muls	r2, r3, r2
+	.loc	5 236 11                        @ ../API/Src/Quaternion.c:236:11
+	bl	__aeabi_memcpy4
+	.loc	5 237 18 is_stmt 1              @ ../API/Src/Quaternion.c:237:18
+	ldr	r3, [sp, #8]
+	.loc	5 237 27 is_stmt 0              @ ../API/Src/Quaternion.c:237:27
+	ldr.w	r0, [r3, #236]
+	.loc	5 237 39                        @ ../API/Src/Quaternion.c:237:39
+	ldr.w	r1, [r3, #240]
+	.loc	5 237 51                        @ ../API/Src/Quaternion.c:237:51
+	ldrh	r2, [r3]
+	.loc	5 237 70                        @ ../API/Src/Quaternion.c:237:70
+	ldrb	r3, [r3, #4]
+	.loc	5 237 64                        @ ../API/Src/Quaternion.c:237:64
+	muls	r2, r3, r2
+	.loc	5 237 80                        @ ../API/Src/Quaternion.c:237:80
+	muls	r2, r3, r2
+	.loc	5 237 11                        @ ../API/Src/Quaternion.c:237:11
+	bl	__aeabi_memcpy4
+	.loc	5 240 11 is_stmt 1              @ ../API/Src/Quaternion.c:240:11
+	ldr	r1, [sp, #8]
+	.loc	5 240 25 is_stmt 0              @ ../API/Src/Quaternion.c:240:25
+	ldrb.w	r0, [r1, #276]
+	orr	r0, r0, #16
+	strb.w	r0, [r1, #276]
+	movs	r0, #1
+	.loc	5 241 11 is_stmt 1              @ ../API/Src/Quaternion.c:241:11
+	strb.w	r0, [sp, #15]
+	b	.LBB6_17
+.Ltmp97:
+.LBB6_10:
+	.loc	5 243 3                         @ ../API/Src/Quaternion.c:243:3
+	b	.LBB6_16
+.Ltmp98:
+.LBB6_11:
+	.loc	5 246 7                         @ ../API/Src/Quaternion.c:246:7
+	ldr	r0, [sp, #8]
+	vldr	s0, [r0, #32]
+	.loc	5 246 70 is_stmt 0              @ ../API/Src/Quaternion.c:246:70
+	vldr	s2, [r0, #36]
+	vldr	s4, .LCPI6_0
+	.loc	5 246 50                        @ ../API/Src/Quaternion.c:246:50
+	vmul.f32	s2, s2, s4
+	.loc	5 246 94                        @ ../API/Src/Quaternion.c:246:94
+	vcmp.f32	s0, s2
+	vmrs	APSR_nzcv, fpscr
+	ble	.LBB6_14
+	b	.LBB6_12
+.LBB6_12:
+	.loc	5 246 97                        @ ../API/Src/Quaternion.c:246:97
+	ldr	r0, [sp, #8]
+	.loc	5 246 115                       @ ../API/Src/Quaternion.c:246:115
+	ldrb.w	r0, [r0, #41]
+.Ltmp99:
+	.loc	5 246 7                         @ ../API/Src/Quaternion.c:246:7
+	lsls	r0, r0, #31
+	cbz	r0, .LBB6_14
+	b	.LBB6_13
+.LBB6_13:
+.Ltmp100:
+	.loc	5 248 36 is_stmt 1              @ ../API/Src/Quaternion.c:248:36
+	ldr	r0, [sp, #8]
+	.loc	5 248 80 is_stmt 0              @ ../API/Src/Quaternion.c:248:80
+	vldr	s0, [r0, #32]
+	.loc	5 248 54                        @ ../API/Src/Quaternion.c:248:54
+	vldr	s2, [r0, #36]
+	.loc	5 248 78                        @ ../API/Src/Quaternion.c:248:78
+	vsub.f32	s0, s2, s0
+	vldr	s4, .LCPI6_1
+	.loc	5 248 125                       @ ../API/Src/Quaternion.c:248:125
+	vmul.f32	s2, s2, s4
+	.loc	5 248 117                       @ ../API/Src/Quaternion.c:248:117
+	vdiv.f32	s0, s0, s2
+	.loc	5 248 5                         @ ../API/Src/Quaternion.c:248:5
+	ldr.w	r0, [r0, #268]
+	.loc	5 248 33                        @ ../API/Src/Quaternion.c:248:33
+	vstr	s0, [r0]
+	.loc	5 249 4 is_stmt 1               @ ../API/Src/Quaternion.c:249:4
+	b	.LBB6_15
+.Ltmp101:
+.LBB6_14:
+	.loc	5 252 5                         @ ../API/Src/Quaternion.c:252:5
+	ldr	r0, [sp, #8]
+	ldr.w	r1, [r0, #268]
+	mov.w	r0, #1065353216
+	.loc	5 252 33 is_stmt 0              @ ../API/Src/Quaternion.c:252:33
+	str	r0, [r1]
+	b	.LBB6_15
+.Ltmp102:
+.LBB6_15:
+	.loc	5 255 7 is_stmt 1               @ ../API/Src/Quaternion.c:255:7
+	ldr	r1, [sp, #8]
+	movs	r0, #0
+	.loc	5 255 38 is_stmt 0              @ ../API/Src/Quaternion.c:255:38
+	strb.w	r0, [r1, #40]
+	.loc	5 256 7 is_stmt 1               @ ../API/Src/Quaternion.c:256:7
+	ldr	r1, [sp, #8]
+	.loc	5 256 21 is_stmt 0              @ ../API/Src/Quaternion.c:256:21
+	ldrb.w	r0, [r1, #276]
+	and	r0, r0, #239
+	strb.w	r0, [r1, #276]
+	b	.LBB6_16
+.Ltmp103:
+.LBB6_16:
+	.loc	5 0 21                          @ ../API/Src/Quaternion.c:0:21
+	movs	r0, #0
+	.loc	5 258 3 is_stmt 1               @ ../API/Src/Quaternion.c:258:3
+	strb.w	r0, [sp, #15]
+	b	.LBB6_17
+.LBB6_17:
+	.loc	5 259 1                         @ ../API/Src/Quaternion.c:259:1
+	ldrb.w	r0, [sp, #15]
+	.loc	5 259 1 epilogue_begin is_stmt 0 @ ../API/Src/Quaternion.c:259:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp104:
+	.loc	5 0 1                           @ :0:1
+.Ltmp105:
+	.p2align	2
+@ %bb.18:
+.LCPI6_0:
+	.long	0x3dcccccd                      @ float 0.100000001
+.LCPI6_1:
+	.long	0x3f666666                      @ float 0.899999976
+.Lfunc_end6:
+	.size	QuaternionEKF_ChiSqrtTest, .Lfunc_end6-QuaternionEKF_ChiSqrtTest
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.hidden	Quaternion_Info                 @ @Quaternion_Info
+	.type	Quaternion_Info,%object
+	.section	.bss.Quaternion_Info,"aw",%nobits
+	.globl	Quaternion_Info
+	.p2align	2, 0x0
+Quaternion_Info:
+	.zero	420
+	.size	Quaternion_Info, 420
+
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                               @ Abbreviation Code
+	.byte	17                              @ DW_TAG_compile_unit
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	37                              @ DW_AT_producer
+	.byte	14                              @ DW_FORM_strp
+	.byte	19                              @ DW_AT_language
+	.byte	5                               @ DW_FORM_data2
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	16                              @ DW_AT_stmt_list
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	27                              @ DW_AT_comp_dir
+	.byte	14                              @ DW_FORM_strp
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	2                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	3                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	4                               @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	5                               @ DW_FORM_data2
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	5                               @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	6                               @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	7                               @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	8                               @ Abbreviation Code
+	.byte	1                               @ DW_TAG_array_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	9                               @ Abbreviation Code
+	.byte	33                              @ DW_TAG_subrange_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	55                              @ DW_AT_count
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	10                              @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	11                              @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	12                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	5                               @ DW_FORM_data2
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	13                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	14                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	13                              @ DW_AT_bit_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	107                             @ DW_AT_data_bit_offset
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	16                              @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	17                              @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	18                              @ Abbreviation Code
+	.byte	4                               @ DW_TAG_enumeration_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	19                              @ Abbreviation Code
+	.byte	40                              @ DW_TAG_enumerator
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	28                              @ DW_AT_const_value
+	.byte	13                              @ DW_FORM_sdata
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	20                              @ Abbreviation Code
+	.byte	21                              @ DW_TAG_subroutine_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	21                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	22                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	23                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	24                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	25                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	26                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	27                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	28                              @ Abbreviation Code
+	.byte	11                              @ DW_TAG_lexical_block
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	29                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	30                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	0                               @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	4                               @ DWARF version number
+	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
+	.byte	4                               @ Address Size (in bytes)
+	.byte	1                               @ Abbrev [1] 0xb:0x781 DW_TAG_compile_unit
+	.long	.Linfo_string0                  @ DW_AT_producer
+	.short	12                              @ DW_AT_language
+	.long	.Linfo_string1                  @ DW_AT_name
+	.long	.Lline_table_start0             @ DW_AT_stmt_list
+	.long	.Linfo_string2                  @ DW_AT_comp_dir
+	.long	0                               @ DW_AT_low_pc
+	.long	.Ldebug_ranges0                 @ DW_AT_ranges
+	.byte	2                               @ Abbrev [2] 0x26:0x11 DW_TAG_variable
+	.long	.Linfo_string3                  @ DW_AT_name
+	.long	55                              @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	5                               @ DW_AT_decl_file
+	.byte	16                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	Quaternion_Info
+	.byte	3                               @ Abbrev [3] 0x37:0xb DW_TAG_typedef
+	.long	66                              @ DW_AT_type
+	.long	.Linfo_string91                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	30                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x42:0xc0 DW_TAG_structure_type
+	.short	420                             @ DW_AT_byte_size
+	.byte	1                               @ DW_AT_decl_file
+	.byte	8                               @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x47:0xc DW_TAG_member
+	.long	.Linfo_string4                  @ DW_AT_name
+	.long	258                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	10                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x53:0xc DW_TAG_member
+	.long	.Linfo_string6                  @ DW_AT_name
+	.long	265                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	12                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x5f:0xc DW_TAG_member
+	.long	.Linfo_string9                  @ DW_AT_name
+	.long	291                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	13                              @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x6b:0xc DW_TAG_member
+	.long	.Linfo_string10                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	15                              @ DW_AT_decl_line
+	.byte	32                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x77:0xc DW_TAG_member
+	.long	.Linfo_string11                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	15                              @ DW_AT_decl_line
+	.byte	36                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x83:0xc DW_TAG_member
+	.long	.Linfo_string12                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	15                              @ DW_AT_decl_line
+	.byte	40                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x8f:0xc DW_TAG_member
+	.long	.Linfo_string13                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	17                              @ DW_AT_decl_line
+	.byte	44                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x9b:0xc DW_TAG_member
+	.long	.Linfo_string14                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.byte	48                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0xa7:0xc DW_TAG_member
+	.long	.Linfo_string15                 @ DW_AT_name
+	.long	308                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	19                              @ DW_AT_decl_line
+	.byte	52                              @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xb3:0xd DW_TAG_member
+	.long	.Linfo_string85                 @ DW_AT_name
+	.long	291                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	21                              @ DW_AT_decl_line
+	.short	364                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xc0:0xd DW_TAG_member
+	.long	.Linfo_string86                 @ DW_AT_name
+	.long	291                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	22                              @ DW_AT_decl_line
+	.short	376                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xcd:0xd DW_TAG_member
+	.long	.Linfo_string87                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	23                              @ DW_AT_decl_line
+	.short	388                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xda:0xd DW_TAG_member
+	.long	.Linfo_string88                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	24                              @ DW_AT_decl_line
+	.short	392                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xe7:0xd DW_TAG_member
+	.long	.Linfo_string89                 @ DW_AT_name
+	.long	291                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	25                              @ DW_AT_decl_line
+	.short	396                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0xf4:0xd DW_TAG_member
+	.long	.Linfo_string90                 @ DW_AT_name
+	.long	291                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	26                              @ DW_AT_decl_line
+	.short	408                             @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	7                               @ Abbrev [7] 0x102:0x7 DW_TAG_base_type
+	.long	.Linfo_string5                  @ DW_AT_name
+	.byte	2                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	8                               @ Abbrev [8] 0x109:0xc DW_TAG_array_type
+	.long	277                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x10e:0x6 DW_TAG_subrange_type
+	.long	284                             @ DW_AT_type
+	.byte	4                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	7                               @ Abbrev [7] 0x115:0x7 DW_TAG_base_type
+	.long	.Linfo_string7                  @ DW_AT_name
+	.byte	4                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	10                              @ Abbrev [10] 0x11c:0x7 DW_TAG_base_type
+	.long	.Linfo_string8                  @ DW_AT_name
+	.byte	8                               @ DW_AT_byte_size
+	.byte	7                               @ DW_AT_encoding
+	.byte	8                               @ Abbrev [8] 0x123:0xc DW_TAG_array_type
+	.long	277                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x128:0x6 DW_TAG_subrange_type
+	.long	284                             @ DW_AT_type
+	.byte	3                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x12f:0x5 DW_TAG_pointer_type
+	.long	277                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0x134:0xb DW_TAG_typedef
+	.long	319                             @ DW_AT_type
+	.long	.Linfo_string84                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	126                             @ DW_AT_decl_line
+	.byte	12                              @ Abbrev [12] 0x13f:0x2f8 DW_TAG_structure_type
+	.long	.Linfo_string83                 @ DW_AT_name
+	.short	312                             @ DW_AT_byte_size
+	.byte	3                               @ DW_AT_decl_file
+	.byte	47                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x148:0xc DW_TAG_member
+	.long	.Linfo_string16                 @ DW_AT_name
+	.long	1079                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	49                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x154:0xc DW_TAG_member
+	.long	.Linfo_string19                 @ DW_AT_name
+	.long	1079                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	49                              @ DW_AT_decl_line
+	.byte	2                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x160:0xc DW_TAG_member
+	.long	.Linfo_string20                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	51                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x16c:0xc DW_TAG_member
+	.long	.Linfo_string23                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x178:0xc DW_TAG_member
+	.long	.Linfo_string24                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	53                              @ DW_AT_decl_line
+	.byte	6                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x184:0xc DW_TAG_member
+	.long	.Linfo_string25                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	55                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x190:0xc DW_TAG_member
+	.long	.Linfo_string26                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	56                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x19c:0xc DW_TAG_member
+	.long	.Linfo_string27                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	57                              @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1a8:0xc DW_TAG_member
+	.long	.Linfo_string28                 @ DW_AT_name
+	.long	1115                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	59                              @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1b4:0xc DW_TAG_member
+	.long	.Linfo_string41                 @ DW_AT_name
+	.long	448                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	81                              @ DW_AT_decl_line
+	.byte	44                              @ DW_AT_data_member_location
+	.byte	13                              @ Abbrev [13] 0x1c0:0xd1 DW_TAG_structure_type
+	.byte	152                             @ DW_AT_byte_size
+	.byte	3                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x1c4:0xc DW_TAG_member
+	.long	.Linfo_string42                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	66                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1d0:0xc DW_TAG_member
+	.long	.Linfo_string43                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	67                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1dc:0xc DW_TAG_member
+	.long	.Linfo_string44                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	68                              @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1e8:0xc DW_TAG_member
+	.long	.Linfo_string45                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	69                              @ DW_AT_decl_line
+	.byte	24                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x1f4:0xc DW_TAG_member
+	.long	.Linfo_string46                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	70                              @ DW_AT_decl_line
+	.byte	32                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x200:0xc DW_TAG_member
+	.long	.Linfo_string47                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	71                              @ DW_AT_decl_line
+	.byte	40                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x20c:0xc DW_TAG_member
+	.long	.Linfo_string48                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	71                              @ DW_AT_decl_line
+	.byte	48                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x218:0xc DW_TAG_member
+	.long	.Linfo_string49                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	72                              @ DW_AT_decl_line
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x224:0xc DW_TAG_member
+	.long	.Linfo_string50                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	72                              @ DW_AT_decl_line
+	.byte	64                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x230:0xc DW_TAG_member
+	.long	.Linfo_string51                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	73                              @ DW_AT_decl_line
+	.byte	72                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x23c:0xc DW_TAG_member
+	.long	.Linfo_string52                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	74                              @ DW_AT_decl_line
+	.byte	80                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x248:0xc DW_TAG_member
+	.long	.Linfo_string53                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	75                              @ DW_AT_decl_line
+	.byte	88                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x254:0xc DW_TAG_member
+	.long	.Linfo_string12                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	76                              @ DW_AT_decl_line
+	.byte	96                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x260:0xc DW_TAG_member
+	.long	.Linfo_string54                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	77                              @ DW_AT_decl_line
+	.byte	104                             @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x26c:0xc DW_TAG_member
+	.long	.Linfo_string55                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	78                              @ DW_AT_decl_line
+	.byte	112                             @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x278:0xc DW_TAG_member
+	.long	.Linfo_string56                 @ DW_AT_name
+	.long	1289                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	79                              @ DW_AT_decl_line
+	.byte	120                             @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x284:0xc DW_TAG_member
+	.long	.Linfo_string57                 @ DW_AT_name
+	.long	1289                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	80                              @ DW_AT_decl_line
+	.byte	136                             @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	5                               @ Abbrev [5] 0x291:0xc DW_TAG_member
+	.long	.Linfo_string58                 @ DW_AT_name
+	.long	1301                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	83                              @ DW_AT_decl_line
+	.byte	196                             @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x29d:0xc DW_TAG_member
+	.long	.Linfo_string68                 @ DW_AT_name
+	.long	681                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	104                             @ DW_AT_decl_line
+	.byte	200                             @ DW_AT_data_member_location
+	.byte	13                              @ Abbrev [13] 0x2a9:0xd1 DW_TAG_structure_type
+	.byte	76                              @ DW_AT_byte_size
+	.byte	3                               @ DW_AT_decl_file
+	.byte	88                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x2ad:0xc DW_TAG_member
+	.long	.Linfo_string42                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	90                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2b9:0xc DW_TAG_member
+	.long	.Linfo_string43                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	90                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2c5:0xc DW_TAG_member
+	.long	.Linfo_string44                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	91                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2d1:0xc DW_TAG_member
+	.long	.Linfo_string45                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	92                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2dd:0xc DW_TAG_member
+	.long	.Linfo_string46                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	93                              @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2e9:0xc DW_TAG_member
+	.long	.Linfo_string47                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	94                              @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x2f5:0xc DW_TAG_member
+	.long	.Linfo_string48                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	94                              @ DW_AT_decl_line
+	.byte	24                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x301:0xc DW_TAG_member
+	.long	.Linfo_string49                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	95                              @ DW_AT_decl_line
+	.byte	28                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x30d:0xc DW_TAG_member
+	.long	.Linfo_string50                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	95                              @ DW_AT_decl_line
+	.byte	32                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x319:0xc DW_TAG_member
+	.long	.Linfo_string51                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	96                              @ DW_AT_decl_line
+	.byte	36                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x325:0xc DW_TAG_member
+	.long	.Linfo_string52                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	97                              @ DW_AT_decl_line
+	.byte	40                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x331:0xc DW_TAG_member
+	.long	.Linfo_string53                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	98                              @ DW_AT_decl_line
+	.byte	44                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x33d:0xc DW_TAG_member
+	.long	.Linfo_string12                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	99                              @ DW_AT_decl_line
+	.byte	48                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x349:0xc DW_TAG_member
+	.long	.Linfo_string54                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	100                             @ DW_AT_decl_line
+	.byte	52                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x355:0xc DW_TAG_member
+	.long	.Linfo_string55                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	101                             @ DW_AT_decl_line
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x361:0xc DW_TAG_member
+	.long	.Linfo_string56                 @ DW_AT_name
+	.long	1372                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	102                             @ DW_AT_decl_line
+	.byte	60                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x36d:0xc DW_TAG_member
+	.long	.Linfo_string57                 @ DW_AT_name
+	.long	1372                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	103                             @ DW_AT_decl_line
+	.byte	68                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	14                              @ Abbrev [14] 0x37a:0xe DW_TAG_member
+	.long	.Linfo_string69                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	106                             @ DW_AT_decl_line
+	.byte	1                               @ DW_AT_bit_size
+	.short	2208                            @ DW_AT_data_bit_offset
+	.byte	14                              @ Abbrev [14] 0x388:0xe DW_TAG_member
+	.long	.Linfo_string70                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	107                             @ DW_AT_decl_line
+	.byte	1                               @ DW_AT_bit_size
+	.short	2209                            @ DW_AT_data_bit_offset
+	.byte	14                              @ Abbrev [14] 0x396:0xe DW_TAG_member
+	.long	.Linfo_string71                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	108                             @ DW_AT_decl_line
+	.byte	1                               @ DW_AT_bit_size
+	.short	2210                            @ DW_AT_data_bit_offset
+	.byte	14                              @ Abbrev [14] 0x3a4:0xe DW_TAG_member
+	.long	.Linfo_string72                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	109                             @ DW_AT_decl_line
+	.byte	1                               @ DW_AT_bit_size
+	.short	2211                            @ DW_AT_data_bit_offset
+	.byte	14                              @ Abbrev [14] 0x3b2:0xe DW_TAG_member
+	.long	.Linfo_string73                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	110                             @ DW_AT_decl_line
+	.byte	1                               @ DW_AT_bit_size
+	.short	2212                            @ DW_AT_data_bit_offset
+	.byte	14                              @ Abbrev [14] 0x3c0:0xe DW_TAG_member
+	.long	.Linfo_string74                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	111                             @ DW_AT_decl_line
+	.byte	3                               @ DW_AT_bit_size
+	.short	2213                            @ DW_AT_data_bit_offset
+	.byte	6                               @ Abbrev [6] 0x3ce:0xd DW_TAG_member
+	.long	.Linfo_string75                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	116                             @ DW_AT_decl_line
+	.short	280                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x3db:0xd DW_TAG_member
+	.long	.Linfo_string76                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	117                             @ DW_AT_decl_line
+	.short	284                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x3e8:0xd DW_TAG_member
+	.long	.Linfo_string77                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	118                             @ DW_AT_decl_line
+	.short	288                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x3f5:0xd DW_TAG_member
+	.long	.Linfo_string78                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	119                             @ DW_AT_decl_line
+	.short	292                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x402:0xd DW_TAG_member
+	.long	.Linfo_string79                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	120                             @ DW_AT_decl_line
+	.short	296                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x40f:0xd DW_TAG_member
+	.long	.Linfo_string80                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	121                             @ DW_AT_decl_line
+	.short	300                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x41c:0xd DW_TAG_member
+	.long	.Linfo_string81                 @ DW_AT_name
+	.long	1384                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	122                             @ DW_AT_decl_line
+	.short	304                             @ DW_AT_data_member_location
+	.byte	6                               @ Abbrev [6] 0x429:0xd DW_TAG_member
+	.long	.Linfo_string82                 @ DW_AT_name
+	.long	303                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	124                             @ DW_AT_decl_line
+	.short	308                             @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	3                               @ Abbrev [3] 0x437:0xb DW_TAG_typedef
+	.long	1090                            @ DW_AT_type
+	.long	.Linfo_string18                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	63                              @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0x442:0x7 DW_TAG_base_type
+	.long	.Linfo_string17                 @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	2                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0x449:0xb DW_TAG_typedef
+	.long	1108                            @ DW_AT_type
+	.long	.Linfo_string22                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	62                              @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0x454:0x7 DW_TAG_base_type
+	.long	.Linfo_string21                 @ DW_AT_name
+	.byte	8                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0x45b:0xb DW_TAG_typedef
+	.long	1126                            @ DW_AT_type
+	.long	.Linfo_string40                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	45                              @ DW_AT_decl_line
+	.byte	13                              @ Abbrev [13] 0x466:0x4d DW_TAG_structure_type
+	.byte	24                              @ DW_AT_byte_size
+	.byte	3                               @ DW_AT_decl_file
+	.byte	37                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x46a:0xc DW_TAG_member
+	.long	.Linfo_string29                 @ DW_AT_name
+	.long	258                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	39                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x476:0xc DW_TAG_member
+	.long	.Linfo_string30                 @ DW_AT_name
+	.long	1203                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	40                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x482:0xc DW_TAG_member
+	.long	.Linfo_string36                 @ DW_AT_name
+	.long	1277                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	41                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x48e:0xc DW_TAG_member
+	.long	.Linfo_string37                 @ DW_AT_name
+	.long	277                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	42                              @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x49a:0xc DW_TAG_member
+	.long	.Linfo_string38                 @ DW_AT_name
+	.long	1097                            @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	43                              @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x4a6:0xc DW_TAG_member
+	.long	.Linfo_string39                 @ DW_AT_name
+	.long	258                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	44                              @ DW_AT_decl_line
+	.byte	21                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	15                              @ Abbrev [15] 0x4b3:0xc DW_TAG_typedef
+	.long	1215                            @ DW_AT_type
+	.long	.Linfo_string35                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	2403                            @ DW_AT_decl_line
+	.byte	16                              @ Abbrev [16] 0x4bf:0x2d DW_TAG_structure_type
+	.byte	8                               @ DW_AT_byte_size
+	.byte	4                               @ DW_AT_decl_file
+	.short	2398                            @ DW_AT_decl_line
+	.byte	17                              @ Abbrev [17] 0x4c4:0xd DW_TAG_member
+	.long	.Linfo_string31                 @ DW_AT_name
+	.long	1079                            @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	2400                            @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	17                              @ Abbrev [17] 0x4d1:0xd DW_TAG_member
+	.long	.Linfo_string32                 @ DW_AT_name
+	.long	1079                            @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	2401                            @ DW_AT_decl_line
+	.byte	2                               @ DW_AT_data_member_location
+	.byte	17                              @ Abbrev [17] 0x4de:0xd DW_TAG_member
+	.long	.Linfo_string33                 @ DW_AT_name
+	.long	1260                            @ DW_AT_type
+	.byte	4                               @ DW_AT_decl_file
+	.short	2402                            @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x4ec:0x5 DW_TAG_pointer_type
+	.long	1265                            @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x4f1:0xc DW_TAG_typedef
+	.long	277                             @ DW_AT_type
+	.long	.Linfo_string34                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	541                             @ DW_AT_decl_line
+	.byte	8                               @ Abbrev [8] 0x4fd:0xc DW_TAG_array_type
+	.long	277                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x502:0x6 DW_TAG_subrange_type
+	.long	284                             @ DW_AT_type
+	.byte	1                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	8                               @ Abbrev [8] 0x509:0xc DW_TAG_array_type
+	.long	1203                            @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x50e:0x6 DW_TAG_subrange_type
+	.long	284                             @ DW_AT_type
+	.byte	2                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	15                              @ Abbrev [15] 0x515:0xc DW_TAG_typedef
+	.long	1313                            @ DW_AT_type
+	.long	.Linfo_string67                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.short	516                             @ DW_AT_decl_line
+	.byte	18                              @ Abbrev [18] 0x521:0x34 DW_TAG_enumeration_type
+	.long	1365                            @ DW_AT_type
+	.byte	1                               @ DW_AT_byte_size
+	.byte	4                               @ DW_AT_decl_file
+	.short	507                             @ DW_AT_decl_line
+	.byte	19                              @ Abbrev [19] 0x52a:0x6 DW_TAG_enumerator
+	.long	.Linfo_string60                 @ DW_AT_name
+	.byte	0                               @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x530:0x6 DW_TAG_enumerator
+	.long	.Linfo_string61                 @ DW_AT_name
+	.byte	127                             @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x536:0x6 DW_TAG_enumerator
+	.long	.Linfo_string62                 @ DW_AT_name
+	.byte	126                             @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x53c:0x6 DW_TAG_enumerator
+	.long	.Linfo_string63                 @ DW_AT_name
+	.byte	125                             @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x542:0x6 DW_TAG_enumerator
+	.long	.Linfo_string64                 @ DW_AT_name
+	.byte	124                             @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x548:0x6 DW_TAG_enumerator
+	.long	.Linfo_string65                 @ DW_AT_name
+	.byte	123                             @ DW_AT_const_value
+	.byte	19                              @ Abbrev [19] 0x54e:0x6 DW_TAG_enumerator
+	.long	.Linfo_string66                 @ DW_AT_name
+	.byte	122                             @ DW_AT_const_value
+	.byte	0                               @ End Of Children Mark
+	.byte	7                               @ Abbrev [7] 0x555:0x7 DW_TAG_base_type
+	.long	.Linfo_string59                 @ DW_AT_name
+	.byte	6                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	8                               @ Abbrev [8] 0x55c:0xc DW_TAG_array_type
+	.long	303                             @ DW_AT_type
+	.byte	9                               @ Abbrev [9] 0x561:0x6 DW_TAG_subrange_type
+	.long	284                             @ DW_AT_type
+	.byte	2                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x568:0x5 DW_TAG_pointer_type
+	.long	1389                            @ DW_AT_type
+	.byte	20                              @ Abbrev [20] 0x56d:0x7 DW_TAG_subroutine_type
+                                        @ DW_AT_prototyped
+	.byte	21                              @ Abbrev [21] 0x56e:0x5 DW_TAG_formal_parameter
+	.long	1396                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x574:0x5 DW_TAG_pointer_type
+	.long	319                             @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x579:0x5 DW_TAG_pointer_type
+	.long	1406                            @ DW_AT_type
+	.byte	7                               @ Abbrev [7] 0x57e:0x7 DW_TAG_base_type
+	.long	.Linfo_string92                 @ DW_AT_name
+	.byte	5                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	22                              @ Abbrev [22] 0x585:0x66 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   @ DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string93                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	23                              @ Abbrev [23] 0x596:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string100                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	1921                            @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x5a4:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	24
+	.long	.Linfo_string101                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x5b2:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string102                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x5c0:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string103                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x5ce:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string13                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	303                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x5dc:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string14                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	18                              @ DW_AT_decl_line
+	.long	303                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	24                              @ Abbrev [24] 0x5eb:0x20 DW_TAG_subprogram
+	.long	.Lfunc_begin1                   @ DW_AT_low_pc
+	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string94                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	140                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	23                              @ Abbrev [23] 0x5fc:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string104                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	140                             @ DW_AT_decl_line
+	.long	1926                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	24                              @ Abbrev [24] 0x60b:0x20 DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string95                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	171                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	23                              @ Abbrev [23] 0x61c:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string104                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	171                             @ DW_AT_decl_line
+	.long	1926                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	25                              @ Abbrev [25] 0x62b:0x95 DW_TAG_subprogram
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string96                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	262                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	26                              @ Abbrev [26] 0x63d:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string104                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	262                             @ DW_AT_decl_line
+	.long	1926                            @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x64c:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string105                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	295                             @ DW_AT_decl_line
+	.long	291                             @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x65b:0x19 DW_TAG_lexical_block
+	.long	.Ltmp24                         @ DW_AT_low_pc
+	.long	.Ltmp29-.Ltmp24                 @ DW_AT_high_pc
+	.byte	27                              @ Abbrev [27] 0x664:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	7
+	.long	.Linfo_string106                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	298                             @ DW_AT_decl_line
+	.long	1097                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	28                              @ Abbrev [28] 0x674:0x19 DW_TAG_lexical_block
+	.long	.Ltmp34                         @ DW_AT_low_pc
+	.long	.Ltmp39-.Ltmp34                 @ DW_AT_high_pc
+	.byte	27                              @ Abbrev [27] 0x67d:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	6
+	.long	.Linfo_string106                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	323                             @ DW_AT_decl_line
+	.long	1097                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	28                              @ Abbrev [28] 0x68d:0x32 DW_TAG_lexical_block
+	.long	.Ltmp40                         @ DW_AT_low_pc
+	.long	.Ltmp50-.Ltmp40                 @ DW_AT_high_pc
+	.byte	27                              @ Abbrev [27] 0x696:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	5
+	.long	.Linfo_string106                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	338                             @ DW_AT_decl_line
+	.long	1097                            @ DW_AT_type
+	.byte	28                              @ Abbrev [28] 0x6a5:0x19 DW_TAG_lexical_block
+	.long	.Ltmp43                         @ DW_AT_low_pc
+	.long	.Ltmp48-.Ltmp43                 @ DW_AT_high_pc
+	.byte	27                              @ Abbrev [27] 0x6ae:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string107                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	340                             @ DW_AT_decl_line
+	.long	1097                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	22                              @ Abbrev [22] 0x6c0:0x4a DW_TAG_subprogram
+	.long	.Lfunc_begin4                   @ DW_AT_low_pc
+	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string97                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	23                              @ Abbrev [23] 0x6d1:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string100                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.long	1921                            @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x6df:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string86                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.long	303                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x6ed:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string85                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.long	303                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x6fb:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string25                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	29                              @ Abbrev [29] 0x70a:0x53 DW_TAG_subprogram
+	.long	.Lfunc_begin5                   @ DW_AT_low_pc
+	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string98                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	362                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	277                             @ DW_AT_type
+	.byte	26                              @ Abbrev [26] 0x720:0xf DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string108                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	362                             @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x72f:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string109                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	365                             @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x73e:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string110                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	366                             @ DW_AT_decl_line
+	.long	277                             @ DW_AT_type
+	.byte	27                              @ Abbrev [27] 0x74d:0xf DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string106                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.short	367                             @ DW_AT_decl_line
+	.long	1406                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	30                              @ Abbrev [30] 0x75d:0x24 DW_TAG_subprogram
+	.long	.Lfunc_begin6                   @ DW_AT_low_pc
+	.long	.Lfunc_end6-.Lfunc_begin6       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string99                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	196                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	258                             @ DW_AT_type
+	.byte	23                              @ Abbrev [23] 0x772:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string104                @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	196                             @ DW_AT_decl_line
+	.long	1926                            @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x781:0x5 DW_TAG_pointer_type
+	.long	55                              @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x786:0x5 DW_TAG_pointer_type
+	.long	308                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	.Lfunc_begin6
+	.long	.Lfunc_end6
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]" @ string offset=0
+.Linfo_string1:
+	.asciz	"../API/Src\\Quaternion.c"      @ string offset=68
+.Linfo_string2:
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=92
+.Linfo_string3:
+	.asciz	"Quaternion_Info"               @ string offset=170
+.Linfo_string4:
+	.asciz	"Init"                          @ string offset=186
+.Linfo_string5:
+	.asciz	"_Bool"                         @ string offset=191
+.Linfo_string6:
+	.asciz	"quat"                          @ string offset=197
+.Linfo_string7:
+	.asciz	"float"                         @ string offset=202
+.Linfo_string8:
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=208
+.Linfo_string9:
+	.asciz	"Deviate"                       @ string offset=228
+.Linfo_string10:
+	.asciz	"Q1"                            @ string offset=236
+.Linfo_string11:
+	.asciz	"Q2"                            @ string offset=239
+.Linfo_string12:
+	.asciz	"R"                             @ string offset=242
+.Linfo_string13:
+	.asciz	"QuaternionEKF_A_Data"          @ string offset=244
+.Linfo_string14:
+	.asciz	"QuaternionEKF_P_Data"          @ string offset=265
+.Linfo_string15:
+	.asciz	"QuaternionEKF"                 @ string offset=286
+.Linfo_string16:
+	.asciz	"sizeof_float"                  @ string offset=300
+.Linfo_string17:
+	.asciz	"unsigned short"                @ string offset=313
+.Linfo_string18:
+	.asciz	"uint16_t"                      @ string offset=328
+.Linfo_string19:
+	.asciz	"sizeof_double"                 @ string offset=337
+.Linfo_string20:
+	.asciz	"Xhat_Size"                     @ string offset=351
+.Linfo_string21:
+	.asciz	"unsigned char"                 @ string offset=361
+.Linfo_string22:
+	.asciz	"uint8_t"                       @ string offset=375
+.Linfo_string23:
+	.asciz	"U_Size"                        @ string offset=383
+.Linfo_string24:
+	.asciz	"Z_Size"                        @ string offset=390
+.Linfo_string25:
+	.asciz	"dt"                            @ string offset=397
+.Linfo_string26:
+	.asciz	"MeasuredVector"                @ string offset=400
+.Linfo_string27:
+	.asciz	"ControlVector"                 @ string offset=415
+.Linfo_string28:
+	.asciz	"ChiSquareTest"                 @ string offset=429
+.Linfo_string29:
+	.asciz	"TestFlag"                      @ string offset=443
+.Linfo_string30:
+	.asciz	"ChiSquare_Matrix"              @ string offset=452
+.Linfo_string31:
+	.asciz	"numRows"                       @ string offset=469
+.Linfo_string32:
+	.asciz	"numCols"                       @ string offset=477
+.Linfo_string33:
+	.asciz	"pData"                         @ string offset=485
+.Linfo_string34:
+	.asciz	"float32_t"                     @ string offset=491
+.Linfo_string35:
+	.asciz	"arm_matrix_instance_f32"       @ string offset=501
+.Linfo_string36:
+	.asciz	"ChiSquare_Data"                @ string offset=525
+.Linfo_string37:
+	.asciz	"ChiSquareTestThresholds"       @ string offset=540
+.Linfo_string38:
+	.asciz	"ChiSquareCnt"                  @ string offset=564
+.Linfo_string39:
+	.asciz	"Result"                        @ string offset=577
+.Linfo_string40:
+	.asciz	"ChiSquareTest_Typedef"         @ string offset=584
+.Linfo_string41:
+	.asciz	"Mat"                           @ string offset=606
+.Linfo_string42:
+	.asciz	"Xhat"                          @ string offset=610
+.Linfo_string43:
+	.asciz	"Xhatminus"                     @ string offset=615
+.Linfo_string44:
+	.asciz	"U"                             @ string offset=625
+.Linfo_string45:
+	.asciz	"Z"                             @ string offset=627
+.Linfo_string46:
+	.asciz	"B"                             @ string offset=629
+.Linfo_string47:
+	.asciz	"A"                             @ string offset=631
+.Linfo_string48:
+	.asciz	"AT"                            @ string offset=633
+.Linfo_string49:
+	.asciz	"H"                             @ string offset=636
+.Linfo_string50:
+	.asciz	"HT"                            @ string offset=638
+.Linfo_string51:
+	.asciz	"P"                             @ string offset=641
+.Linfo_string52:
+	.asciz	"Pminus"                        @ string offset=643
+.Linfo_string53:
+	.asciz	"Q"                             @ string offset=650
+.Linfo_string54:
+	.asciz	"K"                             @ string offset=652
+.Linfo_string55:
+	.asciz	"K_denominator"                 @ string offset=654
+.Linfo_string56:
+	.asciz	"Cache_Matrix"                  @ string offset=668
+.Linfo_string57:
+	.asciz	"Cache_Vector"                  @ string offset=681
+.Linfo_string58:
+	.asciz	"MatStatus"                     @ string offset=694
+.Linfo_string59:
+	.asciz	"signed char"                   @ string offset=704
+.Linfo_string60:
+	.asciz	"ARM_MATH_SUCCESS"              @ string offset=716
+.Linfo_string61:
+	.asciz	"ARM_MATH_ARGUMENT_ERROR"       @ string offset=733
+.Linfo_string62:
+	.asciz	"ARM_MATH_LENGTH_ERROR"         @ string offset=757
+.Linfo_string63:
+	.asciz	"ARM_MATH_SIZE_MISMATCH"        @ string offset=779
+.Linfo_string64:
+	.asciz	"ARM_MATH_NANINF"               @ string offset=802
+.Linfo_string65:
+	.asciz	"ARM_MATH_SINGULAR"             @ string offset=818
+.Linfo_string66:
+	.asciz	"ARM_MATH_TEST_FAILURE"         @ string offset=836
+.Linfo_string67:
+	.asciz	"arm_status"                    @ string offset=858
+.Linfo_string68:
+	.asciz	"Data"                          @ string offset=869
+.Linfo_string69:
+	.asciz	"SkipStep1"                     @ string offset=874
+.Linfo_string70:
+	.asciz	"SkipStep2"                     @ string offset=884
+.Linfo_string71:
+	.asciz	"SkipStep3"                     @ string offset=894
+.Linfo_string72:
+	.asciz	"SkipStep4"                     @ string offset=904
+.Linfo_string73:
+	.asciz	"SkipStep5"                     @ string offset=914
+.Linfo_string74:
+	.asciz	"reserve"                       @ string offset=924
+.Linfo_string75:
+	.asciz	"User_Function0"                @ string offset=932
+.Linfo_string76:
+	.asciz	"User_Function1"                @ string offset=947
+.Linfo_string77:
+	.asciz	"User_Function2"                @ string offset=962
+.Linfo_string78:
+	.asciz	"User_Function3"                @ string offset=977
+.Linfo_string79:
+	.asciz	"User_Function4"                @ string offset=992
+.Linfo_string80:
+	.asciz	"User_Function5"                @ string offset=1007
+.Linfo_string81:
+	.asciz	"User_Function6"                @ string offset=1022
+.Linfo_string82:
+	.asciz	"Output"                        @ string offset=1037
+.Linfo_string83:
+	.asciz	"KF_Info_TypeDef"               @ string offset=1044
+.Linfo_string84:
+	.asciz	"KalmanFilter_Info_TypeDef"     @ string offset=1060
+.Linfo_string85:
+	.asciz	"Accel"                         @ string offset=1086
+.Linfo_string86:
+	.asciz	"Gyro"                          @ string offset=1092
+.Linfo_string87:
+	.asciz	"AccelInvNorm"                  @ string offset=1097
+.Linfo_string88:
+	.asciz	"GyroInvNorm"                   @ string offset=1110
+.Linfo_string89:
+	.asciz	"Half_Gyro_dt"                  @ string offset=1122
+.Linfo_string90:
+	.asciz	"EulerAngle"                    @ string offset=1135
+.Linfo_string91:
+	.asciz	"Quaternion_Info_Typedef"       @ string offset=1146
+.Linfo_string92:
+	.asciz	"long"                          @ string offset=1170
+.Linfo_string93:
+	.asciz	"QuaternionEKF_Init"            @ string offset=1175
+.Linfo_string94:
+	.asciz	"QuaternionEKF_A_Update"        @ string offset=1194
+.Linfo_string95:
+	.asciz	"QuaternionEKF_H_Update"        @ string offset=1217
+.Linfo_string96:
+	.asciz	"QuaternionEKF_xhat_Update"     @ string offset=1240
+.Linfo_string97:
+	.asciz	"QuaternionEKF_Update"          @ string offset=1266
+.Linfo_string98:
+	.asciz	"Fast_InverseSqrt"              @ string offset=1287
+.Linfo_string99:
+	.asciz	"QuaternionEKF_ChiSqrtTest"     @ string offset=1304
+.Linfo_string100:
+	.asciz	"Quat"                          @ string offset=1330
+.Linfo_string101:
+	.asciz	"Process_Noise1"                @ string offset=1335
+.Linfo_string102:
+	.asciz	"Process_Noise2"                @ string offset=1350
+.Linfo_string103:
+	.asciz	"Measure_Noise"                 @ string offset=1365
+.Linfo_string104:
+	.asciz	"KF"                            @ string offset=1379
+.Linfo_string105:
+	.asciz	"OrientationCosine"             @ string offset=1382
+.Linfo_string106:
+	.asciz	"i"                             @ string offset=1400
+.Linfo_string107:
+	.asciz	"j"                             @ string offset=1402
+.Linfo_string108:
+	.asciz	"x"                             @ string offset=1404
+.Linfo_string109:
+	.asciz	"halfx"                         @ string offset=1406
+.Linfo_string110:
+	.asciz	"y"                             @ string offset=1412
+	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:

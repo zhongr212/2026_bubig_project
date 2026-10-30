@@ -1,0 +1,1662 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m7
+	.eabi_attribute	6, 13	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 2	@ Tag_THUMB_ISA_use
+	.fpu	fpv5-d16
+	.eabi_attribute	36, 1	@ Tag_FP_HP_extension
+	.eabi_attribute	34, 1	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	28, 1	@ Tag_ABI_VFP_args
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"bsp_buzzer.c"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../BSP/Inc\\bsp_buzzer.h"
+	.file	2 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
+	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../BSP/Src/bsp_buzzer.c"
+	.section	.text.startBuzzer,"ax",%progbits
+	.hidden	startBuzzer                     @ -- Begin function startBuzzer
+	.globl	startBuzzer
+	.p2align	3
+	.type	startBuzzer,%function
+	.code	16                              @ @startBuzzer
+	.thumb_func
+startBuzzer:
+.Lfunc_begin0:
+	.loc	3 15 0                          @ ../BSP/Src/bsp_buzzer.c:15:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+.Ltmp0:
+	.loc	3 16 5 prologue_end             @ ../BSP/Src/bsp_buzzer.c:16:5
+	movw	r0, :lower16:htim12
+	movt	r0, :upper16:htim12
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	bl	HAL_TIM_Base_Start
+                                        @ kill: def $r1 killed $r0
+	.loc	3 17 5                          @ ../BSP/Src/bsp_buzzer.c:17:5
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	movs	r1, #4
+	bl	HAL_TIM_PWM_Start
+	.loc	3 18 1 epilogue_begin           @ ../BSP/Src/bsp_buzzer.c:18:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp1:
+.Lfunc_end0:
+	.size	startBuzzer, .Lfunc_end0-startBuzzer
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.stopBuzzer,"ax",%progbits
+	.hidden	stopBuzzer                      @ -- Begin function stopBuzzer
+	.globl	stopBuzzer
+	.p2align	3
+	.type	stopBuzzer,%function
+	.code	16                              @ @stopBuzzer
+	.thumb_func
+stopBuzzer:
+.Lfunc_begin1:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	3 25 5 prologue_end             @ ../BSP/Src/bsp_buzzer.c:25:5
+	movw	r0, :lower16:htim12
+	movt	r0, :upper16:htim12
+	ldr	r1, [r0]
+	movs	r0, #0
+	str	r0, [r1, #56]
+	.loc	3 26 1                          @ ../BSP/Src/bsp_buzzer.c:26:1
+	bx	lr
+.Ltmp2:
+.Lfunc_end1:
+	.size	stopBuzzer, .Lfunc_end1-stopBuzzer
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.playNote,"ax",%progbits
+	.hidden	playNote                        @ -- Begin function playNote
+	.globl	playNote
+	.p2align	3
+	.type	playNote,%function
+	.code	16                              @ @playNote
+	.thumb_func
+playNote:
+.Lfunc_begin2:
+	.loc	3 47 0                          @ ../BSP/Src/bsp_buzzer.c:47:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+                                        @ kill: def $r1 killed $r0
+	strb.w	r0, [sp, #15]
+.Ltmp3:
+	.loc	3 49 13 prologue_end            @ ../BSP/Src/bsp_buzzer.c:49:13
+	ldrb.w	r0, [sp, #15]
+	.loc	3 49 5 is_stmt 0                @ ../BSP/Src/bsp_buzzer.c:49:5
+	mov	r1, r0
+	str	r1, [sp, #4]                    @ 4-byte Spill
+	cmp	r0, #6
+	bhi	.LBB2_10
+@ %bb.1:
+	ldr	r1, [sp, #4]                    @ 4-byte Reload
+.LCPI2_0:
+	tbb	[pc, r1]
+@ %bb.2:
+	.loc	3 0 5                           @ ../BSP/Src/bsp_buzzer.c:0:5
+.LJTI2_0:
+	.byte	(.LBB2_3-(.LCPI2_0+4))/2
+	.byte	(.LBB2_4-(.LCPI2_0+4))/2
+	.byte	(.LBB2_5-(.LCPI2_0+4))/2
+	.byte	(.LBB2_6-(.LCPI2_0+4))/2
+	.byte	(.LBB2_7-(.LCPI2_0+4))/2
+	.byte	(.LBB2_8-(.LCPI2_0+4))/2
+	.byte	(.LBB2_9-(.LCPI2_0+4))/2
+	.p2align	1
+.LBB2_3:
+	movw	r0, #53248
+	movt	r0, #17410
+.Ltmp4:
+	.loc	3 52 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:52:19
+	str	r0, [sp, #8]
+	.loc	3 53 9                          @ ../BSP/Src/bsp_buzzer.c:53:9
+	b	.LBB2_11
+.LBB2_4:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movw	r0, #54559
+	movt	r0, #17426
+	.loc	3 55 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:55:19
+	str	r0, [sp, #8]
+	.loc	3 56 9                          @ ../BSP/Src/bsp_buzzer.c:56:9
+	b	.LBB2_11
+.LBB2_5:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movw	r0, #53248
+	movt	r0, #17444
+	.loc	3 58 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:58:19
+	str	r0, [sp, #8]
+	.loc	3 59 9                          @ ../BSP/Src/bsp_buzzer.c:59:9
+	b	.LBB2_11
+.LBB2_6:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movw	r0, #40305
+	movt	r0, #17454
+	.loc	3 61 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:61:19
+	str	r0, [sp, #8]
+	.loc	3 62 9                          @ ../BSP/Src/bsp_buzzer.c:62:9
+	b	.LBB2_11
+.LBB2_7:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movw	r0, #65372
+	movt	r0, #17475
+	.loc	3 64 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:64:19
+	str	r0, [sp, #8]
+	.loc	3 65 9                          @ ../BSP/Src/bsp_buzzer.c:65:9
+	b	.LBB2_11
+.LBB2_8:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movs	r0, #0
+	movt	r0, #17500
+	.loc	3 67 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:67:19
+	str	r0, [sp, #8]
+	.loc	3 68 9                          @ ../BSP/Src/bsp_buzzer.c:68:9
+	b	.LBB2_11
+.LBB2_9:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movw	r0, #61768
+	movt	r0, #17526
+	.loc	3 70 19 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:70:19
+	str	r0, [sp, #8]
+	.loc	3 71 9                          @ ../BSP/Src/bsp_buzzer.c:71:9
+	b	.LBB2_11
+.LBB2_10:
+	.loc	3 0 9 is_stmt 0                 @ ../BSP/Src/bsp_buzzer.c:0:9
+	movs	r0, #0
+	.loc	3 73 15 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:73:15
+	str	r0, [sp, #8]
+	.loc	3 74 9                          @ ../BSP/Src/bsp_buzzer.c:74:9
+	b	.LBB2_12
+.Ltmp5:
+.LBB2_11:
+	.loc	3 76 24                         @ ../BSP/Src/bsp_buzzer.c:76:24
+	vldr	s0, [sp, #8]
+	.loc	3 76 5 is_stmt 0                @ ../BSP/Src/bsp_buzzer.c:76:5
+	bl	setBuzzerFrequency
+	.loc	3 77 1 is_stmt 1                @ ../BSP/Src/bsp_buzzer.c:77:1
+	b	.LBB2_12
+.LBB2_12:
+	.loc	3 77 1 epilogue_begin is_stmt 0 @ ../BSP/Src/bsp_buzzer.c:77:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp6:
+.Lfunc_end2:
+	.size	playNote, .Lfunc_end2-playNote
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.setBuzzerFrequency,"ax",%progbits
+	.p2align	3                               @ -- Begin function setBuzzerFrequency
+	.type	setBuzzerFrequency,%function
+	.code	16                              @ @setBuzzerFrequency
+	.thumb_func
+setBuzzerFrequency:
+.Lfunc_begin3:
+	.loc	3 33 0 is_stmt 1                @ ../BSP/Src/bsp_buzzer.c:33:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#12
+	sub	sp, #12
+	.cfi_def_cfa_offset 12
+	vstr	s0, [sp, #8]
+	movw	r0, #319
+.Ltmp7:
+	.loc	3 34 14 prologue_end            @ ../BSP/Src/bsp_buzzer.c:34:14
+	str	r0, [sp, #4]
+	.loc	3 35 51                         @ ../BSP/Src/bsp_buzzer.c:35:51
+	ldr	r0, [sp, #4]
+	.loc	3 35 55 is_stmt 0               @ ../BSP/Src/bsp_buzzer.c:35:55
+	adds	r0, #1
+	.loc	3 35 50                         @ ../BSP/Src/bsp_buzzer.c:35:50
+	vmov	s0, r0
+	vcvt.f32.u32	s0, s0
+	.loc	3 35 62                         @ ../BSP/Src/bsp_buzzer.c:35:62
+	vldr	s2, [sp, #8]
+	.loc	3 35 60                         @ ../BSP/Src/bsp_buzzer.c:35:60
+	vmul.f32	s2, s0, s2
+	vldr	s0, .LCPI3_0
+	.loc	3 35 47                         @ ../BSP/Src/bsp_buzzer.c:35:47
+	vdiv.f32	s0, s0, s2
+	vmov.f32	s2, #-1.000000e+00
+	.loc	3 35 74                         @ ../BSP/Src/bsp_buzzer.c:35:74
+	vadd.f32	s0, s0, s2
+	.loc	3 35 14                         @ ../BSP/Src/bsp_buzzer.c:35:14
+	vcvt.u32.f32	s0, s0
+	vstr	s0, [sp]
+	.loc	3 37 5 is_stmt 1                @ ../BSP/Src/bsp_buzzer.c:37:5
+	ldr	r0, [sp, #4]
+	movw	r1, :lower16:htim12
+	movt	r1, :upper16:htim12
+	ldr	r1, [r1]
+	str	r0, [r1, #40]
+	.loc	3 38 5                          @ ../BSP/Src/bsp_buzzer.c:38:5
+	b	.LBB3_1
+.LBB3_1:
+.Ltmp8:
+	.loc	3 38 5 is_stmt 0                @ ../BSP/Src/bsp_buzzer.c:38:5
+	ldr	r0, [sp]
+	movw	r1, :lower16:htim12
+	movt	r1, :upper16:htim12
+	ldr	r2, [r1]
+	str	r0, [r2, #44]
+	ldr	r0, [sp]
+	str	r0, [r1, #12]
+	b	.LBB3_2
+.Ltmp9:
+.LBB3_2:
+	.loc	3 39 5 is_stmt 1                @ ../BSP/Src/bsp_buzzer.c:39:5
+	ldr	r0, [sp]
+	lsrs	r0, r0, #1
+	movw	r1, :lower16:htim12
+	movt	r1, :upper16:htim12
+	ldr	r1, [r1]
+	str	r0, [r1, #56]
+	.loc	3 40 1 epilogue_begin           @ ../BSP/Src/bsp_buzzer.c:40:1
+	add	sp, #12
+	bx	lr
+.Ltmp10:
+	.loc	3 0 1 is_stmt 0                 @ :0:1
+.Ltmp11:
+	.p2align	2
+@ %bb.3:
+.LCPI3_0:
+	.long	0x4ca037a0                      @ float 8.4E+7
+.Lfunc_end3:
+	.size	setBuzzerFrequency, .Lfunc_end3-setBuzzerFrequency
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.stopMusicPlay,"ax",%progbits
+	.hidden	stopMusicPlay                   @ -- Begin function stopMusicPlay
+	.globl	stopMusicPlay
+	.p2align	3
+	.type	stopMusicPlay,%function
+	.code	16                              @ @stopMusicPlay
+	.thumb_func
+stopMusicPlay:
+.Lfunc_begin4:
+	.loc	3 123 0 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:123:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp12:
+	.loc	3 124 5 prologue_end            @ ../BSP/Src/bsp_buzzer.c:124:5
+	ldr	r1, [sp, #4]
+	movs	r0, #0
+	.loc	3 124 24 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:124:24
+	strb	r0, [r1, #12]
+	.loc	3 125 5 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:125:5
+	bl	stopBuzzer
+	.loc	3 126 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:126:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp13:
+.Lfunc_end4:
+	.size	stopMusicPlay, .Lfunc_end4-stopMusicPlay
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.updateMusicPlayer,"ax",%progbits
+	.hidden	updateMusicPlayer               @ -- Begin function updateMusicPlayer
+	.globl	updateMusicPlayer
+	.p2align	3
+	.type	updateMusicPlayer,%function
+	.code	16                              @ @updateMusicPlayer
+	.thumb_func
+updateMusicPlayer:
+.Lfunc_begin5:
+	.loc	3 138 0                         @ ../BSP/Src/bsp_buzzer.c:138:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 16
+	str	r0, [sp, #4]
+.Ltmp14:
+	.loc	3 139 10 prologue_end           @ ../BSP/Src/bsp_buzzer.c:139:10
+	ldr	r0, [sp, #4]
+	.loc	3 139 18 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:139:18
+	ldrb	r0, [r0, #12]
+.Ltmp15:
+	.loc	3 139 9                         @ ../BSP/Src/bsp_buzzer.c:139:9
+	lsls	r0, r0, #31
+	cbnz	r0, .LBB5_2
+	b	.LBB5_1
+.LBB5_1:
+.Ltmp16:
+	.loc	3 140 9 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:140:9
+	b	.LBB5_6
+.Ltmp17:
+.LBB5_2:
+	.loc	3 142 21                        @ ../BSP/Src/bsp_buzzer.c:142:21
+	bl	HAL_GetTick
+	mov	r1, r0
+	.loc	3 142 19 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:142:19
+	movw	r0, :lower16:current_time
+	movt	r0, :upper16:current_time
+	str	r1, [r0]
+	.loc	3 143 21 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:143:21
+	ldr	r0, [r0]
+	.loc	3 143 36 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:143:36
+	ldr	r1, [sp, #4]
+	.loc	3 143 44                        @ ../BSP/Src/bsp_buzzer.c:143:44
+	ldr	r1, [r1, #8]
+	.loc	3 143 34                        @ ../BSP/Src/bsp_buzzer.c:143:34
+	subs	r1, r0, r1
+	.loc	3 143 19                        @ ../BSP/Src/bsp_buzzer.c:143:19
+	movw	r0, :lower16:elapsed_time
+	movt	r0, :upper16:elapsed_time
+	str	r1, [r0]
+.Ltmp18:
+	.loc	3 146 9 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:146:9
+	ldr	r0, [r0]
+	.loc	3 146 25 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:146:25
+	ldr	r2, [sp, #4]
+	.loc	3 146 33                        @ ../BSP/Src/bsp_buzzer.c:146:33
+	ldr	r1, [r2]
+	.loc	3 146 47                        @ ../BSP/Src/bsp_buzzer.c:146:47
+	ldrh	r2, [r2, #6]
+	.loc	3 146 25                        @ ../BSP/Src/bsp_buzzer.c:146:25
+	add.w	r1, r1, r2, lsl #2
+	.loc	3 146 61                        @ ../BSP/Src/bsp_buzzer.c:146:61
+	ldrh	r1, [r1, #2]
+.Ltmp19:
+	.loc	3 146 9                         @ ../BSP/Src/bsp_buzzer.c:146:9
+	cmp	r0, r1
+	blo	.LBB5_6
+	b	.LBB5_3
+.LBB5_3:
+.Ltmp20:
+	.loc	3 148 9 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:148:9
+	ldr	r1, [sp, #4]
+	.loc	3 148 29 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:148:29
+	ldrh	r0, [r1, #6]
+	adds	r0, #1
+	strh	r0, [r1, #6]
+.Ltmp21:
+	.loc	3 151 13 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:151:13
+	ldr	r1, [sp, #4]
+	.loc	3 151 21 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:151:21
+	ldrh	r0, [r1, #6]
+	.loc	3 151 45                        @ ../BSP/Src/bsp_buzzer.c:151:45
+	ldrh	r1, [r1, #4]
+.Ltmp22:
+	.loc	3 151 13                        @ ../BSP/Src/bsp_buzzer.c:151:13
+	cmp	r0, r1
+	blt	.LBB5_5
+	b	.LBB5_4
+.LBB5_4:
+.Ltmp23:
+	.loc	3 153 27 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:153:27
+	ldr	r0, [sp, #4]
+	.loc	3 153 13 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:153:13
+	bl	stopMusicPlay
+	.loc	3 154 13 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:154:13
+	b	.LBB5_6
+.Ltmp24:
+.LBB5_5:
+	.loc	3 158 35                        @ ../BSP/Src/bsp_buzzer.c:158:35
+	movw	r0, :lower16:current_time
+	movt	r0, :upper16:current_time
+	ldr	r0, [r0]
+	.loc	3 158 9 is_stmt 0               @ ../BSP/Src/bsp_buzzer.c:158:9
+	ldr	r1, [sp, #4]
+	.loc	3 158 33                        @ ../BSP/Src/bsp_buzzer.c:158:33
+	str	r0, [r1, #8]
+	.loc	3 159 18 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:159:18
+	ldr	r1, [sp, #4]
+	.loc	3 159 26 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:159:26
+	ldr	r0, [r1]
+	.loc	3 159 40                        @ ../BSP/Src/bsp_buzzer.c:159:40
+	ldrh	r1, [r1, #6]
+	.loc	3 159 54                        @ ../BSP/Src/bsp_buzzer.c:159:54
+	ldrb.w	r0, [r0, r1, lsl #2]
+	.loc	3 159 9                         @ ../BSP/Src/bsp_buzzer.c:159:9
+	bl	playNote
+	.loc	3 160 5 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:160:5
+	b	.LBB5_6
+.Ltmp25:
+.LBB5_6:
+	.loc	3 161 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:161:1
+	add	sp, #8
+	pop	{r7, pc}
+.Ltmp26:
+.Lfunc_end5:
+	.size	updateMusicPlayer, .Lfunc_end5-updateMusicPlayer
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.startMusicPlay,"ax",%progbits
+	.hidden	startMusicPlay                  @ -- Begin function startMusicPlay
+	.globl	startMusicPlay
+	.p2align	3
+	.type	startMusicPlay,%function
+	.code	16                              @ @startMusicPlay
+	.thumb_func
+startMusicPlay:
+.Lfunc_begin6:
+	.loc	3 171 0                         @ ../BSP/Src/bsp_buzzer.c:171:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+                                        @ kill: def $r3 killed $r2
+	str	r0, [sp, #12]
+	str	r1, [sp, #8]
+	strh.w	r2, [sp, #6]
+.Ltmp27:
+	.loc	3 172 21 prologue_end           @ ../BSP/Src/bsp_buzzer.c:172:21
+	ldr	r0, [sp, #8]
+	.loc	3 172 5 is_stmt 0               @ ../BSP/Src/bsp_buzzer.c:172:5
+	ldr	r1, [sp, #12]
+	.loc	3 172 19                        @ ../BSP/Src/bsp_buzzer.c:172:19
+	str	r0, [r1]
+	.loc	3 173 27 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:173:27
+	ldrh.w	r0, [sp, #6]
+	.loc	3 173 5 is_stmt 0               @ ../BSP/Src/bsp_buzzer.c:173:5
+	ldr	r1, [sp, #12]
+	.loc	3 173 25                        @ ../BSP/Src/bsp_buzzer.c:173:25
+	strh	r0, [r1, #4]
+	.loc	3 174 5 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:174:5
+	ldr	r1, [sp, #12]
+	movs	r0, #0
+	.loc	3 174 26 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:174:26
+	strh	r0, [r1, #6]
+	.loc	3 175 31 is_stmt 1              @ ../BSP/Src/bsp_buzzer.c:175:31
+	bl	HAL_GetTick
+	.loc	3 175 5 is_stmt 0               @ ../BSP/Src/bsp_buzzer.c:175:5
+	ldr	r1, [sp, #12]
+	.loc	3 175 29                        @ ../BSP/Src/bsp_buzzer.c:175:29
+	str	r0, [r1, #8]
+	.loc	3 176 5 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:176:5
+	ldr	r1, [sp, #12]
+	movs	r0, #1
+	.loc	3 176 24 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:176:24
+	strb	r0, [r1, #12]
+	.loc	3 177 5 is_stmt 1               @ ../BSP/Src/bsp_buzzer.c:177:5
+	bl	startBuzzer
+	.loc	3 178 14                        @ ../BSP/Src/bsp_buzzer.c:178:14
+	ldr	r0, [sp, #8]
+	.loc	3 178 23 is_stmt 0              @ ../BSP/Src/bsp_buzzer.c:178:23
+	ldrb	r0, [r0]
+	.loc	3 178 5                         @ ../BSP/Src/bsp_buzzer.c:178:5
+	bl	playNote
+	.loc	3 179 1 epilogue_begin is_stmt 1 @ ../BSP/Src/bsp_buzzer.c:179:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp28:
+.Lfunc_end6:
+	.size	startMusicPlay, .Lfunc_end6-startMusicPlay
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.LowVoltage_Music,"ax",%progbits
+	.hidden	LowVoltage_Music                @ -- Begin function LowVoltage_Music
+	.globl	LowVoltage_Music
+	.p2align	3
+	.type	LowVoltage_Music,%function
+	.code	16                              @ @LowVoltage_Music
+	.thumb_func
+LowVoltage_Music:
+.Lfunc_begin7:
+	.loc	3 186 0                         @ ../BSP/Src/bsp_buzzer.c:186:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp29:
+	.loc	3 187 1 prologue_end            @ ../BSP/Src/bsp_buzzer.c:187:1
+	movw	r0, :lower16:music_player
+	movt	r0, :upper16:music_player
+	movw	r1, :lower16:Low_Voltage
+	movt	r1, :upper16:Low_Voltage
+	movs	r2, #2
+	bl	startMusicPlay
+	.loc	3 188 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:188:1
+	pop	{r7, pc}
+.Ltmp30:
+.Lfunc_end7:
+	.size	LowVoltage_Music, .Lfunc_end7-LowVoltage_Music
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.HighHeat_Music,"ax",%progbits
+	.hidden	HighHeat_Music                  @ -- Begin function HighHeat_Music
+	.globl	HighHeat_Music
+	.p2align	3
+	.type	HighHeat_Music,%function
+	.code	16                              @ @HighHeat_Music
+	.thumb_func
+HighHeat_Music:
+.Lfunc_begin8:
+	.loc	3 190 0                         @ ../BSP/Src/bsp_buzzer.c:190:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp31:
+	.loc	3 191 1 prologue_end            @ ../BSP/Src/bsp_buzzer.c:191:1
+	movw	r0, :lower16:music_player
+	movt	r0, :upper16:music_player
+	movw	r1, :lower16:High_Heat
+	movt	r1, :upper16:High_Heat
+	movs	r2, #2
+	bl	startMusicPlay
+	.loc	3 192 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:192:1
+	pop	{r7, pc}
+.Ltmp32:
+.Lfunc_end8:
+	.size	HighHeat_Music, .Lfunc_end8-HighHeat_Music
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.CAN1_Lost_Music,"ax",%progbits
+	.hidden	CAN1_Lost_Music                 @ -- Begin function CAN1_Lost_Music
+	.globl	CAN1_Lost_Music
+	.p2align	3
+	.type	CAN1_Lost_Music,%function
+	.code	16                              @ @CAN1_Lost_Music
+	.thumb_func
+CAN1_Lost_Music:
+.Lfunc_begin9:
+	.loc	3 194 0                         @ ../BSP/Src/bsp_buzzer.c:194:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp33:
+	.loc	3 195 1 prologue_end            @ ../BSP/Src/bsp_buzzer.c:195:1
+	movw	r0, :lower16:music_player
+	movt	r0, :upper16:music_player
+	movw	r1, :lower16:Can1_Lost
+	movt	r1, :upper16:Can1_Lost
+	movs	r2, #1
+	bl	startMusicPlay
+	.loc	3 196 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:196:1
+	pop	{r7, pc}
+.Ltmp34:
+.Lfunc_end9:
+	.size	CAN1_Lost_Music, .Lfunc_end9-CAN1_Lost_Music
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.CAN2_Lost_Music,"ax",%progbits
+	.hidden	CAN2_Lost_Music                 @ -- Begin function CAN2_Lost_Music
+	.globl	CAN2_Lost_Music
+	.p2align	3
+	.type	CAN2_Lost_Music,%function
+	.code	16                              @ @CAN2_Lost_Music
+	.thumb_func
+CAN2_Lost_Music:
+.Lfunc_begin10:
+	.loc	3 198 0                         @ ../BSP/Src/bsp_buzzer.c:198:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp35:
+	.loc	3 199 1 prologue_end            @ ../BSP/Src/bsp_buzzer.c:199:1
+	movw	r0, :lower16:music_player
+	movt	r0, :upper16:music_player
+	movw	r1, :lower16:Can2_Lost
+	movt	r1, :upper16:Can2_Lost
+	movs	r2, #3
+	bl	startMusicPlay
+	.loc	3 200 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:200:1
+	pop	{r7, pc}
+.Ltmp36:
+.Lfunc_end10:
+	.size	CAN2_Lost_Music, .Lfunc_end10-CAN2_Lost_Music
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.CAN3_Lost_Music,"ax",%progbits
+	.hidden	CAN3_Lost_Music                 @ -- Begin function CAN3_Lost_Music
+	.globl	CAN3_Lost_Music
+	.p2align	3
+	.type	CAN3_Lost_Music,%function
+	.code	16                              @ @CAN3_Lost_Music
+	.thumb_func
+CAN3_Lost_Music:
+.Lfunc_begin11:
+	.loc	3 202 0                         @ ../BSP/Src/bsp_buzzer.c:202:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+.Ltmp37:
+	.loc	3 203 1 prologue_end            @ ../BSP/Src/bsp_buzzer.c:203:1
+	movw	r0, :lower16:music_player
+	movt	r0, :upper16:music_player
+	movw	r1, :lower16:Can3_Lost
+	movt	r1, :upper16:Can3_Lost
+	movs	r2, #3
+	bl	startMusicPlay
+	.loc	3 204 1 epilogue_begin          @ ../BSP/Src/bsp_buzzer.c:204:1
+	pop	{r7, pc}
+.Ltmp38:
+.Lfunc_end11:
+	.size	CAN3_Lost_Music, .Lfunc_end11-CAN3_Lost_Music
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.hidden	music_player                    @ @music_player
+	.type	music_player,%object
+	.section	.bss.music_player,"aw",%nobits
+	.globl	music_player
+	.p2align	2, 0x0
+music_player:
+	.zero	16
+	.size	music_player, 16
+
+	.hidden	current_time                    @ @current_time
+	.type	current_time,%object
+	.section	.bss.current_time,"aw",%nobits
+	.globl	current_time
+	.p2align	2, 0x0
+current_time:
+	.long	0                               @ 0x0
+	.size	current_time, 4
+
+	.hidden	elapsed_time                    @ @elapsed_time
+	.type	elapsed_time,%object
+	.section	.bss.elapsed_time,"aw",%nobits
+	.globl	elapsed_time
+	.p2align	2, 0x0
+elapsed_time:
+	.long	0                               @ 0x0
+	.size	elapsed_time, 4
+
+	.type	Low_Voltage,%object             @ @Low_Voltage
+	.section	.rodata.Low_Voltage,"a",%progbits
+	.p2align	1, 0x0
+Low_Voltage:
+	.byte	0                               @ 0x0
+	.zero	1
+	.short	150                             @ 0x96
+	.byte	6                               @ 0x6
+	.zero	1
+	.short	150                             @ 0x96
+	.size	Low_Voltage, 8
+
+	.type	High_Heat,%object               @ @High_Heat
+	.section	.rodata.High_Heat,"a",%progbits
+	.p2align	1, 0x0
+High_Heat:
+	.byte	0                               @ 0x0
+	.zero	1
+	.short	150                             @ 0x96
+	.byte	0                               @ 0x0
+	.zero	1
+	.short	150                             @ 0x96
+	.size	High_Heat, 8
+
+	.type	Can1_Lost,%object               @ @Can1_Lost
+	.section	.rodata.Can1_Lost,"a",%progbits
+	.p2align	1, 0x0
+Can1_Lost:
+	.byte	1                               @ 0x1
+	.zero	1
+	.short	100                             @ 0x64
+	.size	Can1_Lost, 4
+
+	.type	Can2_Lost,%object               @ @Can2_Lost
+	.section	.rodata.Can2_Lost,"a",%progbits
+	.p2align	1, 0x0
+Can2_Lost:
+	.byte	1                               @ 0x1
+	.zero	1
+	.short	100                             @ 0x64
+	.byte	0                               @ 0x0
+	.zero	1
+	.short	100                             @ 0x64
+	.byte	1                               @ 0x1
+	.zero	1
+	.short	100                             @ 0x64
+	.size	Can2_Lost, 12
+
+	.type	Can3_Lost,%object               @ @Can3_Lost
+	.section	.rodata.Can3_Lost,"a",%progbits
+	.p2align	1, 0x0
+Can3_Lost:
+	.byte	0                               @ 0x0
+	.zero	1
+	.short	100                             @ 0x64
+	.byte	1                               @ 0x1
+	.zero	1
+	.short	100                             @ 0x64
+	.byte	2                               @ 0x2
+	.zero	1
+	.short	100                             @ 0x64
+	.size	Can3_Lost, 12
+
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                               @ Abbreviation Code
+	.byte	17                              @ DW_TAG_compile_unit
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	37                              @ DW_AT_producer
+	.byte	14                              @ DW_FORM_strp
+	.byte	19                              @ DW_AT_language
+	.byte	5                               @ DW_FORM_data2
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	16                              @ DW_AT_stmt_list
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	27                              @ DW_AT_comp_dir
+	.byte	14                              @ DW_FORM_strp
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	2                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	3                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	4                               @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	5                               @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	6                               @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	7                               @ Abbreviation Code
+	.byte	38                              @ DW_TAG_const_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	8                               @ Abbreviation Code
+	.byte	4                               @ DW_TAG_enumeration_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	9                               @ Abbreviation Code
+	.byte	40                              @ DW_TAG_enumerator
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	28                              @ DW_AT_const_value
+	.byte	15                              @ DW_FORM_udata
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	10                              @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	11                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	12                              @ Abbreviation Code
+	.byte	1                               @ DW_TAG_array_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	13                              @ Abbreviation Code
+	.byte	33                              @ DW_TAG_subrange_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	55                              @ DW_AT_count
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	14                              @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	16                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	17                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	18                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	19                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	0                               @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	4                               @ DWARF version number
+	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
+	.byte	4                               @ Address Size (in bytes)
+	.byte	1                               @ Abbrev [1] 0xb:0x32c DW_TAG_compile_unit
+	.long	.Linfo_string0                  @ DW_AT_producer
+	.short	12                              @ DW_AT_language
+	.long	.Linfo_string1                  @ DW_AT_name
+	.long	.Lline_table_start0             @ DW_AT_stmt_list
+	.long	.Linfo_string2                  @ DW_AT_comp_dir
+	.long	0                               @ DW_AT_low_pc
+	.long	.Ldebug_ranges0                 @ DW_AT_ranges
+	.byte	2                               @ Abbrev [2] 0x26:0x11 DW_TAG_variable
+	.long	.Linfo_string3                  @ DW_AT_name
+	.long	55                              @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	3                               @ DW_AT_decl_file
+	.byte	82                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	music_player
+	.byte	3                               @ Abbrev [3] 0x37:0xb DW_TAG_typedef
+	.long	66                              @ DW_AT_type
+	.long	.Linfo_string27                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	53                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x42:0x41 DW_TAG_structure_type
+	.byte	16                              @ DW_AT_byte_size
+	.byte	1                               @ DW_AT_decl_file
+	.byte	46                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x46:0xc DW_TAG_member
+	.long	.Linfo_string4                  @ DW_AT_name
+	.long	131                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	48                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x52:0xc DW_TAG_member
+	.long	.Linfo_string20                 @ DW_AT_name
+	.long	256                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	49                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x5e:0xc DW_TAG_member
+	.long	.Linfo_string21                 @ DW_AT_name
+	.long	256                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	50                              @ DW_AT_decl_line
+	.byte	6                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x6a:0xc DW_TAG_member
+	.long	.Linfo_string22                 @ DW_AT_name
+	.long	274                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	51                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0x76:0xc DW_TAG_member
+	.long	.Linfo_string25                 @ DW_AT_name
+	.long	292                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	52                              @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	6                               @ Abbrev [6] 0x83:0x5 DW_TAG_pointer_type
+	.long	136                             @ DW_AT_type
+	.byte	7                               @ Abbrev [7] 0x88:0x5 DW_TAG_const_type
+	.long	141                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0x8d:0xb DW_TAG_typedef
+	.long	152                             @ DW_AT_type
+	.long	.Linfo_string19                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	41                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x98:0x1d DW_TAG_structure_type
+	.byte	4                               @ DW_AT_byte_size
+	.byte	1                               @ DW_AT_decl_file
+	.byte	37                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x9c:0xc DW_TAG_member
+	.long	.Linfo_string5                  @ DW_AT_name
+	.long	181                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	39                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	5                               @ Abbrev [5] 0xa8:0xc DW_TAG_member
+	.long	.Linfo_string16                 @ DW_AT_name
+	.long	256                             @ DW_AT_type
+	.byte	1                               @ DW_AT_decl_file
+	.byte	40                              @ DW_AT_decl_line
+	.byte	2                               @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	3                               @ Abbrev [3] 0xb5:0xb DW_TAG_typedef
+	.long	192                             @ DW_AT_type
+	.long	.Linfo_string15                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	32                              @ DW_AT_decl_line
+	.byte	8                               @ Abbrev [8] 0xc0:0x39 DW_TAG_enumeration_type
+	.long	249                             @ DW_AT_type
+	.byte	1                               @ DW_AT_byte_size
+	.byte	1                               @ DW_AT_decl_file
+	.byte	22                              @ DW_AT_decl_line
+	.byte	9                               @ Abbrev [9] 0xc8:0x6 DW_TAG_enumerator
+	.long	.Linfo_string7                  @ DW_AT_name
+	.byte	0                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xce:0x6 DW_TAG_enumerator
+	.long	.Linfo_string8                  @ DW_AT_name
+	.byte	1                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xd4:0x6 DW_TAG_enumerator
+	.long	.Linfo_string9                  @ DW_AT_name
+	.byte	2                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xda:0x6 DW_TAG_enumerator
+	.long	.Linfo_string10                 @ DW_AT_name
+	.byte	3                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xe0:0x6 DW_TAG_enumerator
+	.long	.Linfo_string11                 @ DW_AT_name
+	.byte	4                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xe6:0x6 DW_TAG_enumerator
+	.long	.Linfo_string12                 @ DW_AT_name
+	.byte	5                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xec:0x6 DW_TAG_enumerator
+	.long	.Linfo_string13                 @ DW_AT_name
+	.byte	6                               @ DW_AT_const_value
+	.byte	9                               @ Abbrev [9] 0xf2:0x6 DW_TAG_enumerator
+	.long	.Linfo_string14                 @ DW_AT_name
+	.byte	7                               @ DW_AT_const_value
+	.byte	0                               @ End Of Children Mark
+	.byte	10                              @ Abbrev [10] 0xf9:0x7 DW_TAG_base_type
+	.long	.Linfo_string6                  @ DW_AT_name
+	.byte	8                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0x100:0xb DW_TAG_typedef
+	.long	267                             @ DW_AT_type
+	.long	.Linfo_string18                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	63                              @ DW_AT_decl_line
+	.byte	10                              @ Abbrev [10] 0x10b:0x7 DW_TAG_base_type
+	.long	.Linfo_string17                 @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	2                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0x112:0xb DW_TAG_typedef
+	.long	285                             @ DW_AT_type
+	.long	.Linfo_string24                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	10                              @ Abbrev [10] 0x11d:0x7 DW_TAG_base_type
+	.long	.Linfo_string23                 @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	10                              @ Abbrev [10] 0x124:0x7 DW_TAG_base_type
+	.long	.Linfo_string26                 @ DW_AT_name
+	.byte	2                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	2                               @ Abbrev [2] 0x12b:0x11 DW_TAG_variable
+	.long	.Linfo_string28                 @ DW_AT_name
+	.long	274                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	3                               @ DW_AT_decl_file
+	.byte	135                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	current_time
+	.byte	2                               @ Abbrev [2] 0x13c:0x11 DW_TAG_variable
+	.long	.Linfo_string29                 @ DW_AT_name
+	.long	274                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	3                               @ DW_AT_decl_file
+	.byte	136                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	elapsed_time
+	.byte	11                              @ Abbrev [11] 0x14d:0x11 DW_TAG_variable
+	.long	.Linfo_string30                 @ DW_AT_name
+	.long	350                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	99                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	Low_Voltage
+	.byte	12                              @ Abbrev [12] 0x15e:0xc DW_TAG_array_type
+	.long	136                             @ DW_AT_type
+	.byte	13                              @ Abbrev [13] 0x163:0x6 DW_TAG_subrange_type
+	.long	362                             @ DW_AT_type
+	.byte	2                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	14                              @ Abbrev [14] 0x16a:0x7 DW_TAG_base_type
+	.long	.Linfo_string31                 @ DW_AT_name
+	.byte	8                               @ DW_AT_byte_size
+	.byte	7                               @ DW_AT_encoding
+	.byte	11                              @ Abbrev [11] 0x171:0x11 DW_TAG_variable
+	.long	.Linfo_string32                 @ DW_AT_name
+	.long	350                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	103                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	High_Heat
+	.byte	11                              @ Abbrev [11] 0x182:0x11 DW_TAG_variable
+	.long	.Linfo_string33                 @ DW_AT_name
+	.long	403                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	106                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	Can1_Lost
+	.byte	12                              @ Abbrev [12] 0x193:0xc DW_TAG_array_type
+	.long	136                             @ DW_AT_type
+	.byte	13                              @ Abbrev [13] 0x198:0x6 DW_TAG_subrange_type
+	.long	362                             @ DW_AT_type
+	.byte	1                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x19f:0x11 DW_TAG_variable
+	.long	.Linfo_string34                 @ DW_AT_name
+	.long	432                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	109                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	Can2_Lost
+	.byte	12                              @ Abbrev [12] 0x1b0:0xc DW_TAG_array_type
+	.long	136                             @ DW_AT_type
+	.byte	13                              @ Abbrev [13] 0x1b5:0x6 DW_TAG_subrange_type
+	.long	362                             @ DW_AT_type
+	.byte	3                               @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	11                              @ Abbrev [11] 0x1bc:0x11 DW_TAG_variable
+	.long	.Linfo_string35                 @ DW_AT_name
+	.long	432                             @ DW_AT_type
+	.byte	3                               @ DW_AT_decl_file
+	.byte	112                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	Can3_Lost
+	.byte	15                              @ Abbrev [15] 0x1cd:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   @ DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string36                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	14                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x1de:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin1                   @ DW_AT_low_pc
+	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string37                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	23                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	16                              @ Abbrev [16] 0x1ef:0x2e DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string38                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	46                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	17                              @ Abbrev [17] 0x200:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	15
+	.long	.Linfo_string5                  @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	46                              @ DW_AT_decl_line
+	.long	181                             @ DW_AT_type
+	.byte	18                              @ Abbrev [18] 0x20e:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string48                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	48                              @ DW_AT_decl_line
+	.long	810                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	19                              @ Abbrev [19] 0x21d:0x3c DW_TAG_subprogram
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string39                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	32                              @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	17                              @ Abbrev [17] 0x22e:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string48                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	32                              @ DW_AT_decl_line
+	.long	810                             @ DW_AT_type
+	.byte	18                              @ Abbrev [18] 0x23c:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string50                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	34                              @ DW_AT_decl_line
+	.long	274                             @ DW_AT_type
+	.byte	18                              @ Abbrev [18] 0x24a:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	.Linfo_string51                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	35                              @ DW_AT_decl_line
+	.long	274                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	16                              @ Abbrev [16] 0x259:0x20 DW_TAG_subprogram
+	.long	.Lfunc_begin4                   @ DW_AT_low_pc
+	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string40                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	122                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	17                              @ Abbrev [17] 0x26a:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string52                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	122                             @ DW_AT_decl_line
+	.long	817                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	16                              @ Abbrev [16] 0x279:0x20 DW_TAG_subprogram
+	.long	.Lfunc_begin5                   @ DW_AT_low_pc
+	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string41                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	137                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	17                              @ Abbrev [17] 0x28a:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	.Linfo_string52                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	137                             @ DW_AT_decl_line
+	.long	817                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	16                              @ Abbrev [16] 0x299:0x3c DW_TAG_subprogram
+	.long	.Lfunc_begin6                   @ DW_AT_low_pc
+	.long	.Lfunc_end6-.Lfunc_begin6       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string42                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	170                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	17                              @ Abbrev [17] 0x2aa:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string52                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	170                             @ DW_AT_decl_line
+	.long	817                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x2b8:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	8
+	.long	.Linfo_string4                  @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	170                             @ DW_AT_decl_line
+	.long	131                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x2c6:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	6
+	.long	.Linfo_string20                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	170                             @ DW_AT_decl_line
+	.long	256                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	15                              @ Abbrev [15] 0x2d5:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin7                   @ DW_AT_low_pc
+	.long	.Lfunc_end7-.Lfunc_begin7       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string43                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	185                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x2e6:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin8                   @ DW_AT_low_pc
+	.long	.Lfunc_end8-.Lfunc_begin8       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string44                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	189                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x2f7:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin9                   @ DW_AT_low_pc
+	.long	.Lfunc_end9-.Lfunc_begin9       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string45                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	193                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x308:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin10                  @ DW_AT_low_pc
+	.long	.Lfunc_end10-.Lfunc_begin10     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string46                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	197                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x319:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin11                  @ DW_AT_low_pc
+	.long	.Lfunc_end11-.Lfunc_begin11     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+	.long	.Linfo_string47                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	201                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	10                              @ Abbrev [10] 0x32a:0x7 DW_TAG_base_type
+	.long	.Linfo_string49                 @ DW_AT_name
+	.byte	4                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	6                               @ Abbrev [6] 0x331:0x5 DW_TAG_pointer_type
+	.long	55                              @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	.Lfunc_begin6
+	.long	.Lfunc_end6
+	.long	.Lfunc_begin7
+	.long	.Lfunc_end7
+	.long	.Lfunc_begin8
+	.long	.Lfunc_end8
+	.long	.Lfunc_begin9
+	.long	.Lfunc_end9
+	.long	.Lfunc_begin10
+	.long	.Lfunc_end10
+	.long	.Lfunc_begin11
+	.long	.Lfunc_end11
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]" @ string offset=0
+.Linfo_string1:
+	.asciz	"../BSP/Src\\bsp_buzzer.c"      @ string offset=68
+.Linfo_string2:
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=92
+.Linfo_string3:
+	.asciz	"music_player"                  @ string offset=170
+.Linfo_string4:
+	.asciz	"notes"                         @ string offset=183
+.Linfo_string5:
+	.asciz	"note"                          @ string offset=189
+.Linfo_string6:
+	.asciz	"unsigned char"                 @ string offset=194
+.Linfo_string7:
+	.asciz	"NOTE_DO"                       @ string offset=208
+.Linfo_string8:
+	.asciz	"NOTE_RE"                       @ string offset=216
+.Linfo_string9:
+	.asciz	"NOTE_MI"                       @ string offset=224
+.Linfo_string10:
+	.asciz	"NOTE_FA"                       @ string offset=232
+.Linfo_string11:
+	.asciz	"NOTE_SO"                       @ string offset=240
+.Linfo_string12:
+	.asciz	"NOTE_LA"                       @ string offset=248
+.Linfo_string13:
+	.asciz	"NOTE_SI"                       @ string offset=256
+.Linfo_string14:
+	.asciz	"NOTE"                          @ string offset=264
+.Linfo_string15:
+	.asciz	"Note_Type"                     @ string offset=269
+.Linfo_string16:
+	.asciz	"duration"                      @ string offset=279
+.Linfo_string17:
+	.asciz	"unsigned short"                @ string offset=288
+.Linfo_string18:
+	.asciz	"uint16_t"                      @ string offset=303
+.Linfo_string19:
+	.asciz	"Music_Note_s"                  @ string offset=312
+.Linfo_string20:
+	.asciz	"total_notes"                   @ string offset=325
+.Linfo_string21:
+	.asciz	"current_note"                  @ string offset=337
+.Linfo_string22:
+	.asciz	"note_start_time"               @ string offset=350
+.Linfo_string23:
+	.asciz	"unsigned int"                  @ string offset=366
+.Linfo_string24:
+	.asciz	"uint32_t"                      @ string offset=379
+.Linfo_string25:
+	.asciz	"is_playing"                    @ string offset=388
+.Linfo_string26:
+	.asciz	"_Bool"                         @ string offset=399
+.Linfo_string27:
+	.asciz	"Music_Player_s"                @ string offset=405
+.Linfo_string28:
+	.asciz	"current_time"                  @ string offset=420
+.Linfo_string29:
+	.asciz	"elapsed_time"                  @ string offset=433
+.Linfo_string30:
+	.asciz	"Low_Voltage"                   @ string offset=446
+.Linfo_string31:
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=458
+.Linfo_string32:
+	.asciz	"High_Heat"                     @ string offset=478
+.Linfo_string33:
+	.asciz	"Can1_Lost"                     @ string offset=488
+.Linfo_string34:
+	.asciz	"Can2_Lost"                     @ string offset=498
+.Linfo_string35:
+	.asciz	"Can3_Lost"                     @ string offset=508
+.Linfo_string36:
+	.asciz	"startBuzzer"                   @ string offset=518
+.Linfo_string37:
+	.asciz	"stopBuzzer"                    @ string offset=530
+.Linfo_string38:
+	.asciz	"playNote"                      @ string offset=541
+.Linfo_string39:
+	.asciz	"setBuzzerFrequency"            @ string offset=550
+.Linfo_string40:
+	.asciz	"stopMusicPlay"                 @ string offset=569
+.Linfo_string41:
+	.asciz	"updateMusicPlayer"             @ string offset=583
+.Linfo_string42:
+	.asciz	"startMusicPlay"                @ string offset=601
+.Linfo_string43:
+	.asciz	"LowVoltage_Music"              @ string offset=616
+.Linfo_string44:
+	.asciz	"HighHeat_Music"                @ string offset=633
+.Linfo_string45:
+	.asciz	"CAN1_Lost_Music"               @ string offset=648
+.Linfo_string46:
+	.asciz	"CAN2_Lost_Music"               @ string offset=664
+.Linfo_string47:
+	.asciz	"CAN3_Lost_Music"               @ string offset=680
+.Linfo_string48:
+	.asciz	"frequency"                     @ string offset=696
+.Linfo_string49:
+	.asciz	"float"                         @ string offset=706
+.Linfo_string50:
+	.asciz	"psc"                           @ string offset=712
+.Linfo_string51:
+	.asciz	"arr"                           @ string offset=716
+.Linfo_string52:
+	.asciz	"player"                        @ string offset=720
+	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:
