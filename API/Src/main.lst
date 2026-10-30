@@ -21,12 +21,12 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"main.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_tim.h"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_def.h"
+	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_tim.h"
+	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_dma.h"
 	.file	4 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Include\\core_cm7.h"
+	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Device/ST/STM32H7xx/Include\\stm32h723xx.h"
+	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/CMSIS/Include\\core_cm7.h"
 	.section	.text.main,"ax",%progbits
 	.hidden	main                            @ -- Begin function main
 	.globl	main
@@ -36,7 +36,7 @@
 	.thumb_func
 main:
 .Lfunc_begin0:
-	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Core/Src/main.c"
+	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Core/Src/main.c"
 	.loc	7 80 0                          @ ../Core/Src/main.c:80:0
 	.fnstart
 	.cfi_sections .debug_frame
@@ -255,13 +255,17 @@ main:
 	movt	r0, :upper16:htim3
 	movs	r1, #12
 	bl	HAL_TIM_PWM_Start
+	mov.w	r0, #2000
+	movs	r1, #200
 	.loc	7 141 2                         @ ../Core/Src/main.c:141:2
+	bl	TriangleWave_SetPeriod
+	.loc	7 142 2                         @ ../Core/Src/main.c:142:2
 	bl	TIM1_1ms_Init
-	.loc	7 145 3                         @ ../Core/Src/main.c:145:3
+	.loc	7 146 3                         @ ../Core/Src/main.c:146:3
 	bl	MX_FREERTOS_Init
-	.loc	7 148 3                         @ ../Core/Src/main.c:148:3
+	.loc	7 149 3                         @ ../Core/Src/main.c:149:3
 	bl	osKernelStart
-	.loc	7 154 3                         @ ../Core/Src/main.c:154:3
+	.loc	7 155 3                         @ ../Core/Src/main.c:155:3
 	b	.LBB0_11
 .LBB0_11:                               @ =>This Inner Loop Header: Depth=1
 	b	.LBB0_11
@@ -279,7 +283,7 @@ main:
 	.thumb_func
 MPU_Config:
 .Lfunc_begin1:
-	.loc	7 259 0                         @ ../Core/Src/main.c:259:0
+	.loc	7 260 0                         @ ../Core/Src/main.c:260:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -293,48 +297,48 @@ MPU_Config:
 	.cfi_def_cfa_offset 32
 	movs	r0, #0
 .Ltmp19:
-	.loc	7 260 26 prologue_end           @ ../Core/Src/main.c:260:26
+	.loc	7 261 26 prologue_end           @ ../Core/Src/main.c:261:26
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	str	r0, [sp, #20]
 	str	r0, [sp, #16]
 	str	r0, [sp, #12]
 	str	r0, [sp, #8]
-	.loc	7 263 3                         @ ../Core/Src/main.c:263:3
+	.loc	7 264 3                         @ ../Core/Src/main.c:264:3
 	bl	HAL_MPU_Disable
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movs	r1, #1
-	.loc	7 267 25                        @ ../Core/Src/main.c:267:25
-	strb.w	r1, [sp, #8]
 	.loc	7 268 25                        @ ../Core/Src/main.c:268:25
+	strb.w	r1, [sp, #8]
+	.loc	7 269 25                        @ ../Core/Src/main.c:269:25
 	strb.w	r0, [sp, #9]
 	mov.w	r2, #603979776
-	.loc	7 269 30                        @ ../Core/Src/main.c:269:30
+	.loc	7 270 30                        @ ../Core/Src/main.c:270:30
 	str	r2, [sp, #12]
 	movs	r2, #18
-	.loc	7 270 23                        @ ../Core/Src/main.c:270:23
+	.loc	7 271 23                        @ ../Core/Src/main.c:271:23
 	strb.w	r2, [sp, #16]
-	.loc	7 271 35                        @ ../Core/Src/main.c:271:35
+	.loc	7 272 35                        @ ../Core/Src/main.c:272:35
 	strb.w	r0, [sp, #17]
-	.loc	7 272 31                        @ ../Core/Src/main.c:272:31
+	.loc	7 273 31                        @ ../Core/Src/main.c:273:31
 	strb.w	r1, [sp, #18]
 	movs	r1, #3
-	.loc	7 273 35                        @ ../Core/Src/main.c:273:35
+	.loc	7 274 35                        @ ../Core/Src/main.c:274:35
 	strb.w	r1, [sp, #19]
-	.loc	7 274 30                        @ ../Core/Src/main.c:274:30
-	strb.w	r0, [sp, #20]
 	.loc	7 275 30                        @ ../Core/Src/main.c:275:30
-	strb.w	r0, [sp, #21]
+	strb.w	r0, [sp, #20]
 	.loc	7 276 30                        @ ../Core/Src/main.c:276:30
+	strb.w	r0, [sp, #21]
+	.loc	7 277 30                        @ ../Core/Src/main.c:277:30
 	strb.w	r0, [sp, #22]
-	.loc	7 277 31                        @ ../Core/Src/main.c:277:31
+	.loc	7 278 31                        @ ../Core/Src/main.c:278:31
 	strb.w	r0, [sp, #23]
 	add	r0, sp, #8
-	.loc	7 279 3                         @ ../Core/Src/main.c:279:3
+	.loc	7 280 3                         @ ../Core/Src/main.c:280:3
 	bl	HAL_MPU_ConfigRegion
 	movs	r0, #6
-	.loc	7 281 3                         @ ../Core/Src/main.c:281:3
+	.loc	7 282 3                         @ ../Core/Src/main.c:282:3
 	bl	HAL_MPU_Enable
-	.loc	7 283 1 epilogue_begin          @ ../Core/Src/main.c:283:1
+	.loc	7 284 1 epilogue_begin          @ ../Core/Src/main.c:284:1
 	add	sp, #24
 	pop	{r7, pc}
 .Ltmp20:
@@ -353,7 +357,7 @@ MPU_Config:
 	.thumb_func
 SystemClock_Config:
 .Lfunc_begin2:
-	.loc	7 169 0                         @ ../Core/Src/main.c:169:0
+	.loc	7 170 0                         @ ../Core/Src/main.c:170:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -368,10 +372,10 @@ SystemClock_Config:
 	add	r0, sp, #44
 	movs	r1, #76
 .Ltmp21:
-	.loc	7 170 22 prologue_end           @ ../Core/Src/main.c:170:22
+	.loc	7 171 22 prologue_end           @ ../Core/Src/main.c:171:22
 	bl	__aeabi_memclr4
 	movs	r0, #0
-	.loc	7 171 22                        @ ../Core/Src/main.c:171:22
+	.loc	7 172 22                        @ ../Core/Src/main.c:172:22
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	str	r0, [sp, #40]
 	str	r0, [sp, #36]
@@ -382,15 +386,15 @@ SystemClock_Config:
 	str	r0, [sp, #16]
 	str	r0, [sp, #12]
 	movs	r0, #2
-	.loc	7 175 3                         @ ../Core/Src/main.c:175:3
+	.loc	7 176 3                         @ ../Core/Src/main.c:176:3
 	bl	HAL_PWREx_ConfigSupply
-	.loc	7 179 3                         @ ../Core/Src/main.c:179:3
+	.loc	7 180 3                         @ ../Core/Src/main.c:180:3
 	b	.LBB2_1
 .LBB2_1:
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movs	r0, #0
 .Ltmp22:
-	.loc	7 179 3                         @ ../Core/Src/main.c:179:3
+	.loc	7 180 3                         @ ../Core/Src/main.c:180:3
 	str	r0, [sp, #8]
 	movw	r0, #18456
 	movt	r0, #22530
@@ -404,16 +408,16 @@ SystemClock_Config:
 	b	.LBB2_2
 .Ltmp23:
 .LBB2_2:
-	.loc	7 181 3 is_stmt 1               @ ../Core/Src/main.c:181:3
+	.loc	7 182 3 is_stmt 1               @ ../Core/Src/main.c:182:3
 	b	.LBB2_3
 .LBB2_3:                                @ =>This Inner Loop Header: Depth=1
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movw	r0, #18456
 	movt	r0, #22530
-	.loc	7 181 10                        @ ../Core/Src/main.c:181:10
+	.loc	7 182 10                        @ ../Core/Src/main.c:182:10
 	ldr	r0, [r0]
 	and	r0, r0, #8192
-	.loc	7 181 3                         @ ../Core/Src/main.c:181:3
+	.loc	7 182 3                         @ ../Core/Src/main.c:182:3
 	cmp.w	r0, #8192
 	beq	.LBB2_5
 	b	.LBB2_4
@@ -422,94 +426,94 @@ SystemClock_Config:
 .LBB2_5:
 	.loc	7 0 3                           @ ../Core/Src/main.c:0:3
 	movs	r1, #1
-	.loc	7 186 36 is_stmt 1              @ ../Core/Src/main.c:186:36
+	.loc	7 187 36 is_stmt 1              @ ../Core/Src/main.c:187:36
 	str	r1, [sp, #44]
 	mov.w	r0, #65536
-	.loc	7 187 30                        @ ../Core/Src/main.c:187:30
+	.loc	7 188 30                        @ ../Core/Src/main.c:188:30
 	str	r0, [sp, #48]
 	movs	r0, #2
-	.loc	7 188 34                        @ ../Core/Src/main.c:188:34
+	.loc	7 189 34                        @ ../Core/Src/main.c:189:34
 	str	r0, [sp, #80]
-	.loc	7 189 35                        @ ../Core/Src/main.c:189:35
+	.loc	7 190 35                        @ ../Core/Src/main.c:190:35
 	str	r0, [sp, #84]
 	movs	r2, #6
-	.loc	7 190 30                        @ ../Core/Src/main.c:190:30
+	.loc	7 191 30                        @ ../Core/Src/main.c:191:30
 	str	r2, [sp, #88]
 	movs	r2, #160
-	.loc	7 191 30                        @ ../Core/Src/main.c:191:30
-	str	r2, [sp, #92]
 	.loc	7 192 30                        @ ../Core/Src/main.c:192:30
+	str	r2, [sp, #92]
+	.loc	7 193 30                        @ ../Core/Src/main.c:193:30
 	str	r1, [sp, #96]
 	movs	r1, #4
-	.loc	7 193 30                        @ ../Core/Src/main.c:193:30
-	str	r1, [sp, #100]
 	.loc	7 194 30                        @ ../Core/Src/main.c:194:30
+	str	r1, [sp, #100]
+	.loc	7 195 30                        @ ../Core/Src/main.c:195:30
 	str	r0, [sp, #104]
 	movs	r0, #8
-	.loc	7 195 32                        @ ../Core/Src/main.c:195:32
+	.loc	7 196 32                        @ ../Core/Src/main.c:196:32
 	str	r0, [sp, #108]
 	movs	r0, #0
-	.loc	7 196 35                        @ ../Core/Src/main.c:196:35
+	.loc	7 197 35                        @ ../Core/Src/main.c:197:35
 	str	r0, [sp, #112]
-	.loc	7 197 34                        @ ../Core/Src/main.c:197:34
+	.loc	7 198 34                        @ ../Core/Src/main.c:198:34
 	str	r0, [sp, #116]
 	add	r0, sp, #44
 .Ltmp24:
-	.loc	7 198 7                         @ ../Core/Src/main.c:198:7
+	.loc	7 199 7                         @ ../Core/Src/main.c:199:7
 	bl	HAL_RCC_OscConfig
 .Ltmp25:
-	.loc	7 198 7 is_stmt 0               @ ../Core/Src/main.c:198:7
+	.loc	7 199 7 is_stmt 0               @ ../Core/Src/main.c:199:7
 	cbz	r0, .LBB2_7
 	b	.LBB2_6
 .LBB2_6:
 .Ltmp26:
-	.loc	7 200 5 is_stmt 1               @ ../Core/Src/main.c:200:5
+	.loc	7 201 5 is_stmt 1               @ ../Core/Src/main.c:201:5
 	bl	Error_Handler
-	.loc	7 201 3                         @ ../Core/Src/main.c:201:3
+	.loc	7 202 3                         @ ../Core/Src/main.c:202:3
 	b	.LBB2_7
 .Ltmp27:
 .LBB2_7:
 	.loc	7 0 3 is_stmt 0                 @ ../Core/Src/main.c:0:3
 	movs	r0, #63
-	.loc	7 205 31 is_stmt 1              @ ../Core/Src/main.c:205:31
+	.loc	7 206 31 is_stmt 1              @ ../Core/Src/main.c:206:31
 	str	r0, [sp, #12]
 	movs	r0, #3
-	.loc	7 208 34                        @ ../Core/Src/main.c:208:34
+	.loc	7 209 34                        @ ../Core/Src/main.c:209:34
 	str	r0, [sp, #16]
 	movs	r0, #0
-	.loc	7 209 35                        @ ../Core/Src/main.c:209:35
+	.loc	7 210 35                        @ ../Core/Src/main.c:210:35
 	str	r0, [sp, #20]
 	movs	r0, #9
-	.loc	7 210 35                        @ ../Core/Src/main.c:210:35
+	.loc	7 211 35                        @ ../Core/Src/main.c:211:35
 	str	r0, [sp, #24]
 	movs	r0, #64
-	.loc	7 211 36                        @ ../Core/Src/main.c:211:36
-	str	r0, [sp, #28]
 	.loc	7 212 36                        @ ../Core/Src/main.c:212:36
+	str	r0, [sp, #28]
+	.loc	7 213 36                        @ ../Core/Src/main.c:213:36
 	str	r0, [sp, #32]
 	mov.w	r1, #1024
-	.loc	7 213 36                        @ ../Core/Src/main.c:213:36
-	str	r1, [sp, #36]
 	.loc	7 214 36                        @ ../Core/Src/main.c:214:36
+	str	r1, [sp, #36]
+	.loc	7 215 36                        @ ../Core/Src/main.c:215:36
 	str	r0, [sp, #40]
 	add	r0, sp, #12
 	movs	r1, #2
 .Ltmp28:
-	.loc	7 216 7                         @ ../Core/Src/main.c:216:7
+	.loc	7 217 7                         @ ../Core/Src/main.c:217:7
 	bl	HAL_RCC_ClockConfig
 .Ltmp29:
-	.loc	7 216 7 is_stmt 0               @ ../Core/Src/main.c:216:7
+	.loc	7 217 7 is_stmt 0               @ ../Core/Src/main.c:217:7
 	cbz	r0, .LBB2_9
 	b	.LBB2_8
 .LBB2_8:
 .Ltmp30:
-	.loc	7 218 5 is_stmt 1               @ ../Core/Src/main.c:218:5
+	.loc	7 219 5 is_stmt 1               @ ../Core/Src/main.c:219:5
 	bl	Error_Handler
-	.loc	7 219 3                         @ ../Core/Src/main.c:219:3
+	.loc	7 220 3                         @ ../Core/Src/main.c:220:3
 	b	.LBB2_9
 .Ltmp31:
 .LBB2_9:
-	.loc	7 220 1 epilogue_begin          @ ../Core/Src/main.c:220:1
+	.loc	7 221 1 epilogue_begin          @ ../Core/Src/main.c:221:1
 	add	sp, #120
 	pop	{r7, pc}
 .Ltmp32:
@@ -528,7 +532,7 @@ SystemClock_Config:
 	.thumb_func
 PeriphCommonClock_Config:
 .Lfunc_begin3:
-	.loc	7 227 0                         @ ../Core/Src/main.c:227:0
+	.loc	7 228 0                         @ ../Core/Src/main.c:228:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -544,59 +548,59 @@ PeriphCommonClock_Config:
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	movs	r1, #184
 .Ltmp33:
-	.loc	7 228 28 prologue_end           @ ../Core/Src/main.c:228:28
+	.loc	7 229 28 prologue_end           @ ../Core/Src/main.c:229:28
 	bl	__aeabi_memclr8
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
 	movs	r1, #0
-	.loc	7 232 44                        @ ../Core/Src/main.c:232:44
+	.loc	7 233 44                        @ ../Core/Src/main.c:233:44
 	str	r1, [sp, #12]
 	movw	r2, #32769
 	movt	r2, #8
 	str	r2, [sp, #8]
 	movs	r2, #24
-	.loc	7 235 34                        @ ../Core/Src/main.c:235:34
+	.loc	7 236 34                        @ ../Core/Src/main.c:236:34
 	str	r2, [sp, #16]
 	movs	r2, #200
-	.loc	7 236 34                        @ ../Core/Src/main.c:236:34
+	.loc	7 237 34                        @ ../Core/Src/main.c:237:34
 	str	r2, [sp, #20]
 	movs	r2, #2
-	.loc	7 237 34                        @ ../Core/Src/main.c:237:34
-	str	r2, [sp, #24]
 	.loc	7 238 34                        @ ../Core/Src/main.c:238:34
-	str	r2, [sp, #28]
+	str	r2, [sp, #24]
 	.loc	7 239 34                        @ ../Core/Src/main.c:239:34
+	str	r2, [sp, #28]
+	.loc	7 240 34                        @ ../Core/Src/main.c:240:34
 	str	r2, [sp, #32]
-	.loc	7 240 36                        @ ../Core/Src/main.c:240:36
+	.loc	7 241 36                        @ ../Core/Src/main.c:241:36
 	str	r1, [sp, #36]
 	movs	r2, #32
-	.loc	7 241 39                        @ ../Core/Src/main.c:241:39
+	.loc	7 242 39                        @ ../Core/Src/main.c:242:39
 	str	r2, [sp, #40]
-	.loc	7 242 38                        @ ../Core/Src/main.c:242:38
+	.loc	7 243 38                        @ ../Core/Src/main.c:243:38
 	str	r1, [sp, #44]
 	mov.w	r2, #536870912
-	.loc	7 243 43                        @ ../Core/Src/main.c:243:43
+	.loc	7 244 43                        @ ../Core/Src/main.c:244:43
 	str	r2, [sp, #116]
 	movs	r2, #8
-	.loc	7 244 45                        @ ../Core/Src/main.c:244:45
+	.loc	7 245 45                        @ ../Core/Src/main.c:245:45
 	str	r2, [sp, #128]
-	.loc	7 245 41                        @ ../Core/Src/main.c:245:41
+	.loc	7 246 41                        @ ../Core/Src/main.c:246:41
 	str	r1, [sp, #168]
 .Ltmp34:
-	.loc	7 246 7                         @ ../Core/Src/main.c:246:7
+	.loc	7 247 7                         @ ../Core/Src/main.c:247:7
 	bl	HAL_RCCEx_PeriphCLKConfig
 .Ltmp35:
-	.loc	7 246 7 is_stmt 0               @ ../Core/Src/main.c:246:7
+	.loc	7 247 7 is_stmt 0               @ ../Core/Src/main.c:247:7
 	cbz	r0, .LBB3_2
 	b	.LBB3_1
 .LBB3_1:
 .Ltmp36:
-	.loc	7 248 5 is_stmt 1               @ ../Core/Src/main.c:248:5
+	.loc	7 249 5 is_stmt 1               @ ../Core/Src/main.c:249:5
 	bl	Error_Handler
-	.loc	7 249 3                         @ ../Core/Src/main.c:249:3
+	.loc	7 250 3                         @ ../Core/Src/main.c:250:3
 	b	.LBB3_2
 .Ltmp37:
 .LBB3_2:
-	.loc	7 250 1 epilogue_begin          @ ../Core/Src/main.c:250:1
+	.loc	7 251 1 epilogue_begin          @ ../Core/Src/main.c:251:1
 	add	sp, #192
 	pop	{r7, pc}
 .Ltmp38:
@@ -615,7 +619,7 @@ PeriphCommonClock_Config:
 	.thumb_func
 Error_Handler:
 .Lfunc_begin4:
-	.loc	7 312 0                         @ ../Core/Src/main.c:312:0
+	.loc	7 313 0                         @ ../Core/Src/main.c:313:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -623,14 +627,14 @@ Error_Handler:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 .Ltmp39:
-	.loc	7 315 3 prologue_end            @ ../Core/Src/main.c:315:3
+	.loc	7 316 3 prologue_end            @ ../Core/Src/main.c:316:3
 	@APP
 	mrs	r0, primask
 	cpsid i
 
 	@NO_APP
 	str	r0, [sp]
-	.loc	7 316 3                         @ ../Core/Src/main.c:316:3
+	.loc	7 317 3                         @ ../Core/Src/main.c:317:3
 	b	.LBB4_1
 .LBB4_1:                                @ =>This Inner Loop Header: Depth=1
 	b	.LBB4_1
@@ -650,7 +654,7 @@ Error_Handler:
 	.thumb_func
 HAL_TIM_PeriodElapsedCallback:
 .Lfunc_begin5:
-	.loc	7 294 0                         @ ../Core/Src/main.c:294:0
+	.loc	7 295 0                         @ ../Core/Src/main.c:295:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -664,24 +668,24 @@ HAL_TIM_PeriodElapsedCallback:
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
 .Ltmp41:
-	.loc	7 298 7 prologue_end            @ ../Core/Src/main.c:298:7
+	.loc	7 299 7 prologue_end            @ ../Core/Src/main.c:299:7
 	ldr	r0, [sp, #4]
-	.loc	7 298 13 is_stmt 0              @ ../Core/Src/main.c:298:13
+	.loc	7 299 13 is_stmt 0              @ ../Core/Src/main.c:299:13
 	ldr	r0, [r0]
 .Ltmp42:
-	.loc	7 298 7                         @ ../Core/Src/main.c:298:7
+	.loc	7 299 7                         @ ../Core/Src/main.c:299:7
 	cmp.w	r0, #1073741824
 	bne	.LBB5_2
 	b	.LBB5_1
 .LBB5_1:
 .Ltmp43:
-	.loc	7 300 5 is_stmt 1               @ ../Core/Src/main.c:300:5
+	.loc	7 301 5 is_stmt 1               @ ../Core/Src/main.c:301:5
 	bl	HAL_IncTick
-	.loc	7 301 3                         @ ../Core/Src/main.c:301:3
+	.loc	7 302 3                         @ ../Core/Src/main.c:302:3
 	b	.LBB5_2
 .Ltmp44:
 .LBB5_2:
-	.loc	7 305 1 epilogue_begin          @ ../Core/Src/main.c:305:1
+	.loc	7 306 1 epilogue_begin          @ ../Core/Src/main.c:306:1
 	add	sp, #8
 	pop	{r7, pc}
 .Ltmp45:
@@ -699,9 +703,9 @@ __ARM_use_no_argv:
 	.long	1                               @ 0x1
 	.size	__ARM_use_no_argv, 4
 
-	.file	8 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_cortex.h"
-	.file	9 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_rcc.h"
-	.file	10 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_rcc_ex.h"
+	.file	8 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_cortex.h"
+	.file	9 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_rcc.h"
+	.file	10 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Drivers/STM32H7xx_HAL_Driver/Inc\\stm32h7xx_hal_rcc_ex.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -2068,7 +2072,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string133                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	258                             @ DW_AT_decl_line
+	.short	259                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	26                              @ Abbrev [26] 0x731:0xf DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2076,7 +2080,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string138                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	260                             @ DW_AT_decl_line
+	.short	261                             @ DW_AT_decl_line
 	.long	2018                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	27                              @ Abbrev [27] 0x741:0x46 DW_TAG_subprogram
@@ -2086,7 +2090,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string134                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	168                             @ DW_AT_decl_line
+	.byte	169                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	28                              @ Abbrev [28] 0x752:0xe DW_TAG_variable
@@ -2095,7 +2099,7 @@ __ARM_use_no_argv:
 	.byte	44
 	.long	.Linfo_string151                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	170                             @ DW_AT_decl_line
+	.byte	171                             @ DW_AT_decl_line
 	.long	2166                            @ DW_AT_type
 	.byte	28                              @ Abbrev [28] 0x760:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -2103,7 +2107,7 @@ __ARM_use_no_argv:
 	.byte	12
 	.long	.Linfo_string174                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	171                             @ DW_AT_decl_line
+	.byte	172                             @ DW_AT_decl_line
 	.long	2438                            @ DW_AT_type
 	.byte	29                              @ Abbrev [29] 0x76e:0x18 DW_TAG_lexical_block
 	.long	.Ltmp22                         @ DW_AT_low_pc
@@ -2114,7 +2118,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string184                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	179                             @ DW_AT_decl_line
+	.byte	180                             @ DW_AT_decl_line
 	.long	452                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	0                               @ End Of Children Mark
@@ -2125,7 +2129,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string135                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	226                             @ DW_AT_decl_line
+	.byte	227                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	28                              @ Abbrev [28] 0x798:0xe DW_TAG_variable
@@ -2134,7 +2138,7 @@ __ARM_use_no_argv:
 	.byte	8
 	.long	.Linfo_string185                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.byte	228                             @ DW_AT_decl_line
+	.byte	229                             @ DW_AT_decl_line
 	.long	2550                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	30                              @ Abbrev [30] 0x7a7:0x12 DW_TAG_subprogram
@@ -2144,7 +2148,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string136                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	311                             @ DW_AT_decl_line
+	.short	312                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	31                              @ Abbrev [31] 0x7b9:0x22 DW_TAG_subprogram
@@ -2154,7 +2158,7 @@ __ARM_use_no_argv:
 	.byte	93
 	.long	.Linfo_string137                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	293                             @ DW_AT_decl_line
+	.short	294                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	32                              @ Abbrev [32] 0x7cb:0xf DW_TAG_formal_parameter
@@ -2163,7 +2167,7 @@ __ARM_use_no_argv:
 	.byte	4
 	.long	.Linfo_string236                @ DW_AT_name
 	.byte	7                               @ DW_AT_decl_file
-	.short	293                             @ DW_AT_decl_line
+	.short	294                             @ DW_AT_decl_line
 	.long	3169                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	4                               @ Abbrev [4] 0x7db:0x7 DW_TAG_base_type
@@ -3257,601 +3261,601 @@ __ARM_use_no_argv:
 .Linfo_string1:
 	.asciz	"../Core/Src\\main.c"           @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=87
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" @ string offset=87
 .Linfo_string3:
-	.asciz	"unsigned char"                 @ string offset=165
+	.asciz	"unsigned char"                 @ string offset=173
 .Linfo_string4:
-	.asciz	"HAL_OK"                        @ string offset=179
+	.asciz	"HAL_OK"                        @ string offset=187
 .Linfo_string5:
-	.asciz	"HAL_ERROR"                     @ string offset=186
+	.asciz	"HAL_ERROR"                     @ string offset=194
 .Linfo_string6:
-	.asciz	"HAL_BUSY"                      @ string offset=196
+	.asciz	"HAL_BUSY"                      @ string offset=204
 .Linfo_string7:
-	.asciz	"HAL_TIMEOUT"                   @ string offset=205
+	.asciz	"HAL_TIMEOUT"                   @ string offset=213
 .Linfo_string8:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_1"      @ string offset=217
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_1"      @ string offset=225
 .Linfo_string9:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_2"      @ string offset=242
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_2"      @ string offset=250
 .Linfo_string10:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_3"      @ string offset=267
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_3"      @ string offset=275
 .Linfo_string11:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_4"      @ string offset=292
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_4"      @ string offset=300
 .Linfo_string12:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_5"      @ string offset=317
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_5"      @ string offset=325
 .Linfo_string13:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_6"      @ string offset=342
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_6"      @ string offset=350
 .Linfo_string14:
-	.asciz	"HAL_TIM_ACTIVE_CHANNEL_CLEARED" @ string offset=367
+	.asciz	"HAL_TIM_ACTIVE_CHANNEL_CLEARED" @ string offset=375
 .Linfo_string15:
-	.asciz	"HAL_UNLOCKED"                  @ string offset=398
+	.asciz	"HAL_UNLOCKED"                  @ string offset=406
 .Linfo_string16:
-	.asciz	"HAL_LOCKED"                    @ string offset=411
+	.asciz	"HAL_LOCKED"                    @ string offset=419
 .Linfo_string17:
-	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=422
+	.asciz	"HAL_DMA_STATE_RESET"           @ string offset=430
 .Linfo_string18:
-	.asciz	"HAL_DMA_STATE_READY"           @ string offset=442
+	.asciz	"HAL_DMA_STATE_READY"           @ string offset=450
 .Linfo_string19:
-	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=462
+	.asciz	"HAL_DMA_STATE_BUSY"            @ string offset=470
 .Linfo_string20:
-	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=481
+	.asciz	"HAL_DMA_STATE_ERROR"           @ string offset=489
 .Linfo_string21:
-	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=501
+	.asciz	"HAL_DMA_STATE_ABORT"           @ string offset=509
 .Linfo_string22:
-	.asciz	"HAL_TIM_STATE_RESET"           @ string offset=521
+	.asciz	"HAL_TIM_STATE_RESET"           @ string offset=529
 .Linfo_string23:
-	.asciz	"HAL_TIM_STATE_READY"           @ string offset=541
+	.asciz	"HAL_TIM_STATE_READY"           @ string offset=549
 .Linfo_string24:
-	.asciz	"HAL_TIM_STATE_BUSY"            @ string offset=561
+	.asciz	"HAL_TIM_STATE_BUSY"            @ string offset=569
 .Linfo_string25:
-	.asciz	"HAL_TIM_STATE_TIMEOUT"         @ string offset=580
+	.asciz	"HAL_TIM_STATE_TIMEOUT"         @ string offset=588
 .Linfo_string26:
-	.asciz	"HAL_TIM_STATE_ERROR"           @ string offset=602
+	.asciz	"HAL_TIM_STATE_ERROR"           @ string offset=610
 .Linfo_string27:
-	.asciz	"HAL_TIM_CHANNEL_STATE_RESET"   @ string offset=622
+	.asciz	"HAL_TIM_CHANNEL_STATE_RESET"   @ string offset=630
 .Linfo_string28:
-	.asciz	"HAL_TIM_CHANNEL_STATE_READY"   @ string offset=650
+	.asciz	"HAL_TIM_CHANNEL_STATE_READY"   @ string offset=658
 .Linfo_string29:
-	.asciz	"HAL_TIM_CHANNEL_STATE_BUSY"    @ string offset=678
+	.asciz	"HAL_TIM_CHANNEL_STATE_BUSY"    @ string offset=686
 .Linfo_string30:
-	.asciz	"HAL_DMA_BURST_STATE_RESET"     @ string offset=705
+	.asciz	"HAL_DMA_BURST_STATE_RESET"     @ string offset=713
 .Linfo_string31:
-	.asciz	"HAL_DMA_BURST_STATE_READY"     @ string offset=731
+	.asciz	"HAL_DMA_BURST_STATE_READY"     @ string offset=739
 .Linfo_string32:
-	.asciz	"HAL_DMA_BURST_STATE_BUSY"      @ string offset=757
+	.asciz	"HAL_DMA_BURST_STATE_BUSY"      @ string offset=765
 .Linfo_string33:
-	.asciz	"CR1"                           @ string offset=782
+	.asciz	"CR1"                           @ string offset=790
 .Linfo_string34:
-	.asciz	"unsigned int"                  @ string offset=786
+	.asciz	"unsigned int"                  @ string offset=794
 .Linfo_string35:
-	.asciz	"uint32_t"                      @ string offset=799
+	.asciz	"uint32_t"                      @ string offset=807
 .Linfo_string36:
-	.asciz	"CSR1"                          @ string offset=808
+	.asciz	"CSR1"                          @ string offset=816
 .Linfo_string37:
-	.asciz	"CR2"                           @ string offset=813
+	.asciz	"CR2"                           @ string offset=821
 .Linfo_string38:
-	.asciz	"CR3"                           @ string offset=817
+	.asciz	"CR3"                           @ string offset=825
 .Linfo_string39:
-	.asciz	"CPUCR"                         @ string offset=821
+	.asciz	"CPUCR"                         @ string offset=829
 .Linfo_string40:
-	.asciz	"RESERVED0"                     @ string offset=827
+	.asciz	"RESERVED0"                     @ string offset=835
 .Linfo_string41:
-	.asciz	"D3CR"                          @ string offset=837
+	.asciz	"D3CR"                          @ string offset=845
 .Linfo_string42:
-	.asciz	"RESERVED1"                     @ string offset=842
+	.asciz	"RESERVED1"                     @ string offset=850
 .Linfo_string43:
-	.asciz	"WKUPCR"                        @ string offset=852
+	.asciz	"WKUPCR"                        @ string offset=860
 .Linfo_string44:
-	.asciz	"WKUPFR"                        @ string offset=859
+	.asciz	"WKUPFR"                        @ string offset=867
 .Linfo_string45:
-	.asciz	"WKUPEPR"                       @ string offset=866
+	.asciz	"WKUPEPR"                       @ string offset=874
 .Linfo_string46:
-	.asciz	"PWR_TypeDef"                   @ string offset=874
+	.asciz	"PWR_TypeDef"                   @ string offset=882
 .Linfo_string47:
-	.asciz	"unsigned long long"            @ string offset=886
+	.asciz	"unsigned long long"            @ string offset=894
 .Linfo_string48:
-	.asciz	"uint64_t"                      @ string offset=905
+	.asciz	"uint64_t"                      @ string offset=913
 .Linfo_string49:
-	.asciz	"SMCR"                          @ string offset=914
+	.asciz	"SMCR"                          @ string offset=922
 .Linfo_string50:
-	.asciz	"DIER"                          @ string offset=919
+	.asciz	"DIER"                          @ string offset=927
 .Linfo_string51:
-	.asciz	"SR"                            @ string offset=924
+	.asciz	"SR"                            @ string offset=932
 .Linfo_string52:
-	.asciz	"EGR"                           @ string offset=927
+	.asciz	"EGR"                           @ string offset=935
 .Linfo_string53:
-	.asciz	"CCMR1"                         @ string offset=931
+	.asciz	"CCMR1"                         @ string offset=939
 .Linfo_string54:
-	.asciz	"CCMR2"                         @ string offset=937
+	.asciz	"CCMR2"                         @ string offset=945
 .Linfo_string55:
-	.asciz	"CCER"                          @ string offset=943
+	.asciz	"CCER"                          @ string offset=951
 .Linfo_string56:
-	.asciz	"CNT"                           @ string offset=948
+	.asciz	"CNT"                           @ string offset=956
 .Linfo_string57:
-	.asciz	"PSC"                           @ string offset=952
+	.asciz	"PSC"                           @ string offset=960
 .Linfo_string58:
-	.asciz	"ARR"                           @ string offset=956
+	.asciz	"ARR"                           @ string offset=964
 .Linfo_string59:
-	.asciz	"RCR"                           @ string offset=960
+	.asciz	"RCR"                           @ string offset=968
 .Linfo_string60:
-	.asciz	"CCR1"                          @ string offset=964
+	.asciz	"CCR1"                          @ string offset=972
 .Linfo_string61:
-	.asciz	"CCR2"                          @ string offset=969
+	.asciz	"CCR2"                          @ string offset=977
 .Linfo_string62:
-	.asciz	"CCR3"                          @ string offset=974
+	.asciz	"CCR3"                          @ string offset=982
 .Linfo_string63:
-	.asciz	"CCR4"                          @ string offset=979
+	.asciz	"CCR4"                          @ string offset=987
 .Linfo_string64:
-	.asciz	"BDTR"                          @ string offset=984
+	.asciz	"BDTR"                          @ string offset=992
 .Linfo_string65:
-	.asciz	"DCR"                           @ string offset=989
+	.asciz	"DCR"                           @ string offset=997
 .Linfo_string66:
-	.asciz	"DMAR"                          @ string offset=993
+	.asciz	"DMAR"                          @ string offset=1001
 .Linfo_string67:
-	.asciz	"CCMR3"                         @ string offset=998
+	.asciz	"CCMR3"                         @ string offset=1006
 .Linfo_string68:
-	.asciz	"CCR5"                          @ string offset=1004
+	.asciz	"CCR5"                          @ string offset=1012
 .Linfo_string69:
-	.asciz	"CCR6"                          @ string offset=1009
+	.asciz	"CCR6"                          @ string offset=1017
 .Linfo_string70:
-	.asciz	"AF1"                           @ string offset=1014
+	.asciz	"AF1"                           @ string offset=1022
 .Linfo_string71:
-	.asciz	"AF2"                           @ string offset=1018
+	.asciz	"AF2"                           @ string offset=1026
 .Linfo_string72:
-	.asciz	"TISEL"                         @ string offset=1022
+	.asciz	"TISEL"                         @ string offset=1030
 .Linfo_string73:
-	.asciz	"TIM_TypeDef"                   @ string offset=1028
+	.asciz	"TIM_TypeDef"                   @ string offset=1036
 .Linfo_string74:
-	.asciz	"CPUID"                         @ string offset=1040
+	.asciz	"CPUID"                         @ string offset=1048
 .Linfo_string75:
-	.asciz	"ICSR"                          @ string offset=1046
+	.asciz	"ICSR"                          @ string offset=1054
 .Linfo_string76:
-	.asciz	"VTOR"                          @ string offset=1051
+	.asciz	"VTOR"                          @ string offset=1059
 .Linfo_string77:
-	.asciz	"AIRCR"                         @ string offset=1056
+	.asciz	"AIRCR"                         @ string offset=1064
 .Linfo_string78:
-	.asciz	"SCR"                           @ string offset=1062
+	.asciz	"SCR"                           @ string offset=1070
 .Linfo_string79:
-	.asciz	"CCR"                           @ string offset=1066
+	.asciz	"CCR"                           @ string offset=1074
 .Linfo_string80:
-	.asciz	"SHPR"                          @ string offset=1070
+	.asciz	"SHPR"                          @ string offset=1078
 .Linfo_string81:
-	.asciz	"uint8_t"                       @ string offset=1075
+	.asciz	"uint8_t"                       @ string offset=1083
 .Linfo_string82:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=1083
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=1091
 .Linfo_string83:
-	.asciz	"SHCSR"                         @ string offset=1103
+	.asciz	"SHCSR"                         @ string offset=1111
 .Linfo_string84:
-	.asciz	"CFSR"                          @ string offset=1109
+	.asciz	"CFSR"                          @ string offset=1117
 .Linfo_string85:
-	.asciz	"HFSR"                          @ string offset=1114
+	.asciz	"HFSR"                          @ string offset=1122
 .Linfo_string86:
-	.asciz	"DFSR"                          @ string offset=1119
+	.asciz	"DFSR"                          @ string offset=1127
 .Linfo_string87:
-	.asciz	"MMFAR"                         @ string offset=1124
+	.asciz	"MMFAR"                         @ string offset=1132
 .Linfo_string88:
-	.asciz	"BFAR"                          @ string offset=1130
+	.asciz	"BFAR"                          @ string offset=1138
 .Linfo_string89:
-	.asciz	"AFSR"                          @ string offset=1135
+	.asciz	"AFSR"                          @ string offset=1143
 .Linfo_string90:
-	.asciz	"ID_PFR"                        @ string offset=1140
+	.asciz	"ID_PFR"                        @ string offset=1148
 .Linfo_string91:
-	.asciz	"ID_DFR"                        @ string offset=1147
+	.asciz	"ID_DFR"                        @ string offset=1155
 .Linfo_string92:
-	.asciz	"ID_AFR"                        @ string offset=1154
+	.asciz	"ID_AFR"                        @ string offset=1162
 .Linfo_string93:
-	.asciz	"ID_MFR"                        @ string offset=1161
+	.asciz	"ID_MFR"                        @ string offset=1169
 .Linfo_string94:
-	.asciz	"ID_ISAR"                       @ string offset=1168
+	.asciz	"ID_ISAR"                       @ string offset=1176
 .Linfo_string95:
-	.asciz	"CLIDR"                         @ string offset=1176
+	.asciz	"CLIDR"                         @ string offset=1184
 .Linfo_string96:
-	.asciz	"CTR"                           @ string offset=1182
+	.asciz	"CTR"                           @ string offset=1190
 .Linfo_string97:
-	.asciz	"CCSIDR"                        @ string offset=1186
+	.asciz	"CCSIDR"                        @ string offset=1194
 .Linfo_string98:
-	.asciz	"CSSELR"                        @ string offset=1193
+	.asciz	"CSSELR"                        @ string offset=1201
 .Linfo_string99:
-	.asciz	"CPACR"                         @ string offset=1200
+	.asciz	"CPACR"                         @ string offset=1208
 .Linfo_string100:
-	.asciz	"RESERVED3"                     @ string offset=1206
+	.asciz	"RESERVED3"                     @ string offset=1214
 .Linfo_string101:
-	.asciz	"STIR"                          @ string offset=1216
+	.asciz	"STIR"                          @ string offset=1224
 .Linfo_string102:
-	.asciz	"RESERVED4"                     @ string offset=1221
+	.asciz	"RESERVED4"                     @ string offset=1229
 .Linfo_string103:
-	.asciz	"MVFR0"                         @ string offset=1231
+	.asciz	"MVFR0"                         @ string offset=1239
 .Linfo_string104:
-	.asciz	"MVFR1"                         @ string offset=1237
+	.asciz	"MVFR1"                         @ string offset=1245
 .Linfo_string105:
-	.asciz	"MVFR2"                         @ string offset=1243
+	.asciz	"MVFR2"                         @ string offset=1251
 .Linfo_string106:
-	.asciz	"RESERVED5"                     @ string offset=1249
+	.asciz	"RESERVED5"                     @ string offset=1257
 .Linfo_string107:
-	.asciz	"ICIALLU"                       @ string offset=1259
+	.asciz	"ICIALLU"                       @ string offset=1267
 .Linfo_string108:
-	.asciz	"RESERVED6"                     @ string offset=1267
+	.asciz	"RESERVED6"                     @ string offset=1275
 .Linfo_string109:
-	.asciz	"ICIMVAU"                       @ string offset=1277
+	.asciz	"ICIMVAU"                       @ string offset=1285
 .Linfo_string110:
-	.asciz	"DCIMVAC"                       @ string offset=1285
+	.asciz	"DCIMVAC"                       @ string offset=1293
 .Linfo_string111:
-	.asciz	"DCISW"                         @ string offset=1293
+	.asciz	"DCISW"                         @ string offset=1301
 .Linfo_string112:
-	.asciz	"DCCMVAU"                       @ string offset=1299
+	.asciz	"DCCMVAU"                       @ string offset=1307
 .Linfo_string113:
-	.asciz	"DCCMVAC"                       @ string offset=1307
+	.asciz	"DCCMVAC"                       @ string offset=1315
 .Linfo_string114:
-	.asciz	"DCCSW"                         @ string offset=1315
+	.asciz	"DCCSW"                         @ string offset=1323
 .Linfo_string115:
-	.asciz	"DCCIMVAC"                      @ string offset=1321
+	.asciz	"DCCIMVAC"                      @ string offset=1329
 .Linfo_string116:
-	.asciz	"DCCISW"                        @ string offset=1330
+	.asciz	"DCCISW"                        @ string offset=1338
 .Linfo_string117:
-	.asciz	"RESERVED7"                     @ string offset=1337
+	.asciz	"RESERVED7"                     @ string offset=1345
 .Linfo_string118:
-	.asciz	"ITCMCR"                        @ string offset=1347
+	.asciz	"ITCMCR"                        @ string offset=1355
 .Linfo_string119:
-	.asciz	"DTCMCR"                        @ string offset=1354
+	.asciz	"DTCMCR"                        @ string offset=1362
 .Linfo_string120:
-	.asciz	"AHBPCR"                        @ string offset=1361
+	.asciz	"AHBPCR"                        @ string offset=1369
 .Linfo_string121:
-	.asciz	"CACR"                          @ string offset=1368
+	.asciz	"CACR"                          @ string offset=1376
 .Linfo_string122:
-	.asciz	"AHBSCR"                        @ string offset=1373
+	.asciz	"AHBSCR"                        @ string offset=1381
 .Linfo_string123:
-	.asciz	"RESERVED8"                     @ string offset=1380
+	.asciz	"RESERVED8"                     @ string offset=1388
 .Linfo_string124:
-	.asciz	"ABFSR"                         @ string offset=1390
+	.asciz	"ABFSR"                         @ string offset=1398
 .Linfo_string125:
-	.asciz	"SCB_Type"                      @ string offset=1396
+	.asciz	"SCB_Type"                      @ string offset=1404
 .Linfo_string126:
-	.asciz	"SCB_EnableICache"              @ string offset=1405
+	.asciz	"SCB_EnableICache"              @ string offset=1413
 .Linfo_string127:
-	.asciz	"SCB_EnableDCache"              @ string offset=1422
+	.asciz	"SCB_EnableDCache"              @ string offset=1430
 .Linfo_string128:
-	.asciz	"ccsidr"                        @ string offset=1439
+	.asciz	"ccsidr"                        @ string offset=1447
 .Linfo_string129:
-	.asciz	"sets"                          @ string offset=1446
+	.asciz	"sets"                          @ string offset=1454
 .Linfo_string130:
-	.asciz	"ways"                          @ string offset=1451
+	.asciz	"ways"                          @ string offset=1459
 .Linfo_string131:
-	.asciz	"main"                          @ string offset=1456
+	.asciz	"main"                          @ string offset=1464
 .Linfo_string132:
-	.asciz	"int"                           @ string offset=1461
+	.asciz	"int"                           @ string offset=1469
 .Linfo_string133:
-	.asciz	"MPU_Config"                    @ string offset=1465
+	.asciz	"MPU_Config"                    @ string offset=1473
 .Linfo_string134:
-	.asciz	"SystemClock_Config"            @ string offset=1476
+	.asciz	"SystemClock_Config"            @ string offset=1484
 .Linfo_string135:
-	.asciz	"PeriphCommonClock_Config"      @ string offset=1495
+	.asciz	"PeriphCommonClock_Config"      @ string offset=1503
 .Linfo_string136:
-	.asciz	"Error_Handler"                 @ string offset=1520
+	.asciz	"Error_Handler"                 @ string offset=1528
 .Linfo_string137:
-	.asciz	"HAL_TIM_PeriodElapsedCallback" @ string offset=1534
+	.asciz	"HAL_TIM_PeriodElapsedCallback" @ string offset=1542
 .Linfo_string138:
-	.asciz	"MPU_InitStruct"                @ string offset=1564
+	.asciz	"MPU_InitStruct"                @ string offset=1572
 .Linfo_string139:
-	.asciz	"Enable"                        @ string offset=1579
+	.asciz	"Enable"                        @ string offset=1587
 .Linfo_string140:
-	.asciz	"Number"                        @ string offset=1586
+	.asciz	"Number"                        @ string offset=1594
 .Linfo_string141:
-	.asciz	"BaseAddress"                   @ string offset=1593
+	.asciz	"BaseAddress"                   @ string offset=1601
 .Linfo_string142:
-	.asciz	"Size"                          @ string offset=1605
+	.asciz	"Size"                          @ string offset=1613
 .Linfo_string143:
-	.asciz	"SubRegionDisable"              @ string offset=1610
+	.asciz	"SubRegionDisable"              @ string offset=1618
 .Linfo_string144:
-	.asciz	"TypeExtField"                  @ string offset=1627
+	.asciz	"TypeExtField"                  @ string offset=1635
 .Linfo_string145:
-	.asciz	"AccessPermission"              @ string offset=1640
+	.asciz	"AccessPermission"              @ string offset=1648
 .Linfo_string146:
-	.asciz	"DisableExec"                   @ string offset=1657
+	.asciz	"DisableExec"                   @ string offset=1665
 .Linfo_string147:
-	.asciz	"IsShareable"                   @ string offset=1669
+	.asciz	"IsShareable"                   @ string offset=1677
 .Linfo_string148:
-	.asciz	"IsCacheable"                   @ string offset=1681
+	.asciz	"IsCacheable"                   @ string offset=1689
 .Linfo_string149:
-	.asciz	"IsBufferable"                  @ string offset=1693
+	.asciz	"IsBufferable"                  @ string offset=1701
 .Linfo_string150:
-	.asciz	"MPU_Region_InitTypeDef"        @ string offset=1706
+	.asciz	"MPU_Region_InitTypeDef"        @ string offset=1714
 .Linfo_string151:
-	.asciz	"RCC_OscInitStruct"             @ string offset=1729
+	.asciz	"RCC_OscInitStruct"             @ string offset=1737
 .Linfo_string152:
-	.asciz	"OscillatorType"                @ string offset=1747
+	.asciz	"OscillatorType"                @ string offset=1755
 .Linfo_string153:
-	.asciz	"HSEState"                      @ string offset=1762
+	.asciz	"HSEState"                      @ string offset=1770
 .Linfo_string154:
-	.asciz	"LSEState"                      @ string offset=1771
+	.asciz	"LSEState"                      @ string offset=1779
 .Linfo_string155:
-	.asciz	"HSIState"                      @ string offset=1780
+	.asciz	"HSIState"                      @ string offset=1788
 .Linfo_string156:
-	.asciz	"HSICalibrationValue"           @ string offset=1789
+	.asciz	"HSICalibrationValue"           @ string offset=1797
 .Linfo_string157:
-	.asciz	"LSIState"                      @ string offset=1809
+	.asciz	"LSIState"                      @ string offset=1817
 .Linfo_string158:
-	.asciz	"HSI48State"                    @ string offset=1818
+	.asciz	"HSI48State"                    @ string offset=1826
 .Linfo_string159:
-	.asciz	"CSIState"                      @ string offset=1829
+	.asciz	"CSIState"                      @ string offset=1837
 .Linfo_string160:
-	.asciz	"CSICalibrationValue"           @ string offset=1838
+	.asciz	"CSICalibrationValue"           @ string offset=1846
 .Linfo_string161:
-	.asciz	"PLL"                           @ string offset=1858
+	.asciz	"PLL"                           @ string offset=1866
 .Linfo_string162:
-	.asciz	"PLLState"                      @ string offset=1862
+	.asciz	"PLLState"                      @ string offset=1870
 .Linfo_string163:
-	.asciz	"PLLSource"                     @ string offset=1871
+	.asciz	"PLLSource"                     @ string offset=1879
 .Linfo_string164:
-	.asciz	"PLLM"                          @ string offset=1881
+	.asciz	"PLLM"                          @ string offset=1889
 .Linfo_string165:
-	.asciz	"PLLN"                          @ string offset=1886
+	.asciz	"PLLN"                          @ string offset=1894
 .Linfo_string166:
-	.asciz	"PLLP"                          @ string offset=1891
+	.asciz	"PLLP"                          @ string offset=1899
 .Linfo_string167:
-	.asciz	"PLLQ"                          @ string offset=1896
+	.asciz	"PLLQ"                          @ string offset=1904
 .Linfo_string168:
-	.asciz	"PLLR"                          @ string offset=1901
+	.asciz	"PLLR"                          @ string offset=1909
 .Linfo_string169:
-	.asciz	"PLLRGE"                        @ string offset=1906
+	.asciz	"PLLRGE"                        @ string offset=1914
 .Linfo_string170:
-	.asciz	"PLLVCOSEL"                     @ string offset=1913
+	.asciz	"PLLVCOSEL"                     @ string offset=1921
 .Linfo_string171:
-	.asciz	"PLLFRACN"                      @ string offset=1923
+	.asciz	"PLLFRACN"                      @ string offset=1931
 .Linfo_string172:
-	.asciz	"RCC_PLLInitTypeDef"            @ string offset=1932
+	.asciz	"RCC_PLLInitTypeDef"            @ string offset=1940
 .Linfo_string173:
-	.asciz	"RCC_OscInitTypeDef"            @ string offset=1951
+	.asciz	"RCC_OscInitTypeDef"            @ string offset=1959
 .Linfo_string174:
-	.asciz	"RCC_ClkInitStruct"             @ string offset=1970
+	.asciz	"RCC_ClkInitStruct"             @ string offset=1978
 .Linfo_string175:
-	.asciz	"ClockType"                     @ string offset=1988
+	.asciz	"ClockType"                     @ string offset=1996
 .Linfo_string176:
-	.asciz	"SYSCLKSource"                  @ string offset=1998
+	.asciz	"SYSCLKSource"                  @ string offset=2006
 .Linfo_string177:
-	.asciz	"SYSCLKDivider"                 @ string offset=2011
+	.asciz	"SYSCLKDivider"                 @ string offset=2019
 .Linfo_string178:
-	.asciz	"AHBCLKDivider"                 @ string offset=2025
+	.asciz	"AHBCLKDivider"                 @ string offset=2033
 .Linfo_string179:
-	.asciz	"APB3CLKDivider"                @ string offset=2039
+	.asciz	"APB3CLKDivider"                @ string offset=2047
 .Linfo_string180:
-	.asciz	"APB1CLKDivider"                @ string offset=2054
+	.asciz	"APB1CLKDivider"                @ string offset=2062
 .Linfo_string181:
-	.asciz	"APB2CLKDivider"                @ string offset=2069
+	.asciz	"APB2CLKDivider"                @ string offset=2077
 .Linfo_string182:
-	.asciz	"APB4CLKDivider"                @ string offset=2084
+	.asciz	"APB4CLKDivider"                @ string offset=2092
 .Linfo_string183:
-	.asciz	"RCC_ClkInitTypeDef"            @ string offset=2099
+	.asciz	"RCC_ClkInitTypeDef"            @ string offset=2107
 .Linfo_string184:
-	.asciz	"tmpreg"                        @ string offset=2118
+	.asciz	"tmpreg"                        @ string offset=2126
 .Linfo_string185:
-	.asciz	"PeriphClkInitStruct"           @ string offset=2125
+	.asciz	"PeriphClkInitStruct"           @ string offset=2133
 .Linfo_string186:
-	.asciz	"PeriphClockSelection"          @ string offset=2145
+	.asciz	"PeriphClockSelection"          @ string offset=2153
 .Linfo_string187:
-	.asciz	"PLL2"                          @ string offset=2166
+	.asciz	"PLL2"                          @ string offset=2174
 .Linfo_string188:
-	.asciz	"PLL2M"                         @ string offset=2171
+	.asciz	"PLL2M"                         @ string offset=2179
 .Linfo_string189:
-	.asciz	"PLL2N"                         @ string offset=2177
+	.asciz	"PLL2N"                         @ string offset=2185
 .Linfo_string190:
-	.asciz	"PLL2P"                         @ string offset=2183
+	.asciz	"PLL2P"                         @ string offset=2191
 .Linfo_string191:
-	.asciz	"PLL2Q"                         @ string offset=2189
+	.asciz	"PLL2Q"                         @ string offset=2197
 .Linfo_string192:
-	.asciz	"PLL2R"                         @ string offset=2195
+	.asciz	"PLL2R"                         @ string offset=2203
 .Linfo_string193:
-	.asciz	"PLL2RGE"                       @ string offset=2201
+	.asciz	"PLL2RGE"                       @ string offset=2209
 .Linfo_string194:
-	.asciz	"PLL2VCOSEL"                    @ string offset=2209
+	.asciz	"PLL2VCOSEL"                    @ string offset=2217
 .Linfo_string195:
-	.asciz	"PLL2FRACN"                     @ string offset=2220
+	.asciz	"PLL2FRACN"                     @ string offset=2228
 .Linfo_string196:
-	.asciz	"RCC_PLL2InitTypeDef"           @ string offset=2230
+	.asciz	"RCC_PLL2InitTypeDef"           @ string offset=2238
 .Linfo_string197:
-	.asciz	"PLL3"                          @ string offset=2250
+	.asciz	"PLL3"                          @ string offset=2258
 .Linfo_string198:
-	.asciz	"PLL3M"                         @ string offset=2255
+	.asciz	"PLL3M"                         @ string offset=2263
 .Linfo_string199:
-	.asciz	"PLL3N"                         @ string offset=2261
+	.asciz	"PLL3N"                         @ string offset=2269
 .Linfo_string200:
-	.asciz	"PLL3P"                         @ string offset=2267
+	.asciz	"PLL3P"                         @ string offset=2275
 .Linfo_string201:
-	.asciz	"PLL3Q"                         @ string offset=2273
+	.asciz	"PLL3Q"                         @ string offset=2281
 .Linfo_string202:
-	.asciz	"PLL3R"                         @ string offset=2279
+	.asciz	"PLL3R"                         @ string offset=2287
 .Linfo_string203:
-	.asciz	"PLL3RGE"                       @ string offset=2285
+	.asciz	"PLL3RGE"                       @ string offset=2293
 .Linfo_string204:
-	.asciz	"PLL3VCOSEL"                    @ string offset=2293
+	.asciz	"PLL3VCOSEL"                    @ string offset=2301
 .Linfo_string205:
-	.asciz	"PLL3FRACN"                     @ string offset=2304
+	.asciz	"PLL3FRACN"                     @ string offset=2312
 .Linfo_string206:
-	.asciz	"RCC_PLL3InitTypeDef"           @ string offset=2314
+	.asciz	"RCC_PLL3InitTypeDef"           @ string offset=2322
 .Linfo_string207:
-	.asciz	"FmcClockSelection"             @ string offset=2334
+	.asciz	"FmcClockSelection"             @ string offset=2342
 .Linfo_string208:
-	.asciz	"OspiClockSelection"            @ string offset=2352
+	.asciz	"OspiClockSelection"            @ string offset=2360
 .Linfo_string209:
-	.asciz	"SdmmcClockSelection"           @ string offset=2371
+	.asciz	"SdmmcClockSelection"           @ string offset=2379
 .Linfo_string210:
-	.asciz	"CkperClockSelection"           @ string offset=2391
+	.asciz	"CkperClockSelection"           @ string offset=2399
 .Linfo_string211:
-	.asciz	"Sai1ClockSelection"            @ string offset=2411
+	.asciz	"Sai1ClockSelection"            @ string offset=2419
 .Linfo_string212:
-	.asciz	"Spi123ClockSelection"          @ string offset=2430
+	.asciz	"Spi123ClockSelection"          @ string offset=2438
 .Linfo_string213:
-	.asciz	"Spi45ClockSelection"           @ string offset=2451
+	.asciz	"Spi45ClockSelection"           @ string offset=2459
 .Linfo_string214:
-	.asciz	"SpdifrxClockSelection"         @ string offset=2471
+	.asciz	"SpdifrxClockSelection"         @ string offset=2479
 .Linfo_string215:
-	.asciz	"Dfsdm1ClockSelection"          @ string offset=2493
+	.asciz	"Dfsdm1ClockSelection"          @ string offset=2501
 .Linfo_string216:
-	.asciz	"FdcanClockSelection"           @ string offset=2514
+	.asciz	"FdcanClockSelection"           @ string offset=2522
 .Linfo_string217:
-	.asciz	"Swpmi1ClockSelection"          @ string offset=2534
+	.asciz	"Swpmi1ClockSelection"          @ string offset=2542
 .Linfo_string218:
-	.asciz	"Usart234578ClockSelection"     @ string offset=2555
+	.asciz	"Usart234578ClockSelection"     @ string offset=2563
 .Linfo_string219:
-	.asciz	"Usart16ClockSelection"         @ string offset=2581
+	.asciz	"Usart16ClockSelection"         @ string offset=2589
 .Linfo_string220:
-	.asciz	"RngClockSelection"             @ string offset=2603
+	.asciz	"RngClockSelection"             @ string offset=2611
 .Linfo_string221:
-	.asciz	"I2c1235ClockSelection"         @ string offset=2621
+	.asciz	"I2c1235ClockSelection"         @ string offset=2629
 .Linfo_string222:
-	.asciz	"UsbClockSelection"             @ string offset=2643
+	.asciz	"UsbClockSelection"             @ string offset=2651
 .Linfo_string223:
-	.asciz	"CecClockSelection"             @ string offset=2661
+	.asciz	"CecClockSelection"             @ string offset=2669
 .Linfo_string224:
-	.asciz	"Lptim1ClockSelection"          @ string offset=2679
+	.asciz	"Lptim1ClockSelection"          @ string offset=2687
 .Linfo_string225:
-	.asciz	"Lpuart1ClockSelection"         @ string offset=2700
+	.asciz	"Lpuart1ClockSelection"         @ string offset=2708
 .Linfo_string226:
-	.asciz	"I2c4ClockSelection"            @ string offset=2722
+	.asciz	"I2c4ClockSelection"            @ string offset=2730
 .Linfo_string227:
-	.asciz	"Lptim2ClockSelection"          @ string offset=2741
+	.asciz	"Lptim2ClockSelection"          @ string offset=2749
 .Linfo_string228:
-	.asciz	"Lptim345ClockSelection"        @ string offset=2762
+	.asciz	"Lptim345ClockSelection"        @ string offset=2770
 .Linfo_string229:
-	.asciz	"AdcClockSelection"             @ string offset=2785
+	.asciz	"AdcClockSelection"             @ string offset=2793
 .Linfo_string230:
-	.asciz	"Sai4AClockSelection"           @ string offset=2803
+	.asciz	"Sai4AClockSelection"           @ string offset=2811
 .Linfo_string231:
-	.asciz	"Sai4BClockSelection"           @ string offset=2823
+	.asciz	"Sai4BClockSelection"           @ string offset=2831
 .Linfo_string232:
-	.asciz	"Spi6ClockSelection"            @ string offset=2843
+	.asciz	"Spi6ClockSelection"            @ string offset=2851
 .Linfo_string233:
-	.asciz	"RTCClockSelection"             @ string offset=2862
+	.asciz	"RTCClockSelection"             @ string offset=2870
 .Linfo_string234:
-	.asciz	"TIMPresSelection"              @ string offset=2880
+	.asciz	"TIMPresSelection"              @ string offset=2888
 .Linfo_string235:
-	.asciz	"RCC_PeriphCLKInitTypeDef"      @ string offset=2897
+	.asciz	"RCC_PeriphCLKInitTypeDef"      @ string offset=2905
 .Linfo_string236:
-	.asciz	"htim"                          @ string offset=2922
+	.asciz	"htim"                          @ string offset=2930
 .Linfo_string237:
-	.asciz	"Instance"                      @ string offset=2927
+	.asciz	"Instance"                      @ string offset=2935
 .Linfo_string238:
-	.asciz	"Init"                          @ string offset=2936
+	.asciz	"Init"                          @ string offset=2944
 .Linfo_string239:
-	.asciz	"Prescaler"                     @ string offset=2941
+	.asciz	"Prescaler"                     @ string offset=2949
 .Linfo_string240:
-	.asciz	"CounterMode"                   @ string offset=2951
+	.asciz	"CounterMode"                   @ string offset=2959
 .Linfo_string241:
-	.asciz	"Period"                        @ string offset=2963
+	.asciz	"Period"                        @ string offset=2971
 .Linfo_string242:
-	.asciz	"ClockDivision"                 @ string offset=2970
+	.asciz	"ClockDivision"                 @ string offset=2978
 .Linfo_string243:
-	.asciz	"RepetitionCounter"             @ string offset=2984
+	.asciz	"RepetitionCounter"             @ string offset=2992
 .Linfo_string244:
-	.asciz	"AutoReloadPreload"             @ string offset=3002
+	.asciz	"AutoReloadPreload"             @ string offset=3010
 .Linfo_string245:
-	.asciz	"TIM_Base_InitTypeDef"          @ string offset=3020
+	.asciz	"TIM_Base_InitTypeDef"          @ string offset=3028
 .Linfo_string246:
-	.asciz	"Channel"                       @ string offset=3041
+	.asciz	"Channel"                       @ string offset=3049
 .Linfo_string247:
-	.asciz	"HAL_TIM_ActiveChannel"         @ string offset=3049
+	.asciz	"HAL_TIM_ActiveChannel"         @ string offset=3057
 .Linfo_string248:
-	.asciz	"hdma"                          @ string offset=3071
+	.asciz	"hdma"                          @ string offset=3079
 .Linfo_string249:
-	.asciz	"Request"                       @ string offset=3076
+	.asciz	"Request"                       @ string offset=3084
 .Linfo_string250:
-	.asciz	"Direction"                     @ string offset=3084
+	.asciz	"Direction"                     @ string offset=3092
 .Linfo_string251:
-	.asciz	"PeriphInc"                     @ string offset=3094
+	.asciz	"PeriphInc"                     @ string offset=3102
 .Linfo_string252:
-	.asciz	"MemInc"                        @ string offset=3104
+	.asciz	"MemInc"                        @ string offset=3112
 .Linfo_string253:
-	.asciz	"PeriphDataAlignment"           @ string offset=3111
+	.asciz	"PeriphDataAlignment"           @ string offset=3119
 .Linfo_string254:
-	.asciz	"MemDataAlignment"              @ string offset=3131
+	.asciz	"MemDataAlignment"              @ string offset=3139
 .Linfo_string255:
-	.asciz	"Mode"                          @ string offset=3148
+	.asciz	"Mode"                          @ string offset=3156
 .Linfo_string256:
-	.asciz	"Priority"                      @ string offset=3153
+	.asciz	"Priority"                      @ string offset=3161
 .Linfo_string257:
-	.asciz	"FIFOMode"                      @ string offset=3162
+	.asciz	"FIFOMode"                      @ string offset=3170
 .Linfo_string258:
-	.asciz	"FIFOThreshold"                 @ string offset=3171
+	.asciz	"FIFOThreshold"                 @ string offset=3179
 .Linfo_string259:
-	.asciz	"MemBurst"                      @ string offset=3185
+	.asciz	"MemBurst"                      @ string offset=3193
 .Linfo_string260:
-	.asciz	"PeriphBurst"                   @ string offset=3194
+	.asciz	"PeriphBurst"                   @ string offset=3202
 .Linfo_string261:
-	.asciz	"DMA_InitTypeDef"               @ string offset=3206
+	.asciz	"DMA_InitTypeDef"               @ string offset=3214
 .Linfo_string262:
-	.asciz	"Lock"                          @ string offset=3222
+	.asciz	"Lock"                          @ string offset=3230
 .Linfo_string263:
-	.asciz	"HAL_LockTypeDef"               @ string offset=3227
+	.asciz	"HAL_LockTypeDef"               @ string offset=3235
 .Linfo_string264:
-	.asciz	"State"                         @ string offset=3243
+	.asciz	"State"                         @ string offset=3251
 .Linfo_string265:
-	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=3249
+	.asciz	"HAL_DMA_StateTypeDef"          @ string offset=3257
 .Linfo_string266:
-	.asciz	"Parent"                        @ string offset=3270
+	.asciz	"Parent"                        @ string offset=3278
 .Linfo_string267:
-	.asciz	"XferCpltCallback"              @ string offset=3277
+	.asciz	"XferCpltCallback"              @ string offset=3285
 .Linfo_string268:
-	.asciz	"XferHalfCpltCallback"          @ string offset=3294
+	.asciz	"XferHalfCpltCallback"          @ string offset=3302
 .Linfo_string269:
-	.asciz	"XferM1CpltCallback"            @ string offset=3315
+	.asciz	"XferM1CpltCallback"            @ string offset=3323
 .Linfo_string270:
-	.asciz	"XferM1HalfCpltCallback"        @ string offset=3334
+	.asciz	"XferM1HalfCpltCallback"        @ string offset=3342
 .Linfo_string271:
-	.asciz	"XferErrorCallback"             @ string offset=3357
+	.asciz	"XferErrorCallback"             @ string offset=3365
 .Linfo_string272:
-	.asciz	"XferAbortCallback"             @ string offset=3375
+	.asciz	"XferAbortCallback"             @ string offset=3383
 .Linfo_string273:
-	.asciz	"ErrorCode"                     @ string offset=3393
+	.asciz	"ErrorCode"                     @ string offset=3401
 .Linfo_string274:
-	.asciz	"StreamBaseAddress"             @ string offset=3403
+	.asciz	"StreamBaseAddress"             @ string offset=3411
 .Linfo_string275:
-	.asciz	"StreamIndex"                   @ string offset=3421
+	.asciz	"StreamIndex"                   @ string offset=3429
 .Linfo_string276:
-	.asciz	"DMAmuxChannel"                 @ string offset=3433
+	.asciz	"DMAmuxChannel"                 @ string offset=3441
 .Linfo_string277:
-	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=3447
+	.asciz	"DMAMUX_Channel_TypeDef"        @ string offset=3455
 .Linfo_string278:
-	.asciz	"DMAmuxChannelStatus"           @ string offset=3470
+	.asciz	"DMAmuxChannelStatus"           @ string offset=3478
 .Linfo_string279:
-	.asciz	"CSR"                           @ string offset=3490
+	.asciz	"CSR"                           @ string offset=3498
 .Linfo_string280:
-	.asciz	"CFR"                           @ string offset=3494
+	.asciz	"CFR"                           @ string offset=3502
 .Linfo_string281:
-	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=3498
+	.asciz	"DMAMUX_ChannelStatus_TypeDef"  @ string offset=3506
 .Linfo_string282:
-	.asciz	"DMAmuxChannelStatusMask"       @ string offset=3527
+	.asciz	"DMAmuxChannelStatusMask"       @ string offset=3535
 .Linfo_string283:
-	.asciz	"DMAmuxRequestGen"              @ string offset=3551
+	.asciz	"DMAmuxRequestGen"              @ string offset=3559
 .Linfo_string284:
-	.asciz	"RGCR"                          @ string offset=3568
+	.asciz	"RGCR"                          @ string offset=3576
 .Linfo_string285:
-	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=3573
+	.asciz	"DMAMUX_RequestGen_TypeDef"     @ string offset=3581
 .Linfo_string286:
-	.asciz	"DMAmuxRequestGenStatus"        @ string offset=3599
+	.asciz	"DMAmuxRequestGenStatus"        @ string offset=3607
 .Linfo_string287:
-	.asciz	"RGSR"                          @ string offset=3622
+	.asciz	"RGSR"                          @ string offset=3630
 .Linfo_string288:
-	.asciz	"RGCFR"                         @ string offset=3627
+	.asciz	"RGCFR"                         @ string offset=3635
 .Linfo_string289:
-	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=3633
+	.asciz	"DMAMUX_RequestGenStatus_TypeDef" @ string offset=3641
 .Linfo_string290:
-	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=3665
+	.asciz	"DMAmuxRequestGenStatusMask"    @ string offset=3673
 .Linfo_string291:
-	.asciz	"__DMA_HandleTypeDef"           @ string offset=3692
+	.asciz	"__DMA_HandleTypeDef"           @ string offset=3700
 .Linfo_string292:
-	.asciz	"DMA_HandleTypeDef"             @ string offset=3712
+	.asciz	"DMA_HandleTypeDef"             @ string offset=3720
 .Linfo_string293:
-	.asciz	"HAL_TIM_StateTypeDef"          @ string offset=3730
+	.asciz	"HAL_TIM_StateTypeDef"          @ string offset=3738
 .Linfo_string294:
-	.asciz	"ChannelState"                  @ string offset=3751
+	.asciz	"ChannelState"                  @ string offset=3759
 .Linfo_string295:
-	.asciz	"HAL_TIM_ChannelStateTypeDef"   @ string offset=3764
+	.asciz	"HAL_TIM_ChannelStateTypeDef"   @ string offset=3772
 .Linfo_string296:
-	.asciz	"ChannelNState"                 @ string offset=3792
+	.asciz	"ChannelNState"                 @ string offset=3800
 .Linfo_string297:
-	.asciz	"DMABurstState"                 @ string offset=3806
+	.asciz	"DMABurstState"                 @ string offset=3814
 .Linfo_string298:
-	.asciz	"HAL_TIM_DMABurstStateTypeDef"  @ string offset=3820
+	.asciz	"HAL_TIM_DMABurstStateTypeDef"  @ string offset=3828
 .Linfo_string299:
-	.asciz	"TIM_HandleTypeDef"             @ string offset=3849
+	.asciz	"TIM_HandleTypeDef"             @ string offset=3857
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

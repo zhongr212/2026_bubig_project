@@ -21,12 +21,12 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"Control_Gaimbal_Task.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\Kalman_Filter.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Src/Control_Gaimbal_Task.c"
-	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Task/Inc\\Control_Gaimbal_task.h"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\Kalman_Filter.h"
+	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Task/Src/Control_Gaimbal_Task.c"
+	.file	3 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Task/Inc\\Control_Gaimbal_task.h"
 	.file	4 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\PID.h"
-	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
+	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\PID.h"
+	.file	6 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
 	.section	.text.Control_GIMBAL_Task,"ax",%progbits
 	.hidden	Control_GIMBAL_Task             @ -- Begin function Control_GIMBAL_Task
 	.globl	Control_GIMBAL_Task
@@ -270,7 +270,7 @@ Control_Measure_Update:
 	.loc	2 131 101 prologue_end          @ ../Task/Src/Control_Gaimbal_Task.c:131:101
 	movw	r0, :lower16:Pich_Motor
 	movt	r0, :upper16:Pich_Motor
-	str	r0, [sp, #4]                    @ 4-byte Spill
+	str	r0, [sp]                        @ 4-byte Spill
 	vldr	s0, [r0, #28]
 	vldr	s2, .LCPI2_0
 	vstr	s2, [sp, #12]                   @ 4-byte Spill
@@ -284,7 +284,7 @@ Control_Measure_Update:
 	movw	r0, :lower16:kfp_pitch_angle
 	movt	r0, :upper16:kfp_pitch_angle
 	bl	KalmanFilter
-	ldr	r0, [sp, #4]                    @ 4-byte Reload
+	ldr	r0, [sp]                        @ 4-byte Reload
 	vldr	s2, [sp, #16]                   @ 4-byte Reload
 	.loc	2 131 123                       @ ../Task/Src/Control_Gaimbal_Task.c:131:123
 	movw	r1, :lower16:Pitch_MidPoint_MotorAngle
@@ -301,13 +301,14 @@ Control_Measure_Update:
 	.loc	2 132 84 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:132:84
 	vmov	s0, r0
 	vcvt.f32.s32	s0, s0
-	vldr	s4, .LCPI2_2
 	.loc	2 132 116                       @ ../Task/Src/Control_Gaimbal_Task.c:132:116
-	vdiv.f32	s0, s0, s4
-	.loc	2 132 124                       @ ../Task/Src/Control_Gaimbal_Task.c:132:124
 	vadd.f32	s0, s0, s0
-	.loc	2 132 131                       @ ../Task/Src/Control_Gaimbal_Task.c:132:131
+	.loc	2 132 123                       @ ../Task/Src/Control_Gaimbal_Task.c:132:123
 	vmul.f32	s0, s0, s2
+	vldr	s2, .LCPI2_2
+	vstr	s2, [sp, #4]                    @ 4-byte Spill
+	.loc	2 132 128                       @ ../Task/Src/Control_Gaimbal_Task.c:132:128
+	vdiv.f32	s0, s0, s2
 	.loc	2 132 53                        @ ../Task/Src/Control_Gaimbal_Task.c:132:53
 	movw	r0, :lower16:kfp_pitch_speed
 	movt	r0, :upper16:kfp_pitch_speed
@@ -336,6 +337,8 @@ Control_Measure_Update:
 	movw	r0, :lower16:kfp_yaw_imuspeed
 	movt	r0, :upper16:kfp_yaw_imuspeed
 	bl	KalmanFilter
+	vldr	s2, [sp, #4]                    @ 4-byte Reload
+	vldr	s4, [sp, #16]                   @ 4-byte Reload
 	.loc	2 136 5                         @ ../Task/Src/Control_Gaimbal_Task.c:136:5
 	ldr	r0, [sp, #20]
 	.loc	2 136 47                        @ ../Task/Src/Control_Gaimbal_Task.c:136:47
@@ -345,8 +348,11 @@ Control_Measure_Update:
 	movt	r0, :upper16:DM_Yaw_Motor
 	str	r0, [sp, #8]                    @ 4-byte Spill
 	vldr	s0, [r0, #40]
-	vldr	s2, .LCPI2_3
 	.loc	2 139 114 is_stmt 0             @ ../Task/Src/Control_Gaimbal_Task.c:139:114
+	vadd.f32	s0, s0, s0
+	.loc	2 139 120                       @ ../Task/Src/Control_Gaimbal_Task.c:139:120
+	vmul.f32	s0, s0, s4
+	.loc	2 139 125                       @ ../Task/Src/Control_Gaimbal_Task.c:139:125
 	vdiv.f32	s0, s0, s2
 	.loc	2 139 51                        @ ../Task/Src/Control_Gaimbal_Task.c:139:51
 	movw	r0, :lower16:kfp_yaw_speed
@@ -391,7 +397,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 143 108                       @ ../Task/Src/Control_Gaimbal_Task.c:143:108
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_6
+	vldr	s2, .LCPI2_5
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #28]
 	.loc	2 143 5                         @ ../Task/Src/Control_Gaimbal_Task.c:143:5
@@ -404,7 +410,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 144 41                        @ ../Task/Src/Control_Gaimbal_Task.c:144:41
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_4
+	vldr	s2, .LCPI2_3
 	.loc	2 144 5                         @ ../Task/Src/Control_Gaimbal_Task.c:144:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
@@ -415,7 +421,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 144 109                       @ ../Task/Src/Control_Gaimbal_Task.c:144:109
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_5
+	vldr	s2, .LCPI2_4
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #28]
 	.loc	2 144 5                         @ ../Task/Src/Control_Gaimbal_Task.c:144:5
@@ -439,7 +445,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 147 104                       @ ../Task/Src/Control_Gaimbal_Task.c:147:104
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_6
+	vldr	s2, .LCPI2_5
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #16]
 	.loc	2 147 5                         @ ../Task/Src/Control_Gaimbal_Task.c:147:5
@@ -452,7 +458,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 148 41                        @ ../Task/Src/Control_Gaimbal_Task.c:148:41
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_4
+	vldr	s2, .LCPI2_3
 	.loc	2 148 5                         @ ../Task/Src/Control_Gaimbal_Task.c:148:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
@@ -463,7 +469,7 @@ Control_Measure_Update:
 	ldr	r0, [sp, #20]
 	.loc	2 148 105                       @ ../Task/Src/Control_Gaimbal_Task.c:148:105
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_5
+	vldr	s2, .LCPI2_4
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #16]
 	.loc	2 148 5                         @ ../Task/Src/Control_Gaimbal_Task.c:148:5
@@ -484,12 +490,10 @@ Control_Measure_Update:
 .LCPI2_2:
 	.long	0x42700000                      @ float 60
 .LCPI2_3:
-	.long	0x43bc7edd                      @ float 376.991119
-.LCPI2_4:
 	.long	0xc0490fdb                      @ float -3.14159274
-.LCPI2_5:
+.LCPI2_4:
 	.long	0x40c90fdb                      @ float 6.28318548
-.LCPI2_6:
+.LCPI2_5:
 	.long	0xc0c90fdb                      @ float -6.28318548
 .Lfunc_end2:
 	.size	Control_Measure_Update, .Lfunc_end2-Control_Measure_Update
@@ -1416,7 +1420,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	2                               @ 0x2
 	.size	Control_Mode_Update.last_remote_value, 1
 
-	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
+	.file	7 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F\\portmacro.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -2734,257 +2738,257 @@ Control_Mode_Update.last_remote_value:
 .Linfo_string1:
 	.asciz	"../Task/Src\\Control_Gaimbal_Task.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=103
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" @ string offset=103
 .Linfo_string3:
-	.asciz	"kfp_yaw_vision"                @ string offset=181
+	.asciz	"kfp_yaw_vision"                @ string offset=189
 .Linfo_string4:
-	.asciz	"P"                             @ string offset=196
+	.asciz	"P"                             @ string offset=204
 .Linfo_string5:
-	.asciz	"float"                         @ string offset=198
+	.asciz	"float"                         @ string offset=206
 .Linfo_string6:
-	.asciz	"G"                             @ string offset=204
+	.asciz	"G"                             @ string offset=212
 .Linfo_string7:
-	.asciz	"Q"                             @ string offset=206
+	.asciz	"Q"                             @ string offset=214
 .Linfo_string8:
-	.asciz	"R"                             @ string offset=208
+	.asciz	"R"                             @ string offset=216
 .Linfo_string9:
-	.asciz	"Output"                        @ string offset=210
+	.asciz	"Output"                        @ string offset=218
 .Linfo_string10:
-	.asciz	"KFPTypeS"                      @ string offset=217
+	.asciz	"KFPTypeS"                      @ string offset=225
 .Linfo_string11:
-	.asciz	"kfp_pitch_vision"              @ string offset=226
+	.asciz	"kfp_pitch_vision"              @ string offset=234
 .Linfo_string12:
-	.asciz	"kfp_yaw_imuangle"              @ string offset=243
+	.asciz	"kfp_yaw_imuangle"              @ string offset=251
 .Linfo_string13:
-	.asciz	"kfp_yaw_imuspeed"              @ string offset=260
+	.asciz	"kfp_yaw_imuspeed"              @ string offset=268
 .Linfo_string14:
-	.asciz	"kfp_pitch_angle"               @ string offset=277
+	.asciz	"kfp_pitch_angle"               @ string offset=285
 .Linfo_string15:
-	.asciz	"kfp_pitch_speed"               @ string offset=293
+	.asciz	"kfp_pitch_speed"               @ string offset=301
 .Linfo_string16:
-	.asciz	"kfp_yaw_angle"                 @ string offset=309
+	.asciz	"kfp_yaw_angle"                 @ string offset=317
 .Linfo_string17:
-	.asciz	"kfp_yaw_speed"                 @ string offset=323
+	.asciz	"kfp_yaw_speed"                 @ string offset=331
 .Linfo_string18:
-	.asciz	"Control_Gimbal_Info"           @ string offset=337
+	.asciz	"Control_Gimbal_Info"           @ string offset=345
 .Linfo_string19:
-	.asciz	"Target"                        @ string offset=357
+	.asciz	"Target"                        @ string offset=365
 .Linfo_string20:
-	.asciz	"Yaw_Velocity"                  @ string offset=364
+	.asciz	"Yaw_Velocity"                  @ string offset=372
 .Linfo_string21:
-	.asciz	"Yaw_Angle"                     @ string offset=377
+	.asciz	"Yaw_Angle"                     @ string offset=385
 .Linfo_string22:
-	.asciz	"Pitch_Velocity"                @ string offset=387
+	.asciz	"Pitch_Velocity"                @ string offset=395
 .Linfo_string23:
-	.asciz	"Pitch_Angle"                   @ string offset=402
+	.asciz	"Pitch_Angle"                   @ string offset=410
 .Linfo_string24:
-	.asciz	"Measure"                       @ string offset=414
+	.asciz	"Measure"                       @ string offset=422
 .Linfo_string25:
-	.asciz	"Yaw_IMU_Angle"                 @ string offset=422
+	.asciz	"Yaw_IMU_Angle"                 @ string offset=430
 .Linfo_string26:
-	.asciz	"Yaw_IMU_Gyro"                  @ string offset=436
+	.asciz	"Yaw_IMU_Gyro"                  @ string offset=444
 .Linfo_string27:
-	.asciz	"Pitch_Motor_Angle"             @ string offset=449
+	.asciz	"Pitch_Motor_Angle"             @ string offset=457
 .Linfo_string28:
-	.asciz	"Yaw_Motor_Angle"               @ string offset=467
+	.asciz	"Yaw_Motor_Angle"               @ string offset=475
 .Linfo_string29:
-	.asciz	"Yaw_Motor_Gyro"                @ string offset=483
+	.asciz	"Yaw_Motor_Gyro"                @ string offset=491
 .Linfo_string30:
-	.asciz	"Pitch_Motor_Gyro"              @ string offset=498
+	.asciz	"Pitch_Motor_Gyro"              @ string offset=506
 .Linfo_string31:
-	.asciz	"upper_data"                    @ string offset=515
+	.asciz	"upper_data"                    @ string offset=523
 .Linfo_string32:
-	.asciz	"yaw_angle"                     @ string offset=526
+	.asciz	"yaw_angle"                     @ string offset=534
 .Linfo_string33:
-	.asciz	"yaw_speed"                     @ string offset=536
+	.asciz	"yaw_speed"                     @ string offset=544
 .Linfo_string34:
-	.asciz	"yaw_acc"                       @ string offset=546
+	.asciz	"yaw_acc"                       @ string offset=554
 .Linfo_string35:
-	.asciz	"pitch_angle"                   @ string offset=554
+	.asciz	"pitch_angle"                   @ string offset=562
 .Linfo_string36:
-	.asciz	"pitch_speed"                   @ string offset=566
+	.asciz	"pitch_speed"                   @ string offset=574
 .Linfo_string37:
-	.asciz	"pitch_acc"                     @ string offset=578
+	.asciz	"pitch_acc"                     @ string offset=586
 .Linfo_string38:
-	.asciz	"Upper_data"                    @ string offset=588
+	.asciz	"Upper_data"                    @ string offset=596
 .Linfo_string39:
-	.asciz	"Type"                          @ string offset=599
+	.asciz	"Type"                          @ string offset=607
 .Linfo_string40:
-	.asciz	"unsigned char"                 @ string offset=604
+	.asciz	"unsigned char"                 @ string offset=612
 .Linfo_string41:
-	.asciz	"GIMBAL_REMOTE_IMU"             @ string offset=618
+	.asciz	"GIMBAL_REMOTE_IMU"             @ string offset=626
 .Linfo_string42:
-	.asciz	"GIMBAL_SLEEP"                  @ string offset=636
+	.asciz	"GIMBAL_SLEEP"                  @ string offset=644
 .Linfo_string43:
-	.asciz	"GIMBAL_REMOTE_JIXIE"           @ string offset=649
+	.asciz	"GIMBAL_REMOTE_JIXIE"           @ string offset=657
 .Linfo_string44:
-	.asciz	"Control_Gimbal_Mode_Type_e"    @ string offset=669
+	.asciz	"Control_Gimbal_Mode_Type_e"    @ string offset=677
 .Linfo_string45:
-	.asciz	"SendValue"                     @ string offset=696
+	.asciz	"SendValue"                     @ string offset=704
 .Linfo_string46:
-	.asciz	"short"                         @ string offset=706
+	.asciz	"short"                         @ string offset=714
 .Linfo_string47:
-	.asciz	"int16_t"                       @ string offset=712
+	.asciz	"int16_t"                       @ string offset=720
 .Linfo_string48:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=720
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=728
 .Linfo_string49:
-	.asciz	"Control_Gimbal_Info_Typedef"   @ string offset=740
+	.asciz	"Control_Gimbal_Info_Typedef"   @ string offset=748
 .Linfo_string50:
-	.asciz	"Pitch_Angle_PID"               @ string offset=768
+	.asciz	"Pitch_Angle_PID"               @ string offset=776
 .Linfo_string51:
-	.asciz	"PID_Type_None"                 @ string offset=784
+	.asciz	"PID_Type_None"                 @ string offset=792
 .Linfo_string52:
-	.asciz	"PID_POSITION"                  @ string offset=798
+	.asciz	"PID_POSITION"                  @ string offset=806
 .Linfo_string53:
-	.asciz	"PID_VELOCITY"                  @ string offset=811
+	.asciz	"PID_VELOCITY"                  @ string offset=819
 .Linfo_string54:
-	.asciz	"PID_ANGLE"                     @ string offset=824
+	.asciz	"PID_ANGLE"                     @ string offset=832
 .Linfo_string55:
-	.asciz	"PID_ANTI_WINDUP"               @ string offset=834
+	.asciz	"PID_ANTI_WINDUP"               @ string offset=842
 .Linfo_string56:
-	.asciz	"PID_FEEDFORWARD"               @ string offset=850
+	.asciz	"PID_FEEDFORWARD"               @ string offset=858
 .Linfo_string57:
-	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=866
+	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=874
 .Linfo_string58:
-	.asciz	"PID_TYPE_NUM"                  @ string offset=889
+	.asciz	"PID_TYPE_NUM"                  @ string offset=897
 .Linfo_string59:
-	.asciz	"PID_Type_e"                    @ string offset=902
+	.asciz	"PID_Type_e"                    @ string offset=910
 .Linfo_string60:
-	.asciz	"Err"                           @ string offset=913
+	.asciz	"Err"                           @ string offset=921
 .Linfo_string61:
-	.asciz	"Dbuf"                          @ string offset=917
+	.asciz	"Dbuf"                          @ string offset=925
 .Linfo_string62:
-	.asciz	"Integral"                      @ string offset=922
+	.asciz	"Integral"                      @ string offset=930
 .Linfo_string63:
-	.asciz	"Pout"                          @ string offset=931
+	.asciz	"Pout"                          @ string offset=939
 .Linfo_string64:
-	.asciz	"Iout"                          @ string offset=936
+	.asciz	"Iout"                          @ string offset=944
 .Linfo_string65:
-	.asciz	"Dout"                          @ string offset=941
+	.asciz	"Dout"                          @ string offset=949
 .Linfo_string66:
-	.asciz	"Target_Buffer"                 @ string offset=946
+	.asciz	"Target_Buffer"                 @ string offset=954
 .Linfo_string67:
-	.asciz	"Target_Index"                  @ string offset=960
+	.asciz	"Target_Index"                  @ string offset=968
 .Linfo_string68:
-	.asciz	"uint8_t"                       @ string offset=973
+	.asciz	"uint8_t"                       @ string offset=981
 .Linfo_string69:
-	.asciz	"Fout"                          @ string offset=981
+	.asciz	"Fout"                          @ string offset=989
 .Linfo_string70:
-	.asciz	"Dout_LPF"                      @ string offset=986
+	.asciz	"Dout_LPF"                      @ string offset=994
 .Linfo_string71:
-	.asciz	"Initialized"                   @ string offset=995
+	.asciz	"Initialized"                   @ string offset=1003
 .Linfo_string72:
-	.asciz	"_Bool"                         @ string offset=1007
+	.asciz	"_Bool"                         @ string offset=1015
 .Linfo_string73:
-	.asciz	"Input"                         @ string offset=1013
+	.asciz	"Input"                         @ string offset=1021
 .Linfo_string74:
-	.asciz	"Alpha"                         @ string offset=1019
+	.asciz	"Alpha"                         @ string offset=1027
 .Linfo_string75:
-	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=1025
+	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=1033
 .Linfo_string76:
-	.asciz	"Param"                         @ string offset=1054
+	.asciz	"Param"                         @ string offset=1062
 .Linfo_string77:
-	.asciz	"KP"                            @ string offset=1060
+	.asciz	"KP"                            @ string offset=1068
 .Linfo_string78:
-	.asciz	"KI"                            @ string offset=1063
+	.asciz	"KI"                            @ string offset=1071
 .Linfo_string79:
-	.asciz	"KD"                            @ string offset=1066
+	.asciz	"KD"                            @ string offset=1074
 .Linfo_string80:
-	.asciz	"Deadband"                      @ string offset=1069
+	.asciz	"Deadband"                      @ string offset=1077
 .Linfo_string81:
-	.asciz	"LimitIntegral"                 @ string offset=1078
+	.asciz	"LimitIntegral"                 @ string offset=1086
 .Linfo_string82:
-	.asciz	"LimitOutput"                   @ string offset=1092
+	.asciz	"LimitOutput"                   @ string offset=1100
 .Linfo_string83:
-	.asciz	"I_Variable_Speed_A"            @ string offset=1104
+	.asciz	"I_Variable_Speed_A"            @ string offset=1112
 .Linfo_string84:
-	.asciz	"I_Variable_Speed_B"            @ string offset=1123
+	.asciz	"I_Variable_Speed_B"            @ string offset=1131
 .Linfo_string85:
-	.asciz	"KF"                            @ string offset=1142
+	.asciz	"KF"                            @ string offset=1150
 .Linfo_string86:
-	.asciz	"PID_Parameter_Typedef"         @ string offset=1145
+	.asciz	"PID_Parameter_Typedef"         @ string offset=1153
 .Linfo_string87:
-	.asciz	"ERRORHandler"                  @ string offset=1167
+	.asciz	"ERRORHandler"                  @ string offset=1175
 .Linfo_string88:
-	.asciz	"ErrorCount"                    @ string offset=1180
+	.asciz	"ErrorCount"                    @ string offset=1188
 .Linfo_string89:
-	.asciz	"unsigned short"                @ string offset=1191
+	.asciz	"unsigned short"                @ string offset=1199
 .Linfo_string90:
-	.asciz	"uint16_t"                      @ string offset=1206
+	.asciz	"uint16_t"                      @ string offset=1214
 .Linfo_string91:
-	.asciz	"Status"                        @ string offset=1215
+	.asciz	"Status"                        @ string offset=1223
 .Linfo_string92:
-	.asciz	"PID_ERROR_NONE"                @ string offset=1222
+	.asciz	"PID_ERROR_NONE"                @ string offset=1230
 .Linfo_string93:
-	.asciz	"PID_FAILED_INIT"               @ string offset=1237
+	.asciz	"PID_FAILED_INIT"               @ string offset=1245
 .Linfo_string94:
-	.asciz	"PID_CALC_NANINF"               @ string offset=1253
+	.asciz	"PID_CALC_NANINF"               @ string offset=1261
 .Linfo_string95:
-	.asciz	"PID_Status_NUM"                @ string offset=1269
+	.asciz	"PID_Status_NUM"                @ string offset=1277
 .Linfo_string96:
-	.asciz	"PID_Status_e"                  @ string offset=1284
+	.asciz	"PID_Status_e"                  @ string offset=1292
 .Linfo_string97:
-	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=1297
+	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=1305
 .Linfo_string98:
-	.asciz	"PID_Param_Init"                @ string offset=1322
+	.asciz	"PID_Param_Init"                @ string offset=1330
 .Linfo_string99:
-	.asciz	"PID_Calc_Clear"                @ string offset=1337
+	.asciz	"PID_Calc_Clear"                @ string offset=1345
 .Linfo_string100:
-	.asciz	"_PID_TypeDef"                  @ string offset=1352
+	.asciz	"_PID_TypeDef"                  @ string offset=1360
 .Linfo_string101:
-	.asciz	"PID_Info_TypeDef"              @ string offset=1365
+	.asciz	"PID_Info_TypeDef"              @ string offset=1373
 .Linfo_string102:
-	.asciz	"Pitch_Velocity_PID"            @ string offset=1382
+	.asciz	"Pitch_Velocity_PID"            @ string offset=1390
 .Linfo_string103:
-	.asciz	"Yaw_Angle_PID"                 @ string offset=1401
+	.asciz	"Yaw_Angle_PID"                 @ string offset=1409
 .Linfo_string104:
-	.asciz	"Yaw_Velocity_PID"              @ string offset=1415
+	.asciz	"Yaw_Velocity_PID"              @ string offset=1423
 .Linfo_string105:
-	.asciz	"Pitch_Angle_PID_Param"         @ string offset=1432
+	.asciz	"Pitch_Angle_PID_Param"         @ string offset=1440
 .Linfo_string106:
-	.asciz	"Pitch_Velocity_Param"          @ string offset=1454
+	.asciz	"Pitch_Velocity_Param"          @ string offset=1462
 .Linfo_string107:
-	.asciz	"Yaw_Angle_PID_Param"           @ string offset=1475
+	.asciz	"Yaw_Angle_PID_Param"           @ string offset=1483
 .Linfo_string108:
-	.asciz	"Yaw_Velocity_PID_Param"        @ string offset=1495
+	.asciz	"Yaw_Velocity_PID_Param"        @ string offset=1503
 .Linfo_string109:
-	.asciz	"Pitch_MidPoint_MotorAngle"     @ string offset=1518
+	.asciz	"Pitch_MidPoint_MotorAngle"     @ string offset=1526
 .Linfo_string110:
-	.asciz	"Yaw_MidPoint_MotorAngle"       @ string offset=1544
+	.asciz	"Yaw_MidPoint_MotorAngle"       @ string offset=1552
 .Linfo_string111:
-	.asciz	"last_type"                     @ string offset=1568
+	.asciz	"last_type"                     @ string offset=1576
 .Linfo_string112:
-	.asciz	"last_remote_value"             @ string offset=1578
+	.asciz	"last_remote_value"             @ string offset=1586
 .Linfo_string113:
-	.asciz	"Pitch_LimitMin_Angle"          @ string offset=1596
+	.asciz	"Pitch_LimitMin_Angle"          @ string offset=1604
 .Linfo_string114:
-	.asciz	"Pitch_LimitMax_Angle"          @ string offset=1617
+	.asciz	"Pitch_LimitMax_Angle"          @ string offset=1625
 .Linfo_string115:
-	.asciz	"Control_GIMBAL_Task"           @ string offset=1638
+	.asciz	"Control_GIMBAL_Task"           @ string offset=1646
 .Linfo_string116:
-	.asciz	"Control_Init"                  @ string offset=1658
+	.asciz	"Control_Init"                  @ string offset=1666
 .Linfo_string117:
-	.asciz	"Control_Measure_Update"        @ string offset=1671
+	.asciz	"Control_Measure_Update"        @ string offset=1679
 .Linfo_string118:
-	.asciz	"Control_Mode_Update"           @ string offset=1694
+	.asciz	"Control_Mode_Update"           @ string offset=1702
 .Linfo_string119:
-	.asciz	"Control_Target_Update"         @ string offset=1714
+	.asciz	"Control_Target_Update"         @ string offset=1722
 .Linfo_string120:
-	.asciz	"Control_Gimbal_Info_Update"    @ string offset=1736
+	.asciz	"Control_Gimbal_Info_Update"    @ string offset=1744
 .Linfo_string121:
-	.asciz	"Control_Gimbal_Remote"         @ string offset=1763
+	.asciz	"Control_Gimbal_Remote"         @ string offset=1771
 .Linfo_string122:
-	.asciz	"argument"                      @ string offset=1785
+	.asciz	"argument"                      @ string offset=1793
 .Linfo_string123:
-	.asciz	"Control_Task_SysTick"          @ string offset=1794
+	.asciz	"Control_Task_SysTick"          @ string offset=1802
 .Linfo_string124:
-	.asciz	"unsigned int"                  @ string offset=1815
+	.asciz	"unsigned int"                  @ string offset=1823
 .Linfo_string125:
-	.asciz	"uint32_t"                      @ string offset=1828
+	.asciz	"uint32_t"                      @ string offset=1836
 .Linfo_string126:
-	.asciz	"TickType_t"                    @ string offset=1837
+	.asciz	"TickType_t"                    @ string offset=1845
 .Linfo_string127:
-	.asciz	"pitch_add"                     @ string offset=1848
+	.asciz	"pitch_add"                     @ string offset=1856
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

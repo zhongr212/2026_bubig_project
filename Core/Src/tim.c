@@ -24,6 +24,64 @@
 
 volatile uint32_t tim1_ms_count = 0;
 
+/* Asymmetric triangle wave: radians, updated by the 1 ms TIM1 IRQ. */
+#define TRIANGLE_WAVE_MAX_RAD  (0.7853981633974483f)
+
+static uint32_t triangle_period_ms = 2000U;
+static uint32_t triangle_rise_ms = 200U;
+static uint32_t triangle_phase_ms = 0U;
+static volatile float triangle_value_rad = 0.0f;
+
+/* Returns 1 on success; invalid parameters leave the wave unchanged.
+ * A successful call restarts the wave at zero. Safe from foreground code
+ * while TIM1 is running; the previous interrupt mask is preserved.
+ */
+uint8_t TriangleWave_SetPeriod(uint32_t period_ms, uint32_t rise_ms)
+{
+    uint32_t primask;
+
+    if ((period_ms < 2U) || (rise_ms == 0U) || (rise_ms >= period_ms))
+    {
+        return 0U;
+    }
+
+    primask = __get_PRIMASK();
+    __disable_irq();
+    triangle_period_ms = period_ms;
+    triangle_rise_ms = rise_ms;
+    triangle_phase_ms = 0U;
+    triangle_value_rad = 0.0f;
+    __set_PRIMASK(primask);
+    return 1U;
+}
+
+/* Call exactly once per 1 ms tick, only from TIM1_UP_IRQHandler. */
+static void TriangleWave_Update1ms(void)
+{
+    triangle_phase_ms++;
+    if (triangle_phase_ms >= triangle_period_ms)
+    {
+        triangle_phase_ms = 0U;
+    }
+
+    if (triangle_phase_ms <= triangle_rise_ms)
+    {
+        triangle_value_rad = TRIANGLE_WAVE_MAX_RAD *
+            ((float)triangle_phase_ms / (float)triangle_rise_ms);
+    }
+    else
+    {
+        triangle_value_rad = TRIANGLE_WAVE_MAX_RAD *
+            ((float)(triangle_period_ms - triangle_phase_ms) /
+             (float)(triangle_period_ms - triangle_rise_ms));
+    }
+}
+
+float TriangleWave_GetValue(void)
+{
+    return triangle_value_rad;
+}
+
 void TIM1_1ms_Init(void)//1ms定时函数
 {
     /* 1. 使能 TIM1 外设时钟 */
@@ -263,6 +321,7 @@ void TIM1_UP_IRQHandler(void)
         TIM1->SR &= ~TIM_SR_UIF;
 
         tim1_ms_count++;
+        TriangleWave_Update1ms();
 
         /* 每隔 1 ms 执行的代码 */
     }

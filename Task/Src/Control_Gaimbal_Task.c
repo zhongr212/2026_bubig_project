@@ -129,14 +129,14 @@ static void Control_Measure_Update(Control_Gimbal_Info_Typedef *Control_Gimbal_I
 {
     // Update pitch axis measurements with filtering
     Control_Gimbal_Info->Measure.Pitch_Motor_Angle = KalmanFilter(&kfp_pitch_angle, Pich_Motor.Data.Angle / 180.f * PI) - Pitch_MidPoint_MotorAngle;
-    Control_Gimbal_Info->Measure.Pitch_Motor_Gyro = KalmanFilter(&kfp_pitch_speed, (float)Pich_Motor.Data.Velocity / 60.0f * 2.0f * PI);
+    Control_Gimbal_Info->Measure.Pitch_Motor_Gyro = KalmanFilter(&kfp_pitch_speed, (float)Pich_Motor.Data.Velocity * 2.0f * PI / 60.0f );
 
     // Update yaw axis IMU measurements with filtering
     Control_Gimbal_Info->Measure.Yaw_IMU_Angle = INS_Info.Yaw_Angle / 180.f * PI;
     Control_Gimbal_Info->Measure.Yaw_IMU_Gyro = KalmanFilter(&kfp_yaw_imuspeed, INS_Info.Yaw_Gyro);
 
     // Update lower yaw motor measurements with filtering
-    Control_Gimbal_Info->Measure.Yaw_Motor_Gyro = KalmanFilter(&kfp_yaw_speed, (float)DM_Yaw_Motor.Data.Velocity / (2.0f * PI * 60.0f));  // rad/s
+    Control_Gimbal_Info->Measure.Yaw_Motor_Gyro = KalmanFilter(&kfp_yaw_speed, (float)DM_Yaw_Motor.Data.Velocity *2.0f * PI / ( 60.0f));  // rad/s
     Control_Gimbal_Info->Measure.Yaw_Motor_Angle = (float)DM_Yaw_Motor.Data.Angle / 180.f * PI - Yaw_MidPoint_MotorAngle;
 
     // Normalize angles to [-¦Ð, ¦Ð] range

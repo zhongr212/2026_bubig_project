@@ -54,4 +54,5 @@ cod_h7_template/bsp_uart.o: ..\BSP\Src\bsp_uart.c ..\BSP\Inc\bsp_uart.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
+  ..\Device\Inc\rc_vtm_control.h ..\Task\Inc\Detect.h

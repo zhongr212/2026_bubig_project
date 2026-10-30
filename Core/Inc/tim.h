@@ -47,6 +47,11 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN Prototypes */
 volatile extern uint32_t tim1_ms_count;
+
+/* period_ms >= 2; 0 < rise_ms < period_ms. Returns 1 on success. */
+uint8_t TriangleWave_SetPeriod(uint32_t period_ms, uint32_t rise_ms);
+/* Current angle in radians, from 0 to pi/4. */
+float TriangleWave_GetValue(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -7,6 +7,10 @@
 #include "Referee_System.h"
 #include "Control_Task.h"
 #include "CAN_Task.h"
+#include "rc_vtm_control.h"
+#include "Detect.h"
+
+
  void usart_printf(const char *fmt,...){
     static va_list ap;
     static uint16_t len;
@@ -31,6 +35,8 @@ static void USER_USART5_RxHandler(UART_HandleTypeDef *huart,uint16_t Size);
 static void USER_USART2_RxHandler(UART_HandleTypeDef *huart,uint16_t Size);
 
 static void USER_USART3_RxHandler(UART_HandleTypeDef *huart,uint16_t Size);
+
+static void USER_USART8_RxHandler(UART_HandleTypeDef *huart,uint16_t Size);
 
 static void USART_RxDMA_MultiBuffer_Init(UART_HandleTypeDef *, uint32_t *, uint32_t *, uint32_t );
 
@@ -76,7 +82,9 @@ void BSP_USART_Init(void){
 
   USART_RxDMA_MultiBuffer_Init(&huart5,(uint32_t *)SBUS_MultiRx_Buf[0],(uint32_t *)SBUS_MultiRx_Buf[1],RC_FRAME_LENGTH);
     
-	USART_RxDMA_MultiBuffer_Init(&huart8,(uint32_t *)SBUS_MultiRx_Buf[0],(uint32_t *)SBUS_MultiRx_Buf[1],RC_FRAME_LENGTH);
+	USART_RxDMA_MultiBuffer_Init(&huart8,(uint32_t *)VTM_SBUS_MultiRx_Buf[0] ,(uint32_t *)VTM_SBUS_MultiRx_Buf[1],RC_CH_VALUE_LENGTH);
+	
+	USART_RxDMA_MultiBuffer_Init(&huart7,(uint32_t *)PC_TRAN_MultiRx_Buf[0] ,(uint32_t *)PC_TRAN_MultiRx_Buf[1],REC_DATA_NUM);
 	
 	HAL_Delay(500);
 
@@ -91,7 +99,7 @@ static void USER_USART5_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 
 					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR |= DMA_SxCR_CT;
 					/* reset the receive count */
-					__HAL_DMA_SET_COUNTER(huart->hdmarx,RC_FRAME_LENGTH);
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,SBUS_RX_BUF_NUM);
 
 					if(Size == RC_FRAME_LENGTH)
 					{
@@ -108,7 +116,7 @@ static void USER_USART5_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR &= ~(DMA_SxCR_CT);
 				
 					/* reset the receive count */
-					__HAL_DMA_SET_COUNTER(huart->hdmarx,RC_FRAME_LENGTH);
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,SBUS_RX_BUF_NUM);
 
 					if(Size == RC_FRAME_LENGTH)
 					{
@@ -128,7 +136,7 @@ static void USER_USART1_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 
 					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR |= DMA_SxCR_CT;//交替使用缓存区
 				
-  				__HAL_DMA_SET_COUNTER(huart->hdmarx,16);
+//  				__HAL_DMA_SET_COUNTER(huart->hdmarx,16);
 
 				  if(Size >= 10){
 						
@@ -190,6 +198,87 @@ static void USER_USART3_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 
 }
 
+
+static void USER_USART8_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
+  if(((((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR) & DMA_SxCR_CT ) == RESET)
+			{
+					//Disable DMA 
+					__HAL_DMA_DISABLE(huart->hdmarx);
+
+					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR |= DMA_SxCR_CT;
+					/* reset the receive count */
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,RC_CH_SBUS_BUF_NUM);
+
+					if(Size == RC_CH_VALUE_LENGTH)
+					{
+						vt13_rc(VTM_SBUS_MultiRx_Buf[0],&vtm_rc_data);
+					}
+					
+			}
+			/* Current memory buffer used is Memory 1 */
+			else
+			{
+					//Disable DMA 
+					__HAL_DMA_DISABLE(huart->hdmarx);
+				
+					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR &= ~(DMA_SxCR_CT);
+				
+					/* reset the receive count */
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,RC_CH_SBUS_BUF_NUM);
+
+					if(Size == RC_CH_VALUE_LENGTH)
+					{
+						vt13_rc(VTM_SBUS_MultiRx_Buf[1],&vtm_rc_data);
+					}
+					
+					
+			}
+			
+}
+
+
+static void USER_USART7_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
+  if(((((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR) & DMA_SxCR_CT ) == RESET)
+			{
+					//Disable DMA 
+					__HAL_DMA_DISABLE(huart->hdmarx);
+
+					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR |= DMA_SxCR_CT;
+					/* reset the receive count */
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,REC_DATA_NUM_USART);
+
+					if(Size == REC_DATA_NUM)
+					{
+						rec_data(PC_TRAN_MultiRx_Buf[0],Size);
+					}
+					
+			}
+			/* Current memory buffer used is Memory 1 */
+			else
+			{
+					//Disable DMA 
+					__HAL_DMA_DISABLE(huart->hdmarx);
+				
+					((DMA_Stream_TypeDef  *)huart->hdmarx->Instance)->CR &= ~(DMA_SxCR_CT);
+				
+					/* reset the receive count */
+					__HAL_DMA_SET_COUNTER(huart->hdmarx,REC_DATA_NUM_USART);
+
+					if(Size == REC_DATA_NUM)
+					{
+						rec_data(PC_TRAN_MultiRx_Buf[1],Size);
+					}
+					
+					
+			}
+			
+}
+
+
+
+
+
+
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
 {	
 			 if(huart == &huart1){
@@ -209,6 +298,19 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
       USER_USART3_RxHandler(huart,Size);
 			
 	}
+	
+	if(huart == &huart7){
+	 
+      USER_USART7_RxHandler(huart,Size);
+			
+	}
+	
+	if(huart == &huart8){
+	 
+      USER_USART8_RxHandler(huart,Size);
+			
+	}
+	
 	
    huart->ReceptionType = HAL_UART_RECEPTION_TOIDLE;
 	
