@@ -3,7 +3,7 @@
 <title>Static Call Graph - [COD_H7_Template\COD_H7_Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image COD_H7_Template\COD_H7_Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Oct 30 19:17:23 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sat Oct 31 22:10:25 2026
 <BR><P>
 <H3>Maximum Stack Usage =       2452 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -815,7 +815,7 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32h7xx_it.o(.text.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[a5]"></a>CAN_Task</STRONG> (Thumb, 548 bytes, Stack size 120 bytes, can_task.o(.text.CAN_Task))
+<P><STRONG><a name="[a5]"></a>CAN_Task</STRONG> (Thumb, 540 bytes, Stack size 120 bytes, can_task.o(.text.CAN_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = CAN_Task &rArr; DM_IMU_Init &rArr; IMU_WriteReg &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Motor_Command
@@ -829,8 +829,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartCAN_Task)
 </UL>
-<P><STRONG><a name="[a6]"></a>Control_GIMBAL_Task</STRONG> (Thumb, 232 bytes, Stack size 96 bytes, control_gaimbal_task.o(.text.Control_GIMBAL_Task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 576<LI>Call Chain = Control_GIMBAL_Task &rArr; Control_Gimbal_Info_Update &rArr; Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
+<P><STRONG><a name="[a6]"></a>Control_GIMBAL_Task</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, control_gaimbal_task.o(.text.Control_GIMBAL_Task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = Control_GIMBAL_Task &rArr; Control_Gimbal_Info_Update &rArr; Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;YawSMC
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Info_Update
@@ -840,14 +840,15 @@ Global Symbols
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Vofa_Justfloat_Transmit
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartControl_GIMBAL_Task)
 </UL>
-<P><STRONG><a name="[f9]"></a>Control_Gimbal_Remote</STRONG> (Thumb, 428 bytes, Stack size 96 bytes, control_gaimbal_task.o(.text.Control_Gimbal_Remote))
-<BR><BR>[Stack]<UL><LI>Max Depth = 464<LI>Call Chain = Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
+<P><STRONG><a name="[fa]"></a>Control_Gimbal_Remote</STRONG> (Thumb, 320 bytes, Stack size 24 bytes, control_gaimbal_task.o(.text.Control_Gimbal_Remote))
+<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Calculate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Info_Update
@@ -865,7 +866,7 @@ Global Symbols
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Measure_Update
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Chassis_Cal
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Mode
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartControl_Task)
@@ -2321,7 +2322,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[1c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Vofa_Justfloat_Transmit
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Vofa_Justfloat_Transmit
 </UL>
 
 <P><STRONG><a name="[1c6]"></a>HAL_UART_Transmit_DMA</STRONG> (Thumb, 264 bytes, Stack size 32 bytes, stm32h7xx_hal_uart.o(.text.HAL_UART_Transmit_DMA))
@@ -2623,17 +2624,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[aa]"></a>Magazine_Task</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, magazine_task.o(.text.Magazine_Task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Magazine_Task &rArr; USART_Vofa_Justfloat_Transmit &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout &rArr; UART_EndRxTransfer
+<P><STRONG><a name="[aa]"></a>Magazine_Task</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, magazine_task.o(.text.Magazine_Task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 164<LI>Call Chain = Magazine_Task &rArr; Control_Init &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Magazine_Info_Update
+<LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Magazine_Info_Update
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Target_Update
 <LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Mode
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Measure_Update
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
-<LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Vofa_Justfloat_Transmit
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartMagazine_Task)
@@ -2756,20 +2756,19 @@ Global Symbols
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_ErrorHandle
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LowPassFilter1p_Update
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Magazine_Info_Update
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMI088_Temp_Control
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Chassis_Info_Update
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Target_Update
 </UL>
 
-<P><STRONG><a name="[fc]"></a>PID_Init</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, pid.o(.text.PID_Init))
+<P><STRONG><a name="[fd]"></a>PID_Init</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, pid.o(.text.PID_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = PID_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 <LI><a href="#[1c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INSTask_Init
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 </UL>
 
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, port.o(.text.PendSV_Handler))
@@ -2916,15 +2915,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USER_USART5_RxHandler
 </UL>
 
-<P><STRONG><a name="[fa]"></a>SMC_task</STRONG> (Thumb, 830 bytes, Stack size 152 bytes, slidingmode.o(.text.SMC_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = SMC_task &rArr; __hardfp_pow &rArr; sqrt
+<P><STRONG><a name="[fb]"></a>SMC_task</STRONG> (Thumb, 808 bytes, Stack size 72 bytes, slidingmode.o(.text.SMC_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = SMC_task &rArr; __hardfp_pow &rArr; sqrt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;err_tt
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;err_tran
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sat
 <LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
 </UL>
 
 <P><STRONG><a name="[2e]"></a>SPI2_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32h7xx_it.o(.text.SPI2_IRQHandler))
@@ -2942,7 +2941,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Signal
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
 <P><STRONG><a name="[11a]"></a>Send_Init</STRONG> (Thumb, 72 bytes, Stack size 56 bytes, detect.o(.text.Send_Init))
@@ -3133,12 +3132,12 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[1fc]"></a>USART_Vofa_Justfloat_Transmit</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, bsp_uart.o(.text.USART_Vofa_Justfloat_Transmit))
+<P><STRONG><a name="[f9]"></a>USART_Vofa_Justfloat_Transmit</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, bsp_uart.o(.text.USART_Vofa_Justfloat_Transmit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = USART_Vofa_Justfloat_Transmit &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout &rArr; UART_EndRxTransfer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>
 
 <P><STRONG><a name="[e7]"></a>USER_CAN_TxMessage</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, bsp_can.o(.text.USER_CAN_TxMessage))
@@ -3210,8 +3209,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartWarning_Task)
 </UL>
-<P><STRONG><a name="[f4]"></a>YawSMC</STRONG> (Thumb, 190 bytes, Stack size 128 bytes, slidingmode.o(.text.YawSMC))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = YawSMC
+<P><STRONG><a name="[f4]"></a>YawSMC</STRONG> (Thumb, 144 bytes, Stack size 44 bytes, slidingmode.o(.text.YawSMC))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = YawSMC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>
@@ -3317,13 +3316,13 @@ Global Symbols
 <P><STRONG><a name="[22b]"></a>err_tran</STRONG> (Thumb, 96 bytes, Stack size 4 bytes, slidingmode.o(.text.err_tran))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = err_tran
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
 <P><STRONG><a name="[22c]"></a>err_tt</STRONG> (Thumb, 116 bytes, Stack size 12 bytes, slidingmode.o(.text.err_tt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = err_tt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
 <P><STRONG><a name="[248]"></a>exam_rece_data</STRONG> (Thumb, 404 bytes, Stack size 40 bytes, detect.o(.text.exam_rece_data))
@@ -3388,7 +3387,7 @@ Global Symbols
 <LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_IMU_Init
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Task
@@ -3808,7 +3807,7 @@ Global Symbols
 <LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_divzero
 <LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
 <P><STRONG><a name="[212]"></a>__hardfp_sqrtf</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, sqrtf.o(i.__hardfp_sqrtf))
@@ -4458,10 +4457,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;playNote
 </UL>
 
-<P><STRONG><a name="[fb]"></a>Control_Init</STRONG> (Thumb, 196 bytes, Stack size 32 bytes, control_task.o(.text.Control_Init))
+<P><STRONG><a name="[fc]"></a>Control_Init</STRONG> (Thumb, 196 bytes, Stack size 32 bytes, control_task.o(.text.Control_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Control_Init &rArr; PID_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Task
 </UL>
@@ -4512,7 +4511,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QuaternionEKF_Init
 <LI><a href="#[1ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LowPassFilter2p_Init
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INS_Task
 </UL>
@@ -4540,10 +4539,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
 </UL>
 
-<P><STRONG><a name="[fd]"></a>Control_Init</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, magazine_task.o(.text.Control_Init))
+<P><STRONG><a name="[fe]"></a>Control_Init</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, magazine_task.o(.text.Control_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = Control_Init &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
@@ -4567,24 +4566,22 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
 </UL>
 
-<P><STRONG><a name="[fe]"></a>Control_Magazine_Info_Update</STRONG> (Thumb, 260 bytes, Stack size 24 bytes, magazine_task.o(.text.Control_Magazine_Info_Update))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Control_Magazine_Info_Update &rArr; PID_Calculate &rArr; GetSmoothedTargetDelta
-</UL>
-<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Calculate
+<P><STRONG><a name="[1fc]"></a>Control_Magazine_Info_Update</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, magazine_task.o(.text.Control_Magazine_Info_Update))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Control_Magazine_Info_Update
 </UL>
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
 </UL>
 
-<P><STRONG><a name="[f3]"></a>Control_Init</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, control_gaimbal_task.o(.text.Control_Init))
+<P><STRONG><a name="[f3]"></a>Control_Init</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, control_gaimbal_task.o(.text.Control_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Control_Init &rArr; PID_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>
 
-<P><STRONG><a name="[f5]"></a>Control_Measure_Update</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, control_gaimbal_task.o(.text.Control_Measure_Update))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Control_Measure_Update &rArr; KalmanFilter
+<P><STRONG><a name="[f5]"></a>Control_Measure_Update</STRONG> (Thumb, 408 bytes, Stack size 24 bytes, control_gaimbal_task.o(.text.Control_Measure_Update))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Control_Measure_Update &rArr; KalmanFilter
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter
 </UL>
@@ -4597,16 +4594,16 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>
 
-<P><STRONG><a name="[f7]"></a>Control_Target_Update</STRONG> (Thumb, 312 bytes, Stack size 8 bytes, control_gaimbal_task.o(.text.Control_Target_Update))
+<P><STRONG><a name="[f7]"></a>Control_Target_Update</STRONG> (Thumb, 292 bytes, Stack size 8 bytes, control_gaimbal_task.o(.text.Control_Target_Update))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Control_Target_Update
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>
 
-<P><STRONG><a name="[f8]"></a>Control_Gimbal_Info_Update</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, control_gaimbal_task.o(.text.Control_Gimbal_Info_Update))
-<BR><BR>[Stack]<UL><LI>Max Depth = 480<LI>Call Chain = Control_Gimbal_Info_Update &rArr; Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
+<P><STRONG><a name="[f8]"></a>Control_Gimbal_Info_Update</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, control_gaimbal_task.o(.text.Control_Gimbal_Info_Update))
+<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = Control_Gimbal_Info_Update &rArr; Control_Gimbal_Remote &rArr; SMC_task &rArr; __hardfp_pow &rArr; sqrt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
+<BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Gimbal_Remote
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 </UL>

@@ -20,8 +20,8 @@ typedef struct
 
 }SMC;
 
-extern void YawSMC(SMC SMC_control,float c1,float c2,float k,float target,float error_eps,float q,float p,float u_max,float J,float epsilon );
-extern void SMC_task(SMC SMC_control,float angle_now,float angle_vel);
+extern void YawSMC(SMC* SMC_control,float c1,float c2,float k,float target,float error_eps,float q,float p,float u_max,float J,float epsilon );
+extern void SMC_task(SMC* SMC_control,float angle_now,float angle_vel);
 extern SMC SMC_control_yaw;
 extern SMC SMC_control_pitch;
 

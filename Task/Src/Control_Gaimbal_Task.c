@@ -35,8 +35,8 @@ static float Pitch_Velocity_Param[10] = {11000.0f, 48.0f, 3500.0f, 0.0f, 0.0f, 2
 
 
 // Lower yaw axis control parameters
-static float Yaw_Angle_PID_Param[10] = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 3.f, 3.0f, 0.0972f, 0.4363f, 0.0f};
-static float Yaw_Velocity_PID_Param[10] = {15.0f, 0.0f, 0.0f, 0.0f, 0.0f, 20000.0f, 25000.f, 2.5f, 0.25f, 0};
+static float Yaw_Angle_PID_Param[10] = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 3.f, 4.0f, 0.0972f, 0.4363f, 0.0f};
+static float Yaw_Velocity_PID_Param[10] = {0.09f, 0.1f, 0.20f, 0.0f, 0.0f, 0.2f, 1.0f, 0.5f, 0.25f, 0};
 
 /* PID Controller Instances --------------------------------------------------*/
 PID_Info_TypeDef Pitch_Angle_PID;      // Pitch angle position controller
@@ -61,7 +61,7 @@ KFPTypeS kfp_yaw_angle = {0.02, 0, 0.001, 2, 0};     // yaw motor angle filter
 KFPTypeS kfp_yaw_speed = {0.002, 0, 0.01, 1, 0};     // yaw motor speed filter
 
 /* Gimbal Mechanical Parameters and Limits -----------------------------------*/
-static float Yaw_MidPoint_MotorAngle = 1.60914588;    // Lower yaw motor mechanical midpoint (rad)  记得测试更改 机械0角度
+static float Yaw_MidPoint_MotorAngle =0.0f;// 1.60914588;    // Lower yaw motor mechanical midpoint (rad)  记得测试更改 机械0角度
 static float Pitch_MidPoint_MotorAngle = -0.622802794f;    // Pitch motor mechanical midpoint (rad) 记得测试更改 机械0角度
 static float Pitch_LimitMax_Angle = 0.52359886f;            // Maximum pitch angle limit (rad)  记得测试更改，机械限幅pitch
 static float Pitch_LimitMin_Angle = -0.20943955f;          // Minimum pitch angle limit (rad)
@@ -76,7 +76,7 @@ void Control_GIMBAL_Task(void const * argument)
     vTaskDelay(1000);  // Initial delay for system stabilization
     TickType_t Control_Task_SysTick = 0;
     Control_Init(&Control_Gimbal_Info);  // Initialize gimbal control system
-		YawSMC(SMC_control_yaw,22.5,0,8.1,0,0.001,21,27,25000,0.1,0.07); // c  k  ref error_esp q p u_max j epsilon
+		YawSMC(&SMC_control_yaw,950,0,45,0,0.0002,21,27,20,0.000017,0.0); // c  k  ref error_esp q p u_max j epsilon
     /* Infinite control loop */
     for(;;) 
     {
@@ -87,7 +87,7 @@ void Control_GIMBAL_Task(void const * argument)
         Control_Mode_Update(&Control_Gimbal_Info);        // Update control mode based on RC input
         Control_Target_Update(&Control_Gimbal_Info);      // Update target positions and velocities
         Control_Gimbal_Info_Update(&Control_Gimbal_Info); // Calculate and update motor outputs
-
+				USART_Vofa_Justfloat_Transmit(Control_Gimbal_Info.Target.Yaw_Angle,Control_Gimbal_Info.Measure.Yaw_Motor_Angle,0);
         osDelay(1);  // 1ms delay for 1kHz control frequency
     }
 }
@@ -115,9 +115,9 @@ static void Control_Init(Control_Gimbal_Info_Typedef *Control_Gimbal_Info)
 
 
     // Initialize motor output values to zero
-    Control_Gimbal_Info->SendValue[0] = 0;
-    Control_Gimbal_Info->SendValue[1] = 0;
-    Control_Gimbal_Info->SendValue[2] = 0;
+    Control_Gimbal_Info->SendValue_yaw = 0;
+    Control_Gimbal_Info->SendValue_pitch= 0;
+    
 }
 
 /**
@@ -136,12 +136,12 @@ static void Control_Measure_Update(Control_Gimbal_Info_Typedef *Control_Gimbal_I
     Control_Gimbal_Info->Measure.Yaw_IMU_Gyro = KalmanFilter(&kfp_yaw_imuspeed, INS_Info.Yaw_Gyro);
 
     // Update lower yaw motor measurements with filtering
-    Control_Gimbal_Info->Measure.Yaw_Motor_Gyro = KalmanFilter(&kfp_yaw_speed, (float)DM_Yaw_Motor.Data.Velocity *2.0f * PI / ( 60.0f));  // rad/s
-    Control_Gimbal_Info->Measure.Yaw_Motor_Angle = (float)DM_Yaw_Motor.Data.Angle / 180.f * PI - Yaw_MidPoint_MotorAngle;
+    Control_Gimbal_Info->Measure.Yaw_Motor_Gyro = (float)DM_Yaw_Motor.Data.Velocity;//KalmanFilter(&kfp_yaw_speed, (float)DM_Yaw_Motor.Data.Velocity);  // rad/s
+    Control_Gimbal_Info->Measure.Yaw_Motor_Angle = (float)DM_Yaw_Motor.Data.Angle - Yaw_MidPoint_MotorAngle;
 
     // Normalize angles to [-π, π] range
-    while (Control_Gimbal_Info->Measure.Yaw_Motor_Angle > PI) Control_Gimbal_Info->Measure.Yaw_Motor_Angle -= 2 * PI;
-    while (Control_Gimbal_Info->Measure.Yaw_Motor_Angle < -PI) Control_Gimbal_Info->Measure.Yaw_Motor_Angle += 2 * PI;
+    while (Control_Gimbal_Info->Measure.Yaw_Motor_Angle > 180) Control_Gimbal_Info->Measure.Yaw_Motor_Angle -= 2 * 180;
+    while (Control_Gimbal_Info->Measure.Yaw_Motor_Angle < -180) Control_Gimbal_Info->Measure.Yaw_Motor_Angle += 2 * 180;
     
    
     while (Control_Gimbal_Info->Measure.Yaw_IMU_Angle > PI) Control_Gimbal_Info->Measure.Yaw_IMU_Angle -= 2 * PI;
@@ -175,15 +175,15 @@ static void Control_Target_Update(Control_Gimbal_Info_Typedef *Control_Gimbal_In
         // Remote control mode: use RC channel inputs
         Control_Gimbal_Info->Target.Pitch_Angle = remote_ctrl.rc.ch[1] * 0.001f ; 
 				Control_Gimbal_Info->Target.Pitch_Angle += pitch_add;
-        Control_Gimbal_Info->Target.Yaw_Angle += remote_ctrl.rc.ch[0] * -0.00001f + vtm_rc_data.mouse.x* -0.000050733f;
-//				Control_Gimbal_Info->Target.Yaw_Angle = remote_ctrl.rc.ch[0] * -0.001f;
+        Control_Gimbal_Info->Target.Yaw_Angle +=remote_ctrl.rc.ch[0] * -0.00005f; //+ vtm_rc_data.mouse.x* -0.000050733f;
+//				Control_Gimbal_Info->Target.Yaw_Angle =1.2f;
 			
 				SMC_control_yaw.target = Control_Gimbal_Info->Target.Yaw_Angle;
     }
 
     // Normalize lower yaw target angle to [-π, π] range
-    while (Control_Gimbal_Info->Target.Yaw_Angle > PI) Control_Gimbal_Info->Target.Yaw_Angle -= 2 * PI;
-    while (Control_Gimbal_Info->Target.Yaw_Angle < -PI) Control_Gimbal_Info->Target.Yaw_Angle += 2 * PI;
+    while (Control_Gimbal_Info->Target.Yaw_Angle > 180) Control_Gimbal_Info->Target.Yaw_Angle -= 2 * 180;
+    while (Control_Gimbal_Info->Target.Yaw_Angle < -180) Control_Gimbal_Info->Target.Yaw_Angle += 2 * 180;
     
     last_type = Control_Gimbal_Info->Type;  // Record current mode for transition detection
 }
@@ -244,14 +244,14 @@ static void Control_Gimbal_Info_Update(Control_Gimbal_Info_Typedef *Control_Gimb
       
     }
     // Set output values from PID controllers
-    Control_Gimbal_Info->SendValue[0] = (int16_t)(Pitch_Velocity_PID.Output);
-    Control_Gimbal_Info->SendValue[1] = (int16_t)(SMC_control_yaw.u);//(Yaw_Velocity_PID.Output);
+    Control_Gimbal_Info->SendValue_pitch = (Pitch_Velocity_PID.Output);
+    Control_Gimbal_Info->SendValue_yaw =  (Yaw_Velocity_PID.Output);//(SMC_control_yaw.u);//(Yaw_Velocity_PID.Output);
     
     // Zero outputs in sleep mode for safety
     if (Control_Gimbal_Info->Type == GIMBAL_SLEEP) 
     {
-        Control_Gimbal_Info->SendValue[0] = 0;
-        Control_Gimbal_Info->SendValue[1] = 0;
+        Control_Gimbal_Info->SendValue_pitch = 0;
+        Control_Gimbal_Info->SendValue_yaw= 0;
     }
 }
 
@@ -280,19 +280,22 @@ if (Control_Gimbal_Info->Type == GIMBAL_REMOTE_IMU)
 
 if (Control_Gimbal_Info->Type == GIMBAL_REMOTE_JIXIE) 
 {
-	
-	SMC_task(SMC_control_yaw,Control_Gimbal_Info->Measure.Yaw_Motor_Angle, Control_Gimbal_Info->Measure.Yaw_Motor_Gyro);   
-	
-	PID_Calculate(&Yaw_Velocity_PID, SMC_control_yaw.u + 0.100f * (0 - Control_Gimbal_Info->Measure.Yaw_Motor_Gyro), 
+//	
+	SMC_task(&SMC_control_yaw,Control_Gimbal_Info->Measure.Yaw_Motor_Angle, Control_Gimbal_Info->Measure.Yaw_Motor_Gyro);   
+//	
+	PID_Calculate(&Yaw_Velocity_PID, SMC_control_yaw.u , 
                   Control_Gimbal_Info->Measure.Yaw_Motor_Gyro);
 	
 	// Lower yaw axis cascade control (motor encoder based)
 //    PID_Calculate(&Yaw_Angle_PID, Control_Gimbal_Info->Target.Yaw_Angle, Control_Gimbal_Info->Measure.Yaw_Motor_Angle);
-//    PID_Calculate(&Yaw_Velocity_PID, Yaw_Angle_PID.Output + 0.100f * (0 - Control_Gimbal_Info->Measure.Yaw_Motor_Gyro), 
+//    PID_Calculate(&Yaw_Velocity_PID, Control_Gimbal_Info->Target.Yaw_Angle , 
 //                  Control_Gimbal_Info->Measure.Yaw_Motor_Gyro);
+	
+//		Yaw_Velocity_PID.Output = SMC_control_yaw.u;
+//	
 }
 
 	
-//	USART_Vofa_Justfloat_Transmit(Control_Gimbal_Info->Target.Yaw_Angle,Control_Gimbal_Info->Measure.Yaw_Motor_Angle,0);
+	
 }
 

@@ -21,8 +21,8 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"slidingmode.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\slidingmode.h"
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Src/slidingmode.c"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\slidingmode.h"
+	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Src/slidingmode.c"
 	.section	.text.Signal,"ax",%progbits
 	.hidden	Signal                          @ -- Begin function Signal
 	.globl	Signal
@@ -172,46 +172,9 @@ YawSMC:
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
-	.save	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
-	push.w	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
-	.cfi_def_cfa_offset 36
-	.cfi_offset lr, -4
-	.cfi_offset r11, -8
-	.cfi_offset r10, -12
-	.cfi_offset r9, -16
-	.cfi_offset r8, -20
-	.cfi_offset r7, -24
-	.cfi_offset r6, -28
-	.cfi_offset r5, -32
-	.cfi_offset r4, -36
-	.pad	#92
-	sub	sp, #92
-	.cfi_def_cfa_offset 128
-	ldr.w	r10, [sp, #160]
-	ldr.w	r9, [sp, #156]
-	ldr.w	r8, [sp, #152]
-	ldr	r7, [sp, #148]
-	ldr	r6, [sp, #144]
-	ldr	r5, [sp, #140]
-	ldr	r4, [sp, #136]
-	ldr.w	lr, [sp, #132]
-	ldr.w	r12, [sp, #128]
-                                        @ kill: def $r11 killed $r3
-                                        @ kill: def $r11 killed $r2
-                                        @ kill: def $r11 killed $r1
-                                        @ kill: def $r11 killed $r0
-	str.w	r10, [sp, #88]
-	str.w	r9, [sp, #84]
-	str.w	r8, [sp, #80]
-	str	r7, [sp, #76]
-	str	r6, [sp, #72]
-	str	r5, [sp, #68]
-	str	r4, [sp, #64]
-	str.w	lr, [sp, #60]
-	str.w	r12, [sp, #56]
-	str	r3, [sp, #52]
-	str	r2, [sp, #48]
-	str	r1, [sp, #44]
+	.pad	#44
+	sub	sp, #44
+	.cfi_def_cfa_offset 44
 	str	r0, [sp, #40]
 	vstr	s0, [sp, #36]
 	vstr	s1, [sp, #32]
@@ -224,46 +187,66 @@ YawSMC:
 	vstr	s8, [sp, #4]
 	vstr	s9, [sp]
 .Ltmp13:
-	.loc	2 45 19 prologue_end            @ ../Algorithm/Src/slidingmode.c:45:19
+	.loc	2 45 20 prologue_end            @ ../Algorithm/Src/slidingmode.c:45:20
 	ldr	r0, [sp, #36]
-	.loc	2 45 17 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:45:17
-	str	r0, [sp, #40]
-	.loc	2 46 19 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:46:19
+	.loc	2 45 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:45:2
+	ldr	r1, [sp, #40]
+	.loc	2 45 18                         @ ../Algorithm/Src/slidingmode.c:45:18
+	str	r0, [r1]
+	.loc	2 46 20 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:46:20
 	ldr	r0, [sp, #32]
-	.loc	2 46 17 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:46:17
-	str	r0, [sp, #44]
-	.loc	2 47 18 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:47:18
+	.loc	2 46 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:46:2
+	ldr	r1, [sp, #40]
+	.loc	2 46 18                         @ ../Algorithm/Src/slidingmode.c:46:18
+	str	r0, [r1, #4]
+	.loc	2 47 19 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:47:19
 	ldr	r0, [sp, #28]
-	.loc	2 47 16 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:47:16
-	str	r0, [sp, #48]
-	.loc	2 48 23 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:48:23
+	.loc	2 47 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:47:2
+	ldr	r1, [sp, #40]
+	.loc	2 47 17                         @ ../Algorithm/Src/slidingmode.c:47:17
+	str	r0, [r1, #8]
+	.loc	2 48 24 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:48:24
 	ldr	r0, [sp, #24]
-	.loc	2 48 21 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:48:21
-	str	r0, [sp, #52]
-	.loc	2 49 27 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:49:27
+	.loc	2 48 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:48:2
+	ldr	r1, [sp, #40]
+	.loc	2 48 22                         @ ../Algorithm/Src/slidingmode.c:48:22
+	str	r0, [r1, #12]
+	.loc	2 49 28 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:49:28
 	ldr	r0, [sp, #20]
-	.loc	2 49 25 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:49:25
-	str	r0, [sp, #56]
-	.loc	2 50 18 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:50:18
+	.loc	2 49 3 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:49:3
+	ldr	r1, [sp, #40]
+	.loc	2 49 26                         @ ../Algorithm/Src/slidingmode.c:49:26
+	str	r0, [r1, #16]
+	.loc	2 50 19 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:50:19
 	ldr	r0, [sp, #16]
-	.loc	2 50 16 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:50:16
-	str	r0, [sp, #60]
-	.loc	2 51 18 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:51:18
+	.loc	2 50 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:50:2
+	ldr	r1, [sp, #40]
+	.loc	2 50 17                         @ ../Algorithm/Src/slidingmode.c:50:17
+	str	r0, [r1, #20]
+	.loc	2 51 19 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:51:19
 	ldr	r0, [sp, #12]
-	.loc	2 51 16 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:51:16
-	str	r0, [sp, #64]
-	.loc	2 52 22 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:52:22
+	.loc	2 51 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:51:2
+	ldr	r1, [sp, #40]
+	.loc	2 51 17                         @ ../Algorithm/Src/slidingmode.c:51:17
+	str	r0, [r1, #24]
+	.loc	2 52 23 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:52:23
 	ldr	r0, [sp, #8]
-	.loc	2 52 20 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:52:20
-	str	r0, [sp, #68]
-	.loc	2 53 18 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:53:18
+	.loc	2 52 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:52:2
+	ldr	r1, [sp, #40]
+	.loc	2 52 21                         @ ../Algorithm/Src/slidingmode.c:52:21
+	str	r0, [r1, #28]
+	.loc	2 53 19 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:53:19
 	ldr	r0, [sp, #4]
-	.loc	2 53 16 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:53:16
-	str	r0, [sp, #72]
-	.loc	2 54 24 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:54:24
+	.loc	2 53 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:53:2
+	ldr	r1, [sp, #40]
+	.loc	2 53 17                         @ ../Algorithm/Src/slidingmode.c:53:17
+	str	r0, [r1, #32]
+	.loc	2 54 25 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:54:25
 	ldr	r0, [sp]
-	.loc	2 54 22 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:54:22
-	str	r0, [sp, #84]
+	.loc	2 54 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:54:2
+	ldr	r1, [sp, #40]
+	.loc	2 54 23                         @ ../Algorithm/Src/slidingmode.c:54:23
+	str	r0, [r1, #44]
 	.loc	2 55 13 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:55:13
 	movw	r1, :lower16:target_dot
 	movt	r1, :upper16:target_dot
@@ -277,11 +260,13 @@ YawSMC:
 	movw	r1, :lower16:error_last
 	movt	r1, :upper16:error_last
 	str	r0, [r1]
-	.loc	2 58 17                         @ ../Algorithm/Src/slidingmode.c:58:17
-	str	r0, [sp, #88]
-	.loc	2 60 1 epilogue_begin           @ ../Algorithm/Src/slidingmode.c:60:1
-	add	sp, #92
-	pop.w	{r4, r5, r6, r7, r8, r9, r10, r11, pc}
+	.loc	2 58 3                          @ ../Algorithm/Src/slidingmode.c:58:3
+	ldr	r1, [sp, #40]
+	.loc	2 58 18 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:58:18
+	str	r0, [r1, #48]
+	.loc	2 60 1 epilogue_begin is_stmt 1 @ ../Algorithm/Src/slidingmode.c:60:1
+	add	sp, #44
+	bx	lr
 .Ltmp14:
 .Lfunc_end2:
 	.size	YawSMC, .Lfunc_end2-YawSMC
@@ -321,9 +306,9 @@ err_tran:
 	ble	.LBB3_3
 	b	.LBB3_2
 .LBB3_2:                                @   in Loop: Header=BB3_1 Depth=1
-	.loc	2 65 32                         @ ../Algorithm/Src/slidingmode.c:65:32
+	.loc	2 65 28                         @ ../Algorithm/Src/slidingmode.c:65:28
 	ldr	r0, [sp]
-	.loc	2 65 38                         @ ../Algorithm/Src/slidingmode.c:65:38
+	.loc	2 65 34                         @ ../Algorithm/Src/slidingmode.c:65:34
 	vldr	s0, [r0]
 	vldr	s2, .LCPI3_3
 	vadd.f32	s0, s0, s2
@@ -345,9 +330,9 @@ err_tran:
 	bge	.LBB3_6
 	b	.LBB3_5
 .LBB3_5:                                @   in Loop: Header=BB3_4 Depth=1
-	.loc	2 66 33                         @ ../Algorithm/Src/slidingmode.c:66:33
+	.loc	2 66 29                         @ ../Algorithm/Src/slidingmode.c:66:29
 	ldr	r0, [sp]
-	.loc	2 66 39                         @ ../Algorithm/Src/slidingmode.c:66:39
+	.loc	2 66 35                         @ ../Algorithm/Src/slidingmode.c:66:35
 	vldr	s0, [r0]
 	vldr	s2, .LCPI3_2
 	vadd.f32	s0, s0, s2
@@ -364,13 +349,13 @@ err_tran:
 	.p2align	2
 @ %bb.7:
 .LCPI3_0:
-	.long	0x40490fda                      @ float 3.1415925
+	.long	0x43340000                      @ float 180
 .LCPI3_1:
-	.long	0xc0490fda                      @ float -3.1415925
+	.long	0xc3340000                      @ float -180
 .LCPI3_2:
-	.long	0x40c90fda                      @ float 6.283185
+	.long	0x43b40000                      @ float 360
 .LCPI3_3:
-	.long	0xc0c90fda                      @ float -6.283185
+	.long	0xc3b40000                      @ float -360
 .Lfunc_end3:
 	.size	err_tran, .Lfunc_end3-err_tran
 	.cfi_endproc
@@ -416,7 +401,7 @@ err_tt:
 	ble	.LBB4_3
 	b	.LBB4_2
 .LBB4_2:                                @   in Loop: Header=BB4_1 Depth=1
-	.loc	2 71 33                         @ ../Algorithm/Src/slidingmode.c:71:33
+	.loc	2 71 29                         @ ../Algorithm/Src/slidingmode.c:71:29
 	vldr	s0, [sp]
 	vldr	s2, .LCPI4_3
 	vadd.f32	s0, s0, s2
@@ -436,7 +421,7 @@ err_tt:
 	bge	.LBB4_6
 	b	.LBB4_5
 .LBB4_5:                                @   in Loop: Header=BB4_4 Depth=1
-	.loc	2 72 35                         @ ../Algorithm/Src/slidingmode.c:72:35
+	.loc	2 72 31                         @ ../Algorithm/Src/slidingmode.c:72:31
 	vldr	s0, [sp]
 	vldr	s2, .LCPI4_2
 	vadd.f32	s0, s0, s2
@@ -455,13 +440,13 @@ err_tt:
 	.p2align	2
 @ %bb.7:
 .LCPI4_0:
-	.long	0x40490fda                      @ float 3.1415925
+	.long	0x43340000                      @ float 180
 .LCPI4_1:
-	.long	0xc0490fda                      @ float -3.1415925
+	.long	0xc3340000                      @ float -180
 .LCPI4_2:
-	.long	0x40c90fda                      @ float 6.283185
+	.long	0x43b40000                      @ float 360
 .LCPI4_3:
-	.long	0xc0c90fda                      @ float -6.283185
+	.long	0xc3b40000                      @ float -360
 .Lfunc_end4:
 	.size	err_tt, .Lfunc_end4-err_tt
 	.cfi_endproc
@@ -481,128 +466,112 @@ SMC_task:
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
-	.save	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
-	push.w	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
-	.cfi_def_cfa_offset 36
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
 	.cfi_offset lr, -4
-	.cfi_offset r11, -8
-	.cfi_offset r10, -12
-	.cfi_offset r9, -16
-	.cfi_offset r8, -20
-	.cfi_offset r7, -24
-	.cfi_offset r6, -28
-	.cfi_offset r5, -32
-	.cfi_offset r4, -36
-	.pad	#116
-	sub	sp, #116
-	.cfi_def_cfa_offset 152
-	ldr.w	r10, [sp, #184]
-	ldr.w	r9, [sp, #180]
-	ldr.w	r8, [sp, #176]
-	ldr	r7, [sp, #172]
-	ldr	r6, [sp, #168]
-	ldr	r5, [sp, #164]
-	ldr	r4, [sp, #160]
-	ldr.w	lr, [sp, #156]
-	ldr.w	r12, [sp, #152]
-                                        @ kill: def $r11 killed $r3
-                                        @ kill: def $r11 killed $r2
-                                        @ kill: def $r11 killed $r1
-                                        @ kill: def $r11 killed $r0
-	str.w	r10, [sp, #112]
-	str.w	r9, [sp, #108]
-	str.w	r8, [sp, #104]
-	str	r7, [sp, #100]
-	str	r6, [sp, #96]
-	str	r5, [sp, #92]
-	str	r4, [sp, #88]
-	str.w	lr, [sp, #84]
-	str.w	r12, [sp, #80]
-	str	r3, [sp, #76]
-	str	r2, [sp, #72]
-	str	r1, [sp, #68]
-	str	r0, [sp, #64]
-	vstr	s0, [sp, #60]
-	vstr	s1, [sp, #56]
+	.cfi_offset r7, -8
+	.pad	#64
+	sub	sp, #64
+	.cfi_def_cfa_offset 72
+	str	r0, [sp, #60]
+	vstr	s0, [sp, #56]
+	vstr	s1, [sp, #52]
 .Ltmp21:
-	.loc	2 78 22 prologue_end            @ ../Algorithm/Src/slidingmode.c:78:22
-	ldr	r0, [sp, #60]
-	.loc	2 78 20 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:78:20
-	str	r0, [sp, #100]
-	.loc	2 79 24 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:79:24
+	.loc	2 78 23 prologue_end            @ ../Algorithm/Src/slidingmode.c:78:23
 	ldr	r0, [sp, #56]
-	.loc	2 79 22 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:79:22
-	str	r0, [sp, #104]
-	.loc	2 81 25 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:81:25
-	vldr	s0, [sp, #84]
-	.loc	2 81 39 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:81:39
-	vldr	s2, [sp, #88]
-	.loc	2 81 26                         @ ../Algorithm/Src/slidingmode.c:81:26
+	.loc	2 78 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:78:2
+	ldr	r1, [sp, #60]
+	.loc	2 78 21                         @ ../Algorithm/Src/slidingmode.c:78:21
+	str	r0, [r1, #36]
+	.loc	2 79 25 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:79:25
+	ldr	r0, [sp, #52]
+	.loc	2 79 2 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:79:2
+	ldr	r1, [sp, #60]
+	.loc	2 79 23                         @ ../Algorithm/Src/slidingmode.c:79:23
+	str	r0, [r1, #40]
+	.loc	2 81 13 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:81:13
+	ldr	r0, [sp, #60]
+	.loc	2 81 26 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:81:26
+	vldr	s0, [r0, #20]
+	.loc	2 81 41                         @ ../Algorithm/Src/slidingmode.c:81:41
+	vldr	s2, [r0, #24]
+	.loc	2 81 27                         @ ../Algorithm/Src/slidingmode.c:81:27
 	vdiv.f32	s0, s0, s2
 	.loc	2 81 8                          @ ../Algorithm/Src/slidingmode.c:81:8
-	vstr	s0, [sp, #48]
-	.loc	2 85 42 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:85:42
-	vldr	s2, [sp, #76]
-	.loc	2 85 22 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:85:22
-	vldr	s0, [sp, #100]
-	.loc	2 85 28                         @ ../Algorithm/Src/slidingmode.c:85:28
+	vstr	s0, [sp, #44]
+	.loc	2 85 10 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:85:10
+	ldr	r0, [sp, #60]
+	.loc	2 85 44 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:85:44
+	vldr	s2, [r0, #12]
+	.loc	2 85 23                         @ ../Algorithm/Src/slidingmode.c:85:23
+	vldr	s0, [r0, #36]
+	.loc	2 85 29                         @ ../Algorithm/Src/slidingmode.c:85:29
 	vsub.f32	s0, s0, s2
 	.loc	2 85 8                          @ ../Algorithm/Src/slidingmode.c:85:8
 	movw	r0, :lower16:error
 	movt	r0, :upper16:error
-	str	r0, [sp, #40]                   @ 4-byte Spill
+	str	r0, [sp, #36]                   @ 4-byte Spill
 	vstr	s0, [r0]
 	.loc	2 86 2 is_stmt 1                @ ../Algorithm/Src/slidingmode.c:86:2
 	bl	err_tran
-	.loc	2 87 32                         @ ../Algorithm/Src/slidingmode.c:87:32
-	vldr	s0, [sp, #104]
-	.loc	2 87 42 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:87:42
+	.loc	2 87 20                         @ ../Algorithm/Src/slidingmode.c:87:20
+	ldr	r0, [sp, #60]
+	.loc	2 87 33 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:87:33
+	vldr	s0, [r0, #40]
+	.loc	2 87 43                         @ ../Algorithm/Src/slidingmode.c:87:43
 	movw	r0, :lower16:target_dot
 	movt	r0, :upper16:target_dot
-	str	r0, [sp, #36]                   @ 4-byte Spill
+	str	r0, [sp, #32]                   @ 4-byte Spill
 	vldr	s2, [r0]
-	.loc	2 87 40                         @ ../Algorithm/Src/slidingmode.c:87:40
+	.loc	2 87 41                         @ ../Algorithm/Src/slidingmode.c:87:41
 	vsub.f32	s0, s0, s2
 	.loc	2 87 8                          @ ../Algorithm/Src/slidingmode.c:87:8
-	vstr	s0, [sp, #44]
-	.loc	2 88 35 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:88:35
-	vldr	s0, [sp, #76]
-	.loc	2 88 42 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:88:42
+	vstr	s0, [sp, #40]
+	.loc	2 88 23 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:88:23
+	ldr	r0, [sp, #60]
+	.loc	2 88 36 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:88:36
+	vldr	s0, [r0, #12]
+	.loc	2 88 43                         @ ../Algorithm/Src/slidingmode.c:88:43
 	movw	r0, :lower16:target_last
 	movt	r0, :upper16:target_last
-	str	r0, [sp, #32]                   @ 4-byte Spill
+	str	r0, [sp, #28]                   @ 4-byte Spill
 	vldr	s1, [r0]
 	.loc	2 88 16                         @ ../Algorithm/Src/slidingmode.c:88:16
 	bl	err_tt
-	ldr	r1, [sp, #32]                   @ 4-byte Reload
-	ldr	r0, [sp, #36]                   @ 4-byte Reload
-	.loc	2 88 57                         @ ../Algorithm/Src/slidingmode.c:88:57
+	ldr	r1, [sp, #28]                   @ 4-byte Reload
+	ldr	r0, [sp, #32]                   @ 4-byte Reload
+	.loc	2 88 58                         @ ../Algorithm/Src/slidingmode.c:88:58
 	vldr	s2, [r0]
-	.loc	2 88 55                         @ ../Algorithm/Src/slidingmode.c:88:55
+	.loc	2 88 56                         @ ../Algorithm/Src/slidingmode.c:88:56
 	vsub.f32	s0, s0, s2
 	.loc	2 88 14                         @ ../Algorithm/Src/slidingmode.c:88:14
 	movw	r2, :lower16:target_ddot
 	movt	r2, :upper16:target_ddot
 	vstr	s0, [r2]
-	.loc	2 89 28 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:89:28
-	vldr	s0, [sp, #76]
-	.loc	2 89 37 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:89:37
+	.loc	2 89 16 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:89:16
+	ldr	r2, [sp, #60]
+	.loc	2 89 29 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:89:29
+	vldr	s0, [r2, #12]
+	.loc	2 89 38                         @ ../Algorithm/Src/slidingmode.c:89:38
 	vldr	s2, [r1]
-	.loc	2 89 35                         @ ../Algorithm/Src/slidingmode.c:89:35
+	.loc	2 89 36                         @ ../Algorithm/Src/slidingmode.c:89:36
 	vsub.f32	s0, s0, s2
 	.loc	2 89 13                         @ ../Algorithm/Src/slidingmode.c:89:13
 	vstr	s0, [r0]
 	.loc	2 90 2 is_stmt 1                @ ../Algorithm/Src/slidingmode.c:90:2
 	bl	err_tran
-	ldr	r0, [sp, #40]                   @ 4-byte Reload
+	ldr	r0, [sp, #36]                   @ 4-byte Reload
 .Ltmp22:
 	.loc	2 91 11                         @ ../Algorithm/Src/slidingmode.c:91:11
 	vldr	s0, [r0]
 	vcvt.f64.f32	d0, s0
 	.loc	2 91 6 is_stmt 0                @ ../Algorithm/Src/slidingmode.c:91:6
 	vabs.f64	d0, d0
-	.loc	2 91 32                         @ ../Algorithm/Src/slidingmode.c:91:32
-	vldr	s2, [sp, #80]
+	.loc	2 91 20                         @ ../Algorithm/Src/slidingmode.c:91:20
+	ldr	r0, [sp, #60]
+	.loc	2 91 33                         @ ../Algorithm/Src/slidingmode.c:91:33
+	vldr	s2, [r0, #16]
 	.loc	2 91 20                         @ ../Algorithm/Src/slidingmode.c:91:20
 	vcvt.f64.f32	d1, s2
 .Ltmp23:
@@ -612,12 +581,13 @@ SMC_task:
 	bge	.LBB5_2
 	b	.LBB5_1
 .LBB5_1:
-	.loc	2 0 6                           @ ../Algorithm/Src/slidingmode.c:0:6
-	movs	r0, #0
 .Ltmp24:
-	.loc	2 93 17 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:93:17
-	str	r0, [sp, #112]
-	.loc	2 94 3                          @ ../Algorithm/Src/slidingmode.c:94:3
+	.loc	2 93 3 is_stmt 1                @ ../Algorithm/Src/slidingmode.c:93:3
+	ldr	r1, [sp, #60]
+	movs	r0, #0
+	.loc	2 93 18 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:93:18
+	str	r0, [r1, #48]
+	.loc	2 94 3 is_stmt 1                @ ../Algorithm/Src/slidingmode.c:94:3
 	b	.LBB5_12
 .Ltmp25:
 .LBB5_2:
@@ -641,7 +611,7 @@ SMC_task:
 	.loc	2 98 15 is_stmt 0               @ ../Algorithm/Src/slidingmode.c:98:15
 	vabs.f64	d0, d0
 	.loc	2 98 28                         @ ../Algorithm/Src/slidingmode.c:98:28
-	vldr	s2, [sp, #48]
+	vldr	s2, [sp, #44]
 	vcvt.f64.f32	d1, s2
 	.loc	2 98 11                         @ ../Algorithm/Src/slidingmode.c:98:11
 	bl	__hardfp_pow
@@ -649,7 +619,7 @@ SMC_task:
 	vneg.f64	d0, d0
 	vcvt.f32.f64	s0, d0
 	.loc	2 98 8                          @ ../Algorithm/Src/slidingmode.c:98:8
-	vstr	s0, [sp, #52]
+	vstr	s0, [sp, #48]
 	.loc	2 98 3                          @ ../Algorithm/Src/slidingmode.c:98:3
 	b	.LBB5_5
 .LBB5_4:
@@ -661,91 +631,99 @@ SMC_task:
 	.loc	2 100 14 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:100:14
 	vabs.f64	d0, d0
 	.loc	2 100 27                        @ ../Algorithm/Src/slidingmode.c:100:27
-	vldr	s2, [sp, #48]
+	vldr	s2, [sp, #44]
 	vcvt.f64.f32	d1, s2
 	.loc	2 100 10                        @ ../Algorithm/Src/slidingmode.c:100:10
 	bl	__hardfp_pow
 	vcvt.f32.f64	s0, d0
 	.loc	2 100 8                         @ ../Algorithm/Src/slidingmode.c:100:8
-	vstr	s0, [sp, #52]
+	vstr	s0, [sp, #48]
 	b	.LBB5_5
 .Ltmp28:
 .LBB5_5:
 	.loc	2 102 6 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:102:6
-	vldr	s0, [sp, #44]
-	.loc	2 102 30 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:102:30
-	vldr	s2, [sp, #64]
-	.loc	2 102 35                        @ ../Algorithm/Src/slidingmode.c:102:35
-	vldr	s4, [sp, #52]
+	vldr	s0, [sp, #40]
+	.loc	2 102 18 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:102:18
+	ldr	r0, [sp, #60]
+	.loc	2 102 31                        @ ../Algorithm/Src/slidingmode.c:102:31
+	vldr	s2, [r0]
+	.loc	2 102 36                        @ ../Algorithm/Src/slidingmode.c:102:36
+	vldr	s4, [sp, #48]
 	.loc	2 102 16                        @ ../Algorithm/Src/slidingmode.c:102:16
 	vfma.f32	s0, s2, s4
 	.loc	2 102 4                         @ ../Algorithm/Src/slidingmode.c:102:4
 	movw	r0, :lower16:s
 	movt	r0, :upper16:s
-	str	r0, [sp, #24]                   @ 4-byte Spill
+	str	r0, [sp, #20]                   @ 4-byte Spill
 	vstr	s0, [r0]
-	.loc	2 103 20 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:103:20
-	vldr	s0, [sp, #108]
-	vstr	s0, [sp, #28]                   @ 4-byte Spill
-	.loc	2 103 34 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:103:34
+	.loc	2 103 8 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:103:8
+	ldr	r1, [sp, #60]
+	.loc	2 103 21 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:103:21
+	vldr	s0, [r1, #44]
+	vstr	s0, [sp, #24]                   @ 4-byte Spill
+	.loc	2 103 35                        @ ../Algorithm/Src/slidingmode.c:103:35
 	vldr	s0, [r0]
-	.loc	2 103 30                        @ ../Algorithm/Src/slidingmode.c:103:30
+	.loc	2 103 31                        @ ../Algorithm/Src/slidingmode.c:103:31
 	bl	Sat
-	ldr	r0, [sp, #24]                   @ 4-byte Reload
-	vldr	s2, [sp, #28]                   @ 4-byte Reload
+	ldr	r0, [sp, #20]                   @ 4-byte Reload
+	vldr	s2, [sp, #24]                   @ 4-byte Reload
 	vmov.f32	s4, s0
-	.loc	2 103 51                        @ ../Algorithm/Src/slidingmode.c:103:51
-	vldr	s0, [sp, #72]
-	.loc	2 103 55                        @ ../Algorithm/Src/slidingmode.c:103:55
-	vldr	s6, [r0]
+	.loc	2 103 40                        @ ../Algorithm/Src/slidingmode.c:103:40
+	ldr	r1, [sp, #60]
 	.loc	2 103 53                        @ ../Algorithm/Src/slidingmode.c:103:53
+	vldr	s0, [r1, #8]
+	.loc	2 103 57                        @ ../Algorithm/Src/slidingmode.c:103:57
+	vldr	s6, [r0]
+	.loc	2 103 55                        @ ../Algorithm/Src/slidingmode.c:103:55
 	vmul.f32	s0, s0, s6
-	.loc	2 103 37                        @ ../Algorithm/Src/slidingmode.c:103:37
+	.loc	2 103 38                        @ ../Algorithm/Src/slidingmode.c:103:38
 	vfnma.f32	s0, s2, s4
 	.loc	2 103 5                         @ ../Algorithm/Src/slidingmode.c:103:5
 	movw	r0, :lower16:ds
 	movt	r0, :upper16:ds
 	vstr	s0, [r0]
-	.loc	2 104 91 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:104:91
-	vldr	s4, [sp, #64]
-	.loc	2 104 66 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:104:66
-	vldr	s8, [sp, #68]
-	.loc	2 104 30                        @ ../Algorithm/Src/slidingmode.c:104:30
-	vldr	s0, [sp, #96]
-	.loc	2 104 35                        @ ../Algorithm/Src/slidingmode.c:104:35
-	movw	r1, :lower16:target_ddot
-	movt	r1, :upper16:target_ddot
-	vldr	s2, [r1]
-	.loc	2 104 49                        @ ../Algorithm/Src/slidingmode.c:104:49
+	.loc	2 104 19 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:104:19
+	ldr	r1, [sp, #60]
+	.loc	2 104 95 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:104:95
+	vldr	s4, [r1]
+	.loc	2 104 69                        @ ../Algorithm/Src/slidingmode.c:104:69
+	vldr	s8, [r1, #4]
+	.loc	2 104 32                        @ ../Algorithm/Src/slidingmode.c:104:32
+	vldr	s0, [r1, #32]
+	.loc	2 104 37                        @ ../Algorithm/Src/slidingmode.c:104:37
+	movw	r2, :lower16:target_ddot
+	movt	r2, :upper16:target_ddot
+	vldr	s2, [r2]
+	.loc	2 104 51                        @ ../Algorithm/Src/slidingmode.c:104:51
 	vldr	s6, [r0]
-	.loc	2 104 47                        @ ../Algorithm/Src/slidingmode.c:104:47
+	.loc	2 104 49                        @ ../Algorithm/Src/slidingmode.c:104:49
 	vadd.f32	s2, s2, s6
-	.loc	2 104 70                        @ ../Algorithm/Src/slidingmode.c:104:70
+	.loc	2 104 73                        @ ../Algorithm/Src/slidingmode.c:104:73
 	movw	r0, :lower16:error
 	movt	r0, :upper16:error
 	vldr	s6, [r0]
-	.loc	2 104 52                        @ ../Algorithm/Src/slidingmode.c:104:52
+	.loc	2 104 54                        @ ../Algorithm/Src/slidingmode.c:104:54
 	vfms.f32	s2, s8, s6
-	.loc	2 104 96                        @ ../Algorithm/Src/slidingmode.c:104:96
-	vldr	s8, [sp, #48]
-	.loc	2 104 94                        @ ../Algorithm/Src/slidingmode.c:104:94
-	vmul.f32	s4, s4, s8
-	.loc	2 104 101                       @ ../Algorithm/Src/slidingmode.c:104:101
+	.loc	2 104 100                       @ ../Algorithm/Src/slidingmode.c:104:100
 	vldr	s8, [sp, #44]
-	.loc	2 104 99                        @ ../Algorithm/Src/slidingmode.c:104:99
+	.loc	2 104 98                        @ ../Algorithm/Src/slidingmode.c:104:98
 	vmul.f32	s4, s4, s8
-	.loc	2 104 113                       @ ../Algorithm/Src/slidingmode.c:104:113
-	vldr	s8, [sp, #52]
-	.loc	2 104 111                       @ ../Algorithm/Src/slidingmode.c:104:111
+	.loc	2 104 105                       @ ../Algorithm/Src/slidingmode.c:104:105
+	vldr	s8, [sp, #40]
+	.loc	2 104 103                       @ ../Algorithm/Src/slidingmode.c:104:103
 	vmul.f32	s4, s4, s8
-	.loc	2 104 118                       @ ../Algorithm/Src/slidingmode.c:104:118
+	.loc	2 104 117                       @ ../Algorithm/Src/slidingmode.c:104:117
+	vldr	s8, [sp, #48]
+	.loc	2 104 115                       @ ../Algorithm/Src/slidingmode.c:104:115
+	vmul.f32	s4, s4, s8
+	.loc	2 104 122                       @ ../Algorithm/Src/slidingmode.c:104:122
 	vdiv.f32	s4, s4, s6
-	.loc	2 104 77                        @ ../Algorithm/Src/slidingmode.c:104:77
+	.loc	2 104 80                        @ ../Algorithm/Src/slidingmode.c:104:80
 	vsub.f32	s2, s2, s4
-	.loc	2 104 32                        @ ../Algorithm/Src/slidingmode.c:104:32
+	.loc	2 104 34                        @ ../Algorithm/Src/slidingmode.c:104:34
 	vmul.f32	s0, s0, s2
-	.loc	2 104 16                        @ ../Algorithm/Src/slidingmode.c:104:16
-	vstr	s0, [sp, #112]
+	.loc	2 104 17                        @ ../Algorithm/Src/slidingmode.c:104:17
+	vstr	s0, [r1, #48]
 .Ltmp29:
 	.loc	2 106 11 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:106:11
 	vldr	s0, [r0]
@@ -761,85 +739,95 @@ SMC_task:
 	b	.LBB5_6
 .LBB5_6:
 .Ltmp31:
-	.loc	2 108 44 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:108:44
-	vldr	s2, [sp, #76]
-	.loc	2 108 23 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:108:23
-	vldr	s0, [sp, #100]
-	.loc	2 108 30                        @ ../Algorithm/Src/slidingmode.c:108:30
+	.loc	2 108 11 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:108:11
+	ldr	r0, [sp, #60]
+	.loc	2 108 46 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:108:46
+	vldr	s2, [r0, #12]
+	.loc	2 108 24                        @ ../Algorithm/Src/slidingmode.c:108:24
+	vldr	s0, [r0, #36]
+	.loc	2 108 31                        @ ../Algorithm/Src/slidingmode.c:108:31
 	vsub.f32	s0, s0, s2
 	.loc	2 108 9                         @ ../Algorithm/Src/slidingmode.c:108:9
 	movw	r0, :lower16:error
 	movt	r0, :upper16:error
-	str	r0, [sp, #4]                    @ 4-byte Spill
+	str	r0, [sp]                        @ 4-byte Spill
 	vstr	s0, [r0]
 	.loc	2 109 3 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:109:3
 	bl	err_tran
-	ldr	r1, [sp, #4]                    @ 4-byte Reload
-	.loc	2 110 19                        @ ../Algorithm/Src/slidingmode.c:110:19
-	vldr	s2, [sp, #64]
-	.loc	2 110 24 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:110:24
-	vldr	s4, [r1]
-	.loc	2 110 32                        @ ../Algorithm/Src/slidingmode.c:110:32
-	vldr	s0, [sp, #44]
-	.loc	2 110 30                        @ ../Algorithm/Src/slidingmode.c:110:30
+	ldr	r2, [sp]                        @ 4-byte Reload
+	.loc	2 110 7                         @ ../Algorithm/Src/slidingmode.c:110:7
+	ldr	r0, [sp, #60]
+	.loc	2 110 20 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:110:20
+	vldr	s2, [r0]
+	.loc	2 110 25                        @ ../Algorithm/Src/slidingmode.c:110:25
+	vldr	s4, [r2]
+	.loc	2 110 33                        @ ../Algorithm/Src/slidingmode.c:110:33
+	vldr	s0, [sp, #40]
+	.loc	2 110 31                        @ ../Algorithm/Src/slidingmode.c:110:31
 	vfma.f32	s0, s2, s4
 	.loc	2 110 5                         @ ../Algorithm/Src/slidingmode.c:110:5
 	movw	r0, :lower16:s
 	movt	r0, :upper16:s
-	str	r0, [sp, #16]                   @ 4-byte Spill
+	str	r0, [sp, #12]                   @ 4-byte Spill
 	vstr	s0, [r0]
-	.loc	2 111 36 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:111:36
-	movw	r2, :lower16:target_ddot
-	movt	r2, :upper16:target_ddot
-	vldr	s0, [r2]
-	.loc	2 111 66 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:111:66
-	vldr	s6, [r1]
-	.loc	2 111 87                        @ ../Algorithm/Src/slidingmode.c:111:87
-	vldr	s2, [sp, #64]
-	.loc	2 111 62                        @ ../Algorithm/Src/slidingmode.c:111:62
-	vldr	s4, [sp, #68]
-	.loc	2 111 31                        @ ../Algorithm/Src/slidingmode.c:111:31
-	vldr	s8, [sp, #96]
-	vstr	s8, [sp, #20]                   @ 4-byte Spill
-	.loc	2 111 116                       @ ../Algorithm/Src/slidingmode.c:111:116
-	vldr	s8, [sp, #108]
-	vstr	s8, [sp, #12]                   @ 4-byte Spill
-	.loc	2 111 48                        @ ../Algorithm/Src/slidingmode.c:111:48
-	vfms.f32	s0, s4, s6
-	.loc	2 111 92                        @ ../Algorithm/Src/slidingmode.c:111:92
-	vldr	s4, [sp, #44]
-	.loc	2 111 73                        @ ../Algorithm/Src/slidingmode.c:111:73
-	vfms.f32	s0, s2, s4
-	vstr	s0, [sp, #8]                    @ 4-byte Spill
-	.loc	2 111 130                       @ ../Algorithm/Src/slidingmode.c:111:130
-	vldr	s0, [r0]
-	.loc	2 111 126                       @ ../Algorithm/Src/slidingmode.c:111:126
-	bl	Sat
-	vldr	s2, [sp, #8]                    @ 4-byte Reload
-	vldr	s4, [sp, #12]                   @ 4-byte Reload
-	ldr	r0, [sp, #16]                   @ 4-byte Reload
-	vmov.f32	s6, s0
-	.loc	2 111 102                       @ ../Algorithm/Src/slidingmode.c:111:102
-	vldr	s0, [sp, #20]                   @ 4-byte Reload
-	vfms.f32	s2, s4, s6
-	.loc	2 111 147                       @ ../Algorithm/Src/slidingmode.c:111:147
-	vldr	s4, [sp, #72]
-	.loc	2 111 151                       @ ../Algorithm/Src/slidingmode.c:111:151
-	vldr	s6, [r0]
-	.loc	2 111 133                       @ ../Algorithm/Src/slidingmode.c:111:133
-	vfms.f32	s2, s4, s6
+	.loc	2 111 20 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:111:20
+	ldr	r1, [sp, #60]
+	.loc	2 111 38 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:111:38
+	movw	r3, :lower16:target_ddot
+	movt	r3, :upper16:target_ddot
+	vldr	s0, [r3]
+	.loc	2 111 69                        @ ../Algorithm/Src/slidingmode.c:111:69
+	vldr	s6, [r2]
+	.loc	2 111 91                        @ ../Algorithm/Src/slidingmode.c:111:91
+	vldr	s2, [r1]
+	.loc	2 111 65                        @ ../Algorithm/Src/slidingmode.c:111:65
+	vldr	s4, [r1, #4]
 	.loc	2 111 33                        @ ../Algorithm/Src/slidingmode.c:111:33
+	vldr	s8, [r1, #32]
+	vstr	s8, [sp, #16]                   @ 4-byte Spill
+	.loc	2 111 121                       @ ../Algorithm/Src/slidingmode.c:111:121
+	vldr	s8, [r1, #44]
+	vstr	s8, [sp, #8]                    @ 4-byte Spill
+	.loc	2 111 50                        @ ../Algorithm/Src/slidingmode.c:111:50
+	vfms.f32	s0, s4, s6
+	.loc	2 111 96                        @ ../Algorithm/Src/slidingmode.c:111:96
+	vldr	s4, [sp, #40]
+	.loc	2 111 76                        @ ../Algorithm/Src/slidingmode.c:111:76
+	vfms.f32	s0, s2, s4
+	vstr	s0, [sp, #4]                    @ 4-byte Spill
+	.loc	2 111 135                       @ ../Algorithm/Src/slidingmode.c:111:135
+	vldr	s0, [r0]
+	.loc	2 111 131                       @ ../Algorithm/Src/slidingmode.c:111:131
+	bl	Sat
+	vldr	s2, [sp, #4]                    @ 4-byte Reload
+	vldr	s4, [sp, #8]                    @ 4-byte Reload
+	ldr	r1, [sp, #12]                   @ 4-byte Reload
+	vmov.f32	s6, s0
+	.loc	2 111 106                       @ ../Algorithm/Src/slidingmode.c:111:106
+	vldr	s0, [sp, #16]                   @ 4-byte Reload
+	vfms.f32	s2, s4, s6
+	.loc	2 111 140                       @ ../Algorithm/Src/slidingmode.c:111:140
+	ldr	r0, [sp, #60]
+	.loc	2 111 153                       @ ../Algorithm/Src/slidingmode.c:111:153
+	vldr	s4, [r0, #8]
+	.loc	2 111 157                       @ ../Algorithm/Src/slidingmode.c:111:157
+	vldr	s6, [r1]
+	.loc	2 111 138                       @ ../Algorithm/Src/slidingmode.c:111:138
+	vfms.f32	s2, s4, s6
+	.loc	2 111 35                        @ ../Algorithm/Src/slidingmode.c:111:35
 	vmul.f32	s0, s0, s2
-	.loc	2 111 17                        @ ../Algorithm/Src/slidingmode.c:111:17
-	vstr	s0, [sp, #112]
+	.loc	2 111 18                        @ ../Algorithm/Src/slidingmode.c:111:18
+	vstr	s0, [r0, #48]
 	.loc	2 112 2 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:112:2
 	b	.LBB5_7
 .Ltmp32:
 .LBB5_7:
-	.loc	2 114 34                        @ ../Algorithm/Src/slidingmode.c:114:34
-	vldr	s2, [sp, #92]
-	.loc	2 114 18 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:114:18
-	vldr	s0, [sp, #112]
+	.loc	2 114 6                         @ ../Algorithm/Src/slidingmode.c:114:6
+	ldr	r0, [sp, #60]
+	.loc	2 114 36 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:114:36
+	vldr	s2, [r0, #28]
+	.loc	2 114 19                        @ ../Algorithm/Src/slidingmode.c:114:19
+	vldr	s0, [r0, #48]
 .Ltmp33:
 	.loc	2 114 6                         @ ../Algorithm/Src/slidingmode.c:114:6
 	vcmp.f32	s0, s2
@@ -848,19 +836,23 @@ SMC_task:
 	b	.LBB5_8
 .LBB5_8:
 .Ltmp34:
-	.loc	2 115 31 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:115:31
-	ldr	r0, [sp, #92]
-	.loc	2 115 17 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:115:17
-	str	r0, [sp, #112]
+	.loc	2 115 20 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:115:20
+	ldr	r1, [sp, #60]
+	.loc	2 115 33 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:115:33
+	ldr	r0, [r1, #28]
+	.loc	2 115 18                        @ ../Algorithm/Src/slidingmode.c:115:18
+	str	r0, [r1, #48]
 	.loc	2 115 3                         @ ../Algorithm/Src/slidingmode.c:115:3
 	b	.LBB5_9
 .Ltmp35:
 .LBB5_9:
-	.loc	2 116 35 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:116:35
-	vldr	s2, [sp, #92]
-	.loc	2 116 18 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:116:18
-	vldr	s0, [sp, #112]
-	.loc	2 116 22                        @ ../Algorithm/Src/slidingmode.c:116:22
+	.loc	2 116 6 is_stmt 1               @ ../Algorithm/Src/slidingmode.c:116:6
+	ldr	r0, [sp, #60]
+	.loc	2 116 37 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:116:37
+	vldr	s2, [r0, #28]
+	.loc	2 116 19                        @ ../Algorithm/Src/slidingmode.c:116:19
+	vldr	s0, [r0, #48]
+	.loc	2 116 23                        @ ../Algorithm/Src/slidingmode.c:116:23
 	vneg.f32	s2, s2
 .Ltmp36:
 	.loc	2 116 6                         @ ../Algorithm/Src/slidingmode.c:116:6
@@ -870,19 +862,23 @@ SMC_task:
 	b	.LBB5_10
 .LBB5_10:
 .Ltmp37:
-	.loc	2 117 32 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:117:32
-	vldr	s0, [sp, #92]
-	.loc	2 117 19 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:117:19
+	.loc	2 117 21 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:117:21
+	ldr	r0, [sp, #60]
+	.loc	2 117 34 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:117:34
+	vldr	s0, [r0, #28]
+	.loc	2 117 20                        @ ../Algorithm/Src/slidingmode.c:117:20
 	vneg.f32	s0, s0
-	.loc	2 117 17                        @ ../Algorithm/Src/slidingmode.c:117:17
-	vstr	s0, [sp, #112]
+	.loc	2 117 18                        @ ../Algorithm/Src/slidingmode.c:117:18
+	vstr	s0, [r0, #48]
 	.loc	2 117 3                         @ ../Algorithm/Src/slidingmode.c:117:3
 	b	.LBB5_11
 .Ltmp38:
 .LBB5_11:
-	.loc	2 119 28 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:119:28
-	ldr	r0, [sp, #76]
-	.loc	2 119 14 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:119:14
+	.loc	2 119 16 is_stmt 1              @ ../Algorithm/Src/slidingmode.c:119:16
+	ldr	r0, [sp, #60]
+	.loc	2 119 29 is_stmt 0              @ ../Algorithm/Src/slidingmode.c:119:29
+	ldr	r0, [r0, #12]
+	.loc	2 119 14                        @ ../Algorithm/Src/slidingmode.c:119:14
 	movw	r1, :lower16:target_last
 	movt	r1, :upper16:target_last
 	str	r0, [r1]
@@ -890,8 +886,8 @@ SMC_task:
 	b	.LBB5_12
 .LBB5_12:
 	.loc	2 125 1 epilogue_begin is_stmt 0 @ ../Algorithm/Src/slidingmode.c:125:1
-	add	sp, #116
-	pop.w	{r4, r5, r6, r7, r8, r9, r10, r11, pc}
+	add	sp, #64
+	pop	{r7, pc}
 .Ltmp39:
 .Lfunc_end5:
 	.size	SMC_task, .Lfunc_end5-SMC_task
@@ -1156,7 +1152,7 @@ SMC_control_pitch:
 	.short	4                               @ DWARF version number
 	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
 	.byte	4                               @ Address Size (in bytes)
-	.byte	1                               @ Abbrev [1] 0xb:0x328 DW_TAG_compile_unit
+	.byte	1                               @ Abbrev [1] 0xb:0x32c DW_TAG_compile_unit
 	.long	.Linfo_string0                  @ DW_AT_producer
 	.short	12                              @ DW_AT_language
 	.long	.Linfo_string1                  @ DW_AT_name
@@ -1394,7 +1390,7 @@ SMC_control_pitch:
 	.long	.Linfo_string34                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	43                              @ DW_AT_decl_line
-	.long	55                              @ DW_AT_type
+	.long	812                             @ DW_AT_type
 	.byte	8                               @ Abbrev [8] 0x1d9:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
@@ -1493,7 +1489,7 @@ SMC_control_pitch:
 	.long	.Linfo_string20                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	63                              @ DW_AT_decl_line
-	.long	813                             @ DW_AT_type
+	.long	817                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	7                               @ Abbrev [7] 0x286:0x40 DW_TAG_subprogram
 	.long	.Lfunc_begin4                   @ DW_AT_low_pc
@@ -1531,7 +1527,7 @@ SMC_control_pitch:
 	.byte	70                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	9                               @ Abbrev [9] 0x2c6:0x67 DW_TAG_subprogram
+	.byte	9                               @ Abbrev [9] 0x2c6:0x66 DW_TAG_subprogram
 	.long	.Lfunc_begin5                   @ DW_AT_low_pc
 	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
@@ -1541,56 +1537,58 @@ SMC_control_pitch:
 	.byte	75                              @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	8                               @ Abbrev [8] 0x2d7:0xf DW_TAG_formal_parameter
-	.byte	3                               @ DW_AT_location
-	.byte	145
-	.asciz	"\300"
-	.long	.Linfo_string34                 @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	75                              @ DW_AT_decl_line
-	.long	55                              @ DW_AT_type
-	.byte	8                               @ Abbrev [8] 0x2e6:0xe DW_TAG_formal_parameter
+	.byte	8                               @ Abbrev [8] 0x2d7:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	60
+	.long	.Linfo_string34                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	75                              @ DW_AT_decl_line
+	.long	812                             @ DW_AT_type
+	.byte	8                               @ Abbrev [8] 0x2e5:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	56
 	.long	.Linfo_string41                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	75                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
-	.byte	8                               @ Abbrev [8] 0x2f4:0xe DW_TAG_formal_parameter
+	.byte	8                               @ Abbrev [8] 0x2f3:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	56
+	.byte	52
 	.long	.Linfo_string42                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	75                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
-	.byte	10                              @ Abbrev [10] 0x302:0xe DW_TAG_variable
+	.byte	10                              @ Abbrev [10] 0x301:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	52
+	.byte	48
 	.long	.Linfo_string43                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	80                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
-	.byte	10                              @ Abbrev [10] 0x310:0xe DW_TAG_variable
+	.byte	10                              @ Abbrev [10] 0x30f:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	48
+	.byte	44
 	.long	.Linfo_string44                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	81                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
-	.byte	10                              @ Abbrev [10] 0x31e:0xe DW_TAG_variable
+	.byte	10                              @ Abbrev [10] 0x31d:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	44
+	.byte	40
 	.long	.Linfo_string45                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	87                              @ DW_AT_decl_line
 	.long	227                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	11                              @ Abbrev [11] 0x32d:0x5 DW_TAG_pointer_type
+	.byte	11                              @ Abbrev [11] 0x32c:0x5 DW_TAG_pointer_type
+	.long	55                              @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x331:0x5 DW_TAG_pointer_type
 	.long	227                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 .Ldebug_info_end0:
@@ -1616,93 +1614,93 @@ SMC_control_pitch:
 .Linfo_string1:
 	.asciz	"../Algorithm/Src\\slidingmode.c" @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=99
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" @ string offset=99
 .Linfo_string3:
-	.asciz	"SMC_control_yaw"               @ string offset=177
+	.asciz	"SMC_control_yaw"               @ string offset=185
 .Linfo_string4:
-	.asciz	"C1"                            @ string offset=193
+	.asciz	"C1"                            @ string offset=201
 .Linfo_string5:
-	.asciz	"float"                         @ string offset=196
+	.asciz	"float"                         @ string offset=204
 .Linfo_string6:
-	.asciz	"C2"                            @ string offset=202
+	.asciz	"C2"                            @ string offset=210
 .Linfo_string7:
-	.asciz	"K"                             @ string offset=205
+	.asciz	"K"                             @ string offset=213
 .Linfo_string8:
-	.asciz	"target"                        @ string offset=207
+	.asciz	"target"                        @ string offset=215
 .Linfo_string9:
-	.asciz	"error_eps"                     @ string offset=214
+	.asciz	"error_eps"                     @ string offset=222
 .Linfo_string10:
-	.asciz	"q"                             @ string offset=224
+	.asciz	"q"                             @ string offset=232
 .Linfo_string11:
-	.asciz	"p"                             @ string offset=226
+	.asciz	"p"                             @ string offset=234
 .Linfo_string12:
-	.asciz	"u_max"                         @ string offset=228
+	.asciz	"u_max"                         @ string offset=236
 .Linfo_string13:
-	.asciz	"J"                             @ string offset=234
+	.asciz	"J"                             @ string offset=242
 .Linfo_string14:
-	.asciz	"angle"                         @ string offset=236
+	.asciz	"angle"                         @ string offset=244
 .Linfo_string15:
-	.asciz	"ang_vel"                       @ string offset=242
+	.asciz	"ang_vel"                       @ string offset=250
 .Linfo_string16:
-	.asciz	"epsilon"                       @ string offset=250
+	.asciz	"epsilon"                       @ string offset=258
 .Linfo_string17:
-	.asciz	"u"                             @ string offset=258
+	.asciz	"u"                             @ string offset=266
 .Linfo_string18:
-	.asciz	"SMC"                           @ string offset=260
+	.asciz	"SMC"                           @ string offset=268
 .Linfo_string19:
-	.asciz	"SMC_control_pitch"             @ string offset=264
+	.asciz	"SMC_control_pitch"             @ string offset=272
 .Linfo_string20:
-	.asciz	"error"                         @ string offset=282
+	.asciz	"error"                         @ string offset=290
 .Linfo_string21:
-	.asciz	"error_last"                    @ string offset=288
+	.asciz	"error_last"                    @ string offset=296
 .Linfo_string22:
-	.asciz	"target_dot"                    @ string offset=299
+	.asciz	"target_dot"                    @ string offset=307
 .Linfo_string23:
-	.asciz	"target_ddot"                   @ string offset=310
+	.asciz	"target_ddot"                   @ string offset=318
 .Linfo_string24:
-	.asciz	"target_last"                   @ string offset=322
+	.asciz	"target_last"                   @ string offset=330
 .Linfo_string25:
-	.asciz	"s"                             @ string offset=334
+	.asciz	"s"                             @ string offset=342
 .Linfo_string26:
-	.asciz	"ds"                            @ string offset=336
+	.asciz	"ds"                            @ string offset=344
 .Linfo_string27:
-	.asciz	"Signal"                        @ string offset=339
+	.asciz	"Signal"                        @ string offset=347
 .Linfo_string28:
-	.asciz	"Sat"                           @ string offset=346
+	.asciz	"Sat"                           @ string offset=354
 .Linfo_string29:
-	.asciz	"YawSMC"                        @ string offset=350
+	.asciz	"YawSMC"                        @ string offset=358
 .Linfo_string30:
-	.asciz	"err_tran"                      @ string offset=357
+	.asciz	"err_tran"                      @ string offset=365
 .Linfo_string31:
-	.asciz	"err_tt"                        @ string offset=366
+	.asciz	"err_tt"                        @ string offset=374
 .Linfo_string32:
-	.asciz	"SMC_task"                      @ string offset=373
+	.asciz	"SMC_task"                      @ string offset=381
 .Linfo_string33:
-	.asciz	"y"                             @ string offset=382
+	.asciz	"y"                             @ string offset=390
 .Linfo_string34:
-	.asciz	"SMC_control"                   @ string offset=384
+	.asciz	"SMC_control"                   @ string offset=392
 .Linfo_string35:
-	.asciz	"c1"                            @ string offset=396
+	.asciz	"c1"                            @ string offset=404
 .Linfo_string36:
-	.asciz	"c2"                            @ string offset=399
+	.asciz	"c2"                            @ string offset=407
 .Linfo_string37:
-	.asciz	"k"                             @ string offset=402
+	.asciz	"k"                             @ string offset=410
 .Linfo_string38:
-	.asciz	"a"                             @ string offset=404
+	.asciz	"a"                             @ string offset=412
 .Linfo_string39:
-	.asciz	"b"                             @ string offset=406
+	.asciz	"b"                             @ string offset=414
 .Linfo_string40:
-	.asciz	"erro"                          @ string offset=408
+	.asciz	"erro"                          @ string offset=416
 .Linfo_string41:
-	.asciz	"angle_now"                     @ string offset=413
+	.asciz	"angle_now"                     @ string offset=421
 .Linfo_string42:
-	.asciz	"angle_vel"                     @ string offset=423
+	.asciz	"angle_vel"                     @ string offset=431
 .Linfo_string43:
-	.asciz	"e_qp"                          @ string offset=433
+	.asciz	"e_qp"                          @ string offset=441
 .Linfo_string44:
-	.asciz	"qp"                            @ string offset=438
+	.asciz	"qp"                            @ string offset=446
 .Linfo_string45:
-	.asciz	"error_dot"                     @ string offset=441
+	.asciz	"error_dot"                     @ string offset=449
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

@@ -64,7 +64,7 @@ void Magazine_Task(void const * argument)
 		Control_Mode(&Control_Magazine_Info);
 		Control_Target_Update(&Control_Magazine_Info);
 		Control_Magazine_Info_Update(&Control_Magazine_Info);
-		USART_Vofa_Justfloat_Transmit(Control_Magazine_Info.Target.Magazine_Velocity,Control_Magazine_Info.Measure.Magazine_Velocity,0); 
+//		USART_Vofa_Justfloat_Transmit(Control_Magazine_Info.Target.Magazine_Velocity,Control_Magazine_Info.Measure.Magazine_Velocity,0); 
 		osDelay(1);
   }
 }
@@ -167,27 +167,27 @@ Control_Magazine_Info->Target.Magazine_Angle-=40;
 
 
 static void Control_Magazine_Info_Update(Control_Magazine_Info_Typedef *Control_Magazine_Info){
-  if((Control_Magazine_Info->Type == SHOOT_SINGLE)||(Control_Magazine_Info->Type == SHOOT_SINGLE_WAIT))
-  {
-	PID_Calculate(&Magazine_Angle_PID,    Control_Magazine_Info->Target.Magazine_Angle, Control_Magazine_Info->Measure.Magazine_Angle);
-  PID_Calculate(&Magazine_Velocity_PID, Magazine_Angle_PID.Output,                   Control_Magazine_Info->Measure.Magazine_Velocity);
-	}
-	else if(Control_Magazine_Info->Type == SHOOT_FIRE)
-	{
-	PID_Calculate(&Magazine_Velocity_PID, Control_Magazine_Info->Target.Magazine_Velocity,Control_Magazine_Info->Measure.Magazine_Velocity);
-	}
-  PID_Calculate(&Shoot0_Velocity_PID, Control_Magazine_Info->Target.Shoot0_Velocity,   Control_Magazine_Info->Measure.Shoot0_Velocity);	
-  PID_Calculate(&Shoot1_Velocity_PID, Control_Magazine_Info->Target.Shoot1_Velocity,   Control_Magazine_Info->Measure.Shoot1_Velocity);	
+//  if((Control_Magazine_Info->Type == SHOOT_SINGLE)||(Control_Magazine_Info->Type == SHOOT_SINGLE_WAIT))
+//  {
+//	PID_Calculate(&Magazine_Angle_PID,    Control_Magazine_Info->Target.Magazine_Angle, Control_Magazine_Info->Measure.Magazine_Angle);
+//  PID_Calculate(&Magazine_Velocity_PID, Magazine_Angle_PID.Output,                   Control_Magazine_Info->Measure.Magazine_Velocity);
+//	}
+//	else if(Control_Magazine_Info->Type == SHOOT_FIRE)
+//	{
+//	PID_Calculate(&Magazine_Velocity_PID, Control_Magazine_Info->Target.Magazine_Velocity,Control_Magazine_Info->Measure.Magazine_Velocity);
+//	}
+//  PID_Calculate(&Shoot0_Velocity_PID, Control_Magazine_Info->Target.Shoot0_Velocity,   Control_Magazine_Info->Measure.Shoot0_Velocity);	
+//  PID_Calculate(&Shoot1_Velocity_PID, Control_Magazine_Info->Target.Shoot1_Velocity,   Control_Magazine_Info->Measure.Shoot1_Velocity);	
 
-	Control_Magazine_Info->SendValue[0] = (int16_t)(Magazine_Velocity_PID.Output);
-	Control_Magazine_Info->SendValue[1] = (int16_t)(0);
-	Control_Magazine_Info->SendValue[2] = (int16_t)(Shoot0_Velocity_PID.Output);
-	Control_Magazine_Info->SendValue[3] = (int16_t)(Shoot1_Velocity_PID.Output);
-//	USART_Vofa_Justfloat_Transmit(Control_Magazine_Info->Target.Magazine_Angle,Control_Magazine_Info->Measure.Magazine_Angle,0);
-	if(Control_Magazine_Info->Type == SHOOT_SLEEP){
-		Control_Magazine_Info->SendValue[0] = (int16_t)0;
-		Control_Magazine_Info->SendValue[1] = (int16_t)0;
-	}
+//	Control_Magazine_Info->SendValue[0] = (int16_t)(Magazine_Velocity_PID.Output);
+//	Control_Magazine_Info->SendValue[1] = (int16_t)(0);
+//	Control_Magazine_Info->SendValue[2] = (int16_t)(Shoot0_Velocity_PID.Output);
+//	Control_Magazine_Info->SendValue[3] = (int16_t)(Shoot1_Velocity_PID.Output);
+////	USART_Vofa_Justfloat_Transmit(Control_Magazine_Info->Target.Magazine_Angle,Control_Magazine_Info->Measure.Magazine_Angle,0);
+//	if(Control_Magazine_Info->Type == SHOOT_SLEEP){
+//		Control_Magazine_Info->SendValue[0] = (int16_t)0;
+//		Control_Magazine_Info->SendValue[1] = (int16_t)0;
+//	}
 }
 
 float Heat_control(uint16_t Magazine_Velocity)

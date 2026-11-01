@@ -80,8 +80,8 @@ typedef struct
 	
 	Upper_data upper_data;
 	Control_Gimbal_Mode_Type_e Type;   /*!< Type of mode */
-	int16_t SendValue[3];//send current values
-	
+	int16_t SendValue_pitch;//send current values
+	float SendValue_yaw;
 
 }Control_Gimbal_Info_Typedef;
 #else

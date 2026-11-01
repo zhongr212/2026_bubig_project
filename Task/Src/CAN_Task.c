@@ -103,7 +103,7 @@ void DM_Motor_CAN_TxMessage(FDCAN_TxFrame_TypeDef *FDCAN_TxFrame,DM_Motor_Info_T
 	 FDCAN2_TxFrame.Data[3] = (uint8_t)(Control_Magazine_Info.SendValue[0]);	
 	 USER_CAN_TxMessage(&FDCAN2_TxFrame,&Magazine_Motor,FDCAN2_TxFrame.Data); 
 
-	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, 0, 0, 0, Control_Gimbal_Info.SendValue[1] ); // Yaw÷·
+	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, 0, 0, 0.05, Control_Gimbal_Info.SendValue_yaw); // Yaw÷·
 //	  if (Control_Gimbal_Info.Type == GIMBAL_SLEEP)
 //		DM_Motor_Command(&FDCAN2_TxFrame, &DM_Yaw_Motor, Motor_Disable);
 //		else   if  (Control_Gimbal_Info.Type != GIMBAL_SLEEP)               //((Control_Info.Control_Mode != Control_Info.Gimbal_Last_Mode) &&
@@ -121,8 +121,8 @@ void DM_Motor_CAN_TxMessage(FDCAN_TxFrame_TypeDef *FDCAN_TxFrame,DM_Motor_Info_T
 		USER_CAN_TxMessage(&FDCAN3_TxFrame,&Shoot_Motor[0],FDCAN3_TxFrame.Data); 
 		
 		FDCAN3_TxFrame.Header.Identifier=0x1FF;
-		FDCAN3_TxFrame.Data[4]=(uint8_t)(Control_Gimbal_Info.SendValue[0]>>8);//Pitch÷·
-		FDCAN3_TxFrame.Data[5]=(uint8_t)(Control_Gimbal_Info.SendValue[0]);
+		FDCAN3_TxFrame.Data[4]=(uint8_t)(Control_Gimbal_Info.SendValue_pitch>>8);//Pitch÷·
+		FDCAN3_TxFrame.Data[5]=(uint8_t)(Control_Gimbal_Info.SendValue_pitch);
 			
 		USER_CAN_TxMessage(&FDCAN3_TxFrame,&Pich_Motor,FDCAN3_TxFrame.Data); 
 			

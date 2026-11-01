@@ -93,27 +93,13 @@ Magazine_Task:
 	ldr	r0, [sp]                        @ 4-byte Reload
 	.loc	3 66 3                          @ ../Task/Src/Magazine_task.c:66:3
 	bl	Control_Magazine_Info_Update
-	ldr	r0, [sp]                        @ 4-byte Reload
-	.loc	3 67 62                         @ ../Task/Src/Magazine_task.c:67:62
-	vldr	s0, [r0]
-	.loc	3 67 110 is_stmt 0              @ ../Task/Src/Magazine_task.c:67:110
-	vldr	s1, [r0, #16]
-	vldr	s2, .LCPI0_0
-	.loc	3 67 3                          @ ../Task/Src/Magazine_task.c:67:3
-	bl	USART_Vofa_Justfloat_Transmit
 	movs	r0, #1
-	.loc	3 68 3 is_stmt 1                @ ../Task/Src/Magazine_task.c:68:3
+	.loc	3 68 3                          @ ../Task/Src/Magazine_task.c:68:3
 	bl	osDelay
 .Ltmp2:
 	.loc	3 60 2                          @ ../Task/Src/Magazine_task.c:60:2
 	b	.LBB0_1
 .Ltmp3:
-	.loc	3 0 2 is_stmt 0                 @ :0:2
-.Ltmp4:
-	.p2align	2
-@ %bb.2:
-.LCPI0_0:
-	.long	0x00000000                      @ float 0
 .Lfunc_end0:
 	.size	Magazine_Task, .Lfunc_end0-Magazine_Task
 	.cfi_endproc
@@ -127,7 +113,7 @@ Magazine_Task:
 	.thumb_func
 Control_Init:
 .Lfunc_begin1:
-	.loc	3 73 0 is_stmt 1                @ ../Task/Src/Magazine_task.c:73:0
+	.loc	3 73 0                          @ ../Task/Src/Magazine_task.c:73:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -140,7 +126,7 @@ Control_Init:
 	sub	sp, #16
 	.cfi_def_cfa_offset 24
 	str	r0, [sp, #12]
-.Ltmp5:
+.Ltmp4:
 	.loc	3 76 3 prologue_end             @ ../Task/Src/Magazine_task.c:76:3
 	movw	r0, :lower16:Magazine_Velocity_PID
 	movt	r0, :upper16:Magazine_Velocity_PID
@@ -201,7 +187,7 @@ Control_Init:
 	.loc	3 87 1 epilogue_begin           @ ../Task/Src/Magazine_task.c:87:1
 	add	sp, #16
 	pop	{r7, pc}
-.Ltmp6:
+.Ltmp5:
 .Lfunc_end1:
 	.size	Control_Init, .Lfunc_end1-Control_Init
 	.cfi_endproc
@@ -223,7 +209,7 @@ Control_Measure_Update:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 	str	r0, [sp]
-.Ltmp7:
+.Ltmp6:
 	.loc	3 92 70 prologue_end            @ ../Task/Src/Magazine_task.c:92:70
 	movw	r0, :lower16:Magazine_Motor
 	movt	r0, :upper16:Magazine_Motor
@@ -273,9 +259,9 @@ Control_Measure_Update:
 	.loc	3 99 1 epilogue_begin is_stmt 1 @ ../Task/Src/Magazine_task.c:99:1
 	add	sp, #4
 	bx	lr
-.Ltmp8:
+.Ltmp7:
 	.loc	3 0 1 is_stmt 0                 @ :0:1
-.Ltmp9:
+.Ltmp8:
 	.p2align	2
 @ %bb.1:
 .LCPI2_0:
@@ -301,7 +287,7 @@ Control_Mode:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 	str	r0, [sp]
-.Ltmp10:
+.Ltmp9:
 	.loc	3 103 14 prologue_end           @ ../Task/Src/Magazine_task.c:103:14
 	movw	r1, :lower16:pull
 	movt	r1, :upper16:pull
@@ -316,18 +302,18 @@ Control_Mode:
 	ldrb	r0, [r0, #10]
 	.loc	3 104 7 is_stmt 0               @ ../Task/Src/Magazine_task.c:104:7
 	strb	r0, [r1]
-.Ltmp11:
+.Ltmp10:
 	.loc	3 105 5 is_stmt 1               @ ../Task/Src/Magazine_task.c:105:5
 	movw	r0, :lower16:frist_flag
 	movt	r0, :upper16:frist_flag
 	ldrb	r0, [r0]
-.Ltmp12:
+.Ltmp11:
 	.loc	3 105 5 is_stmt 0               @ ../Task/Src/Magazine_task.c:105:5
 	cmp	r0, #1
 	bne	.LBB3_2
 	b	.LBB3_1
 .LBB3_1:
-.Ltmp13:
+.Ltmp12:
 	.loc	3 120 13 is_stmt 1              @ ../Task/Src/Magazine_task.c:120:13
 	movw	r1, :lower16:frist_flag
 	movt	r1, :upper16:frist_flag
@@ -335,7 +321,7 @@ Control_Mode:
 	strb	r0, [r1]
 	.loc	3 121 2                         @ ../Task/Src/Magazine_task.c:121:2
 	b	.LBB3_16
-.Ltmp14:
+.Ltmp13:
 .LBB3_2:
 	.loc	3 124 7                         @ ../Task/Src/Magazine_task.c:124:7
 	movw	r0, :lower16:last_pull
@@ -354,13 +340,13 @@ Control_Mode:
 	movw	r0, :lower16:pull
 	movt	r0, :upper16:pull
 	ldrb	r0, [r0]
-.Ltmp15:
+.Ltmp14:
 	.loc	3 124 6                         @ ../Task/Src/Magazine_task.c:124:6
 	cmp	r0, #3
 	bne	.LBB3_5
 	b	.LBB3_4
 .LBB3_4:
-.Ltmp16:
+.Ltmp15:
 	.loc	3 126 4 is_stmt 1               @ ../Task/Src/Magazine_task.c:126:4
 	ldr	r1, [sp]
 	movs	r0, #1
@@ -368,7 +354,7 @@ Control_Mode:
 	strb.w	r0, [r1, #32]
 	.loc	3 127 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:127:3
 	b	.LBB3_5
-.Ltmp17:
+.Ltmp16:
 .LBB3_5:
 	.loc	3 128 8                         @ ../Task/Src/Magazine_task.c:128:8
 	movw	r0, :lower16:last_pull
@@ -383,13 +369,13 @@ Control_Mode:
 	movw	r0, :lower16:pull
 	movt	r0, :upper16:pull
 	ldrb	r0, [r0]
-.Ltmp18:
+.Ltmp17:
 	.loc	3 128 7                         @ ../Task/Src/Magazine_task.c:128:7
 	cmp	r0, #1
 	bne	.LBB3_8
 	b	.LBB3_7
 .LBB3_7:
-.Ltmp19:
+.Ltmp18:
 	.loc	3 130 4 is_stmt 1               @ ../Task/Src/Magazine_task.c:130:4
 	ldr	r1, [sp]
 	movs	r0, #2
@@ -397,7 +383,7 @@ Control_Mode:
 	strb.w	r0, [r1, #32]
 	.loc	3 131 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:131:3
 	b	.LBB3_8
-.Ltmp20:
+.Ltmp19:
 .LBB3_8:
 	.loc	3 132 7                         @ ../Task/Src/Magazine_task.c:132:7
 	movw	r0, :lower16:last_pull
@@ -421,12 +407,12 @@ Control_Mode:
 	movw	r0, :lower16:vtm_rc_data
 	movt	r0, :upper16:vtm_rc_data
 	ldrb	r0, [r0, #22]
-.Ltmp21:
+.Ltmp20:
 	.loc	3 132 6                         @ ../Task/Src/Magazine_task.c:132:6
 	cbz	r0, .LBB3_12
 	b	.LBB3_11
 .LBB3_11:
-.Ltmp22:
+.Ltmp21:
 	.loc	3 134 4 is_stmt 1               @ ../Task/Src/Magazine_task.c:134:4
 	ldr	r1, [sp]
 	movs	r0, #4
@@ -434,7 +420,7 @@ Control_Mode:
 	strb.w	r0, [r1, #32]
 	.loc	3 135 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:135:3
 	b	.LBB3_12
-.Ltmp23:
+.Ltmp22:
 .LBB3_12:
 	.loc	3 136 7                         @ ../Task/Src/Magazine_task.c:136:7
 	movw	r0, :lower16:last_pull
@@ -449,13 +435,13 @@ Control_Mode:
 	movw	r0, :lower16:pull
 	movt	r0, :upper16:pull
 	ldrb	r0, [r0]
-.Ltmp24:
+.Ltmp23:
 	.loc	3 136 6                         @ ../Task/Src/Magazine_task.c:136:6
 	cmp	r0, #1
 	bne	.LBB3_15
 	b	.LBB3_14
 .LBB3_14:
-.Ltmp25:
+.Ltmp24:
 	.loc	3 138 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:138:3
 	ldr	r1, [sp]
 	movs	r0, #3
@@ -463,7 +449,7 @@ Control_Mode:
 	strb.w	r0, [r1, #32]
 	.loc	3 139 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:139:3
 	b	.LBB3_15
-.Ltmp26:
+.Ltmp25:
 .LBB3_15:
 	.loc	3 0 3 is_stmt 0                 @ ../Task/Src/Magazine_task.c:0:3
 	b	.LBB3_16
@@ -471,7 +457,7 @@ Control_Mode:
 	.loc	3 143 1 epilogue_begin is_stmt 1 @ ../Task/Src/Magazine_task.c:143:1
 	add	sp, #4
 	bx	lr
-.Ltmp27:
+.Ltmp26:
 .Lfunc_end3:
 	.size	Control_Mode, .Lfunc_end3-Control_Mode
 	.cfi_endproc
@@ -493,18 +479,18 @@ Control_Target_Update:
 	sub	sp, #4
 	.cfi_def_cfa_offset 4
 	str	r0, [sp]
-.Ltmp28:
+.Ltmp27:
 	.loc	3 147 4 prologue_end            @ ../Task/Src/Magazine_task.c:147:4
 	ldr	r0, [sp]
 	.loc	3 147 27 is_stmt 0              @ ../Task/Src/Magazine_task.c:147:27
 	ldrb.w	r0, [r0, #32]
-.Ltmp29:
+.Ltmp28:
 	.loc	3 147 4                         @ ../Task/Src/Magazine_task.c:147:4
 	cmp	r0, #2
 	bne	.LBB4_2
 	b	.LBB4_1
 .LBB4_1:
-.Ltmp30:
+.Ltmp29:
 	.loc	3 149 48 is_stmt 1              @ ../Task/Src/Magazine_task.c:149:48
 	ldr	r1, [sp]
 	.loc	3 149 79 is_stmt 0              @ ../Task/Src/Magazine_task.c:149:79
@@ -520,19 +506,19 @@ Control_Target_Update:
 	vstr	s0, [r0, #4]
 	.loc	3 151 1 is_stmt 1               @ ../Task/Src/Magazine_task.c:151:1
 	b	.LBB4_8
-.Ltmp31:
+.Ltmp30:
 .LBB4_2:
 	.loc	3 152 9                         @ ../Task/Src/Magazine_task.c:152:9
 	ldr	r0, [sp]
 	.loc	3 152 32 is_stmt 0              @ ../Task/Src/Magazine_task.c:152:32
 	ldrb.w	r0, [r0, #32]
-.Ltmp32:
+.Ltmp31:
 	.loc	3 152 9                         @ ../Task/Src/Magazine_task.c:152:9
 	cmp	r0, #4
 	bne	.LBB4_4
 	b	.LBB4_3
 .LBB4_3:
-.Ltmp33:
+.Ltmp32:
 	.loc	3 154 1 is_stmt 1               @ ../Task/Src/Magazine_task.c:154:1
 	ldr	r1, [sp]
 	movs	r0, #0
@@ -561,19 +547,19 @@ Control_Target_Update:
 	vstr	s0, [r0, #12]
 	.loc	3 157 1 is_stmt 1               @ ../Task/Src/Magazine_task.c:157:1
 	b	.LBB4_7
-.Ltmp34:
+.Ltmp33:
 .LBB4_4:
 	.loc	3 158 9                         @ ../Task/Src/Magazine_task.c:158:9
 	ldr	r0, [sp]
 	.loc	3 158 32 is_stmt 0              @ ../Task/Src/Magazine_task.c:158:32
 	ldrb.w	r0, [r0, #32]
-.Ltmp35:
+.Ltmp34:
 	.loc	3 158 9                         @ ../Task/Src/Magazine_task.c:158:9
 	cmp	r0, #5
 	bne	.LBB4_6
 	b	.LBB4_5
 .LBB4_5:
-.Ltmp36:
+.Ltmp35:
 	.loc	3 160 48 is_stmt 1              @ ../Task/Src/Magazine_task.c:160:48
 	ldr	r1, [sp]
 	.loc	3 160 79 is_stmt 0              @ ../Task/Src/Magazine_task.c:160:79
@@ -589,7 +575,7 @@ Control_Target_Update:
 	vstr	s0, [r0, #4]
 	.loc	3 162 1 is_stmt 1               @ ../Task/Src/Magazine_task.c:162:1
 	b	.LBB4_6
-.Ltmp37:
+.Ltmp36:
 .LBB4_6:
 	.loc	3 0 1 is_stmt 0                 @ ../Task/Src/Magazine_task.c:0:1
 	b	.LBB4_7
@@ -599,9 +585,9 @@ Control_Target_Update:
 	.loc	3 165 1 epilogue_begin is_stmt 1 @ ../Task/Src/Magazine_task.c:165:1
 	add	sp, #4
 	bx	lr
-.Ltmp38:
+.Ltmp37:
 	.loc	3 0 1 is_stmt 0                 @ :0:1
-.Ltmp39:
+.Ltmp38:
 	.p2align	2
 @ %bb.9:
 .LCPI4_0:
@@ -625,177 +611,15 @@ Control_Magazine_Info_Update:
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
-	.save	{r7, lr}
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset lr, -4
-	.cfi_offset r7, -8
-	.pad	#16
-	sub	sp, #16
-	.cfi_def_cfa_offset 24
-	str	r0, [sp, #12]
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	str	r0, [sp]
+.Ltmp39:
+	.loc	3 191 1 prologue_end epilogue_begin @ ../Task/Src/Magazine_task.c:191:1
+	add	sp, #4
+	bx	lr
 .Ltmp40:
-	.loc	3 170 7 prologue_end            @ ../Task/Src/Magazine_task.c:170:7
-	ldr	r0, [sp, #12]
-	.loc	3 170 30 is_stmt 0              @ ../Task/Src/Magazine_task.c:170:30
-	ldrb.w	r0, [r0, #32]
-	.loc	3 170 51                        @ ../Task/Src/Magazine_task.c:170:51
-	cmp	r0, #2
-	beq	.LBB5_2
-	b	.LBB5_1
-.LBB5_1:
-	.loc	3 170 54                        @ ../Task/Src/Magazine_task.c:170:54
-	ldr	r0, [sp, #12]
-	.loc	3 170 77                        @ ../Task/Src/Magazine_task.c:170:77
-	ldrb.w	r0, [r0, #32]
-.Ltmp41:
-	.loc	3 170 6                         @ ../Task/Src/Magazine_task.c:170:6
-	cmp	r0, #3
-	bne	.LBB5_3
-	b	.LBB5_2
-.LBB5_2:
-.Ltmp42:
-	.loc	3 172 40 is_stmt 1              @ ../Task/Src/Magazine_task.c:172:40
-	ldr	r0, [sp, #12]
-	.loc	3 172 70 is_stmt 0              @ ../Task/Src/Magazine_task.c:172:70
-	vldr	s0, [r0, #4]
-	.loc	3 172 117                       @ ../Task/Src/Magazine_task.c:172:117
-	vldr	s1, [r0, #20]
-	.loc	3 172 2                         @ ../Task/Src/Magazine_task.c:172:2
-	movw	r0, :lower16:Magazine_Angle_PID
-	movt	r0, :upper16:Magazine_Angle_PID
-	str	r0, [sp, #8]                    @ 4-byte Spill
-	bl	PID_Calculate
-	ldr	r0, [sp, #8]                    @ 4-byte Reload
-	.loc	3 173 60 is_stmt 1              @ ../Task/Src/Magazine_task.c:173:60
-	vldr	s0, [r0, #52]
-	.loc	3 173 86 is_stmt 0              @ ../Task/Src/Magazine_task.c:173:86
-	ldr	r0, [sp, #12]
-	.loc	3 173 117                       @ ../Task/Src/Magazine_task.c:173:117
-	vldr	s1, [r0, #16]
-	.loc	3 173 3                         @ ../Task/Src/Magazine_task.c:173:3
-	movw	r0, :lower16:Magazine_Velocity_PID
-	movt	r0, :upper16:Magazine_Velocity_PID
-	bl	PID_Calculate
-	.loc	3 174 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:174:2
-	b	.LBB5_6
-.Ltmp43:
-.LBB5_3:
-	.loc	3 175 10                        @ ../Task/Src/Magazine_task.c:175:10
-	ldr	r0, [sp, #12]
-	.loc	3 175 33 is_stmt 0              @ ../Task/Src/Magazine_task.c:175:33
-	ldrb.w	r0, [r0, #32]
-.Ltmp44:
-	.loc	3 175 10                        @ ../Task/Src/Magazine_task.c:175:10
-	cmp	r0, #4
-	bne	.LBB5_5
-	b	.LBB5_4
-.LBB5_4:
-.Ltmp45:
-	.loc	3 177 40 is_stmt 1              @ ../Task/Src/Magazine_task.c:177:40
-	ldr	r0, [sp, #12]
-	.loc	3 177 70 is_stmt 0              @ ../Task/Src/Magazine_task.c:177:70
-	vldr	s0, [r0]
-	.loc	3 177 119                       @ ../Task/Src/Magazine_task.c:177:119
-	vldr	s1, [r0, #16]
-	.loc	3 177 2                         @ ../Task/Src/Magazine_task.c:177:2
-	movw	r0, :lower16:Magazine_Velocity_PID
-	movt	r0, :upper16:Magazine_Velocity_PID
-	bl	PID_Calculate
-	.loc	3 178 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:178:2
-	b	.LBB5_5
-.Ltmp46:
-.LBB5_5:
-	.loc	3 0 2 is_stmt 0                 @ ../Task/Src/Magazine_task.c:0:2
-	b	.LBB5_6
-.LBB5_6:
-	.loc	3 179 39 is_stmt 1              @ ../Task/Src/Magazine_task.c:179:39
-	ldr	r0, [sp, #12]
-	.loc	3 179 69 is_stmt 0              @ ../Task/Src/Magazine_task.c:179:69
-	vldr	s0, [r0, #8]
-	.loc	3 179 119                       @ ../Task/Src/Magazine_task.c:179:119
-	vldr	s1, [r0, #24]
-	.loc	3 179 3                         @ ../Task/Src/Magazine_task.c:179:3
-	movw	r0, :lower16:Shoot0_Velocity_PID
-	movt	r0, :upper16:Shoot0_Velocity_PID
-	str	r0, [sp]                        @ 4-byte Spill
-	bl	PID_Calculate
-	.loc	3 180 39 is_stmt 1              @ ../Task/Src/Magazine_task.c:180:39
-	ldr	r0, [sp, #12]
-	.loc	3 180 69 is_stmt 0              @ ../Task/Src/Magazine_task.c:180:69
-	vldr	s0, [r0, #12]
-	.loc	3 180 119                       @ ../Task/Src/Magazine_task.c:180:119
-	vldr	s1, [r0, #28]
-	.loc	3 180 3                         @ ../Task/Src/Magazine_task.c:180:3
-	movw	r0, :lower16:Shoot1_Velocity_PID
-	movt	r0, :upper16:Shoot1_Velocity_PID
-	str	r0, [sp, #4]                    @ 4-byte Spill
-	bl	PID_Calculate
-	ldr	r1, [sp]                        @ 4-byte Reload
-	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	3 182 72 is_stmt 1              @ ../Task/Src/Magazine_task.c:182:72
-	movw	r2, :lower16:Magazine_Velocity_PID
-	movt	r2, :upper16:Magazine_Velocity_PID
-	vldr	s0, [r2, #52]
-	.loc	3 182 40 is_stmt 0              @ ../Task/Src/Magazine_task.c:182:40
-	vcvt.s32.f32	s0, s0
-	vmov	r2, s0
-	.loc	3 182 2                         @ ../Task/Src/Magazine_task.c:182:2
-	ldr	r3, [sp, #12]
-	.loc	3 182 38                        @ ../Task/Src/Magazine_task.c:182:38
-	strh	r2, [r3, #38]
-	.loc	3 183 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:183:2
-	ldr	r3, [sp, #12]
-	movs	r2, #0
-	.loc	3 183 38 is_stmt 0              @ ../Task/Src/Magazine_task.c:183:38
-	strh	r2, [r3, #40]
-	.loc	3 184 70 is_stmt 1              @ ../Task/Src/Magazine_task.c:184:70
-	vldr	s0, [r1, #52]
-	.loc	3 184 40 is_stmt 0              @ ../Task/Src/Magazine_task.c:184:40
-	vcvt.s32.f32	s0, s0
-	vmov	r1, s0
-	.loc	3 184 2                         @ ../Task/Src/Magazine_task.c:184:2
-	ldr	r2, [sp, #12]
-	.loc	3 184 38                        @ ../Task/Src/Magazine_task.c:184:38
-	strh	r1, [r2, #42]
-	.loc	3 185 70 is_stmt 1              @ ../Task/Src/Magazine_task.c:185:70
-	vldr	s0, [r0, #52]
-	.loc	3 185 40 is_stmt 0              @ ../Task/Src/Magazine_task.c:185:40
-	vcvt.s32.f32	s0, s0
-	vmov	r0, s0
-	.loc	3 185 2                         @ ../Task/Src/Magazine_task.c:185:2
-	ldr	r1, [sp, #12]
-	.loc	3 185 38                        @ ../Task/Src/Magazine_task.c:185:38
-	strh	r0, [r1, #44]
-.Ltmp47:
-	.loc	3 187 5 is_stmt 1               @ ../Task/Src/Magazine_task.c:187:5
-	ldr	r0, [sp, #12]
-	.loc	3 187 28 is_stmt 0              @ ../Task/Src/Magazine_task.c:187:28
-	ldrb.w	r0, [r0, #32]
-.Ltmp48:
-	.loc	3 187 5                         @ ../Task/Src/Magazine_task.c:187:5
-	cmp	r0, #1
-	bne	.LBB5_8
-	b	.LBB5_7
-.LBB5_7:
-.Ltmp49:
-	.loc	3 188 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:188:3
-	ldr	r1, [sp, #12]
-	movs	r0, #0
-	.loc	3 188 39 is_stmt 0              @ ../Task/Src/Magazine_task.c:188:39
-	strh	r0, [r1, #38]
-	.loc	3 189 3 is_stmt 1               @ ../Task/Src/Magazine_task.c:189:3
-	ldr	r1, [sp, #12]
-	.loc	3 189 39 is_stmt 0              @ ../Task/Src/Magazine_task.c:189:39
-	strh	r0, [r1, #40]
-	.loc	3 190 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:190:2
-	b	.LBB5_8
-.Ltmp50:
-.LBB5_8:
-	.loc	3 191 1 epilogue_begin          @ ../Task/Src/Magazine_task.c:191:1
-	add	sp, #16
-	pop	{r7, pc}
-.Ltmp51:
 .Lfunc_end5:
 	.size	Control_Magazine_Info_Update, .Lfunc_end5-Control_Magazine_Info_Update
 	.cfi_endproc
@@ -820,7 +644,7 @@ Heat_control:
 	.cfi_def_cfa_offset 12
                                         @ kill: def $r1 killed $r0
 	strh.w	r0, [sp, #10]
-.Ltmp52:
+.Ltmp41:
 	.loc	3 196 59 prologue_end           @ ../Task/Src/Magazine_task.c:196:59
 	movw	r0, :lower16:Referee_System_Info
 	movt	r0, :upper16:Referee_System_Info
@@ -843,16 +667,16 @@ Heat_control:
 	vcvt.f32.f64	s0, d0
 	.loc	3 198 8 is_stmt 0               @ ../Task/Src/Magazine_task.c:198:8
 	vstr	s0, [sp]
-.Ltmp53:
+.Ltmp42:
 	.loc	3 201 5 is_stmt 1               @ ../Task/Src/Magazine_task.c:201:5
 	ldrh.w	r0, [sp, #8]
-.Ltmp54:
+.Ltmp43:
 	.loc	3 201 5 is_stmt 0               @ ../Task/Src/Magazine_task.c:201:5
 	cmp	r0, #200
 	bgt	.LBB6_2
 	b	.LBB6_1
 .LBB6_1:
-.Ltmp55:
+.Ltmp44:
 	.loc	3 203 34 is_stmt 1              @ ../Task/Src/Magazine_task.c:203:34
 	ldrh.w	r0, [sp, #10]
 	vmov	s0, r0
@@ -887,17 +711,17 @@ Heat_control:
 	strh.w	r0, [sp, #10]
 	.loc	3 204 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:204:2
 	b	.LBB6_8
-.Ltmp56:
+.Ltmp45:
 .LBB6_2:
 	.loc	3 205 10                        @ ../Task/Src/Magazine_task.c:205:10
 	ldrh.w	r0, [sp, #8]
-.Ltmp57:
+.Ltmp46:
 	.loc	3 205 10 is_stmt 0              @ ../Task/Src/Magazine_task.c:205:10
 	cmp	r0, #50
 	bgt	.LBB6_4
 	b	.LBB6_3
 .LBB6_3:
-.Ltmp58:
+.Ltmp47:
 	.loc	3 207 23 is_stmt 1              @ ../Task/Src/Magazine_task.c:207:23
 	vldr	s0, [sp]
 	vcvt.u32.f32	s0, s0
@@ -906,11 +730,11 @@ Heat_control:
 	strh.w	r0, [sp, #10]
 	.loc	3 208 2 is_stmt 1               @ ../Task/Src/Magazine_task.c:208:2
 	b	.LBB6_7
-.Ltmp59:
+.Ltmp48:
 .LBB6_4:
 	.loc	3 209 10                        @ ../Task/Src/Magazine_task.c:209:10
 	ldrh.w	r0, [sp, #8]
-.Ltmp60:
+.Ltmp49:
 	.loc	3 209 10 is_stmt 0              @ ../Task/Src/Magazine_task.c:209:10
 	cmp	r0, #20
 	bgt	.LBB6_6
@@ -918,12 +742,12 @@ Heat_control:
 .LBB6_5:
 	.loc	3 0 10                          @ ../Task/Src/Magazine_task.c:0:10
 	movs	r0, #0
-.Ltmp61:
+.Ltmp50:
 	.loc	3 211 21 is_stmt 1              @ ../Task/Src/Magazine_task.c:211:21
 	strh.w	r0, [sp, #10]
 	.loc	3 212 2                         @ ../Task/Src/Magazine_task.c:212:2
 	b	.LBB6_6
-.Ltmp62:
+.Ltmp51:
 .LBB6_6:
 	.loc	3 0 2 is_stmt 0                 @ ../Task/Src/Magazine_task.c:0:2
 	b	.LBB6_7
@@ -937,9 +761,9 @@ Heat_control:
 	.loc	3 213 2 epilogue_begin is_stmt 0 @ ../Task/Src/Magazine_task.c:213:2
 	add	sp, #12
 	bx	lr
-.Ltmp63:
+.Ltmp52:
 	.loc	3 0 2                           @ :0:2
-.Ltmp64:
+.Ltmp53:
 	.p2align	3
 @ %bb.9:
 .LCPI6_0:
@@ -2135,7 +1959,7 @@ Shoot_Velocity_PID_Param:
 	.byte	19                              @ Abbrev [19] 0x5b5:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	12
+	.byte	0
 	.long	.Linfo_string3                  @ DW_AT_name
 	.byte	3                               @ DW_AT_decl_file
 	.byte	169                             @ DW_AT_decl_line
