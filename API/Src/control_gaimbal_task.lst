@@ -61,55 +61,55 @@ Control_GIMBAL_Task:
 	movw	r0, :lower16:Control_Gimbal_Info
 	movt	r0, :upper16:Control_Gimbal_Info
 	bl	Control_Init
-	.loc	2 79 3                          @ ../Task/Src/Control_Gaimbal_Task.c:79:3
+	.loc	2 81 2                          @ ../Task/Src/Control_Gaimbal_Task.c:81:2
 	movw	r0, :lower16:SMC_control_yaw
 	movt	r0, :upper16:SMC_control_yaw
 	vldr	s0, .LCPI0_0
 	vldr	s2, .LCPI0_1
-	vldr	s4, .LCPI0_2
+	vldr	s3, .LCPI0_2
+	vldr	s4, .LCPI0_3
 	vmov.f32	s5, #2.100000e+01
 	vmov.f32	s6, #2.700000e+01
-	vmov.f32	s7, #2.000000e+01
-	vldr	s8, .LCPI0_3
-	vldr	s9, .LCPI0_4
-	vmov.f32	s1, s9
-	vmov.f32	s3, s9
+	vmov.f32	s7, #2.000000e+00
+	vldr	s8, .LCPI0_4
+	vldr	s9, .LCPI0_5
+	vmov.f32	s1, s3
 	bl	YawSMC
-	.loc	2 81 5                          @ ../Task/Src/Control_Gaimbal_Task.c:81:5
+	.loc	2 83 5                          @ ../Task/Src/Control_Gaimbal_Task.c:83:5
 	b	.LBB0_1
 .LBB0_1:                                @ =>This Inner Loop Header: Depth=1
 .Ltmp1:
-	.loc	2 83 32                         @ ../Task/Src/Control_Gaimbal_Task.c:83:32
+	.loc	2 85 32                         @ ../Task/Src/Control_Gaimbal_Task.c:85:32
 	bl	osKernelSysTick
-	.loc	2 83 30 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:83:30
+	.loc	2 85 30 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:85:30
 	str	r0, [sp, #8]
-	.loc	2 86 9 is_stmt 1                @ ../Task/Src/Control_Gaimbal_Task.c:86:9
+	.loc	2 88 9 is_stmt 1                @ ../Task/Src/Control_Gaimbal_Task.c:88:9
 	movw	r0, :lower16:Control_Gimbal_Info
 	movt	r0, :upper16:Control_Gimbal_Info
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	bl	Control_Measure_Update
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	2 87 9                          @ ../Task/Src/Control_Gaimbal_Task.c:87:9
+	.loc	2 89 9                          @ ../Task/Src/Control_Gaimbal_Task.c:89:9
 	bl	Control_Mode_Update
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	2 88 9                          @ ../Task/Src/Control_Gaimbal_Task.c:88:9
+	.loc	2 90 9                          @ ../Task/Src/Control_Gaimbal_Task.c:90:9
 	bl	Control_Target_Update
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	2 89 9                          @ ../Task/Src/Control_Gaimbal_Task.c:89:9
+	.loc	2 91 9                          @ ../Task/Src/Control_Gaimbal_Task.c:91:9
 	bl	Control_Gimbal_Info_Update
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	2 90 62                         @ ../Task/Src/Control_Gaimbal_Task.c:90:62
+	.loc	2 92 62                         @ ../Task/Src/Control_Gaimbal_Task.c:92:62
 	vldr	s0, [r0, #4]
-	.loc	2 90 100 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:90:100
+	.loc	2 92 100 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:92:100
 	vldr	s1, [r0, #28]
-	vldr	s2, .LCPI0_4
-	.loc	2 90 5                          @ ../Task/Src/Control_Gaimbal_Task.c:90:5
+	vldr	s2, .LCPI0_2
+	.loc	2 92 5                          @ ../Task/Src/Control_Gaimbal_Task.c:92:5
 	bl	USART_Vofa_Justfloat_Transmit
 	movs	r0, #1
-	.loc	2 91 9 is_stmt 1                @ ../Task/Src/Control_Gaimbal_Task.c:91:9
+	.loc	2 93 9 is_stmt 1                @ ../Task/Src/Control_Gaimbal_Task.c:93:9
 	bl	osDelay
 .Ltmp2:
-	.loc	2 81 5                          @ ../Task/Src/Control_Gaimbal_Task.c:81:5
+	.loc	2 83 5                          @ ../Task/Src/Control_Gaimbal_Task.c:83:5
 	b	.LBB0_1
 .Ltmp3:
 	.loc	2 0 5 is_stmt 0                 @ :0:5
@@ -117,15 +117,17 @@ Control_GIMBAL_Task:
 	.p2align	2
 @ %bb.2:
 .LCPI0_0:
-	.long	0x446d8000                      @ float 950
+	.long	0x442f0000                      @ float 700
 .LCPI0_1:
-	.long	0x42340000                      @ float 45
+	.long	0x44570000                      @ float 860
 .LCPI0_2:
-	.long	0x3951b717                      @ float 1.99999995E-4
-.LCPI0_3:
-	.long	0x378e9b39                      @ float 1.70000003E-5
-.LCPI0_4:
 	.long	0x00000000                      @ float 0
+.LCPI0_3:
+	.long	0x370637bd                      @ float 7.99999998E-6
+.LCPI0_4:
+	.long	0x37947a76                      @ float 1.77000002E-5
+.LCPI0_5:
+	.long	0x447a0000                      @ float 1000
 .Lfunc_end0:
 	.size	Control_GIMBAL_Task, .Lfunc_end0-Control_GIMBAL_Task
 	.cfi_endproc
@@ -139,7 +141,7 @@ Control_GIMBAL_Task:
 	.thumb_func
 Control_Init:
 .Lfunc_begin1:
-	.loc	2 101 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:101:0
+	.loc	2 103 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:103:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -153,7 +155,7 @@ Control_Init:
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
 .Ltmp5:
-	.loc	2 103 5 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:103:5
+	.loc	2 105 5 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:105:5
 	movw	r0, :lower16:Pitch_Angle_PID
 	movt	r0, :upper16:Pitch_Angle_PID
 	movw	r2, :lower16:Pitch_Angle_PID_Param
@@ -162,13 +164,13 @@ Control_Init:
 	str	r1, [sp]                        @ 4-byte Spill
 	bl	PID_Init
 	ldr	r1, [sp]                        @ 4-byte Reload
-	.loc	2 104 5                         @ ../Task/Src/Control_Gaimbal_Task.c:104:5
+	.loc	2 106 5                         @ ../Task/Src/Control_Gaimbal_Task.c:106:5
 	movw	r0, :lower16:Pitch_Velocity_PID
 	movt	r0, :upper16:Pitch_Velocity_PID
 	movw	r2, :lower16:Pitch_Velocity_Param
 	movt	r2, :upper16:Pitch_Velocity_Param
 	bl	PID_Init
-	.loc	2 106 5                         @ ../Task/Src/Control_Gaimbal_Task.c:106:5
+	.loc	2 108 5                         @ ../Task/Src/Control_Gaimbal_Task.c:108:5
 	movw	r0, :lower16:Yaw_Angle_PID
 	movt	r0, :upper16:Yaw_Angle_PID
 	movw	r2, :lower16:Yaw_Angle_PID_Param
@@ -176,35 +178,35 @@ Control_Init:
 	movs	r1, #6
 	bl	PID_Init
 	ldr	r1, [sp]                        @ 4-byte Reload
-	.loc	2 107 5                         @ ../Task/Src/Control_Gaimbal_Task.c:107:5
+	.loc	2 109 5                         @ ../Task/Src/Control_Gaimbal_Task.c:109:5
 	movw	r0, :lower16:Yaw_Velocity_PID
 	movt	r0, :upper16:Yaw_Velocity_PID
 	movw	r2, :lower16:Yaw_Velocity_PID_Param
 	movt	r2, :upper16:Yaw_Velocity_PID_Param
 	bl	PID_Init
-	.loc	2 110 5                         @ ../Task/Src/Control_Gaimbal_Task.c:110:5
+	.loc	2 112 5                         @ ../Task/Src/Control_Gaimbal_Task.c:112:5
 	ldr	r1, [sp, #4]
 	movs	r0, #0
-	.loc	2 110 45 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:110:45
+	.loc	2 112 45 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:112:45
 	str	r0, [r1, #12]
-	.loc	2 111 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:111:5
-	ldr	r1, [sp, #4]
-	.loc	2 111 43 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:111:43
-	str	r0, [r1, #4]
 	.loc	2 113 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:113:5
+	ldr	r1, [sp, #4]
+	.loc	2 113 43 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:113:43
+	str	r0, [r1, #4]
+	.loc	2 115 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:115:5
 	ldr	r2, [sp, #4]
 	movs	r1, #2
-	.loc	2 113 31 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:113:31
+	.loc	2 115 31 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:115:31
 	strb.w	r1, [r2, #64]
-	.loc	2 118 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:118:5
+	.loc	2 120 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:120:5
 	ldr	r1, [sp, #4]
-	.loc	2 118 40 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:118:40
+	.loc	2 120 40 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:120:40
 	str	r0, [r1, #68]
-	.loc	2 119 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:119:5
+	.loc	2 121 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:121:5
 	ldr	r1, [sp, #4]
-	.loc	2 119 41 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:119:41
+	.loc	2 121 41 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:121:41
 	strh.w	r0, [r1, #66]
-	.loc	2 121 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:121:1
+	.loc	2 123 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:123:1
 	add	sp, #8
 	pop	{r7, pc}
 .Ltmp6:
@@ -221,7 +223,7 @@ Control_Init:
 	.thumb_func
 Control_Measure_Update:
 .Lfunc_begin2:
-	.loc	2 129 0                         @ ../Task/Src/Control_Gaimbal_Task.c:129:0
+	.loc	2 131 0                         @ ../Task/Src/Control_Gaimbal_Task.c:131:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -235,196 +237,196 @@ Control_Measure_Update:
 	.cfi_def_cfa_offset 24
 	str	r0, [sp, #12]
 .Ltmp7:
-	.loc	2 131 101 prologue_end          @ ../Task/Src/Control_Gaimbal_Task.c:131:101
+	.loc	2 133 101 prologue_end          @ ../Task/Src/Control_Gaimbal_Task.c:133:101
 	movw	r0, :lower16:Pich_Motor
 	movt	r0, :upper16:Pich_Motor
 	str	r0, [sp]                        @ 4-byte Spill
 	vldr	s0, [r0, #28]
 	vldr	s2, .LCPI2_0
 	vstr	s2, [sp, #4]                    @ 4-byte Spill
-	.loc	2 131 107 is_stmt 0             @ ../Task/Src/Control_Gaimbal_Task.c:131:107
+	.loc	2 133 107 is_stmt 0             @ ../Task/Src/Control_Gaimbal_Task.c:133:107
 	vdiv.f32	s0, s0, s2
 	vldr	s2, .LCPI2_1
 	vstr	s2, [sp, #8]                    @ 4-byte Spill
-	.loc	2 131 115                       @ ../Task/Src/Control_Gaimbal_Task.c:131:115
+	.loc	2 133 115                       @ ../Task/Src/Control_Gaimbal_Task.c:133:115
 	vmul.f32	s0, s0, s2
-	.loc	2 131 54                        @ ../Task/Src/Control_Gaimbal_Task.c:131:54
+	.loc	2 133 54                        @ ../Task/Src/Control_Gaimbal_Task.c:133:54
 	movw	r0, :lower16:kfp_pitch_angle
 	movt	r0, :upper16:kfp_pitch_angle
 	bl	KalmanFilter
 	ldr	r0, [sp]                        @ 4-byte Reload
 	vldr	s2, [sp, #8]                    @ 4-byte Reload
-	.loc	2 131 123                       @ ../Task/Src/Control_Gaimbal_Task.c:131:123
+	.loc	2 133 123                       @ ../Task/Src/Control_Gaimbal_Task.c:133:123
 	movw	r1, :lower16:Pitch_MidPoint_MotorAngle
 	movt	r1, :upper16:Pitch_MidPoint_MotorAngle
 	vldr	s4, [r1]
-	.loc	2 131 121                       @ ../Task/Src/Control_Gaimbal_Task.c:131:121
+	.loc	2 133 121                       @ ../Task/Src/Control_Gaimbal_Task.c:133:121
 	vsub.f32	s0, s0, s4
-	.loc	2 131 5                         @ ../Task/Src/Control_Gaimbal_Task.c:131:5
+	.loc	2 133 5                         @ ../Task/Src/Control_Gaimbal_Task.c:133:5
 	ldr	r1, [sp, #12]
-	.loc	2 131 52                        @ ../Task/Src/Control_Gaimbal_Task.c:131:52
+	.loc	2 133 52                        @ ../Task/Src/Control_Gaimbal_Task.c:133:52
 	vstr	s0, [r1, #24]
-	.loc	2 132 107 is_stmt 1             @ ../Task/Src/Control_Gaimbal_Task.c:132:107
+	.loc	2 134 107 is_stmt 1             @ ../Task/Src/Control_Gaimbal_Task.c:134:107
 	ldrsh.w	r0, [r0, #22]
-	.loc	2 132 84 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:132:84
+	.loc	2 134 84 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:134:84
 	vmov	s0, r0
 	vcvt.f32.s32	s0, s0
-	.loc	2 132 116                       @ ../Task/Src/Control_Gaimbal_Task.c:132:116
+	.loc	2 134 116                       @ ../Task/Src/Control_Gaimbal_Task.c:134:116
 	vadd.f32	s0, s0, s0
-	.loc	2 132 123                       @ ../Task/Src/Control_Gaimbal_Task.c:132:123
+	.loc	2 134 123                       @ ../Task/Src/Control_Gaimbal_Task.c:134:123
 	vmul.f32	s0, s0, s2
 	vldr	s2, .LCPI2_2
-	.loc	2 132 128                       @ ../Task/Src/Control_Gaimbal_Task.c:132:128
+	.loc	2 134 128                       @ ../Task/Src/Control_Gaimbal_Task.c:134:128
 	vdiv.f32	s0, s0, s2
-	.loc	2 132 53                        @ ../Task/Src/Control_Gaimbal_Task.c:132:53
+	.loc	2 134 53                        @ ../Task/Src/Control_Gaimbal_Task.c:134:53
 	movw	r0, :lower16:kfp_pitch_speed
 	movt	r0, :upper16:kfp_pitch_speed
 	bl	KalmanFilter
 	vldr	s4, [sp, #4]                    @ 4-byte Reload
 	vldr	s2, [sp, #8]                    @ 4-byte Reload
-	.loc	2 132 5                         @ ../Task/Src/Control_Gaimbal_Task.c:132:5
+	.loc	2 134 5                         @ ../Task/Src/Control_Gaimbal_Task.c:134:5
 	ldr	r0, [sp, #12]
-	.loc	2 132 51                        @ ../Task/Src/Control_Gaimbal_Task.c:132:51
+	.loc	2 134 51                        @ ../Task/Src/Control_Gaimbal_Task.c:134:51
 	vstr	s0, [r0, #36]
-	.loc	2 135 59 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:135:59
+	.loc	2 137 59 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:137:59
 	movw	r0, :lower16:INS_Info
 	movt	r0, :upper16:INS_Info
 	vldr	s0, [r0, #4]
-	.loc	2 135 69 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:135:69
+	.loc	2 137 69 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:137:69
 	vdiv.f32	s0, s0, s4
-	.loc	2 135 77                        @ ../Task/Src/Control_Gaimbal_Task.c:135:77
+	.loc	2 137 77                        @ ../Task/Src/Control_Gaimbal_Task.c:137:77
 	vmul.f32	s0, s0, s2
-	.loc	2 135 5                         @ ../Task/Src/Control_Gaimbal_Task.c:135:5
+	.loc	2 137 5                         @ ../Task/Src/Control_Gaimbal_Task.c:137:5
 	ldr	r1, [sp, #12]
-	.loc	2 135 48                        @ ../Task/Src/Control_Gaimbal_Task.c:135:48
+	.loc	2 137 48                        @ ../Task/Src/Control_Gaimbal_Task.c:137:48
 	vstr	s0, [r1, #16]
-	.loc	2 136 90 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:136:90
+	.loc	2 138 90 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:138:90
 	vldr	s0, [r0, #20]
-	.loc	2 136 49 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:136:49
+	.loc	2 138 49 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:138:49
 	movw	r0, :lower16:kfp_yaw_imuspeed
 	movt	r0, :upper16:kfp_yaw_imuspeed
 	bl	KalmanFilter
-	.loc	2 136 5                         @ ../Task/Src/Control_Gaimbal_Task.c:136:5
+	.loc	2 138 5                         @ ../Task/Src/Control_Gaimbal_Task.c:138:5
 	ldr	r0, [sp, #12]
-	.loc	2 136 47                        @ ../Task/Src/Control_Gaimbal_Task.c:136:47
+	.loc	2 138 47                        @ ../Task/Src/Control_Gaimbal_Task.c:138:47
 	vstr	s0, [r0, #20]
-	.loc	2 139 76 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:139:76
+	.loc	2 141 76 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:141:76
 	movw	r0, :lower16:DM_Yaw_Motor
 	movt	r0, :upper16:DM_Yaw_Motor
 	ldr	r1, [r0, #40]
-	.loc	2 139 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:139:5
+	.loc	2 141 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:141:5
 	ldr	r2, [sp, #12]
-	.loc	2 139 49                        @ ../Task/Src/Control_Gaimbal_Task.c:139:49
+	.loc	2 141 49                        @ ../Task/Src/Control_Gaimbal_Task.c:141:49
 	str	r1, [r2, #32]
-	.loc	2 140 77 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:140:77
+	.loc	2 142 77 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:142:77
 	vldr	s0, [r0, #56]
-	.loc	2 140 85 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:140:85
+	.loc	2 142 85 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:142:85
 	movw	r0, :lower16:Yaw_MidPoint_MotorAngle
 	movt	r0, :upper16:Yaw_MidPoint_MotorAngle
 	vldr	s2, [r0]
-	.loc	2 140 83                        @ ../Task/Src/Control_Gaimbal_Task.c:140:83
+	.loc	2 142 83                        @ ../Task/Src/Control_Gaimbal_Task.c:142:83
 	vsub.f32	s0, s0, s2
-	.loc	2 140 5                         @ ../Task/Src/Control_Gaimbal_Task.c:140:5
+	.loc	2 142 5                         @ ../Task/Src/Control_Gaimbal_Task.c:142:5
 	ldr	r0, [sp, #12]
-	.loc	2 140 50                        @ ../Task/Src/Control_Gaimbal_Task.c:140:50
+	.loc	2 142 50                        @ ../Task/Src/Control_Gaimbal_Task.c:142:50
 	vstr	s0, [r0, #28]
-	.loc	2 143 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:143:5
+	.loc	2 145 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:145:5
 	b	.LBB2_1
 .LBB2_1:                                @ =>This Inner Loop Header: Depth=1
-	.loc	2 143 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:143:12
+	.loc	2 145 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:145:12
 	ldr	r0, [sp, #12]
-	.loc	2 143 41                        @ ../Task/Src/Control_Gaimbal_Task.c:143:41
+	.loc	2 145 41                        @ ../Task/Src/Control_Gaimbal_Task.c:145:41
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_0
-	.loc	2 143 5                         @ ../Task/Src/Control_Gaimbal_Task.c:143:5
+	vldr	s2, .LCPI2_1
+	.loc	2 145 5                         @ ../Task/Src/Control_Gaimbal_Task.c:145:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	ble	.LBB2_3
 	b	.LBB2_2
 .LBB2_2:                                @   in Loop: Header=BB2_1 Depth=1
-	.loc	2 143 64                        @ ../Task/Src/Control_Gaimbal_Task.c:143:64
+	.loc	2 145 63                        @ ../Task/Src/Control_Gaimbal_Task.c:145:63
 	ldr	r0, [sp, #12]
-	.loc	2 143 109                       @ ../Task/Src/Control_Gaimbal_Task.c:143:109
+	.loc	2 145 108                       @ ../Task/Src/Control_Gaimbal_Task.c:145:108
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_8
+	vldr	s2, .LCPI2_5
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #28]
-	.loc	2 143 5                         @ ../Task/Src/Control_Gaimbal_Task.c:143:5
+	.loc	2 145 5                         @ ../Task/Src/Control_Gaimbal_Task.c:145:5
 	b	.LBB2_1
 .LBB2_3:
-	.loc	2 144 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:144:5
+	.loc	2 146 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:146:5
 	b	.LBB2_4
 .LBB2_4:                                @ =>This Inner Loop Header: Depth=1
-	.loc	2 144 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:144:12
+	.loc	2 146 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:146:12
 	ldr	r0, [sp, #12]
-	.loc	2 144 41                        @ ../Task/Src/Control_Gaimbal_Task.c:144:41
+	.loc	2 146 41                        @ ../Task/Src/Control_Gaimbal_Task.c:146:41
 	vldr	s0, [r0, #28]
 	vldr	s2, .LCPI2_3
-	.loc	2 144 5                         @ ../Task/Src/Control_Gaimbal_Task.c:144:5
+	.loc	2 146 5                         @ ../Task/Src/Control_Gaimbal_Task.c:146:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	bge	.LBB2_6
 	b	.LBB2_5
 .LBB2_5:                                @   in Loop: Header=BB2_4 Depth=1
-	.loc	2 144 65                        @ ../Task/Src/Control_Gaimbal_Task.c:144:65
+	.loc	2 146 64                        @ ../Task/Src/Control_Gaimbal_Task.c:146:64
 	ldr	r0, [sp, #12]
-	.loc	2 144 110                       @ ../Task/Src/Control_Gaimbal_Task.c:144:110
+	.loc	2 146 109                       @ ../Task/Src/Control_Gaimbal_Task.c:146:109
 	vldr	s0, [r0, #28]
-	vldr	s2, .LCPI2_7
+	vldr	s2, .LCPI2_4
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #28]
-	.loc	2 144 5                         @ ../Task/Src/Control_Gaimbal_Task.c:144:5
+	.loc	2 146 5                         @ ../Task/Src/Control_Gaimbal_Task.c:146:5
 	b	.LBB2_4
 .LBB2_6:
-	.loc	2 147 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:147:5
+	.loc	2 149 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:149:5
 	b	.LBB2_7
 .LBB2_7:                                @ =>This Inner Loop Header: Depth=1
-	.loc	2 147 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:147:12
+	.loc	2 149 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:149:12
 	ldr	r0, [sp, #12]
-	.loc	2 147 41                        @ ../Task/Src/Control_Gaimbal_Task.c:147:41
+	.loc	2 149 41                        @ ../Task/Src/Control_Gaimbal_Task.c:149:41
 	vldr	s0, [r0, #16]
 	vldr	s2, .LCPI2_1
-	.loc	2 147 5                         @ ../Task/Src/Control_Gaimbal_Task.c:147:5
+	.loc	2 149 5                         @ ../Task/Src/Control_Gaimbal_Task.c:149:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	ble	.LBB2_9
 	b	.LBB2_8
 .LBB2_8:                                @   in Loop: Header=BB2_7 Depth=1
-	.loc	2 147 61                        @ ../Task/Src/Control_Gaimbal_Task.c:147:61
+	.loc	2 149 61                        @ ../Task/Src/Control_Gaimbal_Task.c:149:61
 	ldr	r0, [sp, #12]
-	.loc	2 147 104                       @ ../Task/Src/Control_Gaimbal_Task.c:147:104
+	.loc	2 149 104                       @ ../Task/Src/Control_Gaimbal_Task.c:149:104
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_6
+	vldr	s2, .LCPI2_5
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #16]
-	.loc	2 147 5                         @ ../Task/Src/Control_Gaimbal_Task.c:147:5
+	.loc	2 149 5                         @ ../Task/Src/Control_Gaimbal_Task.c:149:5
 	b	.LBB2_7
 .LBB2_9:
-	.loc	2 148 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:148:5
+	.loc	2 150 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:150:5
 	b	.LBB2_10
 .LBB2_10:                               @ =>This Inner Loop Header: Depth=1
-	.loc	2 148 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:148:12
+	.loc	2 150 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:150:12
 	ldr	r0, [sp, #12]
-	.loc	2 148 41                        @ ../Task/Src/Control_Gaimbal_Task.c:148:41
+	.loc	2 150 41                        @ ../Task/Src/Control_Gaimbal_Task.c:150:41
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_4
-	.loc	2 148 5                         @ ../Task/Src/Control_Gaimbal_Task.c:148:5
+	vldr	s2, .LCPI2_3
+	.loc	2 150 5                         @ ../Task/Src/Control_Gaimbal_Task.c:150:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	bge	.LBB2_12
 	b	.LBB2_11
 .LBB2_11:                               @   in Loop: Header=BB2_10 Depth=1
-	.loc	2 148 62                        @ ../Task/Src/Control_Gaimbal_Task.c:148:62
+	.loc	2 150 62                        @ ../Task/Src/Control_Gaimbal_Task.c:150:62
 	ldr	r0, [sp, #12]
-	.loc	2 148 105                       @ ../Task/Src/Control_Gaimbal_Task.c:148:105
+	.loc	2 150 105                       @ ../Task/Src/Control_Gaimbal_Task.c:150:105
 	vldr	s0, [r0, #16]
-	vldr	s2, .LCPI2_5
+	vldr	s2, .LCPI2_4
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #16]
-	.loc	2 148 5                         @ ../Task/Src/Control_Gaimbal_Task.c:148:5
+	.loc	2 150 5                         @ ../Task/Src/Control_Gaimbal_Task.c:150:5
 	b	.LBB2_10
 .LBB2_12:
-	.loc	2 153 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:153:1
+	.loc	2 155 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:155:1
 	add	sp, #16
 	pop	{r7, pc}
 .Ltmp8:
@@ -439,17 +441,11 @@ Control_Measure_Update:
 .LCPI2_2:
 	.long	0x42700000                      @ float 60
 .LCPI2_3:
-	.long	0xc3340000                      @ float -180
-.LCPI2_4:
 	.long	0xc0490fdb                      @ float -3.14159274
-.LCPI2_5:
+.LCPI2_4:
 	.long	0x40c90fdb                      @ float 6.28318548
-.LCPI2_6:
+.LCPI2_5:
 	.long	0xc0c90fdb                      @ float -6.28318548
-.LCPI2_7:
-	.long	0x43b40000                      @ float 360
-.LCPI2_8:
-	.long	0xc3b40000                      @ float -360
 .Lfunc_end2:
 	.size	Control_Measure_Update, .Lfunc_end2-Control_Measure_Update
 	.cfi_endproc
@@ -463,7 +459,7 @@ Control_Measure_Update:
 	.thumb_func
 Control_Mode_Update:
 .Lfunc_begin3:
-	.loc	2 197 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:197:0
+	.loc	2 199 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:199:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -472,63 +468,63 @@ Control_Mode_Update:
 	.cfi_def_cfa_offset 4
 	str	r0, [sp]
 .Ltmp10:
-	.loc	2 201 9 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:201:9
+	.loc	2 203 9 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:203:9
 	movw	r0, :lower16:remote_ctrl
 	movt	r0, :upper16:remote_ctrl
 	ldrb	r0, [r0, #10]
 .Ltmp11:
-	.loc	2 201 9 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:201:9
+	.loc	2 203 9 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:203:9
 	cmp	r0, #2
 	bne	.LBB3_2
 	b	.LBB3_1
 .LBB3_1:
 .Ltmp12:
-	.loc	2 203 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:203:9
+	.loc	2 205 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:205:9
 	ldr	r1, [sp]
 	movs	r0, #2
-	.loc	2 203 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:203:35
+	.loc	2 205 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:205:35
 	strb.w	r0, [r1, #64]
-	.loc	2 204 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:204:5
+	.loc	2 206 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:206:5
 	b	.LBB3_8
 .Ltmp13:
 .LBB3_2:
-	.loc	2 205 14                        @ ../Task/Src/Control_Gaimbal_Task.c:205:14
+	.loc	2 207 14                        @ ../Task/Src/Control_Gaimbal_Task.c:207:14
 	movw	r0, :lower16:remote_ctrl
 	movt	r0, :upper16:remote_ctrl
 	ldrb	r0, [r0, #10]
 .Ltmp14:
-	.loc	2 205 14 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:205:14
+	.loc	2 207 14 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:207:14
 	cmp	r0, #3
 	bne	.LBB3_4
 	b	.LBB3_3
 .LBB3_3:
 .Ltmp15:
-	.loc	2 207 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:207:9
+	.loc	2 209 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:209:9
 	ldr	r1, [sp]
 	movs	r0, #3
-	.loc	2 207 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:207:35
+	.loc	2 209 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:209:35
 	strb.w	r0, [r1, #64]
-	.loc	2 208 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:208:5
+	.loc	2 210 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:210:5
 	b	.LBB3_7
 .Ltmp16:
 .LBB3_4:
-	.loc	2 209 14                        @ ../Task/Src/Control_Gaimbal_Task.c:209:14
+	.loc	2 211 14                        @ ../Task/Src/Control_Gaimbal_Task.c:211:14
 	movw	r0, :lower16:remote_ctrl
 	movt	r0, :upper16:remote_ctrl
 	ldrb	r0, [r0, #10]
 .Ltmp17:
-	.loc	2 209 14 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:209:14
+	.loc	2 211 14 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:211:14
 	cmp	r0, #1
 	bne	.LBB3_6
 	b	.LBB3_5
 .LBB3_5:
 .Ltmp18:
-	.loc	2 211 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:211:9
+	.loc	2 213 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:213:9
 	ldr	r1, [sp]
 	movs	r0, #1
-	.loc	2 211 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:211:35
+	.loc	2 213 35 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:213:35
 	strb.w	r0, [r1, #64]
-	.loc	2 212 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:212:5
+	.loc	2 214 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:214:5
 	b	.LBB3_6
 .Ltmp19:
 .LBB3_6:
@@ -537,15 +533,15 @@ Control_Mode_Update:
 .LBB3_7:
 	b	.LBB3_8
 .LBB3_8:
-	.loc	2 215 25 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:215:25
+	.loc	2 217 25 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:217:25
 	movw	r0, :lower16:remote_ctrl
 	movt	r0, :upper16:remote_ctrl
 	ldrb	r0, [r0, #10]
-	.loc	2 215 23 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:215:23
+	.loc	2 217 23 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:217:23
 	movw	r1, :lower16:Control_Mode_Update.last_remote_value
 	movt	r1, :upper16:Control_Mode_Update.last_remote_value
 	strb	r0, [r1]
-	.loc	2 219 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:219:1
+	.loc	2 221 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:221:1
 	add	sp, #4
 	bx	lr
 .Ltmp20:
@@ -562,7 +558,7 @@ Control_Mode_Update:
 	.thumb_func
 Control_Target_Update:
 .Lfunc_begin4:
-	.loc	2 161 0                         @ ../Task/Src/Control_Gaimbal_Task.c:161:0
+	.loc	2 163 0                         @ ../Task/Src/Control_Gaimbal_Task.c:163:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -571,166 +567,166 @@ Control_Target_Update:
 	.cfi_def_cfa_offset 8
 	str	r0, [sp, #4]
 .Ltmp21:
-	.loc	2 164 9 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:164:9
+	.loc	2 166 9 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:166:9
 	ldr	r0, [sp, #4]
-	.loc	2 164 30 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:164:30
+	.loc	2 166 30 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:166:30
 	ldrb.w	r0, [r0, #64]
 .Ltmp22:
-	.loc	2 164 9                         @ ../Task/Src/Control_Gaimbal_Task.c:164:9
+	.loc	2 166 9                         @ ../Task/Src/Control_Gaimbal_Task.c:166:9
 	cmp	r0, #2
 	bne	.LBB4_2
 	b	.LBB4_1
 .LBB4_1:
 .Ltmp23:
-	.loc	2 167 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:167:9
+	.loc	2 169 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:169:9
 	ldr	r1, [sp, #4]
 	movs	r0, #0
-	.loc	2 167 49 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:167:49
+	.loc	2 169 49 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:169:49
 	str	r0, [r1, #12]
-	.loc	2 168 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:168:9
+	.loc	2 170 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:170:9
 	ldr	r1, [sp, #4]
-	.loc	2 168 47 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:168:47
+	.loc	2 170 47 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:170:47
 	str	r0, [r1, #4]
-	.loc	2 169 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:169:5
+	.loc	2 171 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:171:5
 	b	.LBB4_6
 .Ltmp24:
 .LBB4_2:
-	.loc	2 171 15                        @ ../Task/Src/Control_Gaimbal_Task.c:171:15
+	.loc	2 173 15                        @ ../Task/Src/Control_Gaimbal_Task.c:173:15
 	ldr	r0, [sp, #4]
-	.loc	2 171 36 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:171:36
+	.loc	2 173 36 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:173:36
 	ldrb.w	r0, [r0, #64]
-	.loc	2 171 64                        @ ../Task/Src/Control_Gaimbal_Task.c:171:64
+	.loc	2 173 64                        @ ../Task/Src/Control_Gaimbal_Task.c:173:64
 	cmp	r0, #3
 	beq	.LBB4_4
 	b	.LBB4_3
 .LBB4_3:
-	.loc	2 171 67                        @ ../Task/Src/Control_Gaimbal_Task.c:171:67
+	.loc	2 173 67                        @ ../Task/Src/Control_Gaimbal_Task.c:173:67
 	ldr	r0, [sp, #4]
-	.loc	2 171 88                        @ ../Task/Src/Control_Gaimbal_Task.c:171:88
+	.loc	2 173 88                        @ ../Task/Src/Control_Gaimbal_Task.c:173:88
 	ldrb.w	r0, [r0, #64]
 .Ltmp25:
-	.loc	2 171 14                        @ ../Task/Src/Control_Gaimbal_Task.c:171:14
+	.loc	2 173 14                        @ ../Task/Src/Control_Gaimbal_Task.c:173:14
 	cmp	r0, #1
 	bne	.LBB4_5
 	b	.LBB4_4
 .LBB4_4:
 .Ltmp26:
-	.loc	2 174 35 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:174:35
+	.loc	2 176 35 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:176:35
 	movw	r0, :lower16:vtm_rc_data
 	movt	r0, :upper16:vtm_rc_data
 	ldrsh.w	r0, [r0, #18]
-	.loc	2 174 17 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:174:17
+	.loc	2 176 17 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:176:17
 	vmov	s0, r0
 	vcvt.f32.s32	s0, s0
 	vldr	s2, .LCPI4_0
-	.loc	2 174 36                        @ ../Task/Src/Control_Gaimbal_Task.c:174:36
+	.loc	2 176 36                        @ ../Task/Src/Control_Gaimbal_Task.c:176:36
 	vmul.f32	s0, s0, s2
-	.loc	2 174 15                        @ ../Task/Src/Control_Gaimbal_Task.c:174:15
+	.loc	2 176 15                        @ ../Task/Src/Control_Gaimbal_Task.c:176:15
 	vstr	s0, [sp]
-	.loc	2 176 51 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:176:51
+	.loc	2 178 51 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:178:51
 	movw	r0, :lower16:remote_ctrl
 	movt	r0, :upper16:remote_ctrl
 	ldrsh.w	r1, [r0, #2]
 	vmov	s0, r1
 	vcvt.f32.s32	s0, s0
 	vldr	s2, .LCPI4_1
-	.loc	2 176 72 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:176:72
+	.loc	2 178 72 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:178:72
 	vmul.f32	s0, s0, s2
-	.loc	2 176 9                         @ ../Task/Src/Control_Gaimbal_Task.c:176:9
+	.loc	2 178 9                         @ ../Task/Src/Control_Gaimbal_Task.c:178:9
 	ldr	r1, [sp, #4]
-	.loc	2 176 49                        @ ../Task/Src/Control_Gaimbal_Task.c:176:49
+	.loc	2 178 49                        @ ../Task/Src/Control_Gaimbal_Task.c:178:49
 	vstr	s0, [r1, #12]
-	.loc	2 177 48 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:177:48
+	.loc	2 179 48 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:179:48
 	vldr	s2, [sp]
-	.loc	2 177 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:177:5
+	.loc	2 179 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:179:5
 	ldr	r1, [sp, #4]
-	.loc	2 177 45                        @ ../Task/Src/Control_Gaimbal_Task.c:177:45
+	.loc	2 179 45                        @ ../Task/Src/Control_Gaimbal_Task.c:179:45
 	vldr	s0, [r1, #12]
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r1, #12]
-	.loc	2 178 49 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:178:49
+	.loc	2 180 49 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:180:49
 	ldrsh.w	r0, [r0]
 	vmov	s0, r0
 	vcvt.f32.s32	s2, s0
-	.loc	2 178 9 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:178:9
+	.loc	2 180 9 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:180:9
 	ldr	r0, [sp, #4]
-	.loc	2 178 47                        @ ../Task/Src/Control_Gaimbal_Task.c:178:47
+	.loc	2 180 47                        @ ../Task/Src/Control_Gaimbal_Task.c:180:47
 	vldr	s0, [r0, #4]
 	vldr	s4, .LCPI4_2
 	vfma.f32	s0, s2, s4
 	vstr	s0, [r0, #4]
-	.loc	2 181 30 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:181:30
+	.loc	2 183 30 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:183:30
 	ldr	r0, [sp, #4]
-	.loc	2 181 58 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:181:58
+	.loc	2 183 58 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:183:58
 	ldr	r0, [r0, #4]
-	.loc	2 181 28                        @ ../Task/Src/Control_Gaimbal_Task.c:181:28
+	.loc	2 183 28                        @ ../Task/Src/Control_Gaimbal_Task.c:183:28
 	movw	r1, :lower16:SMC_control_yaw
 	movt	r1, :upper16:SMC_control_yaw
 	str	r0, [r1, #12]
-	.loc	2 182 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:182:5
+	.loc	2 184 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:184:5
 	b	.LBB4_5
 .Ltmp27:
 .LBB4_5:
 	.loc	2 0 5 is_stmt 0                 @ ../Task/Src/Control_Gaimbal_Task.c:0:5
 	b	.LBB4_6
 .LBB4_6:
-	.loc	2 185 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:185:5
+	.loc	2 187 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:187:5
 	b	.LBB4_7
 .LBB4_7:                                @ =>This Inner Loop Header: Depth=1
-	.loc	2 185 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:185:12
+	.loc	2 187 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:187:12
 	ldr	r0, [sp, #4]
-	.loc	2 185 40                        @ ../Task/Src/Control_Gaimbal_Task.c:185:40
+	.loc	2 187 40                        @ ../Task/Src/Control_Gaimbal_Task.c:187:40
 	vldr	s0, [r0, #4]
 	vldr	s2, .LCPI4_3
-	.loc	2 185 5                         @ ../Task/Src/Control_Gaimbal_Task.c:185:5
+	.loc	2 187 5                         @ ../Task/Src/Control_Gaimbal_Task.c:187:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	ble	.LBB4_9
 	b	.LBB4_8
 .LBB4_8:                                @   in Loop: Header=BB4_7 Depth=1
-	.loc	2 185 57                        @ ../Task/Src/Control_Gaimbal_Task.c:185:57
+	.loc	2 187 56                        @ ../Task/Src/Control_Gaimbal_Task.c:187:56
 	ldr	r0, [sp, #4]
-	.loc	2 185 95                        @ ../Task/Src/Control_Gaimbal_Task.c:185:95
+	.loc	2 187 94                        @ ../Task/Src/Control_Gaimbal_Task.c:187:94
 	vldr	s0, [r0, #4]
 	vldr	s2, .LCPI4_6
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #4]
-	.loc	2 185 5                         @ ../Task/Src/Control_Gaimbal_Task.c:185:5
+	.loc	2 187 5                         @ ../Task/Src/Control_Gaimbal_Task.c:187:5
 	b	.LBB4_7
 .LBB4_9:
-	.loc	2 186 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:186:5
+	.loc	2 188 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:188:5
 	b	.LBB4_10
 .LBB4_10:                               @ =>This Inner Loop Header: Depth=1
-	.loc	2 186 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:186:12
+	.loc	2 188 12 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:188:12
 	ldr	r0, [sp, #4]
-	.loc	2 186 40                        @ ../Task/Src/Control_Gaimbal_Task.c:186:40
+	.loc	2 188 40                        @ ../Task/Src/Control_Gaimbal_Task.c:188:40
 	vldr	s0, [r0, #4]
 	vldr	s2, .LCPI4_4
-	.loc	2 186 5                         @ ../Task/Src/Control_Gaimbal_Task.c:186:5
+	.loc	2 188 5                         @ ../Task/Src/Control_Gaimbal_Task.c:188:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	bge	.LBB4_12
 	b	.LBB4_11
 .LBB4_11:                               @   in Loop: Header=BB4_10 Depth=1
-	.loc	2 186 58                        @ ../Task/Src/Control_Gaimbal_Task.c:186:58
+	.loc	2 188 57                        @ ../Task/Src/Control_Gaimbal_Task.c:188:57
 	ldr	r0, [sp, #4]
-	.loc	2 186 96                        @ ../Task/Src/Control_Gaimbal_Task.c:186:96
+	.loc	2 188 95                        @ ../Task/Src/Control_Gaimbal_Task.c:188:95
 	vldr	s0, [r0, #4]
 	vldr	s2, .LCPI4_5
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #4]
-	.loc	2 186 5                         @ ../Task/Src/Control_Gaimbal_Task.c:186:5
+	.loc	2 188 5                         @ ../Task/Src/Control_Gaimbal_Task.c:188:5
 	b	.LBB4_10
 .LBB4_12:
-	.loc	2 188 17 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:188:17
+	.loc	2 190 17 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:190:17
 	ldr	r0, [sp, #4]
-	.loc	2 188 38 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:188:38
+	.loc	2 190 38 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:190:38
 	ldrb.w	r0, [r0, #64]
-	.loc	2 188 15                        @ ../Task/Src/Control_Gaimbal_Task.c:188:15
+	.loc	2 190 15                        @ ../Task/Src/Control_Gaimbal_Task.c:190:15
 	movw	r1, :lower16:Control_Target_Update.last_type
 	movt	r1, :upper16:Control_Target_Update.last_type
 	strb	r0, [r1]
-	.loc	2 189 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:189:1
+	.loc	2 191 1 epilogue_begin is_stmt 1 @ ../Task/Src/Control_Gaimbal_Task.c:191:1
 	add	sp, #8
 	bx	lr
 .Ltmp28:
@@ -743,15 +739,15 @@ Control_Target_Update:
 .LCPI4_1:
 	.long	0x3a83126f                      @ float 0.00100000005
 .LCPI4_2:
-	.long	0xb851b717                      @ float -4.99999987E-5
+	.long	0xb6a7c5ac                      @ float -4.99999987E-6
 .LCPI4_3:
-	.long	0x43340000                      @ float 180
+	.long	0x40490fdb                      @ float 3.14159274
 .LCPI4_4:
-	.long	0xc3340000                      @ float -180
+	.long	0xc0490fdb                      @ float -3.14159274
 .LCPI4_5:
-	.long	0x43b40000                      @ float 360
+	.long	0x40c90fdb                      @ float 6.28318548
 .LCPI4_6:
-	.long	0xc3b40000                      @ float -360
+	.long	0xc0c90fdb                      @ float -6.28318548
 .Lfunc_end4:
 	.size	Control_Target_Update, .Lfunc_end4-Control_Target_Update
 	.cfi_endproc
@@ -765,7 +761,7 @@ Control_Target_Update:
 	.thumb_func
 Control_Gimbal_Info_Update:
 .Lfunc_begin5:
-	.loc	2 227 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:227:0
+	.loc	2 229 0 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:229:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -779,11 +775,11 @@ Control_Gimbal_Info_Update:
 	.cfi_def_cfa_offset 16
 	str	r0, [sp, #4]
 .Ltmp30:
-	.loc	2 233 15 prologue_end           @ ../Task/Src/Control_Gaimbal_Task.c:233:15
+	.loc	2 235 15 prologue_end           @ ../Task/Src/Control_Gaimbal_Task.c:235:15
 	ldr	r0, [sp, #4]
-	.loc	2 233 36 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:233:36
+	.loc	2 235 36 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:235:36
 	ldrb.w	r0, [r0, #64]
-	.loc	2 233 7                         @ ../Task/Src/Control_Gaimbal_Task.c:233:7
+	.loc	2 235 7                         @ ../Task/Src/Control_Gaimbal_Task.c:235:7
 	mov	r1, r0
 	str	r1, [sp]                        @ 4-byte Spill
 	cmp	r0, #1
@@ -801,69 +797,69 @@ Control_Gimbal_Info_Update:
 	b	.LBB5_6
 .LBB5_3:
 .Ltmp31:
-	.loc	2 237 13 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:237:13
+	.loc	2 239 13 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:239:13
 	b	.LBB5_6
 .LBB5_4:
-	.loc	2 239 35                        @ ../Task/Src/Control_Gaimbal_Task.c:239:35
+	.loc	2 241 35                        @ ../Task/Src/Control_Gaimbal_Task.c:241:35
 	ldr	r0, [sp, #4]
-	.loc	2 239 13 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:239:13
+	.loc	2 241 13 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:241:13
 	bl	Control_Gimbal_Remote
-	.loc	2 240 7 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:240:7
+	.loc	2 242 7 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:242:7
 	b	.LBB5_6
 .LBB5_5:
-	.loc	2 242 35                        @ ../Task/Src/Control_Gaimbal_Task.c:242:35
+	.loc	2 244 35                        @ ../Task/Src/Control_Gaimbal_Task.c:244:35
 	ldr	r0, [sp, #4]
-	.loc	2 242 13 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:242:13
+	.loc	2 244 13 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:244:13
 	bl	Control_Gimbal_Remote
-	.loc	2 243 7 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:243:7
+	.loc	2 245 7 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:245:7
 	b	.LBB5_6
 .Ltmp32:
 .LBB5_6:
-	.loc	2 247 64                        @ ../Task/Src/Control_Gaimbal_Task.c:247:64
+	.loc	2 249 64                        @ ../Task/Src/Control_Gaimbal_Task.c:249:64
 	movw	r0, :lower16:Pitch_Velocity_PID
 	movt	r0, :upper16:Pitch_Velocity_PID
 	vldr	s0, [r0, #52]
-	.loc	2 247 44 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:247:44
+	.loc	2 249 44 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:249:44
 	vcvt.s32.f32	s0, s0
 	vmov	r0, s0
-	.loc	2 247 5                         @ ../Task/Src/Control_Gaimbal_Task.c:247:5
+	.loc	2 249 5                         @ ../Task/Src/Control_Gaimbal_Task.c:249:5
 	ldr	r1, [sp, #4]
-	.loc	2 247 42                        @ ../Task/Src/Control_Gaimbal_Task.c:247:42
+	.loc	2 249 42                        @ ../Task/Src/Control_Gaimbal_Task.c:249:42
 	strh.w	r0, [r1, #66]
-	.loc	2 248 61 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:248:61
-	movw	r0, :lower16:Yaw_Velocity_PID
-	movt	r0, :upper16:Yaw_Velocity_PID
-	ldr	r0, [r0, #52]
-	.loc	2 248 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:248:5
+	.loc	2 250 58 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:250:58
+	movw	r0, :lower16:SMC_control_yaw
+	movt	r0, :upper16:SMC_control_yaw
+	ldr	r0, [r0, #48]
+	.loc	2 250 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:250:5
 	ldr	r1, [sp, #4]
-	.loc	2 248 40                        @ ../Task/Src/Control_Gaimbal_Task.c:248:40
+	.loc	2 250 40                        @ ../Task/Src/Control_Gaimbal_Task.c:250:40
 	str	r0, [r1, #68]
 .Ltmp33:
-	.loc	2 251 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:251:9
+	.loc	2 253 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:253:9
 	ldr	r0, [sp, #4]
-	.loc	2 251 30 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:251:30
+	.loc	2 253 30 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:253:30
 	ldrb.w	r0, [r0, #64]
 .Ltmp34:
-	.loc	2 251 9                         @ ../Task/Src/Control_Gaimbal_Task.c:251:9
+	.loc	2 253 9                         @ ../Task/Src/Control_Gaimbal_Task.c:253:9
 	cmp	r0, #2
 	bne	.LBB5_8
 	b	.LBB5_7
 .LBB5_7:
 .Ltmp35:
-	.loc	2 253 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:253:9
+	.loc	2 255 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:255:9
 	ldr	r1, [sp, #4]
 	movs	r0, #0
-	.loc	2 253 46 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:253:46
+	.loc	2 255 46 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:255:46
 	strh.w	r0, [r1, #66]
-	.loc	2 254 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:254:9
+	.loc	2 256 9 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:256:9
 	ldr	r1, [sp, #4]
-	.loc	2 254 43 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:254:43
+	.loc	2 256 43 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:256:43
 	str	r0, [r1, #68]
-	.loc	2 255 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:255:5
+	.loc	2 257 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:257:5
 	b	.LBB5_8
 .Ltmp36:
 .LBB5_8:
-	.loc	2 256 1 epilogue_begin          @ ../Task/Src/Control_Gaimbal_Task.c:256:1
+	.loc	2 258 1 epilogue_begin          @ ../Task/Src/Control_Gaimbal_Task.c:258:1
 	add	sp, #8
 	pop	{r7, pc}
 .Ltmp37:
@@ -882,7 +878,7 @@ Control_Gimbal_Info_Update:
 	.thumb_func
 Control_Gimbal_Remote:
 .Lfunc_begin6:
-	.loc	2 264 0                         @ ../Task/Src/Control_Gaimbal_Task.c:264:0
+	.loc	2 266 0                         @ ../Task/Src/Control_Gaimbal_Task.c:266:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -896,11 +892,11 @@ Control_Gimbal_Remote:
 	.cfi_def_cfa_offset 24
 	str	r0, [sp, #12]
 .Ltmp38:
-	.loc	2 266 5 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5 prologue_end            @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	b	.LBB6_1
 .LBB6_1:
 .Ltmp39:
-	.loc	2 266 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5 is_stmt 0               @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	ldr	r0, [sp, #12]
 	vldr	s0, [r0, #12]
 	movw	r0, :lower16:Pitch_LimitMin_Angle
@@ -908,14 +904,14 @@ Control_Gimbal_Remote:
 	vldr	s2, [r0]
 	vneg.f32	s2, s2
 .Ltmp40:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	ble	.LBB6_3
 	b	.LBB6_2
 .LBB6_2:
 .Ltmp41:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	movw	r0, :lower16:Pitch_LimitMin_Angle
 	movt	r0, :upper16:Pitch_LimitMin_Angle
 	vldr	s0, [r0]
@@ -925,7 +921,7 @@ Control_Gimbal_Remote:
 	b	.LBB6_6
 .Ltmp42:
 .LBB6_3:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	ldr	r0, [sp, #12]
 	vldr	s0, [r0, #12]
 	movw	r0, :lower16:Pitch_LimitMax_Angle
@@ -933,14 +929,14 @@ Control_Gimbal_Remote:
 	vldr	s2, [r0]
 	vneg.f32	s2, s2
 .Ltmp43:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	bge	.LBB6_5
 	b	.LBB6_4
 .LBB6_4:
 .Ltmp44:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	movw	r0, :lower16:Pitch_LimitMax_Angle
 	movt	r0, :upper16:Pitch_LimitMax_Angle
 	vldr	s0, [r0]
@@ -953,114 +949,114 @@ Control_Gimbal_Remote:
 	.loc	2 0 5                           @ ../Task/Src/Control_Gaimbal_Task.c:0:5
 	b	.LBB6_6
 .LBB6_6:
-	.loc	2 266 5                         @ ../Task/Src/Control_Gaimbal_Task.c:266:5
+	.loc	2 268 5                         @ ../Task/Src/Control_Gaimbal_Task.c:268:5
 	b	.LBB6_7
 .Ltmp46:
 .LBB6_7:
-	.loc	2 269 37 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:269:37
+	.loc	2 271 37 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:271:37
 	ldr	r0, [sp, #12]
-	.loc	2 269 65 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:269:65
+	.loc	2 271 65 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:271:65
 	vldr	s0, [r0, #12]
-	.loc	2 269 107                       @ ../Task/Src/Control_Gaimbal_Task.c:269:107
+	.loc	2 271 107                       @ ../Task/Src/Control_Gaimbal_Task.c:271:107
 	vldr	s1, [r0, #24]
-	.loc	2 269 5                         @ ../Task/Src/Control_Gaimbal_Task.c:269:5
+	.loc	2 271 5                         @ ../Task/Src/Control_Gaimbal_Task.c:271:5
 	movw	r0, :lower16:Pitch_Angle_PID
 	movt	r0, :upper16:Pitch_Angle_PID
 	str	r0, [sp, #8]                    @ 4-byte Spill
 	bl	PID_Calculate
 	ldr	r0, [sp, #8]                    @ 4-byte Reload
-	.loc	2 270 56 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:270:56
+	.loc	2 272 56 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:272:56
 	vldr	s0, [r0, #52]
-	.loc	2 270 78 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:270:78
+	.loc	2 272 78 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:272:78
 	ldr	r0, [sp, #12]
-	.loc	2 270 107                       @ ../Task/Src/Control_Gaimbal_Task.c:270:107
+	.loc	2 272 107                       @ ../Task/Src/Control_Gaimbal_Task.c:272:107
 	vldr	s1, [r0, #36]
 	vmov.f32	s2, #-1.800000e+01
-	.loc	2 270 63                        @ ../Task/Src/Control_Gaimbal_Task.c:270:63
+	.loc	2 272 63                        @ ../Task/Src/Control_Gaimbal_Task.c:272:63
 	vfma.f32	s0, s1, s2
-	.loc	2 270 5                         @ ../Task/Src/Control_Gaimbal_Task.c:270:5
+	.loc	2 272 5                         @ ../Task/Src/Control_Gaimbal_Task.c:272:5
 	movw	r0, :lower16:Pitch_Velocity_PID
 	movt	r0, :upper16:Pitch_Velocity_PID
 	bl	PID_Calculate
 .Ltmp47:
-	.loc	2 273 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:273:5
+	.loc	2 275 5 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:275:5
 	ldr	r0, [sp, #12]
-	.loc	2 273 26 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:273:26
+	.loc	2 275 26 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:275:26
 	ldrb.w	r0, [r0, #64]
 .Ltmp48:
-	.loc	2 273 5                         @ ../Task/Src/Control_Gaimbal_Task.c:273:5
+	.loc	2 275 5                         @ ../Task/Src/Control_Gaimbal_Task.c:275:5
 	cmp	r0, #1
 	bne	.LBB6_9
 	b	.LBB6_8
 .LBB6_8:
 .Ltmp49:
-	.loc	2 276 35 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:276:35
+	.loc	2 278 35 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:278:35
 	ldr	r0, [sp, #12]
-	.loc	2 276 63 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:276:63
+	.loc	2 278 63 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:278:63
 	vldr	s0, [r0, #4]
-	.loc	2 276 103                       @ ../Task/Src/Control_Gaimbal_Task.c:276:103
+	.loc	2 278 103                       @ ../Task/Src/Control_Gaimbal_Task.c:278:103
 	vldr	s1, [r0, #16]
-	.loc	2 276 5                         @ ../Task/Src/Control_Gaimbal_Task.c:276:5
+	.loc	2 278 5                         @ ../Task/Src/Control_Gaimbal_Task.c:278:5
 	movw	r0, :lower16:Yaw_Angle_PID
 	movt	r0, :upper16:Yaw_Angle_PID
 	str	r0, [sp, #4]                    @ 4-byte Spill
 	bl	PID_Calculate
 	ldr	r0, [sp, #4]                    @ 4-byte Reload
-	.loc	2 277 52 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:277:52
+	.loc	2 279 52 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:279:52
 	vldr	s0, [r0, #52]
-	.loc	2 277 75 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:277:75
+	.loc	2 279 75 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:279:75
 	ldr	r0, [sp, #12]
-	.loc	2 277 104                       @ ../Task/Src/Control_Gaimbal_Task.c:277:104
+	.loc	2 279 104                       @ ../Task/Src/Control_Gaimbal_Task.c:279:104
 	vldr	s1, [r0, #20]
 	vldr	s2, .LCPI6_0
-	.loc	2 277 59                        @ ../Task/Src/Control_Gaimbal_Task.c:277:59
+	.loc	2 279 59                        @ ../Task/Src/Control_Gaimbal_Task.c:279:59
 	vfma.f32	s0, s1, s2
-	.loc	2 277 5                         @ ../Task/Src/Control_Gaimbal_Task.c:277:5
+	.loc	2 279 5                         @ ../Task/Src/Control_Gaimbal_Task.c:279:5
 	movw	r0, :lower16:Yaw_Velocity_PID
 	movt	r0, :upper16:Yaw_Velocity_PID
 	bl	PID_Calculate
-	.loc	2 279 1 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:279:1
+	.loc	2 281 1 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:281:1
 	b	.LBB6_9
 .Ltmp50:
 .LBB6_9:
-	.loc	2 281 5                         @ ../Task/Src/Control_Gaimbal_Task.c:281:5
+	.loc	2 283 5                         @ ../Task/Src/Control_Gaimbal_Task.c:283:5
 	ldr	r0, [sp, #12]
-	.loc	2 281 26 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:281:26
+	.loc	2 283 26 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:283:26
 	ldrb.w	r0, [r0, #64]
 .Ltmp51:
-	.loc	2 281 5                         @ ../Task/Src/Control_Gaimbal_Task.c:281:5
+	.loc	2 283 5                         @ ../Task/Src/Control_Gaimbal_Task.c:283:5
 	cmp	r0, #3
 	bne	.LBB6_11
 	b	.LBB6_10
 .LBB6_10:
 .Ltmp52:
-	.loc	2 284 28 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:284:28
+	.loc	2 286 28 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:286:28
 	ldr	r0, [sp, #12]
-	.loc	2 284 57 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:284:57
+	.loc	2 286 57 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:286:57
 	vldr	s0, [r0, #28]
-	.loc	2 284 103                       @ ../Task/Src/Control_Gaimbal_Task.c:284:103
+	.loc	2 286 103                       @ ../Task/Src/Control_Gaimbal_Task.c:286:103
 	vldr	s1, [r0, #32]
-	.loc	2 284 2                         @ ../Task/Src/Control_Gaimbal_Task.c:284:2
+	.loc	2 286 2                         @ ../Task/Src/Control_Gaimbal_Task.c:286:2
 	movw	r0, :lower16:SMC_control_yaw
 	movt	r0, :upper16:SMC_control_yaw
 	str	r0, [sp]                        @ 4-byte Spill
 	bl	SMC_task
 	ldr	r0, [sp]                        @ 4-byte Reload
-	.loc	2 286 51 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:286:51
+	.loc	2 288 51 is_stmt 1              @ ../Task/Src/Control_Gaimbal_Task.c:288:51
 	vldr	s0, [r0, #48]
-	.loc	2 287 19                        @ ../Task/Src/Control_Gaimbal_Task.c:287:19
+	.loc	2 288 54 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:288:54
 	ldr	r0, [sp, #12]
-	.loc	2 287 48 is_stmt 0              @ ../Task/Src/Control_Gaimbal_Task.c:287:48
+	.loc	2 288 83                        @ ../Task/Src/Control_Gaimbal_Task.c:288:83
 	vldr	s1, [r0, #32]
-	.loc	2 286 2 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:286:2
+	.loc	2 288 2                         @ ../Task/Src/Control_Gaimbal_Task.c:288:2
 	movw	r0, :lower16:Yaw_Velocity_PID
 	movt	r0, :upper16:Yaw_Velocity_PID
 	bl	PID_Calculate
-	.loc	2 296 1                         @ ../Task/Src/Control_Gaimbal_Task.c:296:1
+	.loc	2 297 1 is_stmt 1               @ ../Task/Src/Control_Gaimbal_Task.c:297:1
 	b	.LBB6_11
 .Ltmp53:
 .LBB6_11:
-	.loc	2 300 1 epilogue_begin          @ ../Task/Src/Control_Gaimbal_Task.c:300:1
+	.loc	2 301 1 epilogue_begin          @ ../Task/Src/Control_Gaimbal_Task.c:301:1
 	add	sp, #16
 	pop	{r7, pc}
 .Ltmp54:
@@ -1275,14 +1271,14 @@ Pitch_Velocity_Param:
 	.section	.data.Yaw_Angle_PID_Param,"aw",%progbits
 	.p2align	2, 0x0
 Yaw_Angle_PID_Param:
-	.long	0x3f800000                      @ float 1
+	.long	0x3fc00000                      @ float 1.5
 	.long	0x00000000                      @ float 0
 	.long	0x00000000                      @ float 0
 	.long	0x00000000                      @ float 0
 	.long	0x00000000                      @ float 0
 	.long	0x40400000                      @ float 3
-	.long	0x40800000                      @ float 4
-	.long	0x3dc710cb                      @ float 0.0971999987
+	.long	0x41a00000                      @ float 20
+	.long	0x3dcccccd                      @ float 0.100000001
 	.long	0x3edf62b7                      @ float 0.436300009
 	.long	0x00000000                      @ float 0
 	.size	Yaw_Angle_PID_Param, 40
@@ -1292,11 +1288,11 @@ Yaw_Angle_PID_Param:
 	.p2align	2, 0x0
 Yaw_Velocity_PID_Param:
 	.long	0x3db851ec                      @ float 0.0900000035
-	.long	0x3dcccccd                      @ float 0.100000001
+	.long	0x00000000                      @ float 0
 	.long	0x3e4ccccd                      @ float 0.200000003
 	.long	0x00000000                      @ float 0
 	.long	0x00000000                      @ float 0
-	.long	0x3e4ccccd                      @ float 0.200000003
+	.long	0x3f000000                      @ float 0.5
 	.long	0x3f800000                      @ float 1
 	.long	0x3f000000                      @ float 0.5
 	.long	0x3e800000                      @ float 0.25
@@ -2429,13 +2425,13 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string120                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	160                             @ DW_AT_decl_line
+	.byte	162                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	17                              @ Abbrev [17] 0x5f8:0x11 DW_TAG_variable
 	.long	.Linfo_string112                @ DW_AT_name
 	.long	580                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	162                             @ DW_AT_decl_line
+	.byte	164                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	Control_Target_Update.last_type
@@ -2445,7 +2441,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	4
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	160                             @ DW_AT_decl_line
+	.byte	162                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	20                              @ Abbrev [20] 0x617:0x18 DW_TAG_lexical_block
 	.long	.Ltmp26                         @ DW_AT_low_pc
@@ -2456,7 +2452,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	0
 	.long	.Linfo_string128                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	173                             @ DW_AT_decl_line
+	.byte	175                             @ DW_AT_decl_line
 	.long	131                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	0                               @ End Of Children Mark
@@ -2467,13 +2463,13 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string119                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	196                             @ DW_AT_decl_line
+	.byte	198                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	17                              @ Abbrev [17] 0x641:0x11 DW_TAG_variable
 	.long	.Linfo_string113                @ DW_AT_name
 	.long	983                             @ DW_AT_type
 	.byte	2                               @ DW_AT_decl_file
-	.byte	198                             @ DW_AT_decl_line
+	.byte	200                             @ DW_AT_decl_line
 	.byte	5                               @ DW_AT_location
 	.byte	3
 	.long	Control_Mode_Update.last_remote_value
@@ -2483,7 +2479,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	0
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	196                             @ DW_AT_decl_line
+	.byte	198                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	17                              @ Abbrev [17] 0x661:0x11 DW_TAG_variable
@@ -2536,7 +2532,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string117                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	100                             @ DW_AT_decl_line
+	.byte	102                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	19                              @ Abbrev [19] 0x6c2:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -2544,7 +2540,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	4
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	100                             @ DW_AT_decl_line
+	.byte	102                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	18                              @ Abbrev [18] 0x6d1:0x20 DW_TAG_subprogram
@@ -2554,7 +2550,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string118                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	128                             @ DW_AT_decl_line
+	.byte	130                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	19                              @ Abbrev [19] 0x6e2:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -2562,7 +2558,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	12
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	128                             @ DW_AT_decl_line
+	.byte	130                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	18                              @ Abbrev [18] 0x6f1:0x20 DW_TAG_subprogram
@@ -2572,7 +2568,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string121                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	226                             @ DW_AT_decl_line
+	.byte	228                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.byte	19                              @ Abbrev [19] 0x702:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -2580,7 +2576,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	4
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	226                             @ DW_AT_decl_line
+	.byte	228                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	23                              @ Abbrev [23] 0x711:0x22 DW_TAG_subprogram
@@ -2590,7 +2586,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	93
 	.long	.Linfo_string122                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.short	263                             @ DW_AT_decl_line
+	.short	265                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	24                              @ Abbrev [24] 0x723:0xf DW_TAG_formal_parameter
@@ -2599,7 +2595,7 @@ Control_Mode_Update.last_remote_value:
 	.byte	12
 	.long	.Linfo_string18                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.short	263                             @ DW_AT_decl_line
+	.short	265                             @ DW_AT_decl_line
 	.long	1878                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	13                              @ Abbrev [13] 0x733:0x5 DW_TAG_pointer_type

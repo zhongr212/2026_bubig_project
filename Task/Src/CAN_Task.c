@@ -103,7 +103,7 @@ void DM_Motor_CAN_TxMessage(FDCAN_TxFrame_TypeDef *FDCAN_TxFrame,DM_Motor_Info_T
 	 FDCAN2_TxFrame.Data[3] = (uint8_t)(Control_Magazine_Info.SendValue[0]);	
 	 USER_CAN_TxMessage(&FDCAN2_TxFrame,&Magazine_Motor,FDCAN2_TxFrame.Data); 
 
-	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, 0, 0, 0.05, Control_Gimbal_Info.SendValue_yaw); // Yaw÷·
+	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, Control_Gimbal_Info.SendValue_yaw, 0, 0.05, 0); // Yaw÷·  Control_Gimbal_Info.SendValue_yaw
 //	  if (Control_Gimbal_Info.Type == GIMBAL_SLEEP)
 //		DM_Motor_Command(&FDCAN2_TxFrame, &DM_Yaw_Motor, Motor_Disable);
 //		else   if  (Control_Gimbal_Info.Type != GIMBAL_SLEEP)               //((Control_Info.Control_Mode != Control_Info.Gimbal_Last_Mode) &&

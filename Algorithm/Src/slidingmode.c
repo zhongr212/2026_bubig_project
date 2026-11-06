@@ -2,6 +2,8 @@
 #include "math.h"
 #include "arm_math.h"
 #include "cmsis_os.h"
+#include "pid.h"
+
 SMC SMC_control_yaw;
 SMC SMC_control_pitch;
 
@@ -62,14 +64,14 @@ void YawSMC(SMC* SMC_control,float c1,float c2,float k,float target,float error_
 	
 void err_tran(float* error)
 {
-  while (*error > 180.0f) *error -= 360.0f;
-  while (*error < -180.0f) *error += 360.0f;
+  while (*error > PI) *error -= 2*PI;
+  while (*error < -PI) *error += 2*PI;
 }
 float err_tt(float a,float b)
 {
 float erro = a-b;
-	while (erro > 180.0f) erro -= 360.0f;
-  while (erro < -180.0f) erro += 360.0f;
+	while (erro > PI) erro -= 2*PI;
+  while (erro < -PI) erro += 2*PI;
 	return erro;
 }
 void SMC_task(SMC* SMC_control,float angle_now,float angle_vel)

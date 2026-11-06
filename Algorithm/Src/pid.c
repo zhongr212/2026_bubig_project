@@ -191,8 +191,8 @@ float PID_Calculate(PID_Info_TypeDef *PID, float Target,float Measure)
             //新增角度转换
             float angle_error = PID->Err[0];
          
-            while (angle_error > 180.0f) angle_error -= 360.0f;
-            while (angle_error < -180.0f) angle_error += 360.0f;
+            while (angle_error > PI) angle_error -= 2*PI;
+            while (angle_error < -PI) angle_error += 2*PI;
             PID->Err[0] = angle_error;
 
             PID->Pout = PID->Param.KP * PID->Err[0];

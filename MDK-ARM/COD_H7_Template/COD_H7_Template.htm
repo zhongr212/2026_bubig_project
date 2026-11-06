@@ -3,7 +3,7 @@
 <title>Static Call Graph - [COD_H7_Template\COD_H7_Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image COD_H7_Template\COD_H7_Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sat Oct 31 22:10:25 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Nov  6 20:32:29 2026
 <BR><P>
 <H3>Maximum Stack Usage =       2452 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -535,11 +535,10 @@ Global Symbols
 
 <P><STRONG><a name="[28d]"></a>___aeabi_memcpy8$move</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
 
-<P><STRONG><a name="[230]"></a>__aeabi_memcpy</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, memmovea.o(.text))
+<P><STRONG><a name="[248]"></a>__aeabi_memcpy</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, memmovea.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_Init
+<BR>[Called By]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
 </UL>
 
 <P><STRONG><a name="[16b]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text))
@@ -557,7 +556,7 @@ Global Symbols
 <P><STRONG><a name="[249]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memmove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
+<BR>[Called By]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
 </UL>
 
 <P><STRONG><a name="[28e]"></a>__aeabi_memmove4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
@@ -587,7 +586,7 @@ Global Symbols
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMU_WriteReg
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receive_init
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC1_Init
-<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QuaternionEKF_H_Update
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QuaternionEKF_A_Update
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Matrixf_init
@@ -1064,7 +1063,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Task
 </UL>
 
-<P><STRONG><a name="[115]"></a>DM_Motor_Info_Update</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, motor.o(.text.DM_Motor_Info_Update))
+<P><STRONG><a name="[115]"></a>DM_Motor_Info_Update</STRONG> (Thumb, 206 bytes, Stack size 24 bytes, motor.o(.text.DM_Motor_Info_Update))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DM_Motor_Info_Update &rArr; uint_to_float
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint_to_float
@@ -1155,7 +1154,7 @@ Global Symbols
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FDCAN2_Init
 <LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FDCAN1_Init
 <LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriphCommonClock_Config
-<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[1d]"></a>FDCAN1_IT0_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32h7xx_it.o(.text.FDCAN1_IT0_IRQHandler))
@@ -1200,16 +1199,16 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[242]"></a>GetBatteryVoltage</STRONG> (Thumb, 56 bytes, Stack size 4 bytes, bsp_adc.o(.text.GetBatteryVoltage))
+<P><STRONG><a name="[241]"></a>GetBatteryVoltage</STRONG> (Thumb, 56 bytes, Stack size 4 bytes, bsp_adc.o(.text.GetBatteryVoltage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = GetBatteryVoltage
 </UL>
-<BR>[Called By]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
+<BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
 </UL>
 
-<P><STRONG><a name="[234]"></a>GetVoltageStatus</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, bsp_adc.o(.text.GetVoltageStatus))
+<P><STRONG><a name="[233]"></a>GetVoltageStatus</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, bsp_adc.o(.text.GetVoltageStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GetVoltageStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
+<BR>[Called By]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
 </UL>
 
 <P><STRONG><a name="[122]"></a>Get_CRC16_Check_Sum</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, crc.o(.text.Get_CRC16_Check_Sum))
@@ -1219,7 +1218,7 @@ Global Symbols
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fomat_set
 </UL>
 
-<P><STRONG><a name="[243]"></a>Get_CRC8_Check_Sum</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, crc.o(.text.Get_CRC8_Check_Sum))
+<P><STRONG><a name="[242]"></a>Get_CRC8_Check_Sum</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, crc.o(.text.Get_CRC8_Check_Sum))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = Get_CRC8_Check_Sum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Verify_CRC8_Check_Sum
@@ -1734,8 +1733,8 @@ Global Symbols
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_ConfigSupply
 <LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startMusicPlay
-<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
+<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HaL_Tick
 </UL>
@@ -1837,7 +1836,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[180]"></a>HAL_RCCEx_GetD3PCLK1Freq</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, stm32h7xx_hal_rcc_ex.o(.text.HAL_RCCEx_GetD3PCLK1Freq))
@@ -1900,7 +1899,7 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[176]"></a>HAL_RCC_GetClockConfig</STRONG> (Thumb, 136 bytes, Stack size 8 bytes, stm32h7xx_hal_rcc.o(.text.HAL_RCC_GetClockConfig))
@@ -1951,7 +1950,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[18d]"></a>HAL_SPI_ErrorCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32h7xx_hal_spi.o(.text.HAL_SPI_ErrorCallback))
@@ -2330,17 +2329,17 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
+<BR>[Called By]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
 </UL>
 
-<P><STRONG><a name="[23c]"></a>HAL_UART_TxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32h7xx_hal_uart.o(.text.HAL_UART_TxCpltCallback))
+<P><STRONG><a name="[23b]"></a>HAL_UART_TxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32h7xx_hal_uart.o(.text.HAL_UART_TxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HAL_UART_TxCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndTransmit_IT
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMATransmitCplt
 </UL>
 
-<P><STRONG><a name="[23d]"></a>HAL_UART_TxHalfCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32h7xx_hal_uart.o(.text.HAL_UART_TxHalfCpltCallback))
+<P><STRONG><a name="[23c]"></a>HAL_UART_TxHalfCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32h7xx_hal_uart.o(.text.HAL_UART_TxHalfCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HAL_UART_TxHalfCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMATxHalfCplt
@@ -2371,7 +2370,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.rodata..L__const.MX_FREERTOS_Init.os_thread_def_StartINS_Task)
 </UL>
-<P><STRONG><a name="[244]"></a>InitVoltageMonitor</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, bsp_adc.o(.text.InitVoltageMonitor))
+<P><STRONG><a name="[243]"></a>InitVoltageMonitor</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, bsp_adc.o(.text.InitVoltageMonitor))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = InitVoltageMonitor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
@@ -2436,7 +2435,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startMusicPlay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
+<BR>[Called By]<UL><LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
 </UL>
 
 <P><STRONG><a name="[1e4]"></a>MX_ADC1_Init</STRONG> (Thumb, 228 bytes, Stack size 64 bytes, adc.o(.text.MX_ADC1_Init))
@@ -2749,7 +2748,7 @@ Global Symbols
 <P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32h7xx_it.o(.text.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[d7]"></a>PID_Calculate</STRONG> (Thumb, 2688 bytes, Stack size 56 bytes, pid.o(.text.PID_Calculate))
+<P><STRONG><a name="[d7]"></a>PID_Calculate</STRONG> (Thumb, 2684 bytes, Stack size 56 bytes, pid.o(.text.PID_Calculate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = PID_Calculate &rArr; GetSmoothedTargetDelta
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetSmoothedTargetDelta
@@ -2890,7 +2889,7 @@ Global Symbols
 <LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;avp_unaligned_u32
 <LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;avp_unaligned_f32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
+<BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
 </UL>
 
 <P><STRONG><a name="[224]"></a>Referee_System_Frame_Update</STRONG> (Thumb, 158 bytes, Stack size 16 bytes, referee_system.o(.text.Referee_System_Frame_Update))
@@ -2903,13 +2902,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USER_USART1_RxHandler
 </UL>
 
-<P><STRONG><a name="[245]"></a>Remote_Message_Moniter</STRONG> (Thumb, 64 bytes, Stack size 4 bytes, remote_control.o(.text.Remote_Message_Moniter))
+<P><STRONG><a name="[244]"></a>Remote_Message_Moniter</STRONG> (Thumb, 64 bytes, Stack size 4 bytes, remote_control.o(.text.Remote_Message_Moniter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Remote_Message_Moniter
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
 </UL>
 
-<P><STRONG><a name="[23e]"></a>SBUS_TO_RC</STRONG> (Thumb, 304 bytes, Stack size 8 bytes, remote_control.o(.text.SBUS_TO_RC))
+<P><STRONG><a name="[23d]"></a>SBUS_TO_RC</STRONG> (Thumb, 304 bytes, Stack size 8 bytes, remote_control.o(.text.SBUS_TO_RC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SBUS_TO_RC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USER_USART5_RxHandler
@@ -2944,11 +2943,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
-<P><STRONG><a name="[11a]"></a>Send_Init</STRONG> (Thumb, 72 bytes, Stack size 56 bytes, detect.o(.text.Send_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Send_Init &rArr; Fomat_set &rArr; Get_CRC16_Check_Sum
+<P><STRONG><a name="[11a]"></a>Send_Init</STRONG> (Thumb, 82 bytes, Stack size 32 bytes, detect.o(.text.Send_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Send_Init &rArr; Fomat_set &rArr; Get_CRC16_Check_Sum
 </UL>
 <BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fomat_set
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Detect_Task
 </UL>
@@ -2968,11 +2966,11 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, port.o(.text.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = SysTick_Handler &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Calls]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[232]"></a>SystemClock_Config</STRONG> (Thumb, 208 bytes, Stack size 128 bytes, main.o(.text.SystemClock_Config))
+<P><STRONG><a name="[231]"></a>SystemClock_Config</STRONG> (Thumb, 208 bytes, Stack size 128 bytes, main.o(.text.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_RCC_GetPCLK1Freq &rArr; HAL_RCC_GetHCLKFreq &rArr; HAL_RCC_GetSysClockFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
@@ -2987,12 +2985,12 @@ Global Symbols
 <P><STRONG><a name="[94]"></a>SystemInit</STRONG> (Thumb, 314 bytes, Stack size 0 bytes, system_stm32h7xx.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(.text)
 </UL>
-<P><STRONG><a name="[235]"></a>TIM1_1ms_Init</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, tim.o(.text.TIM1_1ms_Init))
+<P><STRONG><a name="[234]"></a>TIM1_1ms_Init</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, tim.o(.text.TIM1_1ms_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = TIM1_1ms_Init &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
-<LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3000,7 +2998,7 @@ Global Symbols
 <P><STRONG><a name="[23]"></a>TIM1_UP_IRQHandler</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, tim.o(.text.TIM1_UP_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TIM1_UP_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TriangleWave_Update1ms
+<BR>[Calls]<UL><LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TriangleWave_Update1ms
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
@@ -3050,7 +3048,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[23a]"></a>UART7_Send_Blocking</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, detect.o(.text.UART7_Send_Blocking))
+<P><STRONG><a name="[239]"></a>UART7_Send_Blocking</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, detect.o(.text.UART7_Send_Blocking))
 <BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = UART7_Send_Blocking &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
@@ -3157,11 +3155,11 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Motor_CAN_TxMessage
 </UL>
 
-<P><STRONG><a name="[241]"></a>UpdateVoltageMonitor</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, bsp_adc.o(.text.UpdateVoltageMonitor))
+<P><STRONG><a name="[240]"></a>UpdateVoltageMonitor</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, bsp_adc.o(.text.UpdateVoltageMonitor))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UpdateVoltageMonitor &rArr; GetBatteryVoltage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBatteryVoltage
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBatteryVoltage
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
 </UL>
@@ -3181,16 +3179,16 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_CRC16_Check_Sum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
+<BR>[Called By]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Task
-<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vt13_rc
+<LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vt13_rc
 <LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Referee_System_Frame_Update
 </UL>
 
 <P><STRONG><a name="[225]"></a>Verify_CRC8_Check_Sum</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, crc.o(.text.Verify_CRC8_Check_Sum))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Verify_CRC8_Check_Sum &rArr; Get_CRC8_Check_Sum
 </UL>
-<BR>[Calls]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_CRC8_Check_Sum
+<BR>[Calls]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_CRC8_Check_Sum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Referee_System_Frame_Update
 </UL>
@@ -3198,12 +3196,12 @@ Global Symbols
 <P><STRONG><a name="[ab]"></a>Warning_Task</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, warning_task.o(.text.Warning_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Warning_Task &rArr; System_SelfCheck &rArr; LowVoltage_Music &rArr; startMusicPlay &rArr; startBuzzer &rArr; HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_Message_Moniter
-<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
+<BR>[Calls]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_Message_Moniter
+<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_SelfCheck
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
-<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitVoltageMonitor
+<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
+<LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateVoltageMonitor
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitVoltageMonitor
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ADC_Init
 </UL>
@@ -3294,7 +3292,7 @@ Global Symbols
 <P><STRONG><a name="[109]"></a>encoder_to_angle</STRONG> (Thumb, 388 bytes, Stack size 24 bytes, motor.o(.text.encoder_to_angle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = encoder_to_angle &rArr; f_loop_constrain
 </UL>
-<BR>[Calls]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;f_loop_constrain
+<BR>[Calls]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;f_loop_constrain
 </UL>
 <BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DJI_Motor_Info_Update
 </UL>
@@ -3325,14 +3323,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMC_task
 </UL>
 
-<P><STRONG><a name="[248]"></a>exam_rece_data</STRONG> (Thumb, 404 bytes, Stack size 40 bytes, detect.o(.text.exam_rece_data))
+<P><STRONG><a name="[247]"></a>exam_rece_data</STRONG> (Thumb, 404 bytes, Stack size 40 bytes, detect.o(.text.exam_rece_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = exam_rece_data &rArr; Verify_CRC16_Check_Sum &rArr; Get_CRC16_Check_Sum
 </UL>
 <BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Verify_CRC16_Check_Sum
 <LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memmove
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
+<BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
 </UL>
 
 <P><STRONG><a name="[211]"></a>floatEqual</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, power.o(.text.floatEqual))
@@ -3348,7 +3346,7 @@ Global Symbols
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelStart
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
-<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
 <LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TriangleWave_SetPeriod
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ADC_Init
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMI088_Init
@@ -3372,7 +3370,7 @@ Global Symbols
 <LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriphCommonClock_Config
-<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Config
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
@@ -3384,7 +3382,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMU_WriteReg
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Detect_Task
-<LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
+<LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_GIMBAL_Task
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Magazine_Task
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Init
@@ -3442,7 +3440,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setBuzzerFrequency
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startMusicPlay
-<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
+<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
 </UL>
 
 <P><STRONG><a name="[265]"></a>pvPortMalloc</STRONG> (Thumb, 492 bytes, Stack size 48 bytes, heap_4.o(.text.pvPortMalloc))
@@ -3462,10 +3460,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 </UL>
 
-<P><STRONG><a name="[23f]"></a>rec_data</STRONG> (Thumb, 100 bytes, Stack size 48 bytes, detect.o(.text.rec_data))
+<P><STRONG><a name="[23e]"></a>rec_data</STRONG> (Thumb, 100 bytes, Stack size 48 bytes, detect.o(.text.rec_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = rec_data &rArr; exam_rece_data &rArr; Verify_CRC16_Check_Sum &rArr; Get_CRC16_Check_Sum
 </UL>
-<BR>[Calls]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
+<BR>[Calls]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exam_rece_data
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Task
 <LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;apply_target
 </UL>
@@ -3508,7 +3506,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[26e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stopBuzzer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
+<BR>[Called By]<UL><LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateMusicPlayer
 </UL>
 
 <P><STRONG><a name="[10d]"></a>uint_to_float</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, dm_imu.o(.text.uint_to_float))
@@ -3520,7 +3518,7 @@ Global Symbols
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_IMU_Accel_Update
 </UL>
 
-<P><STRONG><a name="[246]"></a>updateMusicPlayer</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, bsp_buzzer.o(.text.updateMusicPlayer))
+<P><STRONG><a name="[245]"></a>updateMusicPlayer</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, bsp_buzzer.o(.text.updateMusicPlayer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = updateMusicPlayer &rArr; playNote &rArr; setBuzzerFrequency
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -3533,7 +3531,7 @@ Global Symbols
 <P><STRONG><a name="[256]"></a>uxListRemove</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, list.o(.text.uxListRemove))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Called By]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
@@ -3566,7 +3564,7 @@ Global Symbols
 <P><STRONG><a name="[257]"></a>vListInsertEnd</STRONG> (Thumb, 58 bytes, Stack size 12 bytes, list.o(.text.vListInsertEnd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = vListInsertEnd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Called By]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 <LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
@@ -3655,7 +3653,7 @@ Global Symbols
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
 </UL>
 
-<P><STRONG><a name="[240]"></a>vt13_rc</STRONG> (Thumb, 386 bytes, Stack size 16 bytes, rc_vtm_ccontrol.o(.text.vt13_rc))
+<P><STRONG><a name="[23f]"></a>vt13_rc</STRONG> (Thumb, 386 bytes, Stack size 16 bytes, rc_vtm_ccontrol.o(.text.vt13_rc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = vt13_rc &rArr; Verify_CRC16_Check_Sum &rArr; Get_CRC16_Check_Sum
 </UL>
 <BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Verify_CRC16_Check_Sum
@@ -3711,7 +3709,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
 </UL>
 
-<P><STRONG><a name="[231]"></a>xTaskIncrementTick</STRONG> (Thumb, 440 bytes, Stack size 32 bytes, tasks.o(.text.xTaskIncrementTick))
+<P><STRONG><a name="[230]"></a>xTaskIncrementTick</STRONG> (Thumb, 440 bytes, Stack size 32 bytes, tasks.o(.text.xTaskIncrementTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
@@ -3725,7 +3723,7 @@ Global Symbols
 <P><STRONG><a name="[269]"></a>xTaskResumeAll</STRONG> (Thumb, 376 bytes, Stack size 24 bytes, tasks.o(.text.xTaskResumeAll))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Calls]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 <LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
@@ -4292,14 +4290,14 @@ Local Symbols
 <P><STRONG><a name="[9b]"></a>UART_DMATransmitCplt</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, stm32h7xx_hal_uart.o(.text.UART_DMATransmitCplt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UART_DMATransmitCplt &rArr; HAL_UART_TxCpltCallback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
+<BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32h7xx_hal_uart.o(.text.HAL_UART_Transmit_DMA)
 </UL>
 <P><STRONG><a name="[9c]"></a>UART_DMATxHalfCplt</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, stm32h7xx_hal_uart.o(.text.UART_DMATxHalfCplt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UART_DMATxHalfCplt &rArr; HAL_UART_TxHalfCpltCallback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxHalfCpltCallback
+<BR>[Calls]<UL><LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32h7xx_hal_uart.o(.text.HAL_UART_Transmit_DMA)
 </UL>
@@ -4307,12 +4305,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = UART_DMAError &rArr; UART_EndRxTransfer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_ErrorCallback
-<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndTxTransfer
+<LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndTxTransfer
 <LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndRxTransfer
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32h7xx_hal_uart.o(.text.HAL_UART_Transmit_DMA)
 </UL>
-<P><STRONG><a name="[23b]"></a>UART_EndTxTransfer</STRONG> (Thumb, 92 bytes, Stack size 12 bytes, stm32h7xx_hal_uart.o(.text.UART_EndTxTransfer))
+<P><STRONG><a name="[23a]"></a>UART_EndTxTransfer</STRONG> (Thumb, 92 bytes, Stack size 12 bytes, stm32h7xx_hal_uart.o(.text.UART_EndTxTransfer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART_EndTxTransfer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMAError
@@ -4328,7 +4326,7 @@ Local Symbols
 <P><STRONG><a name="[1bc]"></a>UART_EndTransmit_IT</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, stm32h7xx_hal_uart.o(.text.UART_EndTransmit_IT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UART_EndTransmit_IT &rArr; HAL_UART_TxCpltCallback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
+<BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
 </UL>
@@ -4350,25 +4348,25 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[236]"></a>__NVIC_SetPriority</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, tim.o(.text.__NVIC_SetPriority))
+<P><STRONG><a name="[235]"></a>__NVIC_SetPriority</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, tim.o(.text.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
+<BR>[Called By]<UL><LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
 </UL>
 
-<P><STRONG><a name="[237]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, tim.o(.text.__NVIC_ClearPendingIRQ))
+<P><STRONG><a name="[236]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, tim.o(.text.__NVIC_ClearPendingIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_ClearPendingIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
+<BR>[Called By]<UL><LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
 </UL>
 
-<P><STRONG><a name="[238]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, tim.o(.text.__NVIC_EnableIRQ))
+<P><STRONG><a name="[237]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, tim.o(.text.__NVIC_EnableIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
+<BR>[Called By]<UL><LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_1ms_Init
 </UL>
 
-<P><STRONG><a name="[239]"></a>TriangleWave_Update1ms</STRONG> (Thumb, 208 bytes, Stack size 0 bytes, tim.o(.text.TriangleWave_Update1ms))
+<P><STRONG><a name="[238]"></a>TriangleWave_Update1ms</STRONG> (Thumb, 208 bytes, Stack size 0 bytes, tim.o(.text.TriangleWave_Update1ms))
 <BR><BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_UP_IRQHandler
 </UL>
 
@@ -4416,7 +4414,7 @@ Local Symbols
 <P><STRONG><a name="[1b1]"></a>USER_USART5_RxHandler</STRONG> (Thumb, 1640 bytes, Stack size 16 bytes, bsp_uart.o(.text.USER_USART5_RxHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USER_USART5_RxHandler &rArr; SBUS_TO_RC
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SBUS_TO_RC
+<BR>[Calls]<UL><LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SBUS_TO_RC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback
 </UL>
@@ -4427,10 +4425,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback
 </UL>
 
-<P><STRONG><a name="[1b3]"></a>USER_USART7_RxHandler</STRONG> (Thumb, 1632 bytes, Stack size 16 bytes, bsp_uart.o(.text.USER_USART7_RxHandler))
+<P><STRONG><a name="[1b3]"></a>USER_USART7_RxHandler</STRONG> (Thumb, 1608 bytes, Stack size 16 bytes, bsp_uart.o(.text.USER_USART7_RxHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = USER_USART7_RxHandler &rArr; rec_data &rArr; exam_rece_data &rArr; Verify_CRC16_Check_Sum &rArr; Get_CRC16_Check_Sum
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
+<BR>[Calls]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback
 </UL>
@@ -4438,7 +4436,7 @@ Local Symbols
 <P><STRONG><a name="[1b4]"></a>USER_USART8_RxHandler</STRONG> (Thumb, 1640 bytes, Stack size 16 bytes, bsp_uart.o(.text.USER_USART8_RxHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = USER_USART8_RxHandler &rArr; vt13_rc &rArr; Verify_CRC16_Check_Sum &rArr; Get_CRC16_Check_Sum
 </UL>
-<BR>[Calls]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vt13_rc
+<BR>[Calls]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vt13_rc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback
 </UL>
@@ -4530,11 +4528,11 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Motor_CAN_TxMessage
 </UL>
 
-<P><STRONG><a name="[233]"></a>System_SelfCheck</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, warning_task.o(.text.System_SelfCheck))
+<P><STRONG><a name="[232]"></a>System_SelfCheck</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, warning_task.o(.text.System_SelfCheck))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = System_SelfCheck &rArr; LowVoltage_Music &rArr; startMusicPlay &rArr; startBuzzer &rArr; HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LowVoltage_Music
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetVoltageStatus
+<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetVoltageStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Warning_Task
 </UL>
@@ -4634,7 +4632,7 @@ Local Symbols
 <P><STRONG><a name="[26a]"></a>apply_target</STRONG> (Thumb, 84 bytes, Stack size 28 bytes, detect.o(.text.apply_target))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = apply_target
 </UL>
-<BR>[Called By]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
+<BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rec_data
 </UL>
 
 <P><STRONG><a name="[119]"></a>read_gimbal_state</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, detect.o(.text.read_gimbal_state))
@@ -4646,7 +4644,7 @@ Local Symbols
 <P><STRONG><a name="[11b]"></a>uart_write</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, detect.o(.text.uart_write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = uart_write &rArr; UART7_Send_Blocking &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; vListInsertEnd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
+<BR>[Calls]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART7_Send_Blocking
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Detect_Task
 </UL>
@@ -4663,7 +4661,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DJI_Motor_Info_Update
 </UL>
 
-<P><STRONG><a name="[247]"></a>f_loop_constrain</STRONG> (Thumb, 196 bytes, Stack size 20 bytes, motor.o(.text.f_loop_constrain))
+<P><STRONG><a name="[246]"></a>f_loop_constrain</STRONG> (Thumb, 196 bytes, Stack size 20 bytes, motor.o(.text.f_loop_constrain))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = f_loop_constrain
 </UL>
 <BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;encoder_to_angle
@@ -4917,7 +4915,7 @@ Local Symbols
 <P><STRONG><a name="[275]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 70 bytes, Stack size 4 bytes, tasks.o(.text.prvResetNextTaskUnblockTime))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = prvResetNextTaskUnblockTime
 </UL>
-<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Called By]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 

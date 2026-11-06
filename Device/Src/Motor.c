@@ -39,15 +39,15 @@ DJI_Motor_Info_Typedef Motor_chassis[4] =
 //角度
 DM_Motor_Info_Typedef DM_Yaw_Motor ={
 
-		  .Control_Mode = MIT,
+		  .Control_Mode = VELOCITY,
 			.Param_Range ={
 			   .P_MAX = 3.141593f,
 			   .V_MAX = 30.f,
 			   .T_MAX = 10.f		
 			},
 		  .FDCANFrame = {
-				 .TxStdId = 0x1,
-				 .RxStdId = 0x11,//接受电机
+				 .TxStdId = 0x3,
+				 .RxStdId = 0x13,//接受电机
 			},
 		
 };//后期依据实际更改
@@ -316,7 +316,7 @@ void DM_Motor_Info_Update(uint32_t *Identifier,uint8_t *Rx_Buf,DM_Motor_Info_Typ
 		DM_Motor->Data.Torque=  uint_to_float(DM_Motor->Data.T_int,-DM_Motor->Param_Range.T_MAX,DM_Motor->Param_Range.T_MAX,12);
 		DM_Motor->Data.Position=uint_to_float(DM_Motor->Data.P_int,-DM_Motor->Param_Range.P_MAX,DM_Motor->Param_Range.P_MAX,16);
     DM_Motor->Data.Velocity=uint_to_float(DM_Motor->Data.V_int,-DM_Motor->Param_Range.V_MAX,DM_Motor->Param_Range.V_MAX,12);
-	  DM_Motor->Data.Angle = DM_Motor->Data.Position*RadiansToDegrees;
+	  DM_Motor->Data.Angle = DM_Motor->Data.Position;
 
     DM_Motor->Data.Temperature_MOS   = (float)(Rx_Buf[6]);
 		DM_Motor->Data.Temperature_Rotor = (float)(Rx_Buf[7]);

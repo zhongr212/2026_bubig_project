@@ -1167,14 +1167,11 @@ DM_Motor_Info_Update:
 	.loc	3 318 28                        @ ../Device/Src/Motor.c:318:28
 	vstr	s0, [r0, #40]
 	.loc	3 319 27 is_stmt 1              @ ../Device/Src/Motor.c:319:27
-	ldr	r0, [sp, #4]
+	ldr	r1, [sp, #4]
 	.loc	3 319 42 is_stmt 0              @ ../Device/Src/Motor.c:319:42
-	vldr	s0, [r0, #36]
-	vldr	s2, .LCPI5_0
-	.loc	3 319 50                        @ ../Device/Src/Motor.c:319:50
-	vmul.f32	s0, s0, s2
+	ldr	r0, [r1, #36]
 	.loc	3 319 25                        @ ../Device/Src/Motor.c:319:25
-	vstr	s0, [r0, #56]
+	str	r0, [r1, #56]
 	.loc	3 321 48 is_stmt 1              @ ../Device/Src/Motor.c:321:48
 	ldr	r0, [sp, #8]
 	ldrb	r0, [r0, #6]
@@ -1202,12 +1199,6 @@ DM_Motor_Info_Update:
 	add	sp, #16
 	pop	{r7, pc}
 .Ltmp88:
-	.loc	3 0 1                           @ :0:1
-.Ltmp89:
-	.p2align	2
-@ %bb.4:
-.LCPI5_0:
-	.long	0x42652ee1                      @ float 57.2957802
 .Lfunc_end5:
 	.size	DM_Motor_Info_Update, .Lfunc_end5-DM_Motor_Info_Update
 	.cfi_endproc
@@ -1232,7 +1223,7 @@ uint_to_float:
 	vstr	s0, [sp, #16]
 	vstr	s1, [sp, #12]
 	str	r1, [sp, #8]
-.Ltmp90:
+.Ltmp89:
 	.loc	3 330 18 prologue_end           @ ../Device/Src/Motor.c:330:18
 	vldr	s0, [sp, #12]
 	.loc	3 330 26 is_stmt 0              @ ../Device/Src/Motor.c:330:26
@@ -1271,7 +1262,7 @@ uint_to_float:
 	.loc	3 332 5 epilogue_begin          @ ../Device/Src/Motor.c:332:5
 	add	sp, #24
 	bx	lr
-.Ltmp91:
+.Ltmp90:
 .Lfunc_end6:
 	.size	uint_to_float, .Lfunc_end6-uint_to_float
 	.cfi_endproc
@@ -1328,10 +1319,10 @@ Motor_chassis:
 	.globl	DM_Yaw_Motor
 	.p2align	2, 0x0
 DM_Yaw_Motor:
-	.byte	0                               @ 0x0
+	.byte	2                               @ 0x2
 	.zero	3
-	.long	1                               @ 0x1
-	.long	17                              @ 0x11
+	.long	3                               @ 0x3
+	.long	19                              @ 0x13
 	.byte	0                               @ 0x0
 	.zero	3
 	.long	0x40490fdc                      @ float 3.14159298

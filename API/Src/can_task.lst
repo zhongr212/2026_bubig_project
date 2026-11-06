@@ -222,19 +222,19 @@ CAN_Task:
 	.loc	2 104 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:104:3
 	bl	USER_CAN_TxMessage
 	ldr	r0, [sp]                        @ 4-byte Reload
-	.loc	2 106 93                        @ ../Task/Src/CAN_Task.c:106:93
+	.loc	2 106 81                        @ ../Task/Src/CAN_Task.c:106:81
 	movw	r1, :lower16:Control_Gimbal_Info
 	movt	r1, :upper16:Control_Gimbal_Info
 	str	r1, [sp, #20]                   @ 4-byte Spill
-	vldr	s4, [r1, #68]
+	vldr	s1, [r1, #68]
 	.loc	2 106 3 is_stmt 0               @ ../Task/Src/CAN_Task.c:106:3
 	movw	r1, :lower16:DM_Yaw_Motor
 	movt	r1, :upper16:DM_Yaw_Motor
 	str	r1, [sp, #4]                    @ 4-byte Spill
-	vldr	s2, .LCPI0_0
-	vldr	s3, .LCPI0_1
-	vmov.f32	s0, s2
-	vmov.f32	s1, s2
+	vldr	s3, .LCPI0_0
+	vldr	s4, .LCPI0_1
+	vmov.f32	s0, s4
+	vmov.f32	s2, s4
 	bl	DM_Motor_CAN_TxMessage
 	ldr	r0, [sp]                        @ 4-byte Reload
 	ldr	r1, [sp, #4]                    @ 4-byte Reload
@@ -310,9 +310,9 @@ CAN_Task:
 	.p2align	2
 @ %bb.8:
 .LCPI0_0:
-	.long	0x00000000                      @ float 0
-.LCPI0_1:
 	.long	0x3d4ccccd                      @ float 0.0500000007
+.LCPI0_1:
+	.long	0x00000000                      @ float 0
 .Lfunc_end0:
 	.size	CAN_Task, .Lfunc_end0-CAN_Task
 	.cfi_endproc

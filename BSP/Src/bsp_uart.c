@@ -247,10 +247,10 @@ static void USER_USART7_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 					/* reset the receive count */
 					__HAL_DMA_SET_COUNTER(huart->hdmarx,REC_DATA_NUM_USART);
 
-					if(Size == REC_DATA_NUM)
-					{
+//					if(Size == REC_DATA_NUM)
+//					{
 						rec_data(PC_TRAN_MultiRx_Buf[0],Size);
-					}
+//					}
 					
 			}
 			/* Current memory buffer used is Memory 1 */
@@ -264,10 +264,10 @@ static void USER_USART7_RxHandler(UART_HandleTypeDef *huart,uint16_t Size){
 					/* reset the receive count */
 					__HAL_DMA_SET_COUNTER(huart->hdmarx,REC_DATA_NUM_USART);
 
-					if(Size == REC_DATA_NUM)
-					{
+//					if(Size == REC_DATA_NUM)
+//					{
 						rec_data(PC_TRAN_MultiRx_Buf[1],Size);
-					}
+//					}
 					
 					
 			}

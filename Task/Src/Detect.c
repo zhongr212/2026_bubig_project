@@ -41,7 +41,7 @@ static uint32_t avp_unaligned_u32(const uint8_t *p)//uint8转uint32
     return v;
 }
 
-static float avp_unaligned_f32(const uint8_t *p)//uint32转float
+static float avp_unaligned_f32(const uint8_t *p)//uint8转float
 {
     uint32_t bits = avp_unaligned_u32(p);
     float    v;
@@ -85,17 +85,27 @@ static unsigned int Fomat_set(void *frame, size_t len)
 size_t Send_Init(uint8_t out[SEND_DATA_NUM],
                        float yaw, float pitch, float yaw_speed, float pitch_speed)
 {
-    send_data f;
+//    send_data f;
+//		
+
+//    f.header      = HEAD;
+//    f.yaw         = yaw;
+//    f.pitch       = pitch;
+//    f.yaw_speed   = yaw_speed;
+//    f.pitch_speed = pitch_speed;
+//    f.checksum    = 0u;                结构体会补齐，造成超量呈
 		
+		out[0] = HEAD;
 
-    f.header      = HEAD;
-    f.yaw         = yaw;
-    f.pitch       = pitch;
-    f.yaw_speed   = yaw_speed;
-    f.pitch_speed = pitch_speed;
-    f.checksum    = 0u;                
+    memcpy(&out[1],  &yaw,        sizeof(float));
+    memcpy(&out[5],  &pitch,      sizeof(float));
+    memcpy(&out[9],  &yaw_speed,  sizeof(float));
+    memcpy(&out[13], &pitch_speed, sizeof(float));
 
-    memcpy(out, &f, sizeof(f));      
+    out[17] = 0;
+    out[18] = 0;
+		
+//    memcpy(out, &f, sizeof(f));      
     return Fomat_set(out, SEND_DATA_NUM);
 }
 

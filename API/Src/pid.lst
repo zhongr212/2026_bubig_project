@@ -21,7 +21,7 @@
 	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
 	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
 	.file	"pid.c"
-	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\PID.h"
+	.file	1 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\PID.h"
 	.section	.text.PID_Init,"ax",%progbits
 	.hidden	PID_Init                        @ -- Begin function PID_Init
 	.globl	PID_Init
@@ -31,7 +31,7 @@
 	.thumb_func
 PID_Init:
 .Lfunc_begin0:
-	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Src/pid.c"
+	.file	2 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Src/pid.c"
 	.loc	2 87 0                          @ ../Algorithm/Src/pid.c:87:0
 	.fnstart
 	.cfi_sections .debug_frame
@@ -380,7 +380,7 @@ PID_Calculate:
 	movs	r0, #0
 	.loc	2 130 5 is_stmt 1               @ ../Algorithm/Src/pid.c:130:5
 	str	r0, [sp, #44]
-	b.w	.LBB3_142
+	b.w	.LBB3_141
 .Ltmp17:
 .LBB3_2:
 	.loc	2 134 18                        @ ../Algorithm/Src/pid.c:134:18
@@ -504,7 +504,7 @@ PID_Calculate:
 	.loc	2 155 6                         @ ../Algorithm/Src/pid.c:155:6
 	vcmp.f32	s0, #0
 	vmrs	APSR_nzcv, fpscr
-	blt.w	.LBB3_140
+	blt.w	.LBB3_139
 	b	.LBB3_9
 .LBB3_9:
 .Ltmp28:
@@ -517,20 +517,20 @@ PID_Calculate:
 	mov	r1, r0
 	str	r1, [sp, #4]                    @ 4-byte Spill
 	cmp	r0, #5
-	bhi.w	.LBB3_138
+	bhi.w	.LBB3_137
 @ %bb.10:
 	ldr	r1, [sp, #4]                    @ 4-byte Reload
-.LCPI3_13:
+.LCPI3_9:
 	tbh	[pc, r1, lsl #1]
 @ %bb.11:
 	.loc	2 0 7                           @ ../Algorithm/Src/pid.c:0:7
 .LJTI3_0:
-	.short	(.LBB3_12-(.LCPI3_13+4))/2
-	.short	(.LBB3_33-(.LCPI3_13+4))/2
-	.short	(.LBB3_44-(.LCPI3_13+4))/2
-	.short	(.LBB3_71-(.LCPI3_13+4))/2
-	.short	(.LBB3_124-(.LCPI3_13+4))/2
-	.short	(.LBB3_88-(.LCPI3_13+4))/2
+	.short	(.LBB3_12-(.LCPI3_9+4))/2
+	.short	(.LBB3_33-(.LCPI3_9+4))/2
+	.short	(.LBB3_44-(.LCPI3_9+4))/2
+	.short	(.LBB3_71-(.LCPI3_9+4))/2
+	.short	(.LBB3_123-(.LCPI3_9+4))/2
+	.short	(.LBB3_88-(.LCPI3_9+4))/2
 	.p2align	1
 .LBB3_12:
 .Ltmp29:
@@ -763,7 +763,7 @@ PID_Calculate:
 .Ltmp54:
 .LBB3_32:
 	.loc	2 175 13 is_stmt 1              @ ../Algorithm/Src/pid.c:175:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp55:
 .LBB3_33:
 	.loc	2 179 25                        @ ../Algorithm/Src/pid.c:179:25
@@ -924,7 +924,7 @@ PID_Calculate:
 .Ltmp67:
 .LBB3_43:
 	.loc	2 188 13 is_stmt 1              @ ../Algorithm/Src/pid.c:188:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp68:
 .LBB3_44:
 	.loc	2 192 33                        @ ../Algorithm/Src/pid.c:192:33
@@ -937,16 +937,16 @@ PID_Calculate:
 .LBB3_45:                               @ =>This Inner Loop Header: Depth=1
 	.loc	2 194 20 is_stmt 0              @ ../Algorithm/Src/pid.c:194:20
 	vldr	s0, [sp, #24]
-	vldr	s2, __arm_cp.3_14
+	vldr	s2, .LCPI3_10
 	.loc	2 194 13                        @ ../Algorithm/Src/pid.c:194:13
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	ble	.LBB3_47
 	b	.LBB3_46
 .LBB3_46:                               @   in Loop: Header=BB3_45 Depth=1
-	.loc	2 194 54                        @ ../Algorithm/Src/pid.c:194:54
+	.loc	2 194 50                        @ ../Algorithm/Src/pid.c:194:50
 	vldr	s0, [sp, #24]
-	vldr	s2, __arm_cp.3_15
+	vldr	s2, .LCPI3_11
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #24]
 	.loc	2 194 13                        @ ../Algorithm/Src/pid.c:194:13
@@ -957,16 +957,16 @@ PID_Calculate:
 .LBB3_48:                               @ =>This Inner Loop Header: Depth=1
 	.loc	2 195 20 is_stmt 0              @ ../Algorithm/Src/pid.c:195:20
 	vldr	s0, [sp, #24]
-	vldr	s2, __arm_cp.3_16
+	vldr	s2, .LCPI3_12
 	.loc	2 195 13                        @ ../Algorithm/Src/pid.c:195:13
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
 	bge	.LBB3_50
 	b	.LBB3_49
 .LBB3_49:                               @   in Loop: Header=BB3_48 Depth=1
-	.loc	2 195 55                        @ ../Algorithm/Src/pid.c:195:55
+	.loc	2 195 51                        @ ../Algorithm/Src/pid.c:195:51
 	vldr	s0, [sp, #24]
-	vldr	s2, __arm_cp.3_17
+	vldr	s2, .LCPI3_13
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #24]
 	.loc	2 195 13                        @ ../Algorithm/Src/pid.c:195:13
@@ -1207,7 +1207,7 @@ PID_Calculate:
 .Ltmp93:
 .LBB3_70:
 	.loc	2 213 13 is_stmt 1              @ ../Algorithm/Src/pid.c:213:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp94:
 .LBB3_71:
 	.loc	2 0 13 is_stmt 0                @ ../Algorithm/Src/pid.c:0:13
@@ -1371,13 +1371,13 @@ PID_Calculate:
 	vldr	s4, [r0, #28]
 	.loc	2 236 36                        @ ../Algorithm/Src/pid.c:236:36
 	vldr	s0, [r0, #100]
-	vldr	s2, .LCPI3_18
+	vldr	s2, .LCPI3_14
 	.loc	2 236 77                        @ ../Algorithm/Src/pid.c:236:77
 	vmul.f32	s2, s4, s2
-	vldr	s8, .LCPI3_19
+	vldr	s8, .LCPI3_15
 	.loc	2 236 63                        @ ../Algorithm/Src/pid.c:236:63
 	vfma.f32	s2, s6, s8
-	vldr	s6, .LCPI3_20
+	vldr	s6, .LCPI3_16
 	.loc	2 236 83                        @ ../Algorithm/Src/pid.c:236:83
 	vfma.f32	s2, s4, s6
 	.loc	2 236 39                        @ ../Algorithm/Src/pid.c:236:39
@@ -1450,7 +1450,7 @@ PID_Calculate:
 	.loc	2 238 25                        @ ../Algorithm/Src/pid.c:238:25
 	vstr	s0, [r0, #52]
 	.loc	2 239 13 is_stmt 1              @ ../Algorithm/Src/pid.c:239:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp114:
 .LBB3_88:
 	.loc	2 0 13 is_stmt 0                @ ../Algorithm/Src/pid.c:0:13
@@ -1466,72 +1466,60 @@ PID_Calculate:
 .Ltmp116:
 	.loc	2 247 17 is_stmt 1              @ ../Algorithm/Src/pid.c:247:17
 	vldr	s0, [sp, #12]
-	vldr	s2, __arm_cp.3_21
+	vldr	s2, __arm_cp.3_17
 .Ltmp117:
 	.loc	2 247 17 is_stmt 0              @ ../Algorithm/Src/pid.c:247:17
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_99
+	ble	.LBB3_98
 	b	.LBB3_89
 .LBB3_89:
 .Ltmp118:
 	.loc	2 247 53                        @ ../Algorithm/Src/pid.c:247:53
 	vldr	s0, [sp, #12]
-	vldr	s2, .LCPI3_22
+	vldr	s2, .LCPI3_11
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #12]
 	.loc	2 247 41                        @ ../Algorithm/Src/pid.c:247:41
-	b	.LBB3_102
+	b	.LBB3_101
 	.loc	2 0 41                          @ :0:41
 .Ltmp119:
 	.p2align	2
 @ %bb.90:
-__arm_cp.3_14:
-	.long	0x43340000                      @ float 180
-.Lcpi_end0:
-	.size	__arm_cp.3_14, .Lcpi_end0-__arm_cp.3_14
+.LCPI3_10:
+	.long	0x40490fdb                      @ float 3.14159274
 	.p2align	2
 @ %bb.91:
-__arm_cp.3_15:
-	.long	0xc3b40000                      @ float -360
-.Lcpi_end1:
-	.size	__arm_cp.3_15, .Lcpi_end1-__arm_cp.3_15
+.LCPI3_11:
+	.long	0xc0c90fdb                      @ float -6.28318548
 	.p2align	2
 @ %bb.92:
-__arm_cp.3_16:
-	.long	0xc3340000                      @ float -180
-.Lcpi_end2:
-	.size	__arm_cp.3_16, .Lcpi_end2-__arm_cp.3_16
+.LCPI3_12:
+	.long	0xc0490fdb                      @ float -3.14159274
 	.p2align	2
 @ %bb.93:
-__arm_cp.3_17:
-	.long	0x43b40000                      @ float 360
-.Lcpi_end3:
-	.size	__arm_cp.3_17, .Lcpi_end3-__arm_cp.3_17
+.LCPI3_13:
+	.long	0x40c90fdb                      @ float 6.28318548
 	.p2align	2
 @ %bb.94:
-.LCPI3_18:
+.LCPI3_14:
 	.long	0x3dcccccd                      @ float 0.100000001
 	.p2align	2
 @ %bb.95:
-.LCPI3_19:
+.LCPI3_15:
 	.long	0x3f59999a                      @ float 0.850000023
 	.p2align	2
 @ %bb.96:
-.LCPI3_20:
+.LCPI3_16:
 	.long	0x3d4ccccd                      @ float 0.0500000007
 	.p2align	2
 @ %bb.97:
-__arm_cp.3_21:
+__arm_cp.3_17:
 	.long	0x40470d23                      @ float 3.1101768
-.Lcpi_end4:
-	.size	__arm_cp.3_21, .Lcpi_end4-__arm_cp.3_21
-	.p2align	2
-@ %bb.98:
-.LCPI3_22:
-	.long	0xc0c90fdb                      @ float -6.28318548
+.Lcpi_end0:
+	.size	__arm_cp.3_17, .Lcpi_end0-__arm_cp.3_17
 	.p2align	1
-.LBB3_99:
+.LBB3_98:
 .Ltmp120:
 	.loc	2 248 23 is_stmt 1              @ ../Algorithm/Src/pid.c:248:23
 	vldr	s0, [sp, #12]
@@ -1540,9 +1528,9 @@ __arm_cp.3_21:
 	.loc	2 248 23 is_stmt 0              @ ../Algorithm/Src/pid.c:248:23
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bge	.LBB3_101
-	b	.LBB3_100
-.LBB3_100:
+	bge	.LBB3_100
+	b	.LBB3_99
+.LBB3_99:
 .Ltmp122:
 	.loc	2 248 60                        @ ../Algorithm/Src/pid.c:248:60
 	vldr	s0, [sp, #12]
@@ -1550,12 +1538,12 @@ __arm_cp.3_21:
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #12]
 	.loc	2 248 48                        @ ../Algorithm/Src/pid.c:248:48
-	b	.LBB3_101
+	b	.LBB3_100
 .Ltmp123:
-.LBB3_101:
+.LBB3_100:
 	.loc	2 0 48                          @ ../Algorithm/Src/pid.c:0:48
-	b	.LBB3_102
-.LBB3_102:
+	b	.LBB3_101
+.LBB3_101:
 	.loc	2 249 27 is_stmt 1              @ ../Algorithm/Src/pid.c:249:27
 	ldr	r0, [sp, #12]
 	.loc	2 249 13 is_stmt 0              @ ../Algorithm/Src/pid.c:249:13
@@ -1583,18 +1571,18 @@ __arm_cp.3_21:
 	.loc	2 252 17                        @ ../Algorithm/Src/pid.c:252:17
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bgt	.LBB3_104
-	b	.LBB3_103
-.LBB3_103:
+	bgt	.LBB3_103
+	b	.LBB3_102
+.LBB3_102:
 	.loc	2 0 17                          @ ../Algorithm/Src/pid.c:0:17
 	mov.w	r0, #1065353216
 .Ltmp126:
 	.loc	2 254 23 is_stmt 1              @ ../Algorithm/Src/pid.c:254:23
 	str	r0, [sp, #16]
 	.loc	2 255 13                        @ ../Algorithm/Src/pid.c:255:13
-	b	.LBB3_111
+	b	.LBB3_110
 .Ltmp127:
-.LBB3_104:
+.LBB3_103:
 	.loc	2 256 21                        @ ../Algorithm/Src/pid.c:256:21
 	vldr	s0, [sp, #28]
 	.loc	2 256 33 is_stmt 0              @ ../Algorithm/Src/pid.c:256:33
@@ -1604,9 +1592,9 @@ __arm_cp.3_21:
 	.loc	2 256 63                        @ ../Algorithm/Src/pid.c:256:63
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_107
-	b	.LBB3_105
-.LBB3_105:
+	ble	.LBB3_106
+	b	.LBB3_104
+.LBB3_104:
 	.loc	2 256 66                        @ ../Algorithm/Src/pid.c:256:66
 	vldr	s0, [sp, #28]
 	.loc	2 256 80                        @ ../Algorithm/Src/pid.c:256:80
@@ -1621,9 +1609,9 @@ __arm_cp.3_21:
 	.loc	2 256 21                        @ ../Algorithm/Src/pid.c:256:21
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bgt	.LBB3_107
-	b	.LBB3_106
-.LBB3_106:
+	bgt	.LBB3_106
+	b	.LBB3_105
+.LBB3_105:
 .Ltmp129:
 	.loc	2 258 26 is_stmt 1              @ ../Algorithm/Src/pid.c:258:26
 	ldr	r0, [sp, #40]
@@ -1642,9 +1630,9 @@ __arm_cp.3_21:
 	.loc	2 258 23                        @ ../Algorithm/Src/pid.c:258:23
 	vstr	s0, [sp, #16]
 	.loc	2 259 13 is_stmt 1              @ ../Algorithm/Src/pid.c:259:13
-	b	.LBB3_110
+	b	.LBB3_109
 .Ltmp130:
-.LBB3_107:
+.LBB3_106:
 	.loc	2 260 21                        @ ../Algorithm/Src/pid.c:260:21
 	vldr	s0, [sp, #28]
 	.loc	2 260 34 is_stmt 0              @ ../Algorithm/Src/pid.c:260:34
@@ -1659,23 +1647,23 @@ __arm_cp.3_21:
 	.loc	2 260 21                        @ ../Algorithm/Src/pid.c:260:21
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_109
-	b	.LBB3_108
-.LBB3_108:
+	ble	.LBB3_108
+	b	.LBB3_107
+.LBB3_107:
 	.loc	2 0 21                          @ ../Algorithm/Src/pid.c:0:21
 	movs	r0, #0
 .Ltmp132:
 	.loc	2 262 23 is_stmt 1              @ ../Algorithm/Src/pid.c:262:23
 	str	r0, [sp, #16]
 	.loc	2 263 13                        @ ../Algorithm/Src/pid.c:263:13
-	b	.LBB3_109
+	b	.LBB3_108
 .Ltmp133:
-.LBB3_109:
+.LBB3_108:
 	.loc	2 0 13 is_stmt 0                @ ../Algorithm/Src/pid.c:0:13
+	b	.LBB3_109
+.LBB3_109:
 	b	.LBB3_110
 .LBB3_110:
-	b	.LBB3_111
-.LBB3_111:
 	.loc	2 264 26 is_stmt 1              @ ../Algorithm/Src/pid.c:264:26
 	ldr	r0, [sp, #40]
 	.loc	2 264 42 is_stmt 0              @ ../Algorithm/Src/pid.c:264:42
@@ -1718,9 +1706,9 @@ __arm_cp.3_21:
 	.loc	2 270 11 is_stmt 0              @ ../Algorithm/Src/pid.c:270:11
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_113
-	b	.LBB3_112
-.LBB3_112:
+	ble	.LBB3_112
+	b	.LBB3_111
+.LBB3_111:
 .Ltmp136:
 	.loc	2 270 41                        @ ../Algorithm/Src/pid.c:270:41
 	vldr	s0, [sp, #8]
@@ -1728,8 +1716,8 @@ __arm_cp.3_21:
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #8]
 	.loc	2 270 29                        @ ../Algorithm/Src/pid.c:270:29
-	b	.LBB3_116
-.LBB3_113:
+	b	.LBB3_115
+.LBB3_112:
 .Ltmp137:
 	.loc	2 271 16 is_stmt 1              @ ../Algorithm/Src/pid.c:271:16
 	vldr	s0, [sp, #8]
@@ -1738,9 +1726,9 @@ __arm_cp.3_21:
 	.loc	2 271 16 is_stmt 0              @ ../Algorithm/Src/pid.c:271:16
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bge	.LBB3_115
-	b	.LBB3_114
-.LBB3_114:
+	bge	.LBB3_114
+	b	.LBB3_113
+.LBB3_113:
 .Ltmp139:
 	.loc	2 271 47                        @ ../Algorithm/Src/pid.c:271:47
 	vldr	s0, [sp, #8]
@@ -1748,12 +1736,12 @@ __arm_cp.3_21:
 	vadd.f32	s0, s0, s2
 	vstr	s0, [sp, #8]
 	.loc	2 271 35                        @ ../Algorithm/Src/pid.c:271:35
-	b	.LBB3_115
+	b	.LBB3_114
 .Ltmp140:
-.LBB3_115:
+.LBB3_114:
 	.loc	2 0 35                          @ ../Algorithm/Src/pid.c:0:35
-	b	.LBB3_116
-.LBB3_116:
+	b	.LBB3_115
+.LBB3_115:
 	.loc	2 273 22 is_stmt 1              @ ../Algorithm/Src/pid.c:273:22
 	ldr	r0, [sp, #8]
 	.loc	2 273 7 is_stmt 0               @ ../Algorithm/Src/pid.c:273:7
@@ -1782,8 +1770,8 @@ __arm_cp.3_21:
 	.loc	2 275 23                        @ ../Algorithm/Src/pid.c:275:23
 	vstr	s0, [r0, #48]
 	.loc	2 276 13 is_stmt 1              @ ../Algorithm/Src/pid.c:276:13
-	b	.LBB3_117
-.LBB3_117:
+	b	.LBB3_116
+.LBB3_116:
 .Ltmp141:
 	.loc	2 276 13 is_stmt 0              @ ../Algorithm/Src/pid.c:276:13
 	ldr	r0, [sp, #40]
@@ -1793,17 +1781,17 @@ __arm_cp.3_21:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_119
-	b	.LBB3_118
-.LBB3_118:
+	ble	.LBB3_118
+	b	.LBB3_117
+.LBB3_117:
 .Ltmp143:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
 	ldr	r1, [sp, #40]
 	ldr	r0, [r1, #112]
 	str	r0, [r1, #44]
-	b	.LBB3_122
+	b	.LBB3_121
 .Ltmp144:
-.LBB3_119:
+.LBB3_118:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
 	ldr	r0, [sp, #40]
 	vldr	s0, [r0, #44]
@@ -1813,25 +1801,25 @@ __arm_cp.3_21:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bge	.LBB3_121
-	b	.LBB3_120
-.LBB3_120:
+	bge	.LBB3_120
+	b	.LBB3_119
+.LBB3_119:
 .Ltmp146:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
 	ldr	r0, [sp, #40]
 	vldr	s0, [r0, #112]
 	vneg.f32	s0, s0
 	vstr	s0, [r0, #44]
-	b	.LBB3_121
+	b	.LBB3_120
 .Ltmp147:
-.LBB3_121:
+.LBB3_120:
 	.loc	2 0 13                          @ ../Algorithm/Src/pid.c:0:13
-	b	.LBB3_122
-.LBB3_122:
+	b	.LBB3_121
+.LBB3_121:
 	.loc	2 276 13                        @ ../Algorithm/Src/pid.c:276:13
-	b	.LBB3_123
+	b	.LBB3_122
 .Ltmp148:
-.LBB3_123:
+.LBB3_122:
 	.loc	2 277 27 is_stmt 1              @ ../Algorithm/Src/pid.c:277:27
 	ldr	r0, [sp, #40]
 	.loc	2 277 32 is_stmt 0              @ ../Algorithm/Src/pid.c:277:32
@@ -1847,9 +1835,9 @@ __arm_cp.3_21:
 	.loc	2 277 25                        @ ../Algorithm/Src/pid.c:277:25
 	vstr	s0, [r0, #52]
 	.loc	2 278 13 is_stmt 1              @ ../Algorithm/Src/pid.c:278:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp149:
-.LBB3_124:
+.LBB3_123:
 	.loc	2 282 25                        @ ../Algorithm/Src/pid.c:282:25
 	ldr	r0, [sp, #40]
 	.loc	2 282 41 is_stmt 0              @ ../Algorithm/Src/pid.c:282:41
@@ -1869,9 +1857,9 @@ __arm_cp.3_21:
 	.loc	2 284 17                        @ ../Algorithm/Src/pid.c:284:17
 	vcmp.f32	s0, #0
 	vmrs	APSR_nzcv, fpscr
-	beq	.LBB3_133
-	b	.LBB3_125
-.LBB3_125:
+	beq	.LBB3_132
+	b	.LBB3_124
+.LBB3_124:
 .Ltmp152:
 	.loc	2 285 34 is_stmt 1              @ ../Algorithm/Src/pid.c:285:34
 	ldr	r0, [sp, #40]
@@ -1881,8 +1869,8 @@ __arm_cp.3_21:
 	vadd.f32	s0, s0, s2
 	vstr	s0, [r0, #36]
 	.loc	2 286 17 is_stmt 1              @ ../Algorithm/Src/pid.c:286:17
-	b	.LBB3_126
-.LBB3_126:
+	b	.LBB3_125
+.LBB3_125:
 .Ltmp153:
 	.loc	2 286 17 is_stmt 0              @ ../Algorithm/Src/pid.c:286:17
 	ldr	r0, [sp, #40]
@@ -1892,17 +1880,17 @@ __arm_cp.3_21:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_128
-	b	.LBB3_127
-.LBB3_127:
+	ble	.LBB3_127
+	b	.LBB3_126
+.LBB3_126:
 .Ltmp155:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
 	ldr	r1, [sp, #40]
 	ldr	r0, [r1, #112]
 	str	r0, [r1, #36]
-	b	.LBB3_131
+	b	.LBB3_130
 .Ltmp156:
-.LBB3_128:
+.LBB3_127:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
 	ldr	r0, [sp, #40]
 	vldr	s0, [r0, #36]
@@ -1912,25 +1900,25 @@ __arm_cp.3_21:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bge	.LBB3_130
-	b	.LBB3_129
-.LBB3_129:
+	bge	.LBB3_129
+	b	.LBB3_128
+.LBB3_128:
 .Ltmp158:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
 	ldr	r0, [sp, #40]
 	vldr	s0, [r0, #112]
 	vneg.f32	s0, s0
 	vstr	s0, [r0, #36]
-	b	.LBB3_130
+	b	.LBB3_129
 .Ltmp159:
-.LBB3_130:
+.LBB3_129:
 	.loc	2 0 17                          @ ../Algorithm/Src/pid.c:0:17
-	b	.LBB3_131
-.LBB3_131:
+	b	.LBB3_130
+.LBB3_130:
 	.loc	2 286 17                        @ ../Algorithm/Src/pid.c:286:17
-	b	.LBB3_132
+	b	.LBB3_131
 .Ltmp160:
-.LBB3_132:
+.LBB3_131:
 	.loc	2 287 29 is_stmt 1              @ ../Algorithm/Src/pid.c:287:29
 	ldr	r0, [sp, #40]
 	.loc	2 287 50 is_stmt 0              @ ../Algorithm/Src/pid.c:287:50
@@ -1942,17 +1930,17 @@ __arm_cp.3_21:
 	.loc	2 287 27                        @ ../Algorithm/Src/pid.c:287:27
 	vstr	s0, [r0, #44]
 	.loc	2 288 13 is_stmt 1              @ ../Algorithm/Src/pid.c:288:13
-	b	.LBB3_134
+	b	.LBB3_133
 .Ltmp161:
-.LBB3_133:
+.LBB3_132:
 	.loc	2 289 17                        @ ../Algorithm/Src/pid.c:289:17
 	ldr	r1, [sp, #40]
 	movs	r0, #0
 	.loc	2 289 27 is_stmt 0              @ ../Algorithm/Src/pid.c:289:27
 	str	r0, [r1, #44]
-	b	.LBB3_134
+	b	.LBB3_133
 .Ltmp162:
-.LBB3_134:
+.LBB3_133:
 	.loc	2 292 25 is_stmt 1              @ ../Algorithm/Src/pid.c:292:25
 	ldr	r0, [sp, #40]
 	.loc	2 292 42 is_stmt 0              @ ../Algorithm/Src/pid.c:292:42
@@ -1975,9 +1963,9 @@ __arm_cp.3_21:
 	.loc	2 293 40                        @ ../Algorithm/Src/pid.c:293:40
 	vcmp.f32	s0, #0
 	vmrs	APSR_nzcv, fpscr
-	ble	.LBB3_137
-	b	.LBB3_135
-.LBB3_135:
+	ble	.LBB3_136
+	b	.LBB3_134
+.LBB3_134:
 	.loc	2 293 43                        @ ../Algorithm/Src/pid.c:293:43
 	ldr	r0, [sp, #40]
 	.loc	2 293 54                        @ ../Algorithm/Src/pid.c:293:54
@@ -1987,9 +1975,9 @@ __arm_cp.3_21:
 	.loc	2 293 17                        @ ../Algorithm/Src/pid.c:293:17
 	vcmp.f32	s0, s2
 	vmrs	APSR_nzcv, fpscr
-	bge	.LBB3_137
-	b	.LBB3_136
-.LBB3_136:
+	bge	.LBB3_136
+	b	.LBB3_135
+.LBB3_135:
 .Ltmp165:
 	.loc	2 294 39 is_stmt 1              @ ../Algorithm/Src/pid.c:294:39
 	ldr	r1, [sp, #40]
@@ -2010,9 +1998,9 @@ __arm_cp.3_21:
 	.loc	2 295 27                        @ ../Algorithm/Src/pid.c:295:27
 	vstr	s0, [r0, #48]
 	.loc	2 296 13 is_stmt 1              @ ../Algorithm/Src/pid.c:296:13
-	b	.LBB3_137
+	b	.LBB3_136
 .Ltmp166:
-.LBB3_137:
+.LBB3_136:
 	.loc	2 299 25                        @ ../Algorithm/Src/pid.c:299:25
 	ldr	r0, [sp, #40]
 	.loc	2 299 36 is_stmt 0              @ ../Algorithm/Src/pid.c:299:36
@@ -2047,38 +2035,38 @@ __arm_cp.3_21:
 	.loc	2 300 25                        @ ../Algorithm/Src/pid.c:300:25
 	vstr	s0, [r0, #52]
 	.loc	2 301 13 is_stmt 1              @ ../Algorithm/Src/pid.c:301:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp167:
-.LBB3_138:
+.LBB3_137:
 	.loc	2 305 13                        @ ../Algorithm/Src/pid.c:305:13
 	ldr	r1, [sp, #40]
 	movs	r0, #0
 	.loc	2 305 25 is_stmt 0              @ ../Algorithm/Src/pid.c:305:25
 	str	r0, [r1, #52]
 	.loc	2 306 13 is_stmt 1              @ ../Algorithm/Src/pid.c:306:13
-	b	.LBB3_139
+	b	.LBB3_138
 .Ltmp168:
-.LBB3_139:
+.LBB3_138:
 	.loc	2 308 3                         @ ../Algorithm/Src/pid.c:308:3
-	b	.LBB3_141
+	b	.LBB3_140
 .Ltmp169:
-.LBB3_140:
+.LBB3_139:
 	.loc	2 311 3                         @ ../Algorithm/Src/pid.c:311:3
 	ldr	r1, [sp, #40]
 	movs	r0, #0
 	.loc	2 311 15 is_stmt 0              @ ../Algorithm/Src/pid.c:311:15
 	str	r0, [r1, #52]
-	b	.LBB3_141
+	b	.LBB3_140
 .Ltmp170:
-.LBB3_141:
+.LBB3_140:
 	.loc	2 314 10 is_stmt 1              @ ../Algorithm/Src/pid.c:314:10
 	ldr	r0, [sp, #40]
 	.loc	2 314 15 is_stmt 0              @ ../Algorithm/Src/pid.c:314:15
 	ldr	r0, [r0, #52]
 	.loc	2 314 3                         @ ../Algorithm/Src/pid.c:314:3
 	str	r0, [sp, #44]
-	b	.LBB3_142
-.LBB3_142:
+	b	.LBB3_141
+.LBB3_141:
 	.loc	2 315 1 is_stmt 1               @ ../Algorithm/Src/pid.c:315:1
 	vldr	s0, [sp, #44]
 	.loc	2 315 1 epilogue_begin is_stmt 0 @ ../Algorithm/Src/pid.c:315:1
@@ -2088,7 +2076,7 @@ __arm_cp.3_21:
 	.loc	2 0 1                           @ :0:1
 .Ltmp172:
 	.p2align	2
-@ %bb.143:
+@ %bb.142:
 .LCPI3_1:
 	.long	0xc0470d23                      @ float -3.1101768
 .LCPI3_2:
@@ -2347,7 +2335,7 @@ __ARM_isinff:
 	.fnend
                                         @ -- End function
 	.file	4 "D:\\keil5_app\\Keil_v5\\ARM\\ARMCLANG\\bin\\..\\include" "stdint.h"
-	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
+	.file	5 "D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" "../Algorithm/Inc\\lpf.h"
 	.section	.debug_abbrev,"",%progbits
 	.byte	1                               @ Abbreviation Code
 	.byte	17                              @ DW_TAG_compile_unit
@@ -3360,155 +3348,155 @@ __ARM_isinff:
 .Linfo_string1:
 	.asciz	"../Algorithm/Src\\pid.c"       @ string offset=68
 .Linfo_string2:
-	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0\\COD_H7_Template\\MDK-ARM" @ string offset=91
+	.asciz	"D:\\stm32_project\\daily_work\\new_bubing\\cod_update_2.0 - git_n\\COD_H7_Template\\MDK-ARM" @ string offset=91
 .Linfo_string3:
-	.asciz	"unsigned char"                 @ string offset=169
+	.asciz	"unsigned char"                 @ string offset=177
 .Linfo_string4:
-	.asciz	"PID_Type_None"                 @ string offset=183
+	.asciz	"PID_Type_None"                 @ string offset=191
 .Linfo_string5:
-	.asciz	"PID_POSITION"                  @ string offset=197
+	.asciz	"PID_POSITION"                  @ string offset=205
 .Linfo_string6:
-	.asciz	"PID_VELOCITY"                  @ string offset=210
+	.asciz	"PID_VELOCITY"                  @ string offset=218
 .Linfo_string7:
-	.asciz	"PID_ANGLE"                     @ string offset=223
+	.asciz	"PID_ANGLE"                     @ string offset=231
 .Linfo_string8:
-	.asciz	"PID_ANTI_WINDUP"               @ string offset=233
+	.asciz	"PID_ANTI_WINDUP"               @ string offset=241
 .Linfo_string9:
-	.asciz	"PID_FEEDFORWARD"               @ string offset=249
+	.asciz	"PID_FEEDFORWARD"               @ string offset=257
 .Linfo_string10:
-	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=265
+	.asciz	"PID_ANTI_WINDUP_DEGREE"        @ string offset=273
 .Linfo_string11:
-	.asciz	"PID_TYPE_NUM"                  @ string offset=288
+	.asciz	"PID_TYPE_NUM"                  @ string offset=296
 .Linfo_string12:
-	.asciz	"PID_ERROR_NONE"                @ string offset=301
+	.asciz	"PID_ERROR_NONE"                @ string offset=309
 .Linfo_string13:
-	.asciz	"PID_FAILED_INIT"               @ string offset=316
+	.asciz	"PID_FAILED_INIT"               @ string offset=324
 .Linfo_string14:
-	.asciz	"PID_CALC_NANINF"               @ string offset=332
+	.asciz	"PID_CALC_NANINF"               @ string offset=340
 .Linfo_string15:
-	.asciz	"PID_Status_NUM"                @ string offset=348
+	.asciz	"PID_Status_NUM"                @ string offset=356
 .Linfo_string16:
-	.asciz	"unsigned int"                  @ string offset=363
+	.asciz	"unsigned int"                  @ string offset=371
 .Linfo_string17:
-	.asciz	"PID_Init"                      @ string offset=376
+	.asciz	"PID_Init"                      @ string offset=384
 .Linfo_string18:
-	.asciz	"PID_Calc_Clear"                @ string offset=385
+	.asciz	"PID_Calc_Clear"                @ string offset=393
 .Linfo_string19:
-	.asciz	"PID_Param_Init"                @ string offset=400
+	.asciz	"PID_Param_Init"                @ string offset=408
 .Linfo_string20:
-	.asciz	"PID_Status_e"                  @ string offset=415
+	.asciz	"PID_Status_e"                  @ string offset=423
 .Linfo_string21:
-	.asciz	"PID_Calculate"                 @ string offset=428
+	.asciz	"PID_Calculate"                 @ string offset=436
 .Linfo_string22:
-	.asciz	"float"                         @ string offset=442
+	.asciz	"float"                         @ string offset=450
 .Linfo_string23:
-	.asciz	"PID_ErrorHandle"               @ string offset=448
+	.asciz	"PID_ErrorHandle"               @ string offset=456
 .Linfo_string24:
-	.asciz	"GetSmoothedTargetDelta"        @ string offset=464
+	.asciz	"GetSmoothedTargetDelta"        @ string offset=472
 .Linfo_string25:
-	.asciz	"__ARM_isnanf"                  @ string offset=487
+	.asciz	"__ARM_isnanf"                  @ string offset=495
 .Linfo_string26:
-	.asciz	"int"                           @ string offset=500
+	.asciz	"int"                           @ string offset=508
 .Linfo_string27:
-	.asciz	"__ARM_isinff"                  @ string offset=504
+	.asciz	"__ARM_isinff"                  @ string offset=512
 .Linfo_string28:
-	.asciz	"PID"                           @ string offset=517
+	.asciz	"PID"                           @ string offset=525
 .Linfo_string29:
-	.asciz	"Type"                          @ string offset=521
+	.asciz	"Type"                          @ string offset=529
 .Linfo_string30:
-	.asciz	"PID_Type_e"                    @ string offset=526
+	.asciz	"PID_Type_e"                    @ string offset=534
 .Linfo_string31:
-	.asciz	"Target"                        @ string offset=537
+	.asciz	"Target"                        @ string offset=545
 .Linfo_string32:
-	.asciz	"Measure"                       @ string offset=544
+	.asciz	"Measure"                       @ string offset=552
 .Linfo_string33:
-	.asciz	"Err"                           @ string offset=552
+	.asciz	"Err"                           @ string offset=560
 .Linfo_string34:
-	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=556
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=564
 .Linfo_string35:
-	.asciz	"Dbuf"                          @ string offset=576
+	.asciz	"Dbuf"                          @ string offset=584
 .Linfo_string36:
-	.asciz	"Integral"                      @ string offset=581
+	.asciz	"Integral"                      @ string offset=589
 .Linfo_string37:
-	.asciz	"Pout"                          @ string offset=590
+	.asciz	"Pout"                          @ string offset=598
 .Linfo_string38:
-	.asciz	"Iout"                          @ string offset=595
+	.asciz	"Iout"                          @ string offset=603
 .Linfo_string39:
-	.asciz	"Dout"                          @ string offset=600
+	.asciz	"Dout"                          @ string offset=608
 .Linfo_string40:
-	.asciz	"Output"                        @ string offset=605
+	.asciz	"Output"                        @ string offset=613
 .Linfo_string41:
-	.asciz	"Target_Buffer"                 @ string offset=612
+	.asciz	"Target_Buffer"                 @ string offset=620
 .Linfo_string42:
-	.asciz	"Target_Index"                  @ string offset=626
+	.asciz	"Target_Index"                  @ string offset=634
 .Linfo_string43:
-	.asciz	"uint8_t"                       @ string offset=639
+	.asciz	"uint8_t"                       @ string offset=647
 .Linfo_string44:
-	.asciz	"Fout"                          @ string offset=647
+	.asciz	"Fout"                          @ string offset=655
 .Linfo_string45:
-	.asciz	"Dout_LPF"                      @ string offset=652
+	.asciz	"Dout_LPF"                      @ string offset=660
 .Linfo_string46:
-	.asciz	"Initialized"                   @ string offset=661
+	.asciz	"Initialized"                   @ string offset=669
 .Linfo_string47:
-	.asciz	"_Bool"                         @ string offset=673
+	.asciz	"_Bool"                         @ string offset=681
 .Linfo_string48:
-	.asciz	"Input"                         @ string offset=679
+	.asciz	"Input"                         @ string offset=687
 .Linfo_string49:
-	.asciz	"Alpha"                         @ string offset=685
+	.asciz	"Alpha"                         @ string offset=693
 .Linfo_string50:
-	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=691
+	.asciz	"LowPassFilter1p_Info_TypeDef"  @ string offset=699
 .Linfo_string51:
-	.asciz	"Param"                         @ string offset=720
+	.asciz	"Param"                         @ string offset=728
 .Linfo_string52:
-	.asciz	"KP"                            @ string offset=726
+	.asciz	"KP"                            @ string offset=734
 .Linfo_string53:
-	.asciz	"KI"                            @ string offset=729
+	.asciz	"KI"                            @ string offset=737
 .Linfo_string54:
-	.asciz	"KD"                            @ string offset=732
+	.asciz	"KD"                            @ string offset=740
 .Linfo_string55:
-	.asciz	"Deadband"                      @ string offset=735
+	.asciz	"Deadband"                      @ string offset=743
 .Linfo_string56:
-	.asciz	"LimitIntegral"                 @ string offset=744
+	.asciz	"LimitIntegral"                 @ string offset=752
 .Linfo_string57:
-	.asciz	"LimitOutput"                   @ string offset=758
+	.asciz	"LimitOutput"                   @ string offset=766
 .Linfo_string58:
-	.asciz	"I_Variable_Speed_A"            @ string offset=770
+	.asciz	"I_Variable_Speed_A"            @ string offset=778
 .Linfo_string59:
-	.asciz	"I_Variable_Speed_B"            @ string offset=789
+	.asciz	"I_Variable_Speed_B"            @ string offset=797
 .Linfo_string60:
-	.asciz	"KF"                            @ string offset=808
+	.asciz	"KF"                            @ string offset=816
 .Linfo_string61:
-	.asciz	"PID_Parameter_Typedef"         @ string offset=811
+	.asciz	"PID_Parameter_Typedef"         @ string offset=819
 .Linfo_string62:
-	.asciz	"ERRORHandler"                  @ string offset=833
+	.asciz	"ERRORHandler"                  @ string offset=841
 .Linfo_string63:
-	.asciz	"ErrorCount"                    @ string offset=846
+	.asciz	"ErrorCount"                    @ string offset=854
 .Linfo_string64:
-	.asciz	"unsigned short"                @ string offset=857
+	.asciz	"unsigned short"                @ string offset=865
 .Linfo_string65:
-	.asciz	"uint16_t"                      @ string offset=872
+	.asciz	"uint16_t"                      @ string offset=880
 .Linfo_string66:
-	.asciz	"Status"                        @ string offset=881
+	.asciz	"Status"                        @ string offset=889
 .Linfo_string67:
-	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=888
+	.asciz	"PID_ErrorHandler_Typedef"      @ string offset=896
 .Linfo_string68:
-	.asciz	"_PID_TypeDef"                  @ string offset=913
+	.asciz	"_PID_TypeDef"                  @ string offset=921
 .Linfo_string69:
-	.asciz	"PID_Info_TypeDef"              @ string offset=926
+	.asciz	"PID_Info_TypeDef"              @ string offset=934
 .Linfo_string70:
-	.asciz	"abs_error"                     @ string offset=943
+	.asciz	"abs_error"                     @ string offset=951
 .Linfo_string71:
-	.asciz	"angle_error"                   @ string offset=953
+	.asciz	"angle_error"                   @ string offset=961
 .Linfo_string72:
-	.asciz	"set_ratio"                     @ string offset=965
+	.asciz	"set_ratio"                     @ string offset=973
 .Linfo_string73:
-	.asciz	"delta_error"                   @ string offset=975
+	.asciz	"delta_error"                   @ string offset=983
 .Linfo_string74:
-	.asciz	"delta_sum"                     @ string offset=987
+	.asciz	"delta_sum"                     @ string offset=995
 .Linfo_string75:
-	.asciz	"i"                             @ string offset=997
+	.asciz	"i"                             @ string offset=1005
 .Linfo_string76:
-	.asciz	"__x"                           @ string offset=999
+	.asciz	"__x"                           @ string offset=1007
 	.ident	"Component: Arm Compiler for Embedded 6.24 Tool: armclang [5f371800]"
 	.section	".note.GNU-stack","",%progbits
 	.eabi_attribute	30, 6	@ Tag_ABI_optimization_goals

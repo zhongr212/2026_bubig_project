@@ -15,4 +15,5 @@ cod_h7_template/slidingmode.o: ..\Algorithm\Src\slidingmode.c \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
+  ..\Algorithm\Inc\pid.h ..\Task\Inc\config.h ..\Algorithm\Inc\lpf.h
