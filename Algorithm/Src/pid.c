@@ -67,8 +67,13 @@ static void PID_Calc_Clear(PID_Info_TypeDef *PID)
 }
 //------------------------------------------------------------------------------
 
-static float GetSmoothedTargetDelta(PID_Info_TypeDef *PID) {
+static void UpdateTargetBuffer(PID_Info_TypeDef *PID, float Target) {
+    PID->Target_Buffer[PID->Target_Index] = Target;
+    PID->Target_Index = (PID->Target_Index + 1) % FF_WINDOW_SIZE;
+}
     float delta_sum = 0.0f;
+static float GetSmoothedTargetDelta(PID_Info_TypeDef *PID) {
+     delta_sum = 0.0f;
     for (uint8_t i = 0; i < FF_WINDOW_SIZE - 1; i++) {
         delta_sum += (PID->Target_Buffer[(PID->Target_Index + i + 1) % FF_WINDOW_SIZE] - 
                     PID->Target_Buffer[(PID->Target_Index + i) % FF_WINDOW_SIZE]);
@@ -130,6 +135,8 @@ float PID_Calculate(PID_Info_TypeDef *PID, float Target,float Measure)
     return 0;
   }
   
+	UpdateTargetBuffer(PID, Target);
+	
   /* update the target/measure */
   PID->Target =  Target;
   PID->Measure = Measure;
@@ -310,7 +317,7 @@ float PID_Calculate(PID_Info_TypeDef *PID, float Target,float Measure)
 	{
 		PID->Output = 0;
 	}
-
+	VAL_LIMIT(PID->Output, -PID->Param.LimitOutput, PID->Param.LimitOutput);
   return PID->Output;
 }
 //------------------------------------------------------------------------------

@@ -80,34 +80,21 @@ void DM_Motor_CAN_TxMessage(FDCAN_TxFrame_TypeDef *FDCAN_TxFrame,DM_Motor_Info_T
 		FDCAN1_TxFrame.Data[7]=(uint8_t)(Chassis_Info.SendValue[3]);
 	USER_CAN_TxMessage(&FDCAN1_TxFrame,Motor_chassis,FDCAN1_TxFrame.Data); 
 	 	
-		DM_IMU_Init();
-			if(tim1_ms_count%3==0)
-			{
-				IMU_RequestData(&hfdcan3,0x11,3);
-			}
-			else if(tim1_ms_count%2==0)
-			{
-				IMU_RequestData(&hfdcan3,0x11,2);
-			}
-			else
-			{
-				IMU_RequestData(&hfdcan3,0x11,1);
-			}
-	
+
 		
 		
 		
 	 FDCAN2_TxFrame.Header.Identifier=0x1FF;
-	 Magazine_Motor.CANFrame.TxStdId=0x1ff;
 	 FDCAN2_TxFrame.Data[2] = (uint8_t)(Control_Magazine_Info.SendValue[0]>>8);//²¦µ¯ÅÌ	  
 	 FDCAN2_TxFrame.Data[3] = (uint8_t)(Control_Magazine_Info.SendValue[0]);	
 	 USER_CAN_TxMessage(&FDCAN2_TxFrame,&Magazine_Motor,FDCAN2_TxFrame.Data); 
 
-	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, Control_Gimbal_Info.SendValue_yaw, 0, 0.05, 0); // YawÖá  Control_Gimbal_Info.SendValue_yaw
-//	  if (Control_Gimbal_Info.Type == GIMBAL_SLEEP)
-//		DM_Motor_Command(&FDCAN2_TxFrame, &DM_Yaw_Motor, Motor_Disable);
-//		else   if  (Control_Gimbal_Info.Type != GIMBAL_SLEEP)               //((Control_Info.Control_Mode != Control_Info.Gimbal_Last_Mode) &&
-		DM_Motor_Command(&FDCAN2_TxFrame, &DM_Yaw_Motor, Motor_Enable);
+		if(DM_Yaw_Motor.Data.State==0){
+			DM_Motor_Command(&FDCAN2_TxFrame, &DM_Yaw_Motor, Motor_Enable);
+		}
+
+
+	 DM_Motor_CAN_TxMessage(&FDCAN2_TxFrame, &DM_Yaw_Motor, 0, 0, 0, 0, Control_Gimbal_Info.SendValue_yaw); // YawÖá  Control_Gimbal_Info.SendValue_yaw
 
 		FDCAN3_TxFrame.Header.Identifier=0x200;
 	  FDCAN3_TxFrame.Data[0]=(uint8_t)(Control_Magazine_Info.SendValue[2]>>8);//Ä¦²ÁÂÖ

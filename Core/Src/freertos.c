@@ -137,15 +137,15 @@ void MX_FREERTOS_Init(void) {
   StartINS_TaskHandle = osThreadCreate(osThread(StartINS_Task), NULL);
 
   /* definition and creation of StartCAN_Task */
-  osThreadStaticDef(StartCAN_Task, CAN_Task, osPriorityBelowNormal, 0, 1024, StartCAN_TaskBuffer, &StartCAN_TaskControlBlock);
+  osThreadStaticDef(StartCAN_Task, CAN_Task, osPriorityNormal, 0, 1024, StartCAN_TaskBuffer, &StartCAN_TaskControlBlock);
   StartCAN_TaskHandle = osThreadCreate(osThread(StartCAN_Task), NULL);
 
   /* definition and creation of StartControl_Task */
-  osThreadStaticDef(StartControl_Task, Control_Task, osPriorityAboveNormal, 0, 1024, StartControlBuffer, &StartControlControlBlock);
+  osThreadStaticDef(StartControl_Task, Control_Task, osPriorityRealtime, 0, 1024, StartControlBuffer, &StartControlControlBlock);
   StartControl_TaskHandle = osThreadCreate(osThread(StartControl_Task), NULL);
 
   /* definition and creation of StartControl_GIMBAL_Task */
-  osThreadStaticDef(StartControl_GIMBAL_Task, Control_GIMBAL_Task, osPriorityNormal, 0, 1024, StartControl_GIMBAL_TaskBuffer, &StartControl_GIMBAL_TaskBlock);
+  osThreadStaticDef(StartControl_GIMBAL_Task, Control_GIMBAL_Task, osPriorityHigh, 0, 1024, StartControl_GIMBAL_TaskBuffer, &StartControl_GIMBAL_TaskBlock);
   StartControl_GIMBAL_TaskHandle = osThreadCreate(osThread(StartControl_GIMBAL_Task), NULL);
 
   /* definition and creation of StartWarning_Task */
@@ -155,7 +155,7 @@ void MX_FREERTOS_Init(void) {
 	osThreadStaticDef(StartMagazine_Task, Magazine_Task, osPriorityNormal, 0, 1024, StartMagazine_TaskBuffer, &StartMagazine_TaskControlBlock);
   StartMagazine_TaskHandle = osThreadCreate(osThread(StartMagazine_Task), NULL);
 	
-	osThreadStaticDef(StartDetect_Task, Detect_Task, osPriorityNormal, 0, 1024, StartDetect_TaskBuffer, &StartDetect_TaskControlBlock);
+	osThreadStaticDef(StartDetect_Task, Detect_Task, osPriorityBelowNormal, 0, 1024, StartDetect_TaskBuffer, &StartDetect_TaskControlBlock);
   StartDetect_TaskHandle = osThreadCreate(osThread(StartDetect_Task), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */

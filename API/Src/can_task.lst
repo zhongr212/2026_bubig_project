@@ -47,10 +47,10 @@ CAN_Task:
 	.cfi_def_cfa_offset 8
 	.cfi_offset lr, -4
 	.cfi_offset r7, -8
-	.pad	#112
-	sub	sp, #112
-	.cfi_def_cfa_offset 120
-	str	r0, [sp, #108]
+	.pad	#96
+	sub	sp, #96
+	.cfi_def_cfa_offset 104
+	str	r0, [sp, #92]
 .Ltmp0:
 	.loc	2 58 30 prologue_end            @ ../Task/Src/CAN_Task.c:58:30
 	movw	r1, :lower16:Sentry_Tx_Referee
@@ -75,13 +75,13 @@ CAN_Task:
 	movs	r0, #1
 	.loc	2 64 35                         @ ../Task/Src/CAN_Task.c:64:35
 	str.w	r0, [r1, #13]
-	add	r0, sp, #44
+	add	r0, sp, #28
 	movs	r1, #64
 	.loc	2 66 10                         @ ../Task/Src/CAN_Task.c:66:10
 	bl	__aeabi_memclr
 	movs	r0, #0
 	.loc	2 67 14                         @ ../Task/Src/CAN_Task.c:67:14
-	str	r0, [sp, #40]
+	str	r0, [sp, #24]
 	.loc	2 68 2                          @ ../Task/Src/CAN_Task.c:68:2
 	b	.LBB0_1
 .LBB0_1:                                @ =>This Inner Loop Header: Depth=1
@@ -89,17 +89,17 @@ CAN_Task:
 	.loc	2 70 22                         @ ../Task/Src/CAN_Task.c:70:22
 	bl	osKernelSysTick
 	.loc	2 70 20 is_stmt 0               @ ../Task/Src/CAN_Task.c:70:20
-	str	r0, [sp, #40]
+	str	r0, [sp, #24]
 	.loc	2 72 35 is_stmt 1               @ ../Task/Src/CAN_Task.c:72:35
 	movw	r0, :lower16:FDCAN1_TxFrame
 	movt	r0, :upper16:FDCAN1_TxFrame
-	str	r0, [sp, #32]                   @ 4-byte Spill
+	str	r0, [sp, #16]                   @ 4-byte Spill
 	mov.w	r1, #512
 	str	r1, [r0, #4]
 	.loc	2 73 37                         @ ../Task/Src/CAN_Task.c:73:37
 	movw	r1, :lower16:Chassis_Info
 	movt	r1, :upper16:Chassis_Info
-	str	r1, [sp, #36]                   @ 4-byte Spill
+	str	r1, [sp, #20]                   @ 4-byte Spill
 	ldrb.w	r3, [r1, #61]
 	.loc	2 73 26 is_stmt 0               @ ../Task/Src/CAN_Task.c:73:26
 	mov	r2, r0
@@ -136,185 +136,259 @@ CAN_Task:
 	movw	r1, :lower16:Motor_chassis
 	movt	r1, :upper16:Motor_chassis
 	bl	USER_CAN_TxMessage
-	.loc	2 83 3                          @ ../Task/Src/CAN_Task.c:83:3
-	bl	DM_IMU_Init
+	.loc	2 87 35                         @ ../Task/Src/CAN_Task.c:87:35
+	movw	r0, :lower16:FDCAN2_TxFrame
+	movt	r0, :upper16:FDCAN2_TxFrame
+	movw	r1, #511
+	str	r1, [r0, #4]
+	.loc	2 88 38                         @ ../Task/Src/CAN_Task.c:88:38
+	movw	r1, :lower16:Control_Magazine_Info
+	movt	r1, :upper16:Control_Magazine_Info
+	ldrb.w	r2, [r1, #39]
+	.loc	2 88 26 is_stmt 0               @ ../Task/Src/CAN_Task.c:88:26
+	strb.w	r2, [r0, #42]
+	add.w	r2, r0, #40
+	.loc	2 89 38 is_stmt 1               @ ../Task/Src/CAN_Task.c:89:38
+	ldrb.w	r1, [r1, #38]
+	.loc	2 89 26 is_stmt 0               @ ../Task/Src/CAN_Task.c:89:26
+	strb.w	r1, [r0, #43]
+	.loc	2 90 3 is_stmt 1                @ ../Task/Src/CAN_Task.c:90:3
+	movw	r1, :lower16:Magazine_Motor
+	movt	r1, :upper16:Magazine_Motor
+	bl	USER_CAN_TxMessage
 .Ltmp2:
-	.loc	2 84 7                          @ ../Task/Src/CAN_Task.c:84:7
-	movw	r0, :lower16:tim1_ms_count
-	movt	r0, :upper16:tim1_ms_count
-	ldr	r0, [r0]
-	movw	r1, #43691
-	movt	r1, #43690
+	.loc	2 92 24                         @ ../Task/Src/CAN_Task.c:92:24
+	movw	r0, :lower16:DM_Yaw_Motor
+	movt	r0, :upper16:DM_Yaw_Motor
+	ldrb	r0, [r0, #29]
 .Ltmp3:
-	.loc	2 84 7 is_stmt 0                @ ../Task/Src/CAN_Task.c:84:7
-	muls	r0, r1, r0
-	cmp.w	r0, #1431655765
-	bhi	.LBB0_3
+	.loc	2 92 6 is_stmt 0                @ ../Task/Src/CAN_Task.c:92:6
+	cbnz	r0, .LBB0_3
 	b	.LBB0_2
 .LBB0_2:                                @   in Loop: Header=BB0_1 Depth=1
 .Ltmp4:
-	.loc	2 86 5 is_stmt 1                @ ../Task/Src/CAN_Task.c:86:5
-	movw	r0, :lower16:hfdcan3
-	movt	r0, :upper16:hfdcan3
-	movs	r1, #17
-	movs	r2, #3
-	bl	IMU_RequestData
-	.loc	2 87 4                          @ ../Task/Src/CAN_Task.c:87:4
-	b	.LBB0_7
-.Ltmp5:
-.LBB0_3:                                @   in Loop: Header=BB0_1 Depth=1
-	.loc	2 88 12                         @ ../Task/Src/CAN_Task.c:88:12
-	movw	r0, :lower16:tim1_ms_count
-	movt	r0, :upper16:tim1_ms_count
-	ldr	r0, [r0]
-.Ltmp6:
-	.loc	2 88 12 is_stmt 0               @ ../Task/Src/CAN_Task.c:88:12
-	lsls	r0, r0, #31
-	cbnz	r0, .LBB0_5
-	b	.LBB0_4
-.LBB0_4:                                @   in Loop: Header=BB0_1 Depth=1
-.Ltmp7:
-	.loc	2 90 5 is_stmt 1                @ ../Task/Src/CAN_Task.c:90:5
-	movw	r0, :lower16:hfdcan3
-	movt	r0, :upper16:hfdcan3
-	movs	r1, #17
-	movs	r2, #2
-	bl	IMU_RequestData
-	.loc	2 91 4                          @ ../Task/Src/CAN_Task.c:91:4
-	b	.LBB0_6
-.Ltmp8:
-.LBB0_5:                                @   in Loop: Header=BB0_1 Depth=1
-	.loc	2 94 5                          @ ../Task/Src/CAN_Task.c:94:5
-	movw	r0, :lower16:hfdcan3
-	movt	r0, :upper16:hfdcan3
-	movs	r1, #17
-	movs	r2, #1
-	bl	IMU_RequestData
-	b	.LBB0_6
-.Ltmp9:
-.LBB0_6:                                @   in Loop: Header=BB0_1 Depth=1
-	.loc	2 0 5 is_stmt 0                 @ ../Task/Src/CAN_Task.c:0:5
-	b	.LBB0_7
-.LBB0_7:                                @   in Loop: Header=BB0_1 Depth=1
-	.loc	2 100 35 is_stmt 1              @ ../Task/Src/CAN_Task.c:100:35
+	.loc	2 93 4 is_stmt 1                @ ../Task/Src/CAN_Task.c:93:4
 	movw	r0, :lower16:FDCAN2_TxFrame
 	movt	r0, :upper16:FDCAN2_TxFrame
-	str	r0, [sp]                        @ 4-byte Spill
-	movw	r2, #511
-	str	r2, [sp, #16]                   @ 4-byte Spill
-	str	r2, [r0, #4]
-	.loc	2 101 34                        @ ../Task/Src/CAN_Task.c:101:34
-	movw	r1, :lower16:Magazine_Motor
-	movt	r1, :upper16:Magazine_Motor
-	str	r2, [r1, #4]
-	.loc	2 102 38                        @ ../Task/Src/CAN_Task.c:102:38
-	movw	r3, :lower16:Control_Magazine_Info
-	movt	r3, :upper16:Control_Magazine_Info
-	str	r3, [sp, #8]                    @ 4-byte Spill
-	ldrb.w	r2, [r3, #39]
-	.loc	2 102 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:102:26
-	strb.w	r2, [r0, #42]
-	add.w	r2, r0, #40
-	.loc	2 103 38 is_stmt 1              @ ../Task/Src/CAN_Task.c:103:38
-	ldrb.w	r3, [r3, #38]
-	.loc	2 103 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:103:26
-	strb.w	r3, [r0, #43]
-	.loc	2 104 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:104:3
-	bl	USER_CAN_TxMessage
-	ldr	r0, [sp]                        @ 4-byte Reload
-	.loc	2 106 81                        @ ../Task/Src/CAN_Task.c:106:81
-	movw	r1, :lower16:Control_Gimbal_Info
-	movt	r1, :upper16:Control_Gimbal_Info
-	str	r1, [sp, #20]                   @ 4-byte Spill
-	vldr	s1, [r1, #68]
-	.loc	2 106 3 is_stmt 0               @ ../Task/Src/CAN_Task.c:106:3
 	movw	r1, :lower16:DM_Yaw_Motor
 	movt	r1, :upper16:DM_Yaw_Motor
-	str	r1, [sp, #4]                    @ 4-byte Spill
-	vldr	s3, .LCPI0_0
-	vldr	s4, .LCPI0_1
-	vmov.f32	s0, s4
-	vmov.f32	s2, s4
-	bl	DM_Motor_CAN_TxMessage
-	ldr	r0, [sp]                        @ 4-byte Reload
-	ldr	r1, [sp, #4]                    @ 4-byte Reload
 	movs	r2, #0
-	.loc	2 110 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:110:3
-	str	r2, [sp, #12]                   @ 4-byte Spill
 	bl	DM_Motor_Command
-	ldr	r3, [sp, #8]                    @ 4-byte Reload
-	ldr	r1, [sp, #12]                   @ 4-byte Reload
-	.loc	2 112 35                        @ ../Task/Src/CAN_Task.c:112:35
+	.loc	2 94 3                          @ ../Task/Src/CAN_Task.c:94:3
+	b	.LBB0_3
+.Ltmp5:
+.LBB0_3:                                @   in Loop: Header=BB0_1 Depth=1
+	.loc	2 97 90                         @ ../Task/Src/CAN_Task.c:97:90
+	movw	r0, :lower16:Control_Gimbal_Info
+	movt	r0, :upper16:Control_Gimbal_Info
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	vldr	s4, [r0, #68]
+	.loc	2 97 3 is_stmt 0                @ ../Task/Src/CAN_Task.c:97:3
+	movw	r0, :lower16:FDCAN2_TxFrame
+	movt	r0, :upper16:FDCAN2_TxFrame
+	movw	r1, :lower16:DM_Yaw_Motor
+	movt	r1, :upper16:DM_Yaw_Motor
+	vldr	s3, .LCPI0_0
+	vmov.f32	s0, s3
+	vmov.f32	s1, s3
+	vmov.f32	s2, s3
+	bl	DM_Motor_CAN_TxMessage
+	.loc	2 99 35 is_stmt 1               @ ../Task/Src/CAN_Task.c:99:35
 	movw	r0, :lower16:FDCAN3_TxFrame
 	movt	r0, :upper16:FDCAN3_TxFrame
-	str	r0, [sp, #24]                   @ 4-byte Spill
-	mov.w	r2, #512
-	str	r2, [r0, #4]
-	.loc	2 113 37                        @ ../Task/Src/CAN_Task.c:113:37
-	ldrb.w	r12, [r3, #43]
-	.loc	2 113 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:113:26
+	str	r0, [sp, #8]                    @ 4-byte Spill
+	mov.w	r1, #512
+	str	r1, [r0, #4]
+	.loc	2 100 37                        @ ../Task/Src/CAN_Task.c:100:37
+	movw	r1, :lower16:Control_Magazine_Info
+	movt	r1, :upper16:Control_Magazine_Info
+	ldrb.w	r3, [r1, #43]
+	.loc	2 100 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:100:26
 	mov	r2, r0
-	strb	r12, [r2, #40]!
-	.loc	2 114 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:114:36
-	str	r2, [sp, #28]                   @ 4-byte Spill
-	ldrb.w	r12, [r3, #42]
-	.loc	2 114 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:114:25
-	strb.w	r12, [r0, #41]
-	.loc	2 115 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:115:36
-	ldrb.w	r12, [r3, #45]
-	.loc	2 115 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:115:25
-	strb.w	r12, [r0, #42]
-	.loc	2 116 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:116:36
-	ldrb.w	r3, [r3, #44]
-	.loc	2 116 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:116:25
-	strb.w	r3, [r0, #43]
-	.loc	2 117 25 is_stmt 1              @ ../Task/Src/CAN_Task.c:117:25
+	strb	r3, [r2, #40]!
+	.loc	2 101 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:101:36
+	str	r2, [sp, #12]                   @ 4-byte Spill
+	ldrb.w	r3, [r1, #42]
+	.loc	2 101 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:101:25
+	strb.w	r3, [r0, #41]
+	.loc	2 102 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:102:36
+	ldrb.w	r3, [r1, #45]
+	.loc	2 102 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:102:25
+	strb.w	r3, [r0, #42]
+	.loc	2 103 36 is_stmt 1              @ ../Task/Src/CAN_Task.c:103:36
+	ldrb.w	r1, [r1, #44]
+	.loc	2 103 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:103:25
+	strb.w	r1, [r0, #43]
+	movs	r1, #0
+	.loc	2 104 25 is_stmt 1              @ ../Task/Src/CAN_Task.c:104:25
 	strb.w	r1, [r0, #44]
-	.loc	2 118 25                        @ ../Task/Src/CAN_Task.c:118:25
+	.loc	2 105 25                        @ ../Task/Src/CAN_Task.c:105:25
 	strb.w	r1, [r0, #45]
-	.loc	2 119 25                        @ ../Task/Src/CAN_Task.c:119:25
+	.loc	2 106 25                        @ ../Task/Src/CAN_Task.c:106:25
 	strb.w	r1, [r0, #46]
-	.loc	2 120 25                        @ ../Task/Src/CAN_Task.c:120:25
+	.loc	2 107 25                        @ ../Task/Src/CAN_Task.c:107:25
 	strb.w	r1, [r0, #47]
-	.loc	2 121 3                         @ ../Task/Src/CAN_Task.c:121:3
+	.loc	2 108 3                         @ ../Task/Src/CAN_Task.c:108:3
 	movw	r1, :lower16:Shoot_Motor
 	movt	r1, :upper16:Shoot_Motor
 	bl	USER_CAN_TxMessage
-	ldr	r3, [sp, #16]                   @ 4-byte Reload
-	ldr	r1, [sp, #20]                   @ 4-byte Reload
-	ldr	r0, [sp, #24]                   @ 4-byte Reload
-	ldr	r2, [sp, #28]                   @ 4-byte Reload
-	.loc	2 123 35                        @ ../Task/Src/CAN_Task.c:123:35
+	ldr	r1, [sp, #4]                    @ 4-byte Reload
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	ldr	r2, [sp, #12]                   @ 4-byte Reload
+	movw	r3, #511
+	.loc	2 110 35                        @ ../Task/Src/CAN_Task.c:110:35
 	str	r3, [r0, #4]
-	.loc	2 124 56                        @ ../Task/Src/CAN_Task.c:124:56
+	.loc	2 111 56                        @ ../Task/Src/CAN_Task.c:111:56
 	ldrb.w	r3, [r1, #67]
-	.loc	2 124 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:124:25
+	.loc	2 111 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:111:25
 	strb.w	r3, [r0, #44]
-	.loc	2 125 56 is_stmt 1              @ ../Task/Src/CAN_Task.c:125:56
+	.loc	2 112 56 is_stmt 1              @ ../Task/Src/CAN_Task.c:112:56
 	ldrb.w	r1, [r1, #66]
-	.loc	2 125 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:125:25
+	.loc	2 112 25 is_stmt 0              @ ../Task/Src/CAN_Task.c:112:25
 	strb.w	r1, [r0, #45]
-	.loc	2 127 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:127:3
+	.loc	2 114 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:114:3
 	movw	r1, :lower16:Pich_Motor
 	movt	r1, :upper16:Pich_Motor
 	bl	USER_CAN_TxMessage
 	movs	r0, #1
-	.loc	2 130 3                         @ ../Task/Src/CAN_Task.c:130:3
+	.loc	2 117 3                         @ ../Task/Src/CAN_Task.c:117:3
 	bl	osDelay
-.Ltmp10:
+.Ltmp6:
 	.loc	2 68 2                          @ ../Task/Src/CAN_Task.c:68:2
 	b	.LBB0_1
-.Ltmp11:
+.Ltmp7:
 	.loc	2 0 2 is_stmt 0                 @ :0:2
-.Ltmp12:
+.Ltmp8:
 	.p2align	2
-@ %bb.8:
+@ %bb.4:
 .LCPI0_0:
-	.long	0x3d4ccccd                      @ float 0.0500000007
-.LCPI0_1:
 	.long	0x00000000                      @ float 0
 .Lfunc_end0:
 	.size	CAN_Task, .Lfunc_end0-CAN_Task
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.DM_Motor_Command,"ax",%progbits
+	.hidden	DM_Motor_Command                @ -- Begin function DM_Motor_Command
+	.globl	DM_Motor_Command
+	.p2align	3
+	.type	DM_Motor_Command,%function
+	.code	16                              @ @DM_Motor_Command
+	.thumb_func
+DM_Motor_Command:
+.Lfunc_begin1:
+	.loc	2 193 0 is_stmt 1               @ ../Task/Src/CAN_Task.c:193:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r7, lr}
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.pad	#16
+	sub	sp, #16
+	.cfi_def_cfa_offset 24
+                                        @ kill: def $r3 killed $r2
+	str	r0, [sp, #12]
+	str	r1, [sp, #8]
+	strb.w	r2, [sp, #7]
+.Ltmp9:
+	.loc	2 195 38 prologue_end           @ ../Task/Src/CAN_Task.c:195:38
+	ldr	r0, [sp, #8]
+	.loc	2 195 59 is_stmt 0              @ ../Task/Src/CAN_Task.c:195:59
+	ldr	r0, [r0, #4]
+	.loc	2 195 3                         @ ../Task/Src/CAN_Task.c:195:3
+	ldr	r1, [sp, #12]
+	.loc	2 195 36                        @ ../Task/Src/CAN_Task.c:195:36
+	str	r0, [r1, #4]
+	.loc	2 197 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:197:3
+	ldr	r1, [sp, #12]
+	movs	r0, #255
+	.loc	2 197 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:197:26
+	strb.w	r0, [r1, #40]
+	.loc	2 198 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:198:4
+	ldr	r1, [sp, #12]
+	.loc	2 198 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:198:27
+	strb.w	r0, [r1, #41]
+	.loc	2 199 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:199:4
+	ldr	r1, [sp, #12]
+	.loc	2 199 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:199:27
+	strb.w	r0, [r1, #42]
+	.loc	2 200 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:200:3
+	ldr	r1, [sp, #12]
+	.loc	2 200 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:200:26
+	strb.w	r0, [r1, #43]
+	.loc	2 201 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:201:3
+	ldr	r1, [sp, #12]
+	.loc	2 201 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:201:26
+	strb.w	r0, [r1, #44]
+	.loc	2 202 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:202:3
+	ldr	r1, [sp, #12]
+	.loc	2 202 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:202:26
+	strb.w	r0, [r1, #45]
+	.loc	2 203 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:203:3
+	ldr	r1, [sp, #12]
+	.loc	2 203 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:203:26
+	strb.w	r0, [r1, #46]
+	.loc	2 205 10 is_stmt 1              @ ../Task/Src/CAN_Task.c:205:10
+	ldrb.w	r0, [sp, #7]
+	.loc	2 205 3 is_stmt 0               @ ../Task/Src/CAN_Task.c:205:3
+	mov	r1, r0
+	str	r1, [sp]                        @ 4-byte Spill
+	cbz	r0, .LBB1_3
+	b	.LBB1_1
+.LBB1_1:
+	ldr	r0, [sp]                        @ 4-byte Reload
+	cmp	r0, #1
+	beq	.LBB1_4
+	b	.LBB1_2
+.LBB1_2:
+	ldr	r0, [sp]                        @ 4-byte Reload
+	cmp	r0, #2
+	beq	.LBB1_5
+	b	.LBB1_6
+.LBB1_3:
+.Ltmp10:
+	.loc	2 208 10 is_stmt 1              @ ../Task/Src/CAN_Task.c:208:10
+	ldr	r1, [sp, #12]
+	movs	r0, #252
+	.loc	2 208 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:208:33
+	strb.w	r0, [r1, #47]
+	.loc	2 209 6 is_stmt 1               @ ../Task/Src/CAN_Task.c:209:6
+	b	.LBB1_7
+.LBB1_4:
+	.loc	2 212 10                        @ ../Task/Src/CAN_Task.c:212:10
+	ldr	r1, [sp, #12]
+	movs	r0, #253
+	.loc	2 212 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:212:33
+	strb.w	r0, [r1, #47]
+	.loc	2 213 7 is_stmt 1               @ ../Task/Src/CAN_Task.c:213:7
+	b	.LBB1_7
+.LBB1_5:
+	.loc	2 216 10                        @ ../Task/Src/CAN_Task.c:216:10
+	ldr	r1, [sp, #12]
+	movs	r0, #254
+	.loc	2 216 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:216:33
+	strb.w	r0, [r1, #47]
+	.loc	2 217 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:217:4
+	b	.LBB1_7
+.LBB1_6:
+	.loc	2 220 6                         @ ../Task/Src/CAN_Task.c:220:6
+	b	.LBB1_7
+.Ltmp11:
+.LBB1_7:
+	.loc	2 223 35                        @ ../Task/Src/CAN_Task.c:223:35
+	ldr	r0, [sp, #12]
+	.loc	2 223 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:223:4
+	bl	USER_FDCAN_AddMessageToTxFifoQ
+	.loc	2 225 1 epilogue_begin is_stmt 1 @ ../Task/Src/CAN_Task.c:225:1
+	add	sp, #16
+	pop	{r7, pc}
+.Ltmp12:
+.Lfunc_end1:
+	.size	DM_Motor_Command, .Lfunc_end1-DM_Motor_Command
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -327,8 +401,8 @@ CAN_Task:
 	.code	16                              @ @DM_Motor_CAN_TxMessage
 	.thumb_func
 DM_Motor_CAN_TxMessage:
-.Lfunc_begin1:
-	.loc	2 143 0 is_stmt 1               @ ../Task/Src/CAN_Task.c:143:0
+.Lfunc_begin2:
+	.loc	2 130 0                         @ ../Task/Src/CAN_Task.c:130:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -348,333 +422,333 @@ DM_Motor_CAN_TxMessage:
 	vstr	s3, [sp, #40]
 	vstr	s4, [sp, #36]
 .Ltmp13:
-	.loc	2 145 7 prologue_end            @ ../Task/Src/CAN_Task.c:145:7
+	.loc	2 132 7 prologue_end            @ ../Task/Src/CAN_Task.c:132:7
 	ldr	r0, [sp, #56]
-	.loc	2 145 17 is_stmt 0              @ ../Task/Src/CAN_Task.c:145:17
+	.loc	2 132 17 is_stmt 0              @ ../Task/Src/CAN_Task.c:132:17
 	ldrb	r0, [r0]
 .Ltmp14:
-	.loc	2 145 7                         @ ../Task/Src/CAN_Task.c:145:7
+	.loc	2 132 7                         @ ../Task/Src/CAN_Task.c:132:7
 	cmp	r0, #0
-	bne	.LBB1_2
-	b	.LBB1_1
-.LBB1_1:
+	bne	.LBB2_2
+	b	.LBB2_1
+.LBB2_1:
 .Ltmp15:
-	.loc	2 149 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:149:34
+	.loc	2 136 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:136:34
 	vldr	s0, [sp, #52]
-	.loc	2 149 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:149:44
+	.loc	2 136 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:136:44
 	ldr	r0, [sp, #56]
-	.loc	2 149 66                        @ ../Task/Src/CAN_Task.c:149:66
+	.loc	2 136 66                        @ ../Task/Src/CAN_Task.c:136:66
 	vldr	s2, [r0, #16]
-	.loc	2 149 43                        @ ../Task/Src/CAN_Task.c:149:43
+	.loc	2 136 43                        @ ../Task/Src/CAN_Task.c:136:43
 	vneg.f32	s1, s2
 	movs	r0, #16
-	.loc	2 149 20                        @ ../Task/Src/CAN_Task.c:149:20
+	.loc	2 136 20                        @ ../Task/Src/CAN_Task.c:136:20
 	bl	float_to_uint
-	.loc	2 149 17                        @ ../Task/Src/CAN_Task.c:149:17
+	.loc	2 136 17                        @ ../Task/Src/CAN_Task.c:136:17
 	strh.w	r0, [sp, #34]
-	.loc	2 150 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:150:34
+	.loc	2 137 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:137:34
 	vldr	s0, [sp, #48]
-	.loc	2 150 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:150:44
+	.loc	2 137 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:137:44
 	ldr	r0, [sp, #56]
-	.loc	2 150 66                        @ ../Task/Src/CAN_Task.c:150:66
+	.loc	2 137 66                        @ ../Task/Src/CAN_Task.c:137:66
 	vldr	s2, [r0, #20]
-	.loc	2 150 43                        @ ../Task/Src/CAN_Task.c:150:43
+	.loc	2 137 43                        @ ../Task/Src/CAN_Task.c:137:43
 	vneg.f32	s1, s2
 	movs	r0, #12
-	.loc	2 150 20                        @ ../Task/Src/CAN_Task.c:150:20
+	.loc	2 137 20                        @ ../Task/Src/CAN_Task.c:137:20
 	str	r0, [sp, #8]                    @ 4-byte Spill
 	bl	float_to_uint
 	mov	r1, r0
-	.loc	2 150 17                        @ ../Task/Src/CAN_Task.c:150:17
+	.loc	2 137 17                        @ ../Task/Src/CAN_Task.c:137:17
 	ldr	r0, [sp, #8]                    @ 4-byte Reload
 	strh.w	r1, [sp, #32]
-	.loc	2 151 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:151:34
+	.loc	2 138 34 is_stmt 1              @ ../Task/Src/CAN_Task.c:138:34
 	vldr	s0, [sp, #36]
-	.loc	2 151 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:151:44
+	.loc	2 138 44 is_stmt 0              @ ../Task/Src/CAN_Task.c:138:44
 	ldr	r1, [sp, #56]
-	.loc	2 151 66                        @ ../Task/Src/CAN_Task.c:151:66
+	.loc	2 138 66                        @ ../Task/Src/CAN_Task.c:138:66
 	vldr	s2, [r1, #24]
-	.loc	2 151 43                        @ ../Task/Src/CAN_Task.c:151:43
+	.loc	2 138 43                        @ ../Task/Src/CAN_Task.c:138:43
 	vneg.f32	s1, s2
-	.loc	2 151 20                        @ ../Task/Src/CAN_Task.c:151:20
+	.loc	2 138 20                        @ ../Task/Src/CAN_Task.c:138:20
 	bl	float_to_uint
 	mov	r1, r0
-	.loc	2 151 17                        @ ../Task/Src/CAN_Task.c:151:17
+	.loc	2 138 17                        @ ../Task/Src/CAN_Task.c:138:17
 	ldr	r0, [sp, #8]                    @ 4-byte Reload
 	strh.w	r1, [sp, #30]
-	.loc	2 152 27 is_stmt 1              @ ../Task/Src/CAN_Task.c:152:27
+	.loc	2 139 27 is_stmt 1              @ ../Task/Src/CAN_Task.c:139:27
 	vldr	s0, [sp, #44]
-	vldr	s1, .LCPI1_0
+	vldr	s1, .LCPI2_0
 	vstr	s1, [sp, #4]                    @ 4-byte Spill
-	vldr	s2, .LCPI1_1
-	.loc	2 152 13 is_stmt 0              @ ../Task/Src/CAN_Task.c:152:13
+	vldr	s2, .LCPI2_1
+	.loc	2 139 13 is_stmt 0              @ ../Task/Src/CAN_Task.c:139:13
 	bl	float_to_uint
 	vldr	s1, [sp, #4]                    @ 4-byte Reload
 	mov	r1, r0
-	.loc	2 152 11                        @ ../Task/Src/CAN_Task.c:152:11
+	.loc	2 139 11                        @ ../Task/Src/CAN_Task.c:139:11
 	ldr	r0, [sp, #8]                    @ 4-byte Reload
 	strh.w	r1, [sp, #28]
-	.loc	2 153 27 is_stmt 1              @ ../Task/Src/CAN_Task.c:153:27
+	.loc	2 140 27 is_stmt 1              @ ../Task/Src/CAN_Task.c:140:27
 	vldr	s0, [sp, #40]
 	vmov.f32	s2, #5.000000e+00
-	.loc	2 153 13 is_stmt 0              @ ../Task/Src/CAN_Task.c:153:13
+	.loc	2 140 13 is_stmt 0              @ ../Task/Src/CAN_Task.c:140:13
 	bl	float_to_uint
-	.loc	2 153 11                        @ ../Task/Src/CAN_Task.c:153:11
+	.loc	2 140 11                        @ ../Task/Src/CAN_Task.c:140:11
 	strh.w	r0, [sp, #26]
-	.loc	2 155 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:155:39
+	.loc	2 142 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:142:39
 	ldr	r0, [sp, #56]
-	.loc	2 155 60 is_stmt 0              @ ../Task/Src/CAN_Task.c:155:60
+	.loc	2 142 60 is_stmt 0              @ ../Task/Src/CAN_Task.c:142:60
 	ldr	r0, [r0, #4]
-	.loc	2 155 4                         @ ../Task/Src/CAN_Task.c:155:4
+	.loc	2 142 4                         @ ../Task/Src/CAN_Task.c:142:4
 	ldr	r1, [sp, #60]
-	.loc	2 155 37                        @ ../Task/Src/CAN_Task.c:155:37
+	.loc	2 142 37                        @ ../Task/Src/CAN_Task.c:142:37
 	str	r0, [r1, #4]
-	.loc	2 157 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:157:39
+	.loc	2 144 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:144:39
 	ldrb.w	r0, [sp, #35]
-	.loc	2 157 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:157:4
+	.loc	2 144 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:144:4
 	ldr	r1, [sp, #60]
-	.loc	2 157 27                        @ ../Task/Src/CAN_Task.c:157:27
+	.loc	2 144 27                        @ ../Task/Src/CAN_Task.c:144:27
 	strb.w	r0, [r1, #40]
-	.loc	2 158 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:158:39
+	.loc	2 145 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:145:39
 	ldrb.w	r0, [sp, #34]
-	.loc	2 158 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:158:4
+	.loc	2 145 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:145:4
 	ldr	r1, [sp, #60]
-	.loc	2 158 27                        @ ../Task/Src/CAN_Task.c:158:27
+	.loc	2 145 27                        @ ../Task/Src/CAN_Task.c:145:27
 	strb.w	r0, [r1, #41]
-	.loc	2 159 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:159:39
+	.loc	2 146 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:146:39
 	ldrh.w	r0, [sp, #32]
 	lsrs	r0, r0, #4
-	.loc	2 159 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:159:4
+	.loc	2 146 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:146:4
 	ldr	r1, [sp, #60]
-	.loc	2 159 27                        @ ../Task/Src/CAN_Task.c:159:27
+	.loc	2 146 27                        @ ../Task/Src/CAN_Task.c:146:27
 	strb.w	r0, [r1, #42]
-	.loc	2 160 40 is_stmt 1              @ ../Task/Src/CAN_Task.c:160:40
+	.loc	2 147 40 is_stmt 1              @ ../Task/Src/CAN_Task.c:147:40
 	ldrh.w	r1, [sp, #32]
-	.loc	2 160 75 is_stmt 0              @ ../Task/Src/CAN_Task.c:160:75
+	.loc	2 147 75 is_stmt 0              @ ../Task/Src/CAN_Task.c:147:75
 	ldrb.w	r0, [sp, #29]
-	.loc	2 160 63                        @ ../Task/Src/CAN_Task.c:160:63
+	.loc	2 147 63                        @ ../Task/Src/CAN_Task.c:147:63
 	orr.w	r0, r0, r1, lsl #4
-	.loc	2 160 4                         @ ../Task/Src/CAN_Task.c:160:4
+	.loc	2 147 4                         @ ../Task/Src/CAN_Task.c:147:4
 	ldr	r1, [sp, #60]
-	.loc	2 160 27                        @ ../Task/Src/CAN_Task.c:160:27
+	.loc	2 147 27                        @ ../Task/Src/CAN_Task.c:147:27
 	strb.w	r0, [r1, #43]
-	.loc	2 161 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:161:39
+	.loc	2 148 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:148:39
 	ldrb.w	r0, [sp, #28]
-	.loc	2 161 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:161:4
+	.loc	2 148 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:148:4
 	ldr	r1, [sp, #60]
-	.loc	2 161 27                        @ ../Task/Src/CAN_Task.c:161:27
+	.loc	2 148 27                        @ ../Task/Src/CAN_Task.c:148:27
 	strb.w	r0, [r1, #44]
-	.loc	2 162 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:162:39
+	.loc	2 149 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:149:39
 	ldrh.w	r0, [sp, #26]
 	lsrs	r0, r0, #4
-	.loc	2 162 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:162:4
+	.loc	2 149 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:149:4
 	ldr	r1, [sp, #60]
-	.loc	2 162 27                        @ ../Task/Src/CAN_Task.c:162:27
+	.loc	2 149 27                        @ ../Task/Src/CAN_Task.c:149:27
 	strb.w	r0, [r1, #45]
-	.loc	2 163 40 is_stmt 1              @ ../Task/Src/CAN_Task.c:163:40
+	.loc	2 150 40 is_stmt 1              @ ../Task/Src/CAN_Task.c:150:40
 	ldrh.w	r1, [sp, #26]
-	.loc	2 163 69 is_stmt 0              @ ../Task/Src/CAN_Task.c:163:69
+	.loc	2 150 69 is_stmt 0              @ ../Task/Src/CAN_Task.c:150:69
 	ldrb.w	r0, [sp, #31]
-	.loc	2 163 57                        @ ../Task/Src/CAN_Task.c:163:57
+	.loc	2 150 57                        @ ../Task/Src/CAN_Task.c:150:57
 	orr.w	r0, r0, r1, lsl #4
-	.loc	2 163 4                         @ ../Task/Src/CAN_Task.c:163:4
+	.loc	2 150 4                         @ ../Task/Src/CAN_Task.c:150:4
 	ldr	r1, [sp, #60]
-	.loc	2 163 27                        @ ../Task/Src/CAN_Task.c:163:27
+	.loc	2 150 27                        @ ../Task/Src/CAN_Task.c:150:27
 	strb.w	r0, [r1, #46]
-	.loc	2 164 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:164:39
+	.loc	2 151 39 is_stmt 1              @ ../Task/Src/CAN_Task.c:151:39
 	ldrb.w	r0, [sp, #30]
-	.loc	2 164 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:164:4
+	.loc	2 151 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:151:4
 	ldr	r1, [sp, #60]
-	.loc	2 164 27                        @ ../Task/Src/CAN_Task.c:164:27
+	.loc	2 151 27                        @ ../Task/Src/CAN_Task.c:151:27
 	strb.w	r0, [r1, #47]
-	.loc	2 166 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:166:2
-	b	.LBB1_8
+	.loc	2 153 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:153:2
+	b	.LBB2_8
 .Ltmp16:
-.LBB1_2:
-	.loc	2 166 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:166:11
+.LBB2_2:
+	.loc	2 153 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:153:11
 	ldr	r0, [sp, #56]
-	.loc	2 166 21                        @ ../Task/Src/CAN_Task.c:166:21
+	.loc	2 153 21                        @ ../Task/Src/CAN_Task.c:153:21
 	ldrb	r0, [r0]
 .Ltmp17:
-	.loc	2 166 11                        @ ../Task/Src/CAN_Task.c:166:11
+	.loc	2 153 11                        @ ../Task/Src/CAN_Task.c:153:11
 	cmp	r0, #1
-	bne	.LBB1_4
-	b	.LBB1_3
-.LBB1_3:
+	bne	.LBB2_4
+	b	.LBB2_3
+.LBB2_3:
 	.loc	2 0 11                          @ ../Task/Src/CAN_Task.c:0:11
 	add	r0, sp, #52
 .Ltmp18:
-	.loc	2 170 17 is_stmt 1              @ ../Task/Src/CAN_Task.c:170:17
+	.loc	2 157 17 is_stmt 1              @ ../Task/Src/CAN_Task.c:157:17
 	str	r0, [sp, #20]
 	add	r0, sp, #48
-	.loc	2 171 17                        @ ../Task/Src/CAN_Task.c:171:17
+	.loc	2 158 17                        @ ../Task/Src/CAN_Task.c:158:17
 	str	r0, [sp, #16]
-	.loc	2 173 40                        @ ../Task/Src/CAN_Task.c:173:40
+	.loc	2 160 40                        @ ../Task/Src/CAN_Task.c:160:40
 	ldr	r0, [sp, #56]
-	.loc	2 173 61 is_stmt 0              @ ../Task/Src/CAN_Task.c:173:61
+	.loc	2 160 61 is_stmt 0              @ ../Task/Src/CAN_Task.c:160:61
 	ldr	r0, [r0, #4]
-	.loc	2 173 69                        @ ../Task/Src/CAN_Task.c:173:69
+	.loc	2 160 69                        @ ../Task/Src/CAN_Task.c:160:69
 	add.w	r0, r0, #256
-	.loc	2 173 5                         @ ../Task/Src/CAN_Task.c:173:5
+	.loc	2 160 5                         @ ../Task/Src/CAN_Task.c:160:5
 	ldr	r1, [sp, #60]
-	.loc	2 173 38                        @ ../Task/Src/CAN_Task.c:173:38
+	.loc	2 160 38                        @ ../Task/Src/CAN_Task.c:160:38
 	str	r0, [r1, #4]
-	.loc	2 175 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:175:31
+	.loc	2 162 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:162:31
 	ldr	r0, [sp, #20]
-	.loc	2 175 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:175:29
+	.loc	2 162 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:162:29
 	ldrb	r0, [r0]
-	.loc	2 175 4                         @ ../Task/Src/CAN_Task.c:175:4
+	.loc	2 162 4                         @ ../Task/Src/CAN_Task.c:162:4
 	ldr	r1, [sp, #60]
-	.loc	2 175 27                        @ ../Task/Src/CAN_Task.c:175:27
+	.loc	2 162 27                        @ ../Task/Src/CAN_Task.c:162:27
 	strb.w	r0, [r1, #40]
-	.loc	2 176 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:176:31
+	.loc	2 163 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:163:31
 	ldr	r0, [sp, #20]
-	.loc	2 176 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:176:29
+	.loc	2 163 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:163:29
 	ldrb	r0, [r0, #1]
-	.loc	2 176 4                         @ ../Task/Src/CAN_Task.c:176:4
+	.loc	2 163 4                         @ ../Task/Src/CAN_Task.c:163:4
 	ldr	r1, [sp, #60]
-	.loc	2 176 27                        @ ../Task/Src/CAN_Task.c:176:27
+	.loc	2 163 27                        @ ../Task/Src/CAN_Task.c:163:27
 	strb.w	r0, [r1, #41]
-	.loc	2 177 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:177:31
+	.loc	2 164 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:164:31
 	ldr	r0, [sp, #20]
-	.loc	2 177 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:177:29
+	.loc	2 164 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:164:29
 	ldrb	r0, [r0, #2]
-	.loc	2 177 4                         @ ../Task/Src/CAN_Task.c:177:4
+	.loc	2 164 4                         @ ../Task/Src/CAN_Task.c:164:4
 	ldr	r1, [sp, #60]
-	.loc	2 177 27                        @ ../Task/Src/CAN_Task.c:177:27
+	.loc	2 164 27                        @ ../Task/Src/CAN_Task.c:164:27
 	strb.w	r0, [r1, #42]
-	.loc	2 178 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:178:31
+	.loc	2 165 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:165:31
 	ldr	r0, [sp, #20]
-	.loc	2 178 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:178:29
+	.loc	2 165 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:165:29
 	ldrb	r0, [r0, #3]
-	.loc	2 178 4                         @ ../Task/Src/CAN_Task.c:178:4
+	.loc	2 165 4                         @ ../Task/Src/CAN_Task.c:165:4
 	ldr	r1, [sp, #60]
-	.loc	2 178 27                        @ ../Task/Src/CAN_Task.c:178:27
+	.loc	2 165 27                        @ ../Task/Src/CAN_Task.c:165:27
 	strb.w	r0, [r1, #43]
-	.loc	2 179 32 is_stmt 1              @ ../Task/Src/CAN_Task.c:179:32
+	.loc	2 166 32 is_stmt 1              @ ../Task/Src/CAN_Task.c:166:32
 	ldr	r0, [sp, #16]
-	.loc	2 179 30 is_stmt 0              @ ../Task/Src/CAN_Task.c:179:30
+	.loc	2 166 30 is_stmt 0              @ ../Task/Src/CAN_Task.c:166:30
 	ldrb	r0, [r0]
-	.loc	2 179 5                         @ ../Task/Src/CAN_Task.c:179:5
+	.loc	2 166 5                         @ ../Task/Src/CAN_Task.c:166:5
 	ldr	r1, [sp, #60]
-	.loc	2 179 28                        @ ../Task/Src/CAN_Task.c:179:28
+	.loc	2 166 28                        @ ../Task/Src/CAN_Task.c:166:28
 	strb.w	r0, [r1, #44]
-	.loc	2 180 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:180:31
+	.loc	2 167 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:167:31
 	ldr	r0, [sp, #16]
-	.loc	2 180 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:180:29
+	.loc	2 167 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:167:29
 	ldrb	r0, [r0, #1]
-	.loc	2 180 4                         @ ../Task/Src/CAN_Task.c:180:4
+	.loc	2 167 4                         @ ../Task/Src/CAN_Task.c:167:4
 	ldr	r1, [sp, #60]
-	.loc	2 180 27                        @ ../Task/Src/CAN_Task.c:180:27
+	.loc	2 167 27                        @ ../Task/Src/CAN_Task.c:167:27
 	strb.w	r0, [r1, #45]
-	.loc	2 181 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:181:31
+	.loc	2 168 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:168:31
 	ldr	r0, [sp, #16]
-	.loc	2 181 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:181:29
+	.loc	2 168 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:168:29
 	ldrb	r0, [r0, #2]
-	.loc	2 181 4                         @ ../Task/Src/CAN_Task.c:181:4
+	.loc	2 168 4                         @ ../Task/Src/CAN_Task.c:168:4
 	ldr	r1, [sp, #60]
-	.loc	2 181 27                        @ ../Task/Src/CAN_Task.c:181:27
+	.loc	2 168 27                        @ ../Task/Src/CAN_Task.c:168:27
 	strb.w	r0, [r1, #46]
-	.loc	2 182 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:182:31
+	.loc	2 169 31 is_stmt 1              @ ../Task/Src/CAN_Task.c:169:31
 	ldr	r0, [sp, #16]
-	.loc	2 182 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:182:29
+	.loc	2 169 29 is_stmt 0              @ ../Task/Src/CAN_Task.c:169:29
 	ldrb	r0, [r0, #3]
-	.loc	2 182 4                         @ ../Task/Src/CAN_Task.c:182:4
+	.loc	2 169 4                         @ ../Task/Src/CAN_Task.c:169:4
 	ldr	r1, [sp, #60]
-	.loc	2 182 27                        @ ../Task/Src/CAN_Task.c:182:27
+	.loc	2 169 27                        @ ../Task/Src/CAN_Task.c:169:27
 	strb.w	r0, [r1, #47]
-	.loc	2 184 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:184:2
-	b	.LBB1_7
+	.loc	2 171 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:171:2
+	b	.LBB2_7
 .Ltmp19:
-.LBB1_4:
-	.loc	2 184 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:184:11
+.LBB2_4:
+	.loc	2 171 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:171:11
 	ldr	r0, [sp, #56]
-	.loc	2 184 21                        @ ../Task/Src/CAN_Task.c:184:21
+	.loc	2 171 21                        @ ../Task/Src/CAN_Task.c:171:21
 	ldrb	r0, [r0]
 .Ltmp20:
-	.loc	2 184 11                        @ ../Task/Src/CAN_Task.c:184:11
+	.loc	2 171 11                        @ ../Task/Src/CAN_Task.c:171:11
 	cmp	r0, #2
-	bne	.LBB1_6
-	b	.LBB1_5
-.LBB1_5:
+	bne	.LBB2_6
+	b	.LBB2_5
+.LBB2_5:
 	.loc	2 0 11                          @ ../Task/Src/CAN_Task.c:0:11
 	add	r0, sp, #48
 .Ltmp21:
-	.loc	2 187 16 is_stmt 1              @ ../Task/Src/CAN_Task.c:187:16
+	.loc	2 174 16 is_stmt 1              @ ../Task/Src/CAN_Task.c:174:16
 	str	r0, [sp, #12]
-	.loc	2 189 40                        @ ../Task/Src/CAN_Task.c:189:40
+	.loc	2 176 40                        @ ../Task/Src/CAN_Task.c:176:40
 	ldr	r0, [sp, #56]
-	.loc	2 189 61 is_stmt 0              @ ../Task/Src/CAN_Task.c:189:61
+	.loc	2 176 61 is_stmt 0              @ ../Task/Src/CAN_Task.c:176:61
 	ldr	r0, [r0, #4]
-	.loc	2 189 69                        @ ../Task/Src/CAN_Task.c:189:69
+	.loc	2 176 69                        @ ../Task/Src/CAN_Task.c:176:69
 	add.w	r0, r0, #512
-	.loc	2 189 5                         @ ../Task/Src/CAN_Task.c:189:5
+	.loc	2 176 5                         @ ../Task/Src/CAN_Task.c:176:5
 	ldr	r1, [sp, #60]
-	.loc	2 189 38                        @ ../Task/Src/CAN_Task.c:189:38
+	.loc	2 176 38                        @ ../Task/Src/CAN_Task.c:176:38
 	str	r0, [r1, #4]
-	.loc	2 191 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:191:30
+	.loc	2 178 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:178:30
 	ldr	r0, [sp, #12]
-	.loc	2 191 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:191:28
+	.loc	2 178 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:178:28
 	ldrb	r0, [r0]
-	.loc	2 191 3                         @ ../Task/Src/CAN_Task.c:191:3
+	.loc	2 178 3                         @ ../Task/Src/CAN_Task.c:178:3
 	ldr	r1, [sp, #60]
-	.loc	2 191 26                        @ ../Task/Src/CAN_Task.c:191:26
+	.loc	2 178 26                        @ ../Task/Src/CAN_Task.c:178:26
 	strb.w	r0, [r1, #40]
-	.loc	2 192 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:192:30
+	.loc	2 179 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:179:30
 	ldr	r0, [sp, #12]
-	.loc	2 192 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:192:28
+	.loc	2 179 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:179:28
 	ldrb	r0, [r0, #1]
-	.loc	2 192 3                         @ ../Task/Src/CAN_Task.c:192:3
+	.loc	2 179 3                         @ ../Task/Src/CAN_Task.c:179:3
 	ldr	r1, [sp, #60]
-	.loc	2 192 26                        @ ../Task/Src/CAN_Task.c:192:26
+	.loc	2 179 26                        @ ../Task/Src/CAN_Task.c:179:26
 	strb.w	r0, [r1, #41]
-	.loc	2 193 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:193:30
+	.loc	2 180 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:180:30
 	ldr	r0, [sp, #12]
-	.loc	2 193 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:193:28
+	.loc	2 180 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:180:28
 	ldrb	r0, [r0, #2]
-	.loc	2 193 3                         @ ../Task/Src/CAN_Task.c:193:3
+	.loc	2 180 3                         @ ../Task/Src/CAN_Task.c:180:3
 	ldr	r1, [sp, #60]
-	.loc	2 193 26                        @ ../Task/Src/CAN_Task.c:193:26
+	.loc	2 180 26                        @ ../Task/Src/CAN_Task.c:180:26
 	strb.w	r0, [r1, #42]
-	.loc	2 194 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:194:30
+	.loc	2 181 30 is_stmt 1              @ ../Task/Src/CAN_Task.c:181:30
 	ldr	r0, [sp, #12]
-	.loc	2 194 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:194:28
+	.loc	2 181 28 is_stmt 0              @ ../Task/Src/CAN_Task.c:181:28
 	ldrb	r0, [r0, #3]
-	.loc	2 194 3                         @ ../Task/Src/CAN_Task.c:194:3
+	.loc	2 181 3                         @ ../Task/Src/CAN_Task.c:181:3
 	ldr	r1, [sp, #60]
-	.loc	2 194 26                        @ ../Task/Src/CAN_Task.c:194:26
+	.loc	2 181 26                        @ ../Task/Src/CAN_Task.c:181:26
 	strb.w	r0, [r1, #43]
-	.loc	2 195 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:195:3
+	.loc	2 182 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:182:3
 	ldr	r1, [sp, #60]
 	movs	r0, #0
-	.loc	2 195 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:195:26
+	.loc	2 182 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:182:26
 	strb.w	r0, [r1, #44]
-	.loc	2 196 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:196:4
+	.loc	2 183 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:183:4
 	ldr	r1, [sp, #60]
-	.loc	2 196 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:196:27
+	.loc	2 183 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:183:27
 	strb.w	r0, [r1, #45]
-	.loc	2 197 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:197:3
+	.loc	2 184 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:184:3
 	ldr	r1, [sp, #60]
-	.loc	2 197 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:197:26
+	.loc	2 184 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:184:26
 	strb.w	r0, [r1, #46]
-	.loc	2 198 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:198:3
+	.loc	2 185 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:185:3
 	ldr	r1, [sp, #60]
-	.loc	2 198 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:198:26
+	.loc	2 185 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:185:26
 	strb.w	r0, [r1, #47]
-	.loc	2 200 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:200:2
-	b	.LBB1_6
+	.loc	2 187 2 is_stmt 1               @ ../Task/Src/CAN_Task.c:187:2
+	b	.LBB2_6
 .Ltmp22:
-.LBB1_6:
+.LBB2_6:
 	.loc	2 0 2 is_stmt 0                 @ ../Task/Src/CAN_Task.c:0:2
-	b	.LBB1_7
-.LBB1_7:
-	b	.LBB1_8
-.LBB1_8:
-	.loc	2 202 35 is_stmt 1              @ ../Task/Src/CAN_Task.c:202:35
+	b	.LBB2_7
+.LBB2_7:
+	b	.LBB2_8
+.LBB2_8:
+	.loc	2 189 35 is_stmt 1              @ ../Task/Src/CAN_Task.c:189:35
 	ldr	r0, [sp, #60]
-	.loc	2 202 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:202:4
+	.loc	2 189 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:189:4
 	bl	USER_FDCAN_AddMessageToTxFifoQ
-	.loc	2 204 1 epilogue_begin is_stmt 1 @ ../Task/Src/CAN_Task.c:204:1
+	.loc	2 191 1 epilogue_begin is_stmt 1 @ ../Task/Src/CAN_Task.c:191:1
 	add	sp, #64
 	pop	{r7, pc}
 .Ltmp23:
@@ -682,136 +756,12 @@ DM_Motor_CAN_TxMessage:
 .Ltmp24:
 	.p2align	2
 @ %bb.9:
-.LCPI1_0:
+.LCPI2_0:
 	.long	0x00000000                      @ float 0
-.LCPI1_1:
+.LCPI2_1:
 	.long	0x43fa0000                      @ float 500
-.Lfunc_end1:
-	.size	DM_Motor_CAN_TxMessage, .Lfunc_end1-DM_Motor_CAN_TxMessage
-	.cfi_endproc
-	.cantunwind
-	.fnend
-                                        @ -- End function
-	.section	.text.DM_Motor_Command,"ax",%progbits
-	.hidden	DM_Motor_Command                @ -- Begin function DM_Motor_Command
-	.globl	DM_Motor_Command
-	.p2align	3
-	.type	DM_Motor_Command,%function
-	.code	16                              @ @DM_Motor_Command
-	.thumb_func
-DM_Motor_Command:
-.Lfunc_begin2:
-	.loc	2 206 0 is_stmt 1               @ ../Task/Src/CAN_Task.c:206:0
-	.fnstart
-	.cfi_startproc
-@ %bb.0:
-	.save	{r7, lr}
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset lr, -4
-	.cfi_offset r7, -8
-	.pad	#16
-	sub	sp, #16
-	.cfi_def_cfa_offset 24
-                                        @ kill: def $r3 killed $r2
-	str	r0, [sp, #12]
-	str	r1, [sp, #8]
-	strb.w	r2, [sp, #7]
-.Ltmp25:
-	.loc	2 208 38 prologue_end           @ ../Task/Src/CAN_Task.c:208:38
-	ldr	r0, [sp, #8]
-	.loc	2 208 59 is_stmt 0              @ ../Task/Src/CAN_Task.c:208:59
-	ldr	r0, [r0, #4]
-	.loc	2 208 3                         @ ../Task/Src/CAN_Task.c:208:3
-	ldr	r1, [sp, #12]
-	.loc	2 208 36                        @ ../Task/Src/CAN_Task.c:208:36
-	str	r0, [r1, #4]
-	.loc	2 210 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:210:3
-	ldr	r1, [sp, #12]
-	movs	r0, #255
-	.loc	2 210 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:210:26
-	strb.w	r0, [r1, #40]
-	.loc	2 211 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:211:4
-	ldr	r1, [sp, #12]
-	.loc	2 211 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:211:27
-	strb.w	r0, [r1, #41]
-	.loc	2 212 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:212:4
-	ldr	r1, [sp, #12]
-	.loc	2 212 27 is_stmt 0              @ ../Task/Src/CAN_Task.c:212:27
-	strb.w	r0, [r1, #42]
-	.loc	2 213 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:213:3
-	ldr	r1, [sp, #12]
-	.loc	2 213 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:213:26
-	strb.w	r0, [r1, #43]
-	.loc	2 214 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:214:3
-	ldr	r1, [sp, #12]
-	.loc	2 214 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:214:26
-	strb.w	r0, [r1, #44]
-	.loc	2 215 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:215:3
-	ldr	r1, [sp, #12]
-	.loc	2 215 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:215:26
-	strb.w	r0, [r1, #45]
-	.loc	2 216 3 is_stmt 1               @ ../Task/Src/CAN_Task.c:216:3
-	ldr	r1, [sp, #12]
-	.loc	2 216 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:216:26
-	strb.w	r0, [r1, #46]
-	.loc	2 218 10 is_stmt 1              @ ../Task/Src/CAN_Task.c:218:10
-	ldrb.w	r0, [sp, #7]
-	.loc	2 218 3 is_stmt 0               @ ../Task/Src/CAN_Task.c:218:3
-	mov	r1, r0
-	str	r1, [sp]                        @ 4-byte Spill
-	cbz	r0, .LBB2_3
-	b	.LBB2_1
-.LBB2_1:
-	ldr	r0, [sp]                        @ 4-byte Reload
-	cmp	r0, #1
-	beq	.LBB2_4
-	b	.LBB2_2
-.LBB2_2:
-	ldr	r0, [sp]                        @ 4-byte Reload
-	cmp	r0, #2
-	beq	.LBB2_5
-	b	.LBB2_6
-.LBB2_3:
-.Ltmp26:
-	.loc	2 221 10 is_stmt 1              @ ../Task/Src/CAN_Task.c:221:10
-	ldr	r1, [sp, #12]
-	movs	r0, #252
-	.loc	2 221 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:221:33
-	strb.w	r0, [r1, #47]
-	.loc	2 222 6 is_stmt 1               @ ../Task/Src/CAN_Task.c:222:6
-	b	.LBB2_7
-.LBB2_4:
-	.loc	2 225 10                        @ ../Task/Src/CAN_Task.c:225:10
-	ldr	r1, [sp, #12]
-	movs	r0, #253
-	.loc	2 225 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:225:33
-	strb.w	r0, [r1, #47]
-	.loc	2 226 7 is_stmt 1               @ ../Task/Src/CAN_Task.c:226:7
-	b	.LBB2_7
-.LBB2_5:
-	.loc	2 229 10                        @ ../Task/Src/CAN_Task.c:229:10
-	ldr	r1, [sp, #12]
-	movs	r0, #254
-	.loc	2 229 33 is_stmt 0              @ ../Task/Src/CAN_Task.c:229:33
-	strb.w	r0, [r1, #47]
-	.loc	2 230 4 is_stmt 1               @ ../Task/Src/CAN_Task.c:230:4
-	b	.LBB2_7
-.LBB2_6:
-	.loc	2 233 6                         @ ../Task/Src/CAN_Task.c:233:6
-	b	.LBB2_7
-.Ltmp27:
-.LBB2_7:
-	.loc	2 236 35                        @ ../Task/Src/CAN_Task.c:236:35
-	ldr	r0, [sp, #12]
-	.loc	2 236 4 is_stmt 0               @ ../Task/Src/CAN_Task.c:236:4
-	bl	USER_FDCAN_AddMessageToTxFifoQ
-	.loc	2 238 1 epilogue_begin is_stmt 1 @ ../Task/Src/CAN_Task.c:238:1
-	add	sp, #16
-	pop	{r7, pc}
-.Ltmp28:
 .Lfunc_end2:
-	.size	DM_Motor_Command, .Lfunc_end2-DM_Motor_Command
+	.size	DM_Motor_CAN_TxMessage, .Lfunc_end2-DM_Motor_CAN_TxMessage
 	.cfi_endproc
 	.cantunwind
 	.fnend
@@ -823,7 +773,7 @@ DM_Motor_Command:
 	.thumb_func
 float_to_uint:
 .Lfunc_begin3:
-	.loc	2 248 0                         @ ../Task/Src/CAN_Task.c:248:0
+	.loc	2 235 0 is_stmt 1               @ ../Task/Src/CAN_Task.c:235:0
 	.fnstart
 	.cfi_startproc
 @ %bb.0:
@@ -834,48 +784,48 @@ float_to_uint:
 	vstr	s1, [sp, #16]
 	vstr	s2, [sp, #12]
 	str	r0, [sp, #8]
-.Ltmp29:
-	.loc	2 250 18 prologue_end           @ ../Task/Src/CAN_Task.c:250:18
+.Ltmp25:
+	.loc	2 237 18 prologue_end           @ ../Task/Src/CAN_Task.c:237:18
 	vldr	s0, [sp, #12]
-	.loc	2 250 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:250:26
+	.loc	2 237 26 is_stmt 0              @ ../Task/Src/CAN_Task.c:237:26
 	vldr	s2, [sp, #16]
-	.loc	2 250 24                        @ ../Task/Src/CAN_Task.c:250:24
+	.loc	2 237 24                        @ ../Task/Src/CAN_Task.c:237:24
 	vsub.f32	s0, s0, s2
-	.loc	2 250 11                        @ ../Task/Src/CAN_Task.c:250:11
+	.loc	2 237 11                        @ ../Task/Src/CAN_Task.c:237:11
 	vstr	s0, [sp, #4]
-	.loc	2 251 20 is_stmt 1              @ ../Task/Src/CAN_Task.c:251:20
+	.loc	2 238 20 is_stmt 1              @ ../Task/Src/CAN_Task.c:238:20
 	ldr	r0, [sp, #16]
-	.loc	2 251 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:251:11
+	.loc	2 238 11 is_stmt 0              @ ../Task/Src/CAN_Task.c:238:11
 	str	r0, [sp]
-	.loc	2 252 20 is_stmt 1              @ ../Task/Src/CAN_Task.c:252:20
+	.loc	2 239 20 is_stmt 1              @ ../Task/Src/CAN_Task.c:239:20
 	vldr	s0, [sp, #20]
-	.loc	2 252 22 is_stmt 0              @ ../Task/Src/CAN_Task.c:252:22
+	.loc	2 239 22 is_stmt 0              @ ../Task/Src/CAN_Task.c:239:22
 	vldr	s2, [sp]
-	.loc	2 252 21                        @ ../Task/Src/CAN_Task.c:252:21
+	.loc	2 239 21                        @ ../Task/Src/CAN_Task.c:239:21
 	vsub.f32	s0, s0, s2
-	.loc	2 252 43                        @ ../Task/Src/CAN_Task.c:252:43
+	.loc	2 239 43                        @ ../Task/Src/CAN_Task.c:239:43
 	ldr	r1, [sp, #8]
 	movs	r0, #1
-	.loc	2 252 41                        @ ../Task/Src/CAN_Task.c:252:41
+	.loc	2 239 41                        @ ../Task/Src/CAN_Task.c:239:41
 	lsls	r0, r1
-	.loc	2 252 48                        @ ../Task/Src/CAN_Task.c:252:48
+	.loc	2 239 48                        @ ../Task/Src/CAN_Task.c:239:48
 	subs	r0, #1
-	.loc	2 252 31                        @ ../Task/Src/CAN_Task.c:252:31
+	.loc	2 239 31                        @ ../Task/Src/CAN_Task.c:239:31
 	vmov	s2, r0
 	vcvt.f32.s32	s2, s2
-	.loc	2 252 29                        @ ../Task/Src/CAN_Task.c:252:29
+	.loc	2 239 29                        @ ../Task/Src/CAN_Task.c:239:29
 	vmul.f32	s0, s0, s2
-	.loc	2 252 53                        @ ../Task/Src/CAN_Task.c:252:53
+	.loc	2 239 53                        @ ../Task/Src/CAN_Task.c:239:53
 	vldr	s2, [sp, #4]
-	.loc	2 252 52                        @ ../Task/Src/CAN_Task.c:252:52
+	.loc	2 239 52                        @ ../Task/Src/CAN_Task.c:239:52
 	vdiv.f32	s0, s0, s2
-	.loc	2 252 12                        @ ../Task/Src/CAN_Task.c:252:12
+	.loc	2 239 12                        @ ../Task/Src/CAN_Task.c:239:12
 	vcvt.s32.f32	s0, s0
 	vmov	r0, s0
-	.loc	2 252 5 epilogue_begin          @ ../Task/Src/CAN_Task.c:252:5
+	.loc	2 239 5 epilogue_begin          @ ../Task/Src/CAN_Task.c:239:5
 	add	sp, #24
 	bx	lr
-.Ltmp30:
+.Ltmp26:
 .Lfunc_end3:
 	.size	float_to_uint, .Lfunc_end3-float_to_uint
 	.cfi_endproc
@@ -1642,7 +1592,7 @@ sentry_status:
 	.byte	16                              @ Abbrev [16] 0x2a9:0xf DW_TAG_formal_parameter
 	.byte	3                               @ DW_AT_location
 	.byte	145
-	.asciz	"\354"
+	.asciz	"\334"
 	.long	.Linfo_string59                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	56                              @ DW_AT_decl_line
@@ -1650,7 +1600,7 @@ sentry_status:
 	.byte	17                              @ Abbrev [17] 0x2b8:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	44
+	.byte	28
 	.long	.Linfo_string60                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	66                              @ DW_AT_decl_line
@@ -1658,189 +1608,189 @@ sentry_status:
 	.byte	17                              @ Abbrev [17] 0x2c6:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	40
+	.byte	24
 	.long	.Linfo_string61                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
 	.byte	67                              @ DW_AT_decl_line
 	.long	1167                            @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	15                              @ Abbrev [15] 0x2d5:0x102 DW_TAG_subprogram
+	.byte	15                              @ Abbrev [15] 0x2d5:0x3c DW_TAG_subprogram
 	.long	.Lfunc_begin1                   @ DW_AT_low_pc
 	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string56                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
+	.byte	193                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
 	.byte	16                              @ Abbrev [16] 0x2e6:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	60
+	.byte	12
 	.long	.Linfo_string63                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
+	.byte	193                             @ DW_AT_decl_line
 	.long	1178                            @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x2f4:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	56
+	.byte	8
 	.long	.Linfo_string202                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
+	.byte	193                             @ DW_AT_decl_line
 	.long	3054                            @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x302:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
 	.byte	145
-	.byte	52
+	.byte	7
 	.long	.Linfo_string228                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
-	.long	657                             @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x310:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	48
-	.long	.Linfo_string221                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
-	.long	657                             @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x31e:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	44
-	.long	.Linfo_string229                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
-	.long	657                             @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x32c:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	40
-	.long	.Linfo_string230                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
-	.long	657                             @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x33a:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	36
-	.long	.Linfo_string222                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	143                             @ DW_AT_decl_line
-	.long	657                             @ DW_AT_type
-	.byte	18                              @ Abbrev [18] 0x348:0x50 DW_TAG_lexical_block
-	.long	.Ltmp15                         @ DW_AT_low_pc
-	.long	.Ltmp16-.Ltmp15                 @ DW_AT_high_pc
-	.byte	17                              @ Abbrev [17] 0x351:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	34
-	.long	.Linfo_string231                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	147                             @ DW_AT_decl_line
-	.long	370                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x35f:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	32
-	.long	.Linfo_string232                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	147                             @ DW_AT_decl_line
-	.long	370                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x36d:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	30
-	.long	.Linfo_string233                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	147                             @ DW_AT_decl_line
-	.long	370                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x37b:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	28
-	.long	.Linfo_string234                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	147                             @ DW_AT_decl_line
-	.long	370                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x389:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	26
-	.long	.Linfo_string235                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	147                             @ DW_AT_decl_line
-	.long	370                             @ DW_AT_type
+	.byte	193                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
-	.byte	18                              @ Abbrev [18] 0x398:0x26 DW_TAG_lexical_block
-	.long	.Ltmp18                         @ DW_AT_low_pc
-	.long	.Ltmp19-.Ltmp18                 @ DW_AT_high_pc
-	.byte	17                              @ Abbrev [17] 0x3a1:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	20
-	.long	.Linfo_string231                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	168                             @ DW_AT_decl_line
-	.long	645                             @ DW_AT_type
-	.byte	17                              @ Abbrev [17] 0x3af:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	16
-	.long	.Linfo_string232                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	168                             @ DW_AT_decl_line
-	.long	645                             @ DW_AT_type
-	.byte	0                               @ End Of Children Mark
-	.byte	18                              @ Abbrev [18] 0x3be:0x18 DW_TAG_lexical_block
-	.long	.Ltmp21                         @ DW_AT_low_pc
-	.long	.Ltmp22-.Ltmp21                 @ DW_AT_high_pc
-	.byte	17                              @ Abbrev [17] 0x3c7:0xe DW_TAG_variable
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	12
-	.long	.Linfo_string232                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	186                             @ DW_AT_decl_line
-	.long	645                             @ DW_AT_type
-	.byte	0                               @ End Of Children Mark
-	.byte	0                               @ End Of Children Mark
-	.byte	15                              @ Abbrev [15] 0x3d7:0x3c DW_TAG_subprogram
+	.byte	15                              @ Abbrev [15] 0x311:0x102 DW_TAG_subprogram
 	.long	.Lfunc_begin2                   @ DW_AT_low_pc
 	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
 	.byte	1                               @ DW_AT_frame_base
 	.byte	93
 	.long	.Linfo_string57                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	206                             @ DW_AT_decl_line
+	.byte	130                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
                                         @ DW_AT_external
-	.byte	16                              @ Abbrev [16] 0x3e8:0xe DW_TAG_formal_parameter
+	.byte	16                              @ Abbrev [16] 0x322:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	60
+	.long	.Linfo_string63                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	1178                            @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x330:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	56
+	.long	.Linfo_string202                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	3054                            @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x33e:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	52
+	.long	.Linfo_string229                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	657                             @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x34c:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	48
+	.long	.Linfo_string221                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	657                             @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x35a:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	44
+	.long	.Linfo_string230                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	657                             @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x368:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	40
+	.long	.Linfo_string231                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	657                             @ DW_AT_type
+	.byte	16                              @ Abbrev [16] 0x376:0xe DW_TAG_formal_parameter
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	36
+	.long	.Linfo_string222                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	130                             @ DW_AT_decl_line
+	.long	657                             @ DW_AT_type
+	.byte	18                              @ Abbrev [18] 0x384:0x50 DW_TAG_lexical_block
+	.long	.Ltmp15                         @ DW_AT_low_pc
+	.long	.Ltmp16-.Ltmp15                 @ DW_AT_high_pc
+	.byte	17                              @ Abbrev [17] 0x38d:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	34
+	.long	.Linfo_string232                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	370                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x39b:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	32
+	.long	.Linfo_string233                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	370                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x3a9:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	30
+	.long	.Linfo_string234                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	370                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x3b7:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	28
+	.long	.Linfo_string235                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	370                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x3c5:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	26
+	.long	.Linfo_string236                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	370                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	18                              @ Abbrev [18] 0x3d4:0x26 DW_TAG_lexical_block
+	.long	.Ltmp18                         @ DW_AT_low_pc
+	.long	.Ltmp19-.Ltmp18                 @ DW_AT_high_pc
+	.byte	17                              @ Abbrev [17] 0x3dd:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	20
+	.long	.Linfo_string232                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	155                             @ DW_AT_decl_line
+	.long	645                             @ DW_AT_type
+	.byte	17                              @ Abbrev [17] 0x3eb:0xe DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	16
+	.long	.Linfo_string233                @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	155                             @ DW_AT_decl_line
+	.long	645                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	18                              @ Abbrev [18] 0x3fa:0x18 DW_TAG_lexical_block
+	.long	.Ltmp21                         @ DW_AT_low_pc
+	.long	.Ltmp22-.Ltmp21                 @ DW_AT_high_pc
+	.byte	17                              @ Abbrev [17] 0x403:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
 	.byte	145
 	.byte	12
-	.long	.Linfo_string63                 @ DW_AT_name
+	.long	.Linfo_string233                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	206                             @ DW_AT_decl_line
-	.long	1178                            @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x3f6:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	8
-	.long	.Linfo_string202                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	206                             @ DW_AT_decl_line
-	.long	3054                            @ DW_AT_type
-	.byte	16                              @ Abbrev [16] 0x404:0xe DW_TAG_formal_parameter
-	.byte	2                               @ DW_AT_location
-	.byte	145
-	.byte	7
-	.long	.Linfo_string236                @ DW_AT_name
-	.byte	2                               @ DW_AT_decl_file
-	.byte	206                             @ DW_AT_decl_line
-	.long	55                              @ DW_AT_type
+	.byte	173                             @ DW_AT_decl_line
+	.long	645                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
 	.byte	0                               @ End Of Children Mark
 	.byte	19                              @ Abbrev [19] 0x413:0x6a DW_TAG_subprogram
 	.long	.Lfunc_begin3                   @ DW_AT_low_pc
@@ -1849,7 +1799,7 @@ sentry_status:
 	.byte	93
 	.long	.Linfo_string58                 @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	248                             @ DW_AT_decl_line
+	.byte	235                             @ DW_AT_decl_line
                                         @ DW_AT_prototyped
 	.long	650                             @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x428:0xe DW_TAG_formal_parameter
@@ -1858,7 +1808,7 @@ sentry_status:
 	.byte	20
 	.long	.Linfo_string237                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	248                             @ DW_AT_decl_line
+	.byte	235                             @ DW_AT_decl_line
 	.long	657                             @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x436:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -1866,7 +1816,7 @@ sentry_status:
 	.byte	16
 	.long	.Linfo_string238                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	248                             @ DW_AT_decl_line
+	.byte	235                             @ DW_AT_decl_line
 	.long	657                             @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x444:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -1874,7 +1824,7 @@ sentry_status:
 	.byte	12
 	.long	.Linfo_string239                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	248                             @ DW_AT_decl_line
+	.byte	235                             @ DW_AT_decl_line
 	.long	657                             @ DW_AT_type
 	.byte	16                              @ Abbrev [16] 0x452:0xe DW_TAG_formal_parameter
 	.byte	2                               @ DW_AT_location
@@ -1882,7 +1832,7 @@ sentry_status:
 	.byte	8
 	.long	.Linfo_string240                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	248                             @ DW_AT_decl_line
+	.byte	235                             @ DW_AT_decl_line
 	.long	650                             @ DW_AT_type
 	.byte	17                              @ Abbrev [17] 0x460:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -1890,7 +1840,7 @@ sentry_status:
 	.byte	4
 	.long	.Linfo_string241                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	250                             @ DW_AT_decl_line
+	.byte	237                             @ DW_AT_decl_line
 	.long	657                             @ DW_AT_type
 	.byte	17                              @ Abbrev [17] 0x46e:0xe DW_TAG_variable
 	.byte	2                               @ DW_AT_location
@@ -1898,7 +1848,7 @@ sentry_status:
 	.byte	0
 	.long	.Linfo_string242                @ DW_AT_name
 	.byte	2                               @ DW_AT_decl_file
-	.byte	251                             @ DW_AT_decl_line
+	.byte	238                             @ DW_AT_decl_line
 	.long	657                             @ DW_AT_type
 	.byte	0                               @ End Of Children Mark
 	.byte	14                              @ Abbrev [14] 0x47d:0x5 DW_TAG_pointer_type
@@ -3115,9 +3065,9 @@ sentry_status:
 .Linfo_string55:
 	.asciz	"CAN_Task"                      @ string offset=798
 .Linfo_string56:
-	.asciz	"DM_Motor_CAN_TxMessage"        @ string offset=807
+	.asciz	"DM_Motor_Command"              @ string offset=807
 .Linfo_string57:
-	.asciz	"DM_Motor_Command"              @ string offset=830
+	.asciz	"DM_Motor_CAN_TxMessage"        @ string offset=824
 .Linfo_string58:
 	.asciz	"float_to_uint"                 @ string offset=847
 .Linfo_string59:
@@ -3459,23 +3409,23 @@ sentry_status:
 .Linfo_string227:
 	.asciz	"DM_Motor_Info_Typedef"         @ string offset=2572
 .Linfo_string228:
-	.asciz	"Postion"                       @ string offset=2594
+	.asciz	"CMD"                           @ string offset=2594
 .Linfo_string229:
-	.asciz	"KP"                            @ string offset=2602
+	.asciz	"Postion"                       @ string offset=2598
 .Linfo_string230:
-	.asciz	"KD"                            @ string offset=2605
+	.asciz	"KP"                            @ string offset=2606
 .Linfo_string231:
-	.asciz	"Postion_Tmp"                   @ string offset=2608
+	.asciz	"KD"                            @ string offset=2609
 .Linfo_string232:
-	.asciz	"Velocity_Tmp"                  @ string offset=2620
+	.asciz	"Postion_Tmp"                   @ string offset=2612
 .Linfo_string233:
-	.asciz	"Torque_Tmp"                    @ string offset=2633
+	.asciz	"Velocity_Tmp"                  @ string offset=2624
 .Linfo_string234:
-	.asciz	"KP_Tmp"                        @ string offset=2644
+	.asciz	"Torque_Tmp"                    @ string offset=2637
 .Linfo_string235:
-	.asciz	"KD_Tmp"                        @ string offset=2651
+	.asciz	"KP_Tmp"                        @ string offset=2648
 .Linfo_string236:
-	.asciz	"CMD"                           @ string offset=2658
+	.asciz	"KD_Tmp"                        @ string offset=2655
 .Linfo_string237:
 	.asciz	"x"                             @ string offset=2662
 .Linfo_string238:

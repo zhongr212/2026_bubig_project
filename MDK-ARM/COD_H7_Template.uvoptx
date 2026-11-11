@@ -178,7 +178,7 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Yaw_Velocity_PID</ItemText>
+          <ItemText>Yaw_Velocity_PID,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
@@ -194,6 +194,46 @@
           <count>6</count>
           <WinNumber>1</WinNumber>
           <ItemText>Yaw_Angle_PID</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\COD_H7_Template\../Task/Src/Control_Gaimbal_Task.c\Yaw_Velocity_PID.Param.KP</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>GetSmoothedTargetDelta</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>GetSmoothedTargetDelta(PID)</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>delta_sum</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>INS_Info</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Control_Gimbal_Info</ItemText>
+        </Ww>
+        <Ww>
+          <count>13</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\COD_H7_Template\../Task/Src/Control_Gaimbal_Task.c\Yaw_Velocity_PID.Param.Deadband</ItemText>
+        </Ww>
+        <Ww>
+          <count>14</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\COD_H7_Template\../Task/Src/Control_Gaimbal_Task.c\Yaw_Angle_PID.Iout</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -1169,7 +1209,7 @@
 
   <Group>
     <GroupName>Algorithm</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1321,7 +1361,7 @@
 
   <Group>
     <GroupName>Middlewares/FreeRTOS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

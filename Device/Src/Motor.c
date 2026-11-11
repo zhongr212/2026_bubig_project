@@ -39,15 +39,15 @@ DJI_Motor_Info_Typedef Motor_chassis[4] =
 //角度
 DM_Motor_Info_Typedef DM_Yaw_Motor ={
 
-		  .Control_Mode = VELOCITY,
+		  .Control_Mode = MIT,
 			.Param_Range ={
 			   .P_MAX = 3.141593f,
 			   .V_MAX = 30.f,
 			   .T_MAX = 10.f		
 			},
 		  .FDCANFrame = {
-				 .TxStdId = 0x3,
-				 .RxStdId = 0x13,//接受电机
+				 .TxStdId = 0x1,
+				 .RxStdId = 0x11,//接受电机
 			},
 		
 };//后期依据实际更改

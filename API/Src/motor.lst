@@ -1319,10 +1319,10 @@ Motor_chassis:
 	.globl	DM_Yaw_Motor
 	.p2align	2, 0x0
 DM_Yaw_Motor:
-	.byte	2                               @ 0x2
+	.byte	0                               @ 0x0
 	.zero	3
-	.long	3                               @ 0x3
-	.long	19                              @ 0x13
+	.long	1                               @ 0x1
+	.long	17                              @ 0x11
 	.byte	0                               @ 0x0
 	.zero	3
 	.long	0x40490fdc                      @ float 3.14159298

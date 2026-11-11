@@ -663,7 +663,7 @@ StartCAN_TaskControlBlock:
 .L__const.MX_FREERTOS_Init.os_thread_def_StartCAN_Task:
 	.long	.L.str.1
 	.long	CAN_Task
-	.short	65535                           @ 0xffff
+	.short	0                               @ 0x0
 	.zero	2
 	.long	0                               @ 0x0
 	.long	1024                            @ 0x400
@@ -710,7 +710,7 @@ StartControlControlBlock:
 .L__const.MX_FREERTOS_Init.os_thread_def_StartControl_Task:
 	.long	.L.str.2
 	.long	Control_Task
-	.short	1                               @ 0x1
+	.short	3                               @ 0x3
 	.zero	2
 	.long	0                               @ 0x0
 	.long	1024                            @ 0x400
@@ -757,7 +757,7 @@ StartControl_GIMBAL_TaskBlock:
 .L__const.MX_FREERTOS_Init.os_thread_def_StartControl_GIMBAL_Task:
 	.long	.L.str.3
 	.long	Control_GIMBAL_Task
-	.short	0                               @ 0x0
+	.short	2                               @ 0x2
 	.zero	2
 	.long	0                               @ 0x0
 	.long	1024                            @ 0x400
@@ -898,7 +898,7 @@ StartDetect_TaskControlBlock:
 .L__const.MX_FREERTOS_Init.os_thread_def_StartDetect_Task:
 	.long	.L.str.6
 	.long	Detect_Task
-	.short	0                               @ 0x0
+	.short	65535                           @ 0xffff
 	.zero	2
 	.long	0                               @ 0x0
 	.long	1024                            @ 0x400

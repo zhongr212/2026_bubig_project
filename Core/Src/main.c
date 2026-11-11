@@ -138,7 +138,7 @@ int main(void)
   BMI088_Init();
 	BSP_ADC_Init();
 	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
-	TriangleWave_SetPeriod(2000U, 200U);
+	TriangleWave_SetPeriod(1000U, 400U);
 	TIM1_1ms_Init();
   /* USER CODE END 2 */
 

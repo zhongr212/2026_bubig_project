@@ -255,8 +255,8 @@ main:
 	movt	r0, :upper16:htim3
 	movs	r1, #12
 	bl	HAL_TIM_PWM_Start
-	mov.w	r0, #2000
-	movs	r1, #200
+	mov.w	r0, #1000
+	mov.w	r1, #400
 	.loc	7 141 2                         @ ../Core/Src/main.c:141:2
 	bl	TriangleWave_SetPeriod
 	.loc	7 142 2                         @ ../Core/Src/main.c:142:2
